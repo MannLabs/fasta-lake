@@ -1,7 +1,7 @@
 # Rust function index
 
 Use [functions in execution order](function-map.md) to find the engine for a step.
-This index links **170 function declarations**, sorted by file and name.
+This index links **173 function declarations**, sorted by file and name.
 It omits test directories and conventional in-file test modules.
 It is a source navigation aid, not a list of public or enabled APIs.
 Repeated names belong to different files or implementations.
@@ -94,6 +94,14 @@ Regenerate with `python tools/render_function_index.py --write`.
 | Function | Definition |
 |---|---|
 | `main` | [Line 4](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/build.rs#L4) |
+
+## rust/fasta_extractor_v2/src/bin/bag_extract.rs
+
+| Function | Definition |
+|---|---|
+| `emit` | [Line 51](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/bin/bag_extract.rs#L51) |
+| `main` | [Line 113](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/bin/bag_extract.rs#L113) |
+| `norm` | [Line 40](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/bin/bag_extract.rs#L40) |
 
 ## rust/fasta_extractor_v2/src/bin/fasta_sort_by_id.rs
 

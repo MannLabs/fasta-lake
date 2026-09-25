@@ -1,5 +1,24 @@
 # Empirical validation and interpretation
 
+## Adaptive selection and relaxed matching
+
+Using the same spectra for protein selection and the subsequent Sage search can
+favor targets in a way that search decoys do not reproduce. This concern applies
+to exact matching as well as the experimental bag and mass alternatives. Counting
+all alternatives as one prediction prevents duplicate support votes, but leaves
+the extra opportunities to match an unrelated protein.
+
+An increase at a fixed Sage q-value is an increase in nominally accepted yield.
+It does not establish improved sensitivity at the same actual FDR. Shuffled
+queries assess accidental retrieval, not the false fraction of final identifications.
+The full workflow's FDR remains unverified. Its execution checks cannot establish
+calibration. Independent absent-species controls must enter before selection and
+follow the same retrieval, selection and search steps; shared peptide sequences
+and possible contaminants must be accounted for. The experimental branch describes
+this diagnostic in `BAGS_ENTRAPMENT.md` at the repository root. Even low control
+counts need an assessment of control exposure and statistical power before an FDR
+claim; protein-group and added-identification claims require their own validation.
+
 ## Study design
 
 The acceptance experiment included ten HSTOOL acquisitions labelled TechnicalReplicates 1–10 and ten PREDICT acquisitions with matched metagenome FASTAs. Each acquisition was processed through pooled evidence extraction, acquisition-specific extraction, Rust razor/hash-acc selection and SAGE searching. The PREDICT acquisitions were also searched against their matched metagenome FASTAs, giving thirty completed searches. Existing predictions and mzML files were reused.

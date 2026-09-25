@@ -1,7 +1,7 @@
 # Python function index
 
 For a first reading, use [functions in execution order](function-map.md).
-This generated index contains **479 functions and methods**, including private
+This generated index contains **494 functions and methods**, including private
 and nested helpers, from the Python package and the two main workflow tools.
 Sections follow workflow purpose; modules and names are alphabetical within them.
 Links open the exact definition. The [Python API](api/index.md) renders full
@@ -754,6 +754,26 @@ CI checks the index against the source.
 | [`component_layout`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/_ckg_worker.py#L77) | Keep disconnected membership components readable in a deterministic grid. |
 | [`remove_unused_bootstrap`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/_ckg_worker.py#L46) | Remove PyVis's unused remote Bootstrap assets from its inline template. |
 | [`render`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/_ckg_worker.py#L101) | Plot reported membership and topological communities without re-inferring proteins. |
+
+### fasta_lake.bags
+
+| Function | Purpose |
+|---|---|
+| [`bag_plan`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L141) | Validate recorded spans and choose an anchor for all-hit streaming lookup. |
+| [`compile_queries`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L212) | Compile native AlphaNovo alternatives without turning variants into observations. |
+| [`compile_queries.write`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L261) | Emit one route-tagged pattern, failing before truncating a query. |
+| [`control_form`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L195) | Shuffle residues reproducibly while preserving bag spans and modifications. |
+| [`dump`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L48) | Atomically replace a JSON receipt, rejecting non-finite numbers. |
+| [`evidence_for`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L329) | Return original-query support only when the arm admits this protein. |
+| [`fnv1a`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L321) | Compute the production unsigned 64-bit FNV-1a accession tie-breaker. |
+| [`load_queries`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L89) | Keep original row ranking/ties; collapse selection evidence by original sequence. |
+| [`low_complexity`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L78) | Apply the archived composition and alternating-repeat exclusion rules. |
+| [`metadata`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L42) | Record the absolute path, byte size and SHA-256 of an input or output. |
+| [`norm`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L28) | Canonicalize residue case and collapse indistinguishable I/L spellings. |
+| [`select_databases`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L336) | Apply FastaLake's fixed-count razor rule to original-query/protein edges. |
+| [`sha`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L33) | Hash a complete file while bounding read-buffer memory. |
+| [`tokens`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L165) | Separate residue and terminal tokens and check their unmodified spelling. |
+| [`upstream`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/bags.py#L56) | Load the actual pinned implementation; never select another installed copy. |
 
 ### fasta_lake.benchmark
 
