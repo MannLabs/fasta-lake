@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+target/
+ci_bins/
+ci_demo/
+demo_run_*/
+study_run_*/
+study_groups_*/
+campi_run_*/
+hstool_run_*/
+ci_campi/
+ci_hstool/
+ci_molecular/
+.coverage*
+fastalake.site.sh
+
+# documentation site build
+/site/
+# example outputs the tutorial notebooks read
+tutorial_data/
+# mkdocs-jupyter render cache
+.cache/

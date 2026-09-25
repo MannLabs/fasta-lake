@@ -1,0 +1,5 @@
+# rustfmt configuration for all FastaLake Rust crates.
+# Conservative: only widely-safe, stable options so `cargo fmt --check` is a
+# reliable CI gate rather than a source of churn across rustfmt versions.
+max_width = 100
+edition = "2021"

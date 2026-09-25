@@ -1,0 +1,41 @@
+{
+  "checked_utc": "2026-09-23T13:22:40.443329+00:00",
+  "status": "PASS",
+  "source_commit": "e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773",
+  "source_records_checked": 80,
+  "labels_checked": 57,
+  "detail_paragraphs_checked": 6,
+  "reproducible_build": true,
+  "svg": [
+    {
+      "file": "fastalake-pipeline-light.svg",
+      "labels": 44,
+      "xmllint": "PASS",
+      "scripts": 0,
+      "external_href": 0,
+      "embedded_fonts": 2,
+      "sha256": "a4aca0b51193d30ffe89aaa9e3de7e4a6f4cf96486c49f708b1d5bfdb11369c4"
+    },
+    {
+      "file": "fastalake-pipeline-dark.svg",
+      "labels": 44,
+      "xmllint": "PASS",
+      "scripts": 0,
+      "external_href": 0,
+      "embedded_fonts": 2,
+      "sha256": "b5b54004d0d24effedb11decc8078d1c5ff073bb4ae8eae83fcddd20d93d149b"
+    }
+  ],
+  "minimum_font_px_at_880": 11.366666666666667,
+  "browser_render_count": 12,
+  "visual_review": "VISUAL_REVIEW.json",
+  "no_overlapping_text_ink": true,
+  "old_stage_check": {
+    "clustering": "absent",
+    "k-mer rescue": "absent",
+    "TPM filtering": "absent",
+    "directLFQ": "absent from figure; explicitly optional in HTML notes",
+    "parsimony": "present: active Rust selection, distinct from study grouping"
+  },
+  "manuscript_alignment": "v11 terminology checked on 23 September 2026; see PIPELINE_INVENTORY.md"
+}

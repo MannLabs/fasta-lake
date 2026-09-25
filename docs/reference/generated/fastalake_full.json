@@ -1,0 +1,75 @@
+{
+  "database": {
+    "sources": [
+      {
+        "tag": "UHGG",
+        "priority": 1,
+        "path": "/data/uhgp-100.faa"
+      },
+      {
+        "tag": "GMGC",
+        "priority": 2,
+        "path": "/data/GMGC10.100AA.faa"
+      }
+    ],
+    "output": "reference_lake.fasta"
+  },
+  "sequence_quality": {
+    "min_length": 6,
+    "max_length": 50000,
+    "reject_poly_runs": false,
+    "poly_run_length": 10,
+    "reject_low_complexity": false,
+    "low_complexity_threshold": 0.3,
+    "reject_fragments": false,
+    "fragment_length_threshold": 100
+  },
+  "peptide_evidence": {
+    "predictions_dir": "/data/alphanovo_results",
+    "min_length": 8,
+    "max_length": 50,
+    "min_score": 0.0,
+    "top_percent": 0.3,
+    "normalize_il": true
+  },
+  "complexity": {
+    "enabled": false,
+    "auto_recommend": true,
+    "report_metrics": [
+      "hit_rate",
+      "species_richness",
+      "peptide_diversity"
+    ]
+  },
+  "inference": {
+    "strategy": "species_budget",
+    "min_peptides": 1,
+    "strain_resolution": false,
+    "keep_contaminants": true,
+    "keep_entrapment": true
+  },
+  "entrapment": {
+    "enabled": false,
+    "method": "phylogenetic",
+    "source": "",
+    "n_proteins": 1000,
+    "expected_fdr": 0.01
+  },
+  "clustering": {
+    "enabled": true,
+    "identity": 0.97,
+    "coverage": 0.8
+  },
+  "output": {
+    "directory": "./output",
+    "write_stats": true,
+    "write_hits_tsv": true,
+    "write_audit_log": false,
+    "provenance_tracking": true
+  },
+  "rust": {
+    "fasta_extractor": null,
+    "lake_builder": null,
+    "threads": null
+  }
+}

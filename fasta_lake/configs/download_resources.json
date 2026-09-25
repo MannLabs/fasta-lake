@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "resources": {
+    "gmsc-90": {
+      "title": "GMSC 90% identity small-ORF proteins",
+      "version": "GMSC10 protein catalogue (2024)",
+      "source": "https://gmsc.big-data-biology.org/download/",
+      "files": [
+        {
+          "url": "https://gmsc-api.big-data-biology.org/files/GMSC10.90AA.faa.xz",
+          "name": "GMSC10.90AA.faa.xz",
+          "bytes": 9327402072,
+          "checksum": null
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "Identity threshold, not protein length. Expanded FASTA size is not published here. Quality/annotation tables are separate.",
+      "verified_date": "2026-09-15"
+    },
+    "gmsc-100": {
+      "title": "GMSC 100% identity small-ORF proteins",
+      "version": "GMSC10 protein catalogue (2024)",
+      "source": "https://gmsc.big-data-biology.org/download/",
+      "files": [
+        {
+          "url": "https://gmsc-api.big-data-biology.org/files/GMSC10.100AA.faa.xz",
+          "name": "GMSC10.100AA.faa.xz",
+          "bytes": 20603408848,
+          "checksum": null
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "Identity threshold, not protein length. Expanded FASTA size is not published here. Quality/annotation tables are separate.",
+      "verified_date": "2026-09-15"
+    },
+    "gmgc-100nr": {
+      "title": "GMGC proteins: 100nr",
+      "version": "1.0",
+      "source": "https://gmgc.embl.de/download.cgi",
+      "files": [
+        {
+          "url": "https://gmgc.embl.de/downloads/v1.0/GMGC10.100nr.faa.gz",
+          "name": "GMGC10.100nr.faa.gz",
+          "bytes": null,
+          "checksum": null,
+          "approximate_download_size": "82G (upstream rounded listing)"
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "966'108'540 proteins. 95nr clusters at 95% nucleotide identity; 90nr at 90% protein identity. Server may stream without an exact transfer length.",
+      "verified_date": "2026-09-15"
+    },
+    "gmgc-90nr": {
+      "title": "GMGC proteins: 90nr",
+      "version": "1.0",
+      "source": "https://gmgc.embl.de/download.cgi",
+      "files": [
+        {
+          "url": "https://gmgc.embl.de/downloads/v1.0/GMGC10.90nr.faa.gz",
+          "name": "GMGC10.90nr.faa.gz",
+          "bytes": null,
+          "checksum": null,
+          "approximate_download_size": "24G (upstream rounded listing)"
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "210'478'083 proteins. 95nr clusters at 95% nucleotide identity; 90nr at 90% protein identity. Server may stream without an exact transfer length.",
+      "verified_date": "2026-09-15"
+    },
+    "gmgc-95nr.complete": {
+      "title": "GMGC proteins: 95nr.complete",
+      "version": "1.0",
+      "source": "https://gmgc.embl.de/download.cgi",
+      "files": [
+        {
+          "url": "https://gmgc.embl.de/downloads/v1.0/GMGC10.95nr.complete.faa.gz",
+          "name": "GMGC10.95nr.complete.faa.gz",
+          "bytes": null,
+          "checksum": null,
+          "approximate_download_size": "13G (upstream rounded listing)"
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "95'292'300 proteins. 95nr clusters at 95% nucleotide identity; 90nr at 90% protein identity. Server may stream without an exact transfer length.",
+      "verified_date": "2026-09-15"
+    },
+    "gmgc-95nr": {
+      "title": "GMGC proteins: 95nr",
+      "version": "1.0",
+      "source": "https://gmgc.embl.de/download.cgi",
+      "files": [
+        {
+          "url": "https://gmgc.embl.de/downloads/v1.0/GMGC10.95nr.faa.gz",
+          "name": "GMGC10.95nr.faa.gz",
+          "bytes": null,
+          "checksum": null,
+          "approximate_download_size": "31G (upstream rounded listing)"
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "302'655'267 proteins. 95nr clusters at 95% nucleotide identity; 90nr at 90% protein identity. Server may stream without an exact transfer length.",
+      "verified_date": "2026-09-15"
+    },
+    "gmgc-95nr.no-rare": {
+      "title": "GMGC proteins: 95nr.no-rare",
+      "version": "1.0",
+      "source": "https://gmgc.embl.de/download.cgi",
+      "files": [
+        {
+          "url": "https://gmgc.embl.de/downloads/v1.0/GMGC10.95nr.no-rare.faa.gz",
+          "name": "GMGC10.95nr.no-rare.faa.gz",
+          "bytes": null,
+          "checksum": null,
+          "approximate_download_size": "16G (upstream rounded listing)"
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "136'812'516 proteins. 95nr clusters at 95% nucleotide identity; 90nr at 90% protein identity. Server may stream without an exact transfer length.",
+      "verified_date": "2026-09-15"
+    },
+    "uhgp-50": {
+      "title": "UHGP 50% protein clusters for UHGG human gut",
+      "version": "UHGG/UHGP v2.0.2",
+      "source": "https://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/human-gut/v2.0.2/protein_catalogue/",
+      "files": [
+        {
+          "url": "https://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/human-gut/v2.0.2/protein_catalogue/uhgp-50.tar.gz",
+          "name": "uhgp-50.tar.gz",
+          "bytes": 5161566994,
+          "checksum": null
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "Protein archive associated with UHGG genomes. Contains catalogue/support files; choose the protein FASTA after unpacking. Genome assemblies are not needed for protein search.",
+      "verified_date": "2026-09-15"
+    },
+    "uhgp-90": {
+      "title": "UHGP 90% protein clusters for UHGG human gut",
+      "version": "UHGG/UHGP v2.0.2",
+      "source": "https://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/human-gut/v2.0.2/protein_catalogue/",
+      "files": [
+        {
+          "url": "https://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/human-gut/v2.0.2/protein_catalogue/uhgp-90.tar.gz",
+          "name": "uhgp-90.tar.gz",
+          "bytes": 10573087336,
+          "checksum": null
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "Protein archive associated with UHGG genomes. Contains catalogue/support files; choose the protein FASTA after unpacking. Genome assemblies are not needed for protein search.",
+      "verified_date": "2026-09-15"
+    },
+    "uhgp-95": {
+      "title": "UHGP 95% protein clusters for UHGG human gut",
+      "version": "UHGG/UHGP v2.0.2",
+      "source": "https://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/human-gut/v2.0.2/protein_catalogue/",
+      "files": [
+        {
+          "url": "https://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/human-gut/v2.0.2/protein_catalogue/uhgp-95.tar.gz",
+          "name": "uhgp-95.tar.gz",
+          "bytes": 8884098391,
+          "checksum": null
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "Protein archive associated with UHGG genomes. Contains catalogue/support files; choose the protein FASTA after unpacking. Genome assemblies are not needed for protein search.",
+      "verified_date": "2026-09-15"
+    },
+    "uhgp-100": {
+      "title": "UHGP 100% protein clusters for UHGG human gut",
+      "version": "UHGG/UHGP v2.0.2",
+      "source": "https://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/human-gut/v2.0.2/protein_catalogue/",
+      "files": [
+        {
+          "url": "https://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/human-gut/v2.0.2/protein_catalogue/uhgp-100.tar.gz",
+          "name": "uhgp-100.tar.gz",
+          "bytes": 28342719422,
+          "checksum": null
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "Protein archive associated with UHGG genomes. Contains catalogue/support files; choose the protein FASTA after unpacking. Genome assemblies are not needed for protein search.",
+      "verified_date": "2026-09-15"
+    },
+    "uniprot-swissprot": {
+      "title": "UniProtKB reviewed Swiss-Prot proteins",
+      "version": "current_release: resolve release and checksum at download",
+      "source": "https://www.uniprot.org/help/downloads",
+      "files": [
+        {
+          "url": "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz",
+          "name": "uniprot_sprot.fasta.gz",
+          "bytes": 93801562,
+          "checksum": null
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "List size is a dated snapshot. Plan/download resolves the current UniProt release and upstream MD5. These are alternatives or deliberate complements, not mandatory downloads.",
+      "verified_date": "2026-09-15",
+      "metalink": "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/complete/RELEASE.metalink"
+    },
+    "uniprot-trembl": {
+      "title": "UniProtKB unreviewed TrEMBL proteins",
+      "version": "current_release: resolve release and checksum at download",
+      "source": "https://www.uniprot.org/help/downloads",
+      "files": [
+        {
+          "url": "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_trembl.fasta.gz",
+          "name": "uniprot_trembl.fasta.gz",
+          "bytes": 40628134612,
+          "checksum": null
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "List size is a dated snapshot. Plan/download resolves the current UniProt release and upstream MD5. These are alternatives or deliberate complements, not mandatory downloads.",
+      "verified_date": "2026-09-15",
+      "metalink": "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/complete/RELEASE.metalink"
+    },
+    "uniprot-human": {
+      "title": "UniProt human reference proteome UP000005640",
+      "version": "current_release",
+      "source": "https://www.uniprot.org/proteomes/UP000005640",
+      "files": [
+        {
+          "url": "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000005640/UP000005640_9606.fasta.gz",
+          "name": "UP000005640_9606.fasta.gz",
+          "bytes": 47819245,
+          "checksum": null
+        }
+      ],
+      "expanded_bytes_estimate": null,
+      "notes": "Host reference; record the resolved release and checksum with each download. Does not include every alternative isoform file.",
+      "verified_date": "2026-09-15",
+      "release_url": "https://ftp.ebi.ac.uk/pub/databases/uniprot/current_release/knowledgebase/complete/reldate.txt"
+    },
+    "eggnog-5.0.2": {
+      "title": "eggNOG-mapper DIAMOND databases",
+      "version": "5.0.2",
+      "source": "https://github.com/eggnogdb/eggnog-mapper",
+      "files": [
+        {
+          "url": "http://eggnog5.embl.de/download/emapperdb-5.0.2/eggnog.db.gz",
+          "name": "eggnog.db.gz",
+          "bytes": 6776977123,
+          "checksum": null
+        },
+        {
+          "url": "http://eggnog5.embl.de/download/emapperdb-5.0.2/eggnog.taxa.tar.gz",
+          "name": "eggnog.taxa.tar.gz",
+          "bytes": 72797584,
+          "checksum": null
+        },
+        {
+          "url": "http://eggnog5.embl.de/download/emapperdb-5.0.2/eggnog_proteins.dmnd.gz",
+          "name": "eggnog_proteins.dmnd.gz",
+          "bytes": 5208806170,
+          "checksum": null
+        }
+      ],
+      "expanded_bytes_estimate": 51000000000,
+      "notes": "Legacy official HTTP endpoint. HTTPS replacement returned 403 when checked. No published digest was available; full local SHA256 is recorded. About 51 GB expanded plus downloaded archives; mapper software is installed separately.",
+      "verified_date": "2026-09-15"
+    },
+    "esmc-300m": {
+      "title": "ESM-C 300M local checkpoint",
+      "version": "2024-12; revision 7f10b20ae75017b2dbc884070e03434515709a8d",
+      "source": "https://huggingface.co/Biohub/esmc-300m-2024-12",
+      "files": [
+        {
+          "url": "https://huggingface.co/Biohub/esmc-300m-2024-12/resolve/7f10b20ae75017b2dbc884070e03434515709a8d/data/weights/esmc_300m_2024_12_v0.pth",
+          "name": "esmc_300m_2024_12_v0.pth",
+          "bytes": 1332095738,
+          "checksum": "sha256:323dff9fbf3fef297a74f4f18b6528e6f2e599b0bcf72b6927516804015becea"
+        }
+      ],
+      "expanded_bytes_estimate": 1332095738,
+      "notes": "Model weights only. Explicit download; ESM software is installed separately. Review the upstream model licence. Embeddings do not assign functions.",
+      "verified_date": "2026-09-15"
+    },
+    "esmc-600m": {
+      "title": "ESM-C 600M local checkpoint",
+      "version": "2024-12; revision e4d83bc7e10fd55c92e598e545f4a76bf04a6e5c",
+      "source": "https://huggingface.co/Biohub/esmc-600m-2024-12",
+      "files": [
+        {
+          "url": "https://huggingface.co/Biohub/esmc-600m-2024-12/resolve/e4d83bc7e10fd55c92e598e545f4a76bf04a6e5c/data/weights/esmc_600m_2024_12_v0.pth",
+          "name": "esmc_600m_2024_12_v0.pth",
+          "bytes": 2300275866,
+          "checksum": "sha256:8ef856e1a237ee3f995442df997a962e70057faadecf38fc0c8561bd3c2f4324"
+        }
+      ],
+      "expanded_bytes_estimate": 2300275866,
+      "notes": "Model weights only. Explicit download; ESM software is installed separately. Review the upstream model licence. Embeddings do not assign functions.",
+      "verified_date": "2026-09-15"
+    }
+  }
+}

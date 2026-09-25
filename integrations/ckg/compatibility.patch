@@ -1,0 +1,125 @@
+--- a/ckg/analytics_core/utils.py
++++ b/ckg/analytics_core/utils.py
+@@ -31,30 +31,12 @@
+ 
+ 
+ def generate_html(network):
++    """Render through PyVis' public API and retain ``network.html``.
++
++    PyVis owns its template variables and network-data tuple. Delegating avoids
++    relying on obsolete tuple lengths or internal template attributes.
+     """
+-    This method gets the data structures supporting the nodes, edges,
+-    and options and updates the pyvis html template holding the visualization.
+-
+-    :type name_html: str
+-    """
+-    # here, check if an href is present in the hover data
+-    use_link_template = False
+-    for n in network.nodes:
+-        title = n.get("title", None)
+-        if title:
+-            if "href" in title:
+-                """
+-                this tells the template to override default hover
+-                mechanic, as the tooltip would move with the mouse
+-                cursor which made interacting with hover data useless.
+-                """
+-                use_link_template = True
+-                break
+-    template = network.template
+-
+-    nodes, edges, height, width, options = network.get_network_data()
+-    network.html = template.render(height=height, width=width, nodes=nodes, edges=edges, options=options, use_DOT=network.use_DOT, dot_lang=network.dot_lang,
+-                                   widget=network.widget, bgcolor=network.bgcolor, conf=network.conf, tooltip_link=use_link_template)
++    return network.generate_html(notebook=True)
+ 
+ 
+ def append_to_list(mylist, myappend):
+--- a/ckg/analytics_core/viz/viz.py
++++ b/ckg/analytics_core/viz/viz.py
+@@ -1048,32 +1048,27 @@
+ 
+     return dcc.Graph(id=identifier, figure=figure,)
+ 
+-def get_notebook_network_pyvis(graph, args={}):
+-    """
+-    This function converts a Networkx graph into a PyVis graph supporting Jupyter notebook embedding.
+-
+-    :param graph graph: networkX graph.
+-    :param dict args: see below.
+-    :Arguments:
+-        * **height** (int) -- network canvas height.
+-        * **width** (int) -- network canvas width.
+-    :return: PyVis graph.
+-
+-    Example::
+-
+-        result = get_notebook_network_pyvis(graph, args={'height':100, 'width':100})
+-    """
+-    if 'width' not in args:
+-        args['width'] = 800
+-    if 'height' not in args:
+-        args['height'] = 850
+-    notebook_net = visnet(args['width'], args['height'], notebook=True)
++def get_notebook_network_pyvis(graph, args=None):
++    """Create a PyVis view without changing the input graph or options.
++
++    Width/height accept CSS dimensions or pixel counts. ``cdn_resources`` is
++    passed to PyVis and defaults to inline network assets for portable output.
++    """
++    options = dict(args or {})
++    width = options.get('width', 800)
++    height = options.get('height', 850)
++    if isinstance(width, (int, float)):
++        width = f"{width}px"
++    if isinstance(height, (int, float)):
++        height = f"{height}px"
++    notebook_net = visnet(height=height, width=width, notebook=True,
++                          cdn_resources=options.get('cdn_resources', 'in_line'))
+     notebook_net.barnes_hut(overlap=0.8)
+-    notebook_net.from_nx(graph)
++    notebook_net.from_nx(graph.copy())
+     notebook_net.show_buttons(['nodes', 'edges', 'physics'])
+     utils.generate_html(notebook_net)
+-
+     return notebook_net
++
+ 
+ def get_notebook_network_web(graph, args):
+     """
+@@ -1680,7 +1675,7 @@
+             data[c] = data[c].apply(lambda x: ";".join([str(i) for i in x]))
+ 
+         data_trace = dash_table.DataTable(id='table_'+identifier,
+-                                            data=data.astype(str).to_dict("rows"),
++                                            data=data.astype(str).to_dict("records"),
+                                             columns=[{"name": str(i).replace('_', ' ').title(), "id": i} for i in data.columns],
+                                             # css=[{
+                                             #     'selector': '.dash-cell div.dash-cell-value',
+--- a/ckg/analytics_core/analytics/analytics.py
++++ b/ckg/analytics_core/analytics/analytics.py
+@@ -2779,15 +2779,14 @@
+ 
+ 
+ def most_central_edge(G):
+-    """
+-    Compute the eigenvector centrality for the graph G, and finds the highest value.
+-
+-    :param graph G: networkx graph
+-    :return: Highest eigenvector centrality value.
+-    :rtype: float
+-    """
+-    centrality = nx.eigenvector_centrality_numpy(G, weight='width')
+-
++    """Return an edge for Girvan-Newman removal, using edge betweenness.
++
++    This is a structural, unweighted score. Edge strengths are not silently
++    interpreted as shortest-path distances. Ties follow graph insertion order.
++    """
++    centrality = nx.edge_betweenness_centrality(G, weight=None)
++    if not centrality:
++        raise ValueError("Cannot select a central edge from an edgeless graph")
+     return max(centrality, key=centrality.get)
+ 
+ 

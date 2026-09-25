@@ -1,0 +1,21 @@
+name: Feature request
+description: A capability, an input format, a clearer error message or a documentation gap.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you are trying to do
+      description: The study or analysis step, and where FastaLake stops short today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What a solution would look like from the user's side. A minimal example of the input and the expected output helps most.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and scope
+      description: Data or a reference that shows the need, and any constraint (memory, determinism, licence) the change must respect.

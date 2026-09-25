@@ -1,0 +1,24 @@
+{
+  "source_commit": "e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773",
+  "fonts": [
+    {
+      "file": "PlusJakartaSans-subset.woff2",
+      "bytes": 21524,
+      "sha256": "ba4b8be78634d3216753e8df7324b1ff06a3739e8ed70386bad8806b7ec03ab5"
+    },
+    {
+      "file": "JetBrainsMono-subset.woff2",
+      "bytes": 19928,
+      "sha256": "fb7e057130dd7c552e62a5469b9c20cbba24f4fc91814e4b515a21381e92eb07"
+    }
+  ],
+  "literal_labels": 57,
+  "minimum_font_px_at_880": 11.366666666666667,
+  "outputs": {
+    "fastalake-pipeline-light.svg": "a4aca0b51193d30ffe89aaa9e3de7e4a6f4cf96486c49f708b1d5bfdb11369c4",
+    "fastalake-pipeline-dark.svg": "b5b54004d0d24effedb11decc8078d1c5ff073bb4ae8eae83fcddd20d93d149b",
+    "fastalake-pipeline.html": "dc95d381ada8949efb77e20953fb9872a15d170ebc3453c072380e7c6752e977",
+    "README_SNIPPET.md": "680fb3da3b64da1cc32ecbfd4a2a22695a4cf3864f830cc54c29b86b262afd34",
+    "LABEL_SOURCES.md": "86b8757d750dc44f2edc903a849738829c22974e217223e66e59b24d9851d305"
+  }
+}

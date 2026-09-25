@@ -1,0 +1,7 @@
+cohort_method	table	original_rows	candidate_rows	sample_columns	changed_cells	changed_occupancy	original_intensity	corrected_intensity	removed_fraction	largest_cell_relative_change
+HSTOOL_fastalake	FastaLake_HSTOOL_fastalake_lfq_peptidelevel_181808rows_10samples_q0.01.tsv	181808	181808	10	0	0	125451167995585.5	125451167995585.5	0.0	0.0
+HSTOOL_fastalake	FastaLake_HSTOOL_fastalake_lfq_proteingroup_99306grp_10samples_q0.01.tsv	99306	99306	10	0	0	125451167995588.42	125451167995588.42	0.0	0.0
+PREDICT_fastalake	FastaLake_PREDICT_fastalake_lfq_peptidelevel_236114rows_10samples_q0.01.tsv	236114	236114	10	0	0	110645750324618.9	110645750324618.9	0.0	0.0
+PREDICT_fastalake	FastaLake_PREDICT_fastalake_lfq_proteingroup_102399grp_10samples_q0.01.tsv	102399	102399	10	0	0	110645621673677.6	110645621673677.6	0.0	0.0
+PREDICT_matched_metag	FastaLake_PREDICT_matched_metag_lfq_peptidelevel_174917rows_10samples_q0.01.tsv	174917	174917	10	0	0	49301351760576.55	49301351760576.55	0.0	0.0
+PREDICT_matched_metag	FastaLake_PREDICT_matched_metag_lfq_proteingroup_83980grp_10samples_q0.01.tsv	83980	83980	10	0	0	47449251805735.016	47449251805735.016	0.0	0.0

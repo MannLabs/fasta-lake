@@ -1,0 +1,166 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "check": "ruff",
+      "passed": true,
+      "detail": {
+        "exit_code": 0
+      }
+    },
+    {
+      "check": "portable_source",
+      "passed": true,
+      "detail": {
+        "exit_code": 0
+      }
+    },
+    {
+      "check": "example_python_310_syntax",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "previous_distribution_preserved",
+      "passed": true,
+      "detail": 212
+    },
+    {
+      "check": "fasta_lake_source_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "rust_source_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "input_preparation_reproduced",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "bundled_input_checksums",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "four_thread_expected_results",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "four_thread_exact_peptides",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "existing_output_refused",
+      "passed": true,
+      "detail": {
+        "exit_code": 2
+      }
+    },
+    {
+      "check": "existing_output_unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "zero_threads_refused",
+      "passed": true,
+      "detail": {
+        "exit_code": 2
+      }
+    },
+    {
+      "check": "invalid_threads_created_no_output",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "wrong_database_expectation_fails",
+      "passed": true,
+      "detail": {
+        "exit_code": 1
+      }
+    },
+    {
+      "check": "wrong_database_failure_explained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "altered_input_rejected",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "nonfinite_quantification_rejected",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "example_measurements": {
+    "status": "passed",
+    "errors": [],
+    "peptide_jaccard_to_reference": {
+      "S01": 1.0,
+      "S02": 1.0
+    },
+    "measurements": {
+      "reference_sequences": 29635,
+      "reference_sha256": "41acd91421f75bb9d674ba80fb92e24c14cf4a114ec29348d1273ad4b7267269",
+      "evidence_sequences": 538,
+      "evidence_sha256": "5023c4c30c3c5eedf58f774817fd7a0b9047ff8d86f45d16ac949f53fa81b633",
+      "samples": {
+        "S01": {
+          "drawn_sequences": 370,
+          "drawn_sha256": "508df4a763b14fc8b2ee01e18f35a1313e868497126ce0d745863f900f41aaf6",
+          "selected_sequences": 348,
+          "selected_sha256": "652c096ccda639eb2987823790f2f879d22b7f84ceac92ce274a606bf6e1ca4d",
+          "target_psms_spectrum_q_001": 758,
+          "canonical_target_peptides_peptide_q_001": 548
+        },
+        "S02": {
+          "drawn_sequences": 316,
+          "drawn_sha256": "819a1db3c30b668f5e6f9764759726531ffc8b3b4b58bfdee6fdb4e7fd2d9d54",
+          "selected_sequences": 287,
+          "selected_sha256": "172225c842ec90c40c90fdb4ebb86514b35a7ac13d10e1e71a46bc2c30dcd8b7",
+          "target_psms_spectrum_q_001": 593,
+          "canonical_target_peptides_peptide_q_001": 426
+        }
+      },
+      "study": {
+        "acquisitions": 2,
+        "searched_universe": 498,
+        "proteins_with_observed_evidence": 448,
+        "unobserved_searched_proteins": 50,
+        "study_groups": 448,
+        "pooled_canonical_peptides": 819,
+        "intensity_in": 87045942192.60388,
+        "intensity_out": 87045942192.60388,
+        "q_threshold": 0.01,
+        "grouping_rule": "greedy set cover; lexical gain ties; plurality protein mapping",
+        "confidence": "post-search grouping; no study-wide FDR recalibration"
+      },
+      "dual_key_rows": 577
+    },
+    "interpretation": "Software example acceptance, not independent FDR calibration or a full CAMPI benchmark."
+  },
+  "reference_setup": {
+    "fresh_python_environment": true,
+    "fresh_locked_rust_build": true,
+    "source_sha256": "49f83897a008f23e259c99e901d3ebc255dc7ff1198357ebbbc93102815f271a",
+    "python": "3.12.4",
+    "rust": "1.91.1",
+    "sage": "0.14.6",
+    "platform": "Linux x86_64",
+    "thread_counts": [
+      2,
+      4
+    ]
+  },
+  "scope": "Local integration checks; hosted CI has not run."
+}

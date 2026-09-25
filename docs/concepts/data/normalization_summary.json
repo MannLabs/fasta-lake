@@ -1,0 +1,30 @@
+{
+  "complete_case_peptides": 12057,
+  "median_raw_cv": 0.431353758983303,
+  "median_normalized_cv": 0.3952295800840772,
+  "method": "Per-acquisition median log2 ratio to each complete-case peptide median; divide intensities by the resulting factor. Diagnostic only, no imputation.",
+  "samples": [
+    "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_1_190104120800",
+    "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_2_190104150314",
+    "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_3_190104175825",
+    "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_4_190104205346",
+    "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_5_190104234917",
+    "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_6",
+    "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_7",
+    "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_8",
+    "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_9",
+    "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_10"
+  ],
+  "scaling_factors": [
+    0.9473970540529999,
+    0.9007429121571059,
+    1.1610219349033302,
+    0.8768746885533159,
+    0.8901122456255098,
+    0.9465403945045789,
+    0.955017278021788,
+    1.054960135765104,
+    1.256922939620216,
+    1.2534665112081629
+  ]
+}

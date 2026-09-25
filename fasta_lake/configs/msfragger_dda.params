@@ -1,0 +1,67 @@
+# MSFragger closed search parameters for DDA proteomics/metaproteomics
+# FastaLake default — matched to SAGE canonical config
+#
+# IMPORTANT: MSFragger requires reversed decoy sequences (rev_ prefix)
+# in the FASTA. Use: fasta-lake export --engine msfragger -i input.fasta -o output.fasta
+# SAGE generates decoys internally and does NOT need them in the FASTA.
+
+database_name = /path/to/fastalake_output.fasta
+num_threads = 16
+
+# Precursor mass tolerance (matched to SAGE ±10 ppm)
+precursor_mass_lower = -10
+precursor_mass_upper = 10
+precursor_mass_units = 1
+
+# Fragment mass tolerance (matched to SAGE ±20 ppm)
+fragment_mass_tolerance = 20
+fragment_mass_units = 1
+
+# Enzyme: strict trypsin (KR, not before P) — same as SAGE restrict=P
+search_enzyme_name_1 = stricttrypsin
+search_enzyme_cut_1 = KR
+search_enzyme_nocut_1 = P
+search_enzyme_sense_1 = C
+allowed_missed_cleavage_1 = 2
+
+# No second enzyme
+search_enzyme_name_2 = null
+
+# Peptide length (matched to SAGE min_len=7, max_len=50)
+digest_min_length = 7
+digest_max_length = 50
+digest_mass_range = 500.0 5000.0
+
+# Modifications (matched to SAGE)
+# Fixed: carbamidomethyl C (+57.0215)
+add_C_cysteine = 57.02146
+
+# Variable: oxidation M (+15.9949)
+variable_mod_01 = 15.99490 M 2
+max_variable_mods_per_peptide = 2
+max_variable_mods_combinations = 5000
+
+# Isotope errors (matched to SAGE [0,1])
+isotope_error = 0/1
+
+# Deisotoping
+deisotope = 1
+
+# Decoy prefix (must match FASTA decoys from fasta-lake export)
+decoy_prefix = rev_
+
+# Output
+output_format = pepXML
+output_report_topN = 1
+output_max_expect = 50.0
+
+# Performance
+precursor_charge = 1 6
+override_charge = 0
+
+# Calibration
+calibrate_mass = 2
+mass_offsets = 0
+
+# Labile modifications (empty = none)
+labile_search_mode = off

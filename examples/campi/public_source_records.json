@@ -1,0 +1,78 @@
+{
+  "retrieved": "2026-09-06",
+  "project_api": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD023217",
+  "project": {
+    "accession": "PXD023217",
+    "title": "Critical Assessment of Metaproteome Investigation (CAMPI): a Multi-Lab Comparison of Established Workflows",
+    "license": "Creative Commons Public Domain (CC0)"
+  },
+  "files": [
+    {
+      "fileName": "S01.raw",
+      "checksum": "810578a8620e323432464bb1c35d0338b84d9c30",
+      "fileSizeBytes": 1663712025,
+      "publicFileLocations": [
+        {
+          "@type": "CvParam",
+          "cvLabel": "PRIDE",
+          "accession": "PRIDE:0000469",
+          "name": "FTP Protocol",
+          "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD023217/S01.raw"
+        },
+        {
+          "@type": "CvParam",
+          "cvLabel": "PRIDE",
+          "accession": "PRIDE:0000468",
+          "name": "Aspera Protocol",
+          "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2022/02/PXD023217/S01.raw"
+        }
+      ]
+    },
+    {
+      "fileName": "S02.raw",
+      "checksum": "5a53f1679052874d89bd061e51c57bc8b32edcbf",
+      "fileSizeBytes": 1713685458,
+      "publicFileLocations": [
+        {
+          "@type": "CvParam",
+          "cvLabel": "PRIDE",
+          "accession": "PRIDE:0000469",
+          "name": "FTP Protocol",
+          "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD023217/S02.raw"
+        },
+        {
+          "@type": "CvParam",
+          "cvLabel": "PRIDE",
+          "accession": "PRIDE:0000468",
+          "name": "Aspera Protocol",
+          "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2022/02/PXD023217/S02.raw"
+        }
+      ]
+    },
+    {
+      "fileName": "SIHUMI_DB1UNIPROT.faa",
+      "checksum": "65b2440a81c56b9f210f77183e482ffc17e7a277",
+      "fileSizeBytes": 27604475,
+      "publicFileLocations": [
+        {
+          "@type": "CvParam",
+          "cvLabel": "PRIDE",
+          "accession": "PRIDE:0000468",
+          "name": "Aspera Protocol",
+          "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2022/02/PXD023217/SIHUMI_DB1UNIPROT.faa"
+        },
+        {
+          "@type": "CvParam",
+          "cvLabel": "PRIDE",
+          "accession": "PRIDE:0000469",
+          "name": "FTP Protocol",
+          "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD023217/SIHUMI_DB1UNIPROT.faa"
+        }
+      ]
+    }
+  ],
+  "identity_checks": {
+    "reference_sha1_matches_deposited_file": true,
+    "both_mzml_raw_file_sha1_values_match_deposit": true
+  }
+}

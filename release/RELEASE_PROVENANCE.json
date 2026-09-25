@@ -1,0 +1,67 @@
+{
+  "version": "1.1.0rc2",
+  "base_commit": "9e2ff80aa8e42dc448a297b994635d1b9c194ee3",
+  "review_date": "2026-09-16",
+  "status": "1.1.0rc1 reviewed on branch fable-5.1-review (items 1-18 and second-pass fixes, merged as PR #42); history then rewritten with the package at the repository root (PR-less force-push of branch restructure, 2026-09-16); documentation site, generated reference, tutorials and repository hygiene merged as PR #51; 1.1.0rc2 tags that state",
+  "scope": "explicit Rust DDA workflow from prediction CSV and mzML",
+  "preservation": "original source, data, manuscript figures and failed review attempts retained separately",
+  "curation": "Supported source, documentation, tests and two public CAMPI acquisition windows. Historical site-specific orchestration, private study spectra and research archives remain outside this distribution.",
+  "source_manifest": "SOURCE_MANIFEST.json, written by tools/source_manifest.py --write from every git-tracked file in the repository and verified by tools/source_manifest.py --check in CI",
+  "review_2026_09_16": {
+    "branch": "fable-5.1-review",
+    "started_from": "9e2ff80aa8e42dc448a297b994635d1b9c194ee3",
+    "changed": [
+      "fasta_lake/refine.py: declared proposal-only; run_refinement raises NotImplementedError",
+      "fasta_lake/headers/report.py: removed (unimportable; opened a public tunnel)",
+      "fasta_lake/benchmark.py: SAGE reports now count entrapment precursors",
+      "fasta_lake/entrapment_workflow.py: results run chosen by class, ambiguity refused, results_file recorded",
+      "fasta_lake/entrapment.py: configured seed reaches the shuffled generator",
+      "fasta_lake/multi_omics: evidence rows and rescued records in sorted order",
+      "rust/fasta_export: entrapment samples listed in sorted order",
+      "fasta_lake/inference/runner.py: k-mer rescue failures are errors; a zero is recorded",
+      "rust/fasta_extractor_v2 mass_kmer_anchor: every candidate verified against a precursor mass (theoretical fallback), mass_source column",
+      "fasta_lake/headers: no fabricated UniProt gene symbols; unresolved entries kept without GN=; heal_fasta skip_no_gene defaults to False",
+      "tools/source_manifest.py and tests/test_import_all.py added; CI checks the source manifest",
+      "fasta_lake/helpers.py, inference/strategies.py, complexity.py: species_budget refuses proteins without a resolvable species; GMGC/smORF/assembly ids need a taxonomy map",
+      "fasta_lake/helpers.py, aggregate.py, benchmark.py, canonical_comparison.py, tune.py, entrapment_workflow.py: readers refuse missing columns (require_columns)",
+      "fasta_lake/lake_builder.py: SwissProt isoform accessions parse as UniProt entries",
+      "fasta_lake/helpers.py, headers/fasta_io.py: duplicate accessions, empty records and bare headers refused",
+      "rust/*/Cargo.toml: license = MIT; deny.toml allow list trimmed; CI cargo-deny job",
+      "docs, CONTRIBUTING, examples/campi/run_example.py: native route installs the hash-locked requirements-container.txt (Python 3.12, Linux x86_64)",
+      "pyproject filterwarnings = error; warnings fixed at their sources (pandas downcasting, unclosed files, empty-study QC); demo passes a derived --source-map",
+      "fasta_lake/gzip_io.py: gzip outputs written with MTIME 0 (study, quantification, lake_merge, multi_omics/exact, downstream) so identical reruns are byte-identical",
+      "fasta_lake/entrapment_workflow.py: partition sizes from the manifest governing each sample; single wrong-class run refused; FDP reader requires proteins/peptide columns",
+      "fasta_lake/study.py, multi_omics/complementarity.py: Sage N-terminal modification strings canonicalise",
+      "fasta_lake/tune.py, diagnose.py: an undefined FDP is None and excluded from medians",
+      "rust/fasta_extractor_v2: mass_kmer_anchor tie-break on ppm at printed precision; lake_builder joint-header sidecar rows keep exactly four columns",
+      "tools/source_manifest.py works in an extracted archive; tools/check_no_site_paths.py scans tracked files in a checkout"
+    ],
+    "checks": "CI mirror on a compute node: cargo fmt/clippy/test/build for six crates, ruff, site-path scan, pytest, validation accounting test, molecular example, demo, directlfq and analysis suites; run logs kept with the review folder",
+    "second_pass": "three read-only passes over the branch (commit verification, fresh Python, fresh Rust/release); their findings are the last items above; reports in the review folder"
+  },
+  "historical": {
+    "binary_build_revision": "review-c48a6ace3c0d0824",
+    "packaging_revision": "2026-09-08-private-review",
+    "review_2026_09_08": "../validation/review_2026-09-08/REVIEW.md",
+    "note": "The 2026-09-08 packaging claimed runtime source identical to the reviewed candidate and cited a base commit that is not in this repository's history; both statements are superseded by this record."
+  },
+  "validation": "docs/guide/data/release_validation.json",
+  "real_data_example": {
+    "directory": "examples/campi",
+    "dataset": "PXD023217",
+    "scope": "S01/S02 45 <= RT < 50 minute windows",
+    "source_fingerprint": "49f83897a008f23e259c99e901d3ebc255dc7ff1198357ebbbc93102815f271a",
+    "source_fingerprint_note": "fingerprint of the 2026-09-08 runtime source; the runtime source has changed since, see review_2026_09_16"
+  },
+  "hstool_example": {
+    "directory": "examples/hstool",
+    "scope": "TechnicalReplicates 1/2, 45\u201350 min, compact evidence-conditioned reference",
+    "full_original_reservoir_bundled": false,
+    "inputs_distributed": false
+  },
+  "public_preparation_2026_09_25": {
+    "source_main": "3d898f502507f5247ced617b4fc16621fc57b760",
+    "scope": "Fresh publication history; private HSTOOL input files and prior research history excluded. Public CAMPI and synthetic examples retained. Source-path and credential guard includes archives and spectral metadata.",
+    "validation": "See checks on the publication commit; earlier release checks describe their original source states."
+  }
+}

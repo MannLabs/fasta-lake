@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="270 144 150 130" width="750" height="650" role="img" aria-labelledby="title desc">
+<title id="title">FastaLake protein database selection</title>
+<desc id="desc">The funnel shows MS/MS spectra, de novo peptide predictions, exact peptide matching, selection parsimony, and the selected protein database in FASTA format. Complete protein sequences are retained.</desc>
+<path d="M 374.7842 259.9832 C 369.0768 265.3600 352.5015 268.8975 344.6605 268.8626 C 336.7989 268.8281 320.2323 265.4025 314.5369 259.9832 L 374.7842 259.9832" fill="#79becd" fill-rule="nonzero"/>
+<path d="M 374.7842 259.9832 C 377.9945 256.9589 383.9503 242.6684 385.4289 238.5131 L 303.9503 238.5131 C 305.4821 242.8332 314.5369 259.9832 314.5369 259.9832 C 341.1473 267.7867 374.7842 259.9832 374.7842 259.9832" fill="#79becd" fill-rule="nonzero"/>
+<path d="M 385.4289 238.5131 C 387.7529 231.9822 392.4195 217.0430 392.4195 217.0430 L 297.0182 217.0430 L 303.9503 238.5131 C 345.9797 248.7077 385.4289 238.5131 385.4289 238.5131" fill="#96c9df" fill-rule="nonzero"/>
+<path d="M 392.4195 217.0430 L 399.4101 195.5729 L 290.0857 195.5729 L 297.0182 217.0430 C 349.0202 231.9278 392.4195 217.0430 392.4195 217.0430" fill="#b0d5e5" fill-rule="nonzero"/>
+<path d="M 399.4102 195.5729 L 406.4008 174.1111 L 283.1533 174.1111 L 290.0858 195.5729 C 344.6669 210.0713 399.4102 195.5729 399.4102 195.5729" fill="#ccddec" fill-rule="nonzero"/>
+<path d="M 413.0592 152.5650 L 413.0592 152.5650 L 276.5530 152.7003 L 283.1533 174.1112 C 346.8192 189.3328 406.4008 174.1112 406.4008 174.1112 L 413.0592 152.5650" fill="#e1e7f2" fill-rule="nonzero"/>
+<path d="M 344.7799 156.7354 C 326.5470 156.7354 309.4067 156.2760 296.5154 155.4415 C 277.3048 154.1982 276.7501 152.7285 276.7501 152.5651 C 276.7501 152.4017 277.3048 150.9321 296.5154 149.6887 C 309.4067 148.8542 326.5470 148.3948 344.7799 148.3948 C 363.0128 148.3948 380.1535 148.8542 393.0445 149.6887 C 412.2554 150.9321 412.8101 152.4017 412.8101 152.5651 C 412.8101 152.7285 412.2554 154.1982 393.0445 155.4415 C 380.1535 156.2760 363.0128 156.7354 344.7799 156.7354" fill="#edf0f8" fill-rule="nonzero"/>
+<path d="M 344.7800 148.1455 C 307.0705 148.1455 276.5007 150.1241 276.5007 152.5650 C 276.5007 155.0059 307.0705 156.9845 344.7800 156.9845 C 382.4896 156.9845 413.0590 155.0059 413.0590 152.5650 C 413.0590 150.1241 382.4896 148.1455 344.7800 148.1455 M 344.7800 148.6438 C 362.4904 148.6438 379.2746 149.0810 392.0410 149.8746 C 409.1372 150.9376 412.0159 152.2086 412.4940 152.5650 C 412.0159 152.9218 409.1372 154.1927 392.0410 155.2554 C 379.2746 156.0493 362.4904 156.4862 344.7800 156.4862 C 327.0696 156.4862 310.2854 156.0493 297.5190 155.2554 C 280.4229 154.1927 277.5441 152.9218 277.0661 152.5650 C 277.5441 152.2086 280.4229 150.9376 297.5190 149.8746 C 310.2854 149.0810 327.0696 148.6438 344.7800 148.6438" fill="#ffffff" fill-rule="nonzero"/>
+<text x="344.78" y="168" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8.0" font-weight="500" fill="#12365b">
+<tspan x="344.78" dy="0">MS/MS spectra</tspan>
+</text>
+<text x="344.78" y="191" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7.1" font-weight="500" fill="#12365b">
+<tspan x="344.78" dy="0">De novo peptide predictions</tspan>
+</text>
+<text x="344.78" y="213" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7.3" font-weight="500" fill="#12365b">
+<tspan x="344.78" dy="0">Exact peptide matching</tspan>
+</text>
+<text x="344.78" y="235" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7.3" font-weight="500" fill="#12365b">
+<tspan x="344.78" dy="0">Selection parsimony</tspan>
+</text>
+<text x="344.78" y="251" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="6.1" font-weight="500" fill="#12365b">
+<tspan x="344.78" dy="0">Selected proteins</tspan>
+<tspan x="344.78" dy="8">FASTA</tspan>
+</text>
+</svg>

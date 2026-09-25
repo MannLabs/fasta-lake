@@ -1,0 +1,43 @@
+{
+  "measurements": {
+    "reference_sequences": 706838,
+    "reference_sha256": "f60a094d57f24f2a6ecea006c287008f1aafdee5baebc908cf85135d12742d15",
+    "evidence_sequences": 706838,
+    "evidence_sha256": "f60a094d57f24f2a6ecea006c287008f1aafdee5baebc908cf85135d12742d15",
+    "samples": {
+      "TR01": {
+        "drawn_sequences": 597601,
+        "drawn_sha256": "a37c7a4a8b60e1c07654dd2d3b95635d8f0a636aa5209f6b742313af878706a7",
+        "selected_sequences": 607,
+        "selected_sha256": "d3c42acdb39500c041b514d56f911aa82e82ac06a325e1473bf3dcdd79cca8a7",
+        "target_psms_spectrum_q_001": 925,
+        "canonical_target_peptides_peptide_q_001": 544
+      },
+      "TR02": {
+        "drawn_sequences": 567399,
+        "drawn_sha256": "fda0850151f44726d6e800c53a747f4012dc0004634c1731f5c5172e8b46259c",
+        "selected_sequences": 596,
+        "selected_sha256": "0d995c0f5d3e4d1250797296ff5443b0a26da440e6e0f0a64c5bd6c38cb5abc6",
+        "target_psms_spectrum_q_001": 858,
+        "canonical_target_peptides_peptide_q_001": 514
+      }
+    },
+    "study": {
+      "acquisitions": 2,
+      "searched_universe": 833,
+      "proteins_with_observed_evidence": 631,
+      "unobserved_searched_proteins": 202,
+      "study_groups": 550,
+      "pooled_canonical_peptides": 713,
+      "intensity_in": 192151376495.72452,
+      "intensity_out": 192151376495.72452,
+      "q_threshold": 0.01,
+      "grouping_rule": "greedy set cover; lexical gain ties; plurality protein mapping",
+      "confidence": "post-search grouping; no study-wide FDR recalibration"
+    },
+    "dual_key_rows": 825
+  },
+  "search_count_relative_tolerance": 0.02,
+  "minimum_peptide_jaccard": 0.98,
+  "origin": "First measured cropped-window run on 2026-09-08; regression baseline, not independent ground truth"
+}

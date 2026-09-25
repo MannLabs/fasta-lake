@@ -1,0 +1,17 @@
+.git
+**/target
+**/__pycache__
+**/*.pyc
+**/.venv
+**/_runtime
+**/*.egg-info
+.pytest_cache
+.ruff_cache
+build
+dist
+ci_*
+*_run_*
+demo/output*
+publication
+documents
+tests

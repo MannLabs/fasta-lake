@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Documentation
+    url: https://mannlabs.github.io/fasta-lake/
+    about: Install, first study, how-to guides, concepts and the full command and API reference.

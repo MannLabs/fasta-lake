@@ -1,0 +1,74 @@
+{
+  "acquisition": "dda",
+  "search_engine": "sage",
+  "database": {
+    "sources": [
+      {
+        "tag": "UHGG",
+        "priority": 1,
+        "path": "/data/uhgp-100.faa",
+        "type": "reference"
+      },
+      {
+        "tag": "GMGC",
+        "priority": 2,
+        "path": "/data/GMGC10.100AA.faa",
+        "type": "reference"
+      },
+      {
+        "tag": "GMSC",
+        "priority": 3,
+        "path": "/data/GMSC10.100AA.faa",
+        "type": "reference"
+      },
+      {
+        "tag": "Entrap_Arabidopsis",
+        "priority": 100,
+        "path": "/data/arabidopsis_thaliana.fasta",
+        "type": "entrapment"
+      }
+    ],
+    "output": "reference_lake.fasta"
+  },
+  "sequence_quality": {
+    "reject_poly_runs": true,
+    "reject_low_complexity": true
+  },
+  "peptide_evidence": {
+    "predictions_dir": "/data/alphanovo_results",
+    "min_length": 8,
+    "max_length": 50,
+    "min_score": 0.0,
+    "top_percent": 0.3,
+    "normalize_il": true
+  },
+  "complexity": {
+    "enabled": true,
+    "auto_recommend": true
+  },
+  "inference": {
+    "strategy": "species_budget",
+    "min_peptides": 1,
+    "strain_resolution": false,
+    "keep_entrapment": true
+  },
+  "entrapment": {
+    "enabled": true,
+    "method": "phylogenetic",
+    "source": "/data/arabidopsis_thaliana.fasta",
+    "n_proteins": 1000,
+    "expected_fdr": 0.01
+  },
+  "clustering": {
+    "enabled": true,
+    "identity": 0.97,
+    "coverage": 0.8
+  },
+  "output": {
+    "directory": "./output",
+    "write_stats": true,
+    "write_hits_tsv": true,
+    "write_audit_log": true,
+    "provenance_tracking": true
+  }
+}

@@ -1,0 +1,17 @@
+[package]
+name = "fasta_export"
+version = "1.0.0"
+edition = "2021"
+license = "MIT"
+authors = ["Peter Treit", "AlphaForge"]
+description = "Engine-aware FASTA export: header healing, decoy generation, entrapment FDP"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+csv = "1"
+
+tempfile = "3"
+
+[[bin]]
+name = "fasta_export"
+path = "src/main.rs"

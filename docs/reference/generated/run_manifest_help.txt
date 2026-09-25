@@ -1,0 +1,71 @@
+usage: run_manifest.py [-h] --manifest MANIFEST [--lake LAKE] --out OUT [--sage SAGE]
+                       [--threads THREADS] [--laptop]
+                       [--memory-budget-gib MEMORY_BUDGET_GIB]
+                       [--memory-fraction MEMORY_FRACTION]
+                       [--cpu-fraction CPU_FRACTION]
+                       [--reference-chunk-mib REFERENCE_CHUNK_MIB]
+                       [--top-fraction TOP_FRACTION] [--min-length MIN_LENGTH]
+                       [--max-length MAX_LENGTH]
+                       [--digestion {tryptic,semi-tryptic,unspecific}]
+                       [--search-mode {closed,open}]
+                       [--search-min-length SEARCH_MIN_LENGTH]
+                       [--search-max-length SEARCH_MAX_LENGTH] [--databases-only]
+                       [--skip-qc] [--validate-only]
+                       [--quantification {sum,directlfq}]
+                       [--molecular-reference {augment,shared}]
+                       [--molecular-dna-percent MOLECULAR_DNA_PERCENT]
+                       [--molecular-rna-percent MOLECULAR_RNA_PERCENT]
+                       [--molecular-dna-absolute MOLECULAR_DNA_ABSOLUTE]
+                       [--molecular-rna-absolute MOLECULAR_RNA_ABSOLUTE]
+                       [--molecular-metabolites] [--background BACKGROUND]
+                       [--annotation-settings ANNOTATION_SETTINGS]
+
+Portable, explicit Rust workflow for a declared acquisition manifest. Inputs and prior
+outputs are preserved. Chunked extraction reclaims its own consumed scratch pieces. A
+run requires a new output directory; failed runs remain available for diagnosis. Run
+this script from an installed FastaLake environment.
+
+options:
+  -h, --help            show this help message and exit
+  --manifest MANIFEST
+  --lake LAKE           Required reservoir in augment mode
+  --out OUT
+  --sage SAGE           Explicit path to SAGE 0.14.6 (otherwise PATH)
+  --threads THREADS     Rust threads (default: 4, automatic in laptop mode)
+  --laptop              Detect resources and enable bounded reference pieces
+  --memory-budget-gib MEMORY_BUDGET_GIB
+                        Laptop planning budget; use Docker/Slurm for a hard RAM cap
+  --memory-fraction MEMORY_FRACTION
+                        Laptop share of visible RAM (default: 0.35)
+  --cpu-fraction CPU_FRACTION
+                        Laptop share of visible CPU slots (default: 0.5)
+  --reference-chunk-mib REFERENCE_CHUNK_MIB
+                        Extract reference pieces of this target size, then merge
+                        before razor (e.g. 256)
+  --top-fraction TOP_FRACTION
+  --min-length MIN_LENGTH
+  --max-length MAX_LENGTH
+  --digestion {tryptic,semi-tryptic,unspecific}
+                        Search cleavage specificity; does not change de novo selection
+  --search-mode {closed,open}
+                        Closed +/-20 ppm or open [-500,+100] Da precursor search
+  --search-min-length SEARCH_MIN_LENGTH
+  --search-max-length SEARCH_MAX_LENGTH
+  --databases-only
+  --skip-qc             Explicitly omit automatic QC/PCA for a core-only installation
+  --validate-only
+  --quantification {sum,directlfq}
+                        Study quantification after searching (default: sum); QC/PCA
+                        follows automatically
+  --molecular-reference {augment,shared}
+                        Augment a reservoir-derived baseline, or select from each
+                        shared gene reference
+  --molecular-dna-percent MOLECULAR_DNA_PERCENT
+  --molecular-rna-percent MOLECULAR_RNA_PERCENT
+  --molecular-dna-absolute MOLECULAR_DNA_ABSOLUTE
+  --molecular-rna-absolute MOLECULAR_RNA_ABSOLUTE
+  --molecular-metabolites
+  --background BACKGROUND
+                        Common target-only host/contaminant FASTA for molecular runs
+  --annotation-settings ANNOTATION_SETTINGS
+                        Optional JSON for local eggNOG/ESM-C annotation after grouping

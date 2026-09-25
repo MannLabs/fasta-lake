@@ -1,0 +1,19 @@
+{
+  "package": "unipept-visualizations",
+  "version": "3.0.0",
+  "registry": "https://registry.npmjs.org/unipept-visualizations/-/unipept-visualizations-3.0.0.tgz",
+  "integrity": "sha512-qbue67xGio+fkDrowQDM8K68N4k0VB4dzQnoytsBtXTu14yaWRbHlGUQISLiu5FmKOMB2GSGjB2ouWBdzsusNA==",
+  "bundle_sha256": "fa2229488a4c278e1f049b2de53e05a2d10476b1a4a7edc5757380523153c043",
+  "license": "MIT; bundled D3 ISC licence retained",
+  "source": "https://github.com/unipept/unipept-visualizations",
+  "citation": {
+    "authors": "Verschaffelt P, Collier J, Botzki A, Martens L, Dawyndt P, Mesuere B",
+    "title": "Unipept Visualizations: an interactive visualization library for biological data",
+    "journal": "Bioinformatics",
+    "year": 2022,
+    "volume": "38",
+    "issue": "2",
+    "pages": "562\u2013563",
+    "doi": "10.1093/bioinformatics/btab590"
+  }
+}

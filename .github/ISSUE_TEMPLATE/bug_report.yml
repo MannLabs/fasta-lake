@@ -1,0 +1,42 @@
+name: Bug report
+description: A run fails, refuses an input it should accept, or produces a result that contradicts the documentation.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Remove credentials and private paths before posting. The [troubleshooting page](https://mannlabs.github.io/fasta-lake/how-to/troubleshooting/) lists the first messages a run can produce.
+  - type: input
+    id: version
+    attributes:
+      label: FastaLake revision or image
+      description: Output of `fasta-lake --version`, the git commit, or the Docker image ID.
+    validations:
+      required: true
+  - type: dropdown
+    id: route
+    attributes:
+      label: Route
+      options: [Docker image, Source installation, Cluster (Slurm or similar)]
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      description: The exact command line, with paths shortened if needed.
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and observed
+      description: What the documentation led you to expect, and what happened instead. Quote the relevant log lines.
+    validations:
+      required: true
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Smallest shareable input
+      description: A cropped file, a synthetic reproducer, or a bundled example that shows the problem. For resource issues add the allocation, the stage and the measured peak memory.

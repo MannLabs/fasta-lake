@@ -1,0 +1,82 @@
+# Dependabot policy. Every pin in this repository is deliberate, so updates arrive
+# as few, reviewable pull requests rather than one per package:
+#
+# - GitHub Actions are pinned to reviewed commit SHAs. Minor and patch bumps of
+#   the same major version are welcome, grouped weekly. Major bumps change the
+#   action's contract and are reviewed by hand, not proposed automatically.
+# - Rust dependencies are fixed by each crate's Cargo.lock and tested with
+#   --locked. Each crate gets at most one grouped weekly pull request.
+# - The Python runtime set (requirements/container.txt) is a hash-locked set
+#   compiled with uv from pyproject.toml; a single-package bump cannot satisfy
+#   pip's resolver (alphapepttools[stable] pins its own closure). It is
+#   regenerated as a set (see .github/CONTRIBUTING.md), so no pip ecosystem is watched.
+# - Docker base images are pinned by digest to the toolchain the code is tested
+#   with (Rust 1.91.1, Python 3.12) and are bumped by hand with the toolchain.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    groups:
+      actions:
+        patterns: ["*"]
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: cargo
+    directory: /rust/fasta_extractor_v2
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    groups:
+      cargo:
+        patterns: ["*"]
+
+  - package-ecosystem: cargo
+    directory: /rust/parsimony_engine
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    groups:
+      cargo:
+        patterns: ["*"]
+
+  - package-ecosystem: cargo
+    directory: /rust/aggregation_engine
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    groups:
+      cargo:
+        patterns: ["*"]
+
+  - package-ecosystem: cargo
+    directory: /rust/fasta_export
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    groups:
+      cargo:
+        patterns: ["*"]
+
+  - package-ecosystem: cargo
+    directory: /rust/lake_stats
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    groups:
+      cargo:
+        patterns: ["*"]
+
+  - package-ecosystem: cargo
+    directory: /rust/shared_peptide_classifier
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    groups:
+      cargo:
+        patterns: ["*"]
+

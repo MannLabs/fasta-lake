@@ -1,0 +1,566 @@
+{
+  "repository": "https://github.com/MannLabs/fasta-lake",
+  "commit": "e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773",
+  "sources": {
+    "acpin": {
+      "path": "rust/fasta_extractor_v2/Cargo.lock",
+      "symbol": "aho-corasick package",
+      "first_line": 5,
+      "last_line": 10,
+      "sha256": "e28d0d86853ae1459260a49e49022ca35bfdf6994a8ba5d905497c5555dd15c3"
+    },
+    "aggbh": {
+      "path": "rust/aggregation_engine/src/main.rs",
+      "symbol": "main",
+      "first_line": 1801,
+      "last_line": 1807,
+      "sha256": "1a565991af5ad9ba5475e0ef839b8c2831305d7c72580ff914e5d30823696ea4"
+    },
+    "aggload": {
+      "path": "rust/aggregation_engine/src/main.rs",
+      "symbol": "load_search_q",
+      "first_line": 470,
+      "last_line": 522,
+      "sha256": "1a565991af5ad9ba5475e0ef839b8c2831305d7c72580ff914e5d30823696ea4"
+    },
+    "aggmeta": {
+      "path": "rust/aggregation_engine/src/main.rs",
+      "symbol": "main",
+      "first_line": 2170,
+      "last_line": 2200,
+      "sha256": "1a565991af5ad9ba5475e0ef839b8c2831305d7c72580ff914e5d30823696ea4"
+    },
+    "aggoutput": {
+      "path": "rust/aggregation_engine/src/main.rs",
+      "symbol": "main",
+      "first_line": 2072,
+      "last_line": 2091,
+      "sha256": "1a565991af5ad9ba5475e0ef839b8c2831305d7c72580ff914e5d30823696ea4"
+    },
+    "aggregatecall": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main",
+      "first_line": 544,
+      "last_line": 567,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "annotation": {
+      "path": "fasta_lake/annotation.py",
+      "symbol": "annotate_study",
+      "first_line": 325,
+      "last_line": 375,
+      "sha256": "0d27d77a6beea9d97f31b40e5fa52a85d7a3e32677b19911854a3ef279ece6cc"
+    },
+    "annotationcall": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main",
+      "first_line": 585,
+      "last_line": 601,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "aptpin": {
+      "path": "fasta_lake/downstream.py",
+      "symbol": "ALPHAPEPTTOOLS_VERSION / require_analysis",
+      "first_line": 21,
+      "last_line": 48,
+      "sha256": "e3b70012b9e3af0e101dd7ff3a183da5304ebe745b3a03a2c8909673d5e944b8"
+    },
+    "canonical": {
+      "path": "fasta_lake/study.py",
+      "symbol": "canonical_peptide / _passing",
+      "first_line": 26,
+      "last_line": 87,
+      "sha256": "b886e758202e0c575c88e8b2bcba1b1fe76346c2d6c6db5be2044c434a416a6e"
+    },
+    "ci": {
+      "path": ".github/workflows/ci.yml",
+      "symbol": "jobs.python / jobs.real-data-example",
+      "first_line": 104,
+      "last_line": 142,
+      "sha256": "44ca5a048c2c32b90583ebb5a1f1566d1c6f1e6c77640fb33bef61fd10c4b094"
+    },
+    "classifier": {
+      "path": "rust/shared_peptide_classifier/src/main.rs",
+      "symbol": "Args",
+      "first_line": 44,
+      "last_line": 74,
+      "sha256": "1c34a4845ad2ba32f5b05477c47c252e684dc5476a4244127bb70844e8db1531"
+    },
+    "complete": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main",
+      "first_line": 602,
+      "last_line": 625,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "complexity": {
+      "path": "rust/fasta_extractor_v2/src/main.rs",
+      "symbol": "normalize_il_seq / is_low_complexity",
+      "first_line": 305,
+      "last_line": 347,
+      "sha256": "256f7b7be3caebde15022b8b77bbed576a22aab9757c7ca419d8f2bb7bfd7dc8"
+    },
+    "controls": {
+      "path": "fasta_lake/cli.py",
+      "symbol": "entrapment_grp",
+      "first_line": 210,
+      "last_line": 253,
+      "sha256": "1ad410abfa0fcf9bd8d08ccc94edc41b35a71168d66104f9fe0b78dea7c4a2e2"
+    },
+    "convert": {
+      "path": "fasta_lake/cli.py",
+      "symbol": "convert",
+      "first_line": 1237,
+      "last_line": 1313,
+      "sha256": "1ad410abfa0fcf9bd8d08ccc94edc41b35a71168d66104f9fe0b78dea7c4a2e2"
+    },
+    "counts": {
+      "path": "docs/concepts/data/construction_counts.tsv",
+      "symbol": "HSTOOL/PREDICT result rows",
+      "first_line": 1,
+      "last_line": 3,
+      "sha256": "b94e5a26f7c33e204f85a36ece7e4aed3dc7e9d5024ee65ea393ffba88a22911"
+    },
+    "countscope": {
+      "path": "docs/concepts/data/summary.json",
+      "symbol": "definitions and limits",
+      "first_line": 1,
+      "last_line": 23,
+      "sha256": "a2090f595b27742ad25444035deab5b5f4061ebdb11460be46964b5f28b3e923"
+    },
+    "defaults": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main",
+      "first_line": 99,
+      "last_line": 183,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "demo": {
+      "path": "demo/run_demo.sh",
+      "symbol": "top-level shell stages",
+      "first_line": 67,
+      "last_line": 108,
+      "sha256": "25b1f9fab7738a80d03d3f00dbca67bdbd935b61f55307e406bc30757dceb4e0"
+    },
+    "deps": {
+      "path": "pyproject.toml",
+      "symbol": "[project.optional-dependencies]",
+      "first_line": 51,
+      "last_line": 57,
+      "sha256": "9bc307d57bbc7ff1bdc397af05da72a8f5b5350f3e4387a52bdf6c8230643a5c"
+    },
+    "diagnose": {
+      "path": "fasta_lake/cli.py",
+      "symbol": "diagnose_cmd",
+      "first_line": 871,
+      "last_line": 944,
+      "sha256": "1ad410abfa0fcf9bd8d08ccc94edc41b35a71168d66104f9fe0b78dea7c4a2e2"
+    },
+    "dictionary": {
+      "path": "fasta_lake/study.py",
+      "symbol": "greedy_set_cover / study_dictionary",
+      "first_line": 40,
+      "last_line": 79,
+      "sha256": "b886e758202e0c575c88e8b2bcba1b1fe76346c2d6c6db5be2044c434a416a6e"
+    },
+    "directcall": {
+      "path": "fasta_lake/quantification.py",
+      "symbol": "_directlfq",
+      "first_line": 245,
+      "last_line": 257,
+      "sha256": "a136bb984e483572371c2675d18591351415cde6bf12692ce6f48d30a30e791b"
+    },
+    "directpin": {
+      "path": "fasta_lake/quantification.py",
+      "symbol": "DIRECTLFQ_VERSION / require_directlfq",
+      "first_line": 27,
+      "last_line": 50,
+      "sha256": "a136bb984e483572371c2675d18591351415cde6bf12692ce6f48d30a30e791b"
+    },
+    "docker": {
+      "path": "Dockerfile",
+      "symbol": "build/runtime stages",
+      "first_line": 15,
+      "last_line": 27,
+      "sha256": "08d0479892eb725ce34c2187ac3c5fc066a6aabd6b8fe5a36f1de10efc4c7974"
+    },
+    "dockercmd": {
+      "path": "Dockerfile",
+      "symbol": "runtime command",
+      "first_line": 63,
+      "last_line": 78,
+      "sha256": "08d0479892eb725ce34c2187ac3c5fc066a6aabd6b8fe5a36f1de10efc4c7974"
+    },
+    "eggnog": {
+      "path": "fasta_lake/annotation.py",
+      "symbol": "annotate_fasta",
+      "first_line": 146,
+      "last_line": 195,
+      "sha256": "0d27d77a6beea9d97f31b40e5fa52a85d7a3e32677b19911854a3ef279ece6cc"
+    },
+    "entry": {
+      "path": "pyproject.toml",
+      "symbol": "[project.scripts]",
+      "first_line": 48,
+      "last_line": 49,
+      "sha256": "9bc307d57bbc7ff1bdc397af05da72a8f5b5350f3e4387a52bdf6c8230643a5c"
+    },
+    "example": {
+      "path": "examples/campi/run_example.py",
+      "symbol": "main",
+      "first_line": 265,
+      "last_line": 309,
+      "sha256": "a68078c4be741159b848ce3502f229f8dfb48ec536ed467e9a16208c56499b72"
+    },
+    "experimental": {
+      "path": "fasta_lake/cli.py",
+      "symbol": "infer",
+      "first_line": 979,
+      "last_line": 1049,
+      "sha256": "1ad410abfa0fcf9bd8d08ccc94edc41b35a71168d66104f9fe0b78dea7c4a2e2"
+    },
+    "explore": {
+      "path": "fasta_lake/exploration_cli.py",
+      "symbol": "explore_cmd",
+      "first_line": 9,
+      "last_line": 55,
+      "sha256": "d0d6f4dda54eeed73e83b14efc148ee09eba528dedea479b78ba5badbbbe0808"
+    },
+    "extractcall": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main.extract",
+      "first_line": 376,
+      "last_line": 440,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "extractwrite": {
+      "path": "rust/fasta_extractor_v2/src/main.rs",
+      "symbol": "main",
+      "first_line": 1182,
+      "last_line": 1209,
+      "sha256": "256f7b7be3caebde15022b8b77bbed576a22aab9757c7ca419d8f2bb7bfd7dc8"
+    },
+    "groupcall": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main",
+      "first_line": 568,
+      "last_line": 584,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "groupentry": {
+      "path": "tools/group_study.py",
+      "symbol": "main",
+      "first_line": 14,
+      "last_line": 77,
+      "sha256": "052975c949ae5f9fbabe866f83ae4bf63fcb244e7422060c196f6ac94c65b9b0"
+    },
+    "groupread": {
+      "path": "fasta_lake/study.py",
+      "symbol": "group_searches",
+      "first_line": 174,
+      "last_line": 256,
+      "sha256": "b886e758202e0c575c88e8b2bcba1b1fe76346c2d6c6db5be2044c434a416a6e"
+    },
+    "groupwrite": {
+      "path": "fasta_lake/study.py",
+      "symbol": "group_searches",
+      "first_line": 258,
+      "last_line": 317,
+      "sha256": "b886e758202e0c575c88e8b2bcba1b1fe76346c2d6c6db5be2044c434a416a6e"
+    },
+    "init": {
+      "path": "fasta_lake/__init__.py",
+      "symbol": "__version__",
+      "first_line": 13,
+      "last_line": 13,
+      "sha256": "0434aedde1b0b3e2e640602609fa98c523afbfecc347420a894155028f45e436"
+    },
+    "inputs": {
+      "path": "tools/run_manifest.py",
+      "symbol": "load_manifest",
+      "first_line": 40,
+      "last_line": 96,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "kmer": {
+      "path": "fasta_lake/inference/runner.py",
+      "symbol": "run_inference",
+      "first_line": 276,
+      "last_line": 304,
+      "sha256": "bee0f94071b71e0d04f43ef9e517e7273f618f7006c680e56c4fb6f8934d1acd"
+    },
+    "lakeargs": {
+      "path": "rust/fasta_extractor_v2/src/bin/lake_builder.rs",
+      "symbol": "Args",
+      "first_line": 64,
+      "last_line": 155,
+      "sha256": "c606c931a1acd51ab101c7f0e058c12f98c0628d77e0a2d5c08b2d782392761f"
+    },
+    "lakeclean": {
+      "path": "rust/fasta_extractor_v2/src/bin/lake_builder.rs",
+      "symbol": "extract_clean_sequence",
+      "first_line": 329,
+      "last_line": 339,
+      "sha256": "c606c931a1acd51ab101c7f0e058c12f98c0628d77e0a2d5c08b2d782392761f"
+    },
+    "lakecli": {
+      "path": "fasta_lake/cli.py",
+      "symbol": "lake_build",
+      "first_line": 1323,
+      "last_line": 1339,
+      "sha256": "1ad410abfa0fcf9bd8d08ccc94edc41b35a71168d66104f9fe0b78dea7c4a2e2"
+    },
+    "lakededup": {
+      "path": "rust/fasta_extractor_v2/src/bin/lake_builder.rs",
+      "symbol": "main",
+      "first_line": 531,
+      "last_line": 563,
+      "sha256": "c606c931a1acd51ab101c7f0e058c12f98c0628d77e0a2d5c08b2d782392761f"
+    },
+    "lakewrapper": {
+      "path": "fasta_lake/rust/binaries.py",
+      "symbol": "run_lake_builder",
+      "first_line": 198,
+      "last_line": 241,
+      "sha256": "a33f34bdfcd6eaabc859a8f3c32a1055cac6b8c6bb62c2cd1bb946600e535429"
+    },
+    "match": {
+      "path": "rust/fasta_extractor_v2/src/main.rs",
+      "symbol": "main",
+      "first_line": 854,
+      "last_line": 935,
+      "sha256": "256f7b7be3caebde15022b8b77bbed576a22aab9757c7ca419d8f2bb7bfd7dc8"
+    },
+    "molecular": {
+      "path": "fasta_lake/multi_omics/selection.py",
+      "symbol": "build_selection",
+      "first_line": 49,
+      "last_line": 132,
+      "sha256": "1ece4eddd844efc8162e74ed95a47148689beda292f0d253128f533bfed176b9"
+    },
+    "molecularcall": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main",
+      "first_line": 486,
+      "last_line": 517,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "network": {
+      "path": "fasta_lake/network_cli.py",
+      "symbol": "export_cmd / render_cmd",
+      "first_line": 14,
+      "last_line": 77,
+      "sha256": "85ca71a564c5626e036018f12082275dbb94bd5db2d56b6de6c9d7d21ff4e3c7"
+    },
+    "parse": {
+      "path": "rust/fasta_extractor_v2/src/main.rs",
+      "symbol": "parse_prediction_csv",
+      "first_line": 207,
+      "last_line": 248,
+      "sha256": "256f7b7be3caebde15022b8b77bbed576a22aab9757c7ca419d8f2bb7bfd7dc8"
+    },
+    "pepin": {
+      "path": "rust/parsimony_engine/Cargo.lock",
+      "symbol": "aho-corasick package",
+      "first_line": 5,
+      "last_line": 10,
+      "sha256": "ce220c058034c56f1f6a0242a1e00f3b7edf49e80bdd76d10d5e9d10c5beac0f"
+    },
+    "poolfilter": {
+      "path": "rust/fasta_extractor_v2/src/main.rs",
+      "symbol": "load_peptides_top_percent",
+      "first_line": 408,
+      "last_line": 465,
+      "sha256": "256f7b7be3caebde15022b8b77bbed576a22aab9757c7ca419d8f2bb7bfd7dc8"
+    },
+    "preflight": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main",
+      "first_line": 242,
+      "last_line": 309,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "qc": {
+      "path": "fasta_lake/downstream.py",
+      "symbol": "analyze_study",
+      "first_line": 160,
+      "last_line": 219,
+      "sha256": "e3b70012b9e3af0e101dd7ff3a183da5304ebe745b3a03a2c8909673d5e944b8"
+    },
+    "qcout": {
+      "path": "fasta_lake/downstream.py",
+      "symbol": "analyze_study",
+      "first_line": 290,
+      "last_line": 341,
+      "sha256": "e3b70012b9e3af0e101dd7ff3a183da5304ebe745b3a03a2c8909673d5e944b8"
+    },
+    "quantify": {
+      "path": "fasta_lake/quantification.py",
+      "symbol": "quantify_study",
+      "first_line": 73,
+      "last_line": 143,
+      "sha256": "a136bb984e483572371c2675d18591351415cde6bf12692ce6f48d30a30e791b"
+    },
+    "razor": {
+      "path": "rust/parsimony_engine/src/main.rs",
+      "symbol": "run_razor",
+      "first_line": 783,
+      "last_line": 895,
+      "sha256": "f4181f1bccb0a465a7251d47d7acc65f582be23b0d272a485109d88e48139d24"
+    },
+    "razorcall": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main",
+      "first_line": 457,
+      "last_line": 485,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "razorload": {
+      "path": "rust/parsimony_engine/src/main.rs",
+      "symbol": "load_peptides",
+      "first_line": 545,
+      "last_line": 628,
+      "sha256": "f4181f1bccb0a465a7251d47d7acc65f582be23b0d272a485109d88e48139d24"
+    },
+    "razormain": {
+      "path": "rust/parsimony_engine/src/main.rs",
+      "symbol": "main",
+      "first_line": 1528,
+      "last_line": 1569,
+      "sha256": "f4181f1bccb0a465a7251d47d7acc65f582be23b0d272a485109d88e48139d24"
+    },
+    "razormap": {
+      "path": "rust/parsimony_engine/src/main.rs",
+      "symbol": "map_peptides_parallel",
+      "first_line": 692,
+      "last_line": 776,
+      "sha256": "f4181f1bccb0a465a7251d47d7acc65f582be23b0d272a485109d88e48139d24"
+    },
+    "razoroutputs": {
+      "path": "rust/parsimony_engine/src/main.rs",
+      "symbol": "main",
+      "first_line": 1643,
+      "last_line": 1682,
+      "sha256": "f4181f1bccb0a465a7251d47d7acc65f582be23b0d272a485109d88e48139d24"
+    },
+    "razorwrite": {
+      "path": "rust/parsimony_engine/src/main.rs",
+      "symbol": "write_fasta",
+      "first_line": 1436,
+      "last_line": 1458,
+      "sha256": "f4181f1bccb0a465a7251d47d7acc65f582be23b0d272a485109d88e48139d24"
+    },
+    "record": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main / execute",
+      "first_line": 325,
+      "last_line": 374,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "refinement": {
+      "path": "fasta_lake/refine.py",
+      "symbol": "run_refinement",
+      "first_line": 229,
+      "last_line": 254,
+      "sha256": "6a538c268d0c2cc6b8b3c2299a2a2b4d69a353e9a7f146fa5ee2c272026ee5a0"
+    },
+    "registrations": {
+      "path": "fasta_lake/cli.py",
+      "symbol": "cli.add_command registrations",
+      "first_line": 2008,
+      "last_line": 2020,
+      "sha256": "1ad410abfa0fcf9bd8d08ccc94edc41b35a71168d66104f9fe0b78dea7c4a2e2"
+    },
+    "resources": {
+      "path": "fasta_lake/download_cli.py",
+      "symbol": "download_cmd / unpack_cmd",
+      "first_line": 80,
+      "last_line": 121,
+      "sha256": "c2be99191d12c9d609632f76e72037b708959921fb5dcae2477ee06e8ce5e648"
+    },
+    "rustpin": {
+      "path": "Dockerfile",
+      "symbol": "rust-builder base",
+      "first_line": 4,
+      "last_line": 4,
+      "sha256": "08d0479892eb725ce34c2187ac3c5fc066a6aabd6b8fe5a36f1de10efc4c7974"
+    },
+    "samplefilter": {
+      "path": "rust/fasta_extractor_v2/src/main.rs",
+      "symbol": "load_peptides_top_percent_single_csv",
+      "first_line": 568,
+      "last_line": 620,
+      "sha256": "256f7b7be3caebde15022b8b77bbed576a22aab9757c7ca419d8f2bb7bfd7dc8"
+    },
+    "searchcall": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main",
+      "first_line": 518,
+      "last_line": 543,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "searchconfig": {
+      "path": "fasta_lake/search.py",
+      "symbol": "_dda_config",
+      "first_line": 13,
+      "last_line": 57,
+      "sha256": "9f529405197b656f79b8f7100fc819f7f03fedd5b2bc2262265e782ac0baa582"
+    },
+    "searchoptions": {
+      "path": "fasta_lake/search.py",
+      "symbol": "sage_config",
+      "first_line": 60,
+      "last_line": 108,
+      "sha256": "9f529405197b656f79b8f7100fc819f7f03fedd5b2bc2262265e782ac0baa582"
+    },
+    "staleconfig": {
+      "path": "fasta_lake/run_config.py",
+      "symbol": "RunConfig",
+      "first_line": 66,
+      "last_line": 79,
+      "sha256": "21a445359546fc7af3eb696806cecf42d3426b2a760ab5ec3ef8f7d6fbeacc46"
+    },
+    "studycall": {
+      "path": "tools/run_manifest.py",
+      "symbol": "main",
+      "first_line": 442,
+      "last_line": 456,
+      "sha256": "637948d53033367683693fb14eca5a78f59b2c449a7a75fcf2c0eabf19508ffb"
+    },
+    "sum": {
+      "path": "fasta_lake/study.py",
+      "symbol": "_quantify",
+      "first_line": 321,
+      "last_line": 447,
+      "sha256": "b886e758202e0c575c88e8b2bcba1b1fe76346c2d6c6db5be2044c434a416a6e"
+    },
+    "tax": {
+      "path": "fasta_lake/taxonomy_cli.py",
+      "symbol": "prepare / report",
+      "first_line": 14,
+      "last_line": 67,
+      "sha256": "33b05d1098c2c6db853d6ef2dc4440477f08e1c88951be94e6f3296e82a45cb1"
+    },
+    "toycounts": {
+      "path": "examples/campi/expected/results.json",
+      "symbol": "measurements / selection",
+      "first_line": 10,
+      "last_line": 51,
+      "sha256": "207f8ddf1046c691a980f56dab84d35ccb8b6531b6c0164cc2c2524a49b5738e"
+    },
+    "tune": {
+      "path": "fasta_lake/cli.py",
+      "symbol": "tune_cmd",
+      "first_line": 792,
+      "last_line": 855,
+      "sha256": "1ad410abfa0fcf9bd8d08ccc94edc41b35a71168d66104f9fe0b78dea7c4a2e2"
+    },
+    "wrappers": {
+      "path": "fasta_lake/cli.py",
+      "symbol": "evidence_lake / extract_sample",
+      "first_line": 1342,
+      "last_line": 1448,
+      "sha256": "1ad410abfa0fcf9bd8d08ccc94edc41b35a71168d66104f9fe0b78dea7c4a2e2"
+    }
+  }
+}

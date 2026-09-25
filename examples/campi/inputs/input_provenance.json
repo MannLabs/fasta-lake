@@ -1,0 +1,62 @@
+{
+  "project": "PXD023217",
+  "samples": [
+    {
+      "sample": "S01",
+      "mzml": "S01_45-50min.mzML",
+      "predictions": "S01_predictions.csv",
+      "window_minutes": [
+        45,
+        50
+      ],
+      "window_interval": "start inclusive, end exclusive",
+      "ms1_spectra": 381,
+      "ms2_spectra": 5689,
+      "extra_precursor_spectra": 1,
+      "prediction_rows": 5689,
+      "max_precursor_pairing_error_ppm": 0.058055383187972896,
+      "source_mzml_name": "S01.mzML",
+      "source_mzml_sha256": "ef55a67286e0aa840c413ff388f7d67cac8baebae8297bb80fc6081452e25864",
+      "source_predictions_name": "S01_predictions.csv",
+      "source_predictions_sha256": "a7a2d9c8b23aecf704ae7dde8efb79e60e44958ab04f6a3f6eed70351936b377",
+      "source_raw_sha1_from_mzml": "810578a8620e323432464bb1c35d0338b84d9c30",
+      "output_mzml_bytes": 41562492,
+      "output_mzml_sha256": "056c03a563e0fac12a0d228acda84bb27d52c7b5bb0f223dc640325fd48bf63c",
+      "prediction_sha256": "1c643ab17ed54e96d02eab138e52d7eb8f8dfac12c3beacae06e4ec3f97cf704",
+      "modifications": "Retained measured binary arrays and native scan IDs; rebuilt sequential indices; omitted original chromatogram and index sections. Added any MS1 precursor referenced from the selected interval."
+    },
+    {
+      "sample": "S02",
+      "mzml": "S02_45-50min.mzML",
+      "predictions": "S02_predictions.csv",
+      "window_minutes": [
+        45,
+        50
+      ],
+      "window_interval": "start inclusive, end exclusive",
+      "ms1_spectra": 375,
+      "ms2_spectra": 5615,
+      "extra_precursor_spectra": 0,
+      "prediction_rows": 5615,
+      "max_precursor_pairing_error_ppm": 0.05777579471776721,
+      "source_mzml_name": "S02.mzML",
+      "source_mzml_sha256": "c8976e2c79c5f768ebd64f05f8a49588e4d702b3ddde37db33b7aa62d8765742",
+      "source_predictions_name": "S02_predictions.csv",
+      "source_predictions_sha256": "2110db3bf1c37c0d8fb1d131d9ccca15c860660aa7dea5b39d73eb08e03d852b",
+      "source_raw_sha1_from_mzml": "5a53f1679052874d89bd061e51c57bc8b32edcbf",
+      "output_mzml_bytes": 40908908,
+      "output_mzml_sha256": "282494728d316eca699125a580213f7f45931025506c2bb479a6116bd1319150",
+      "prediction_sha256": "b67ef6ba3f14d290856186a15077564abef8718841334c5f621d3f6ad159e5c7",
+      "modifications": "Retained measured binary arrays and native scan IDs; rebuilt sequential indices; omitted original chromatogram and index sections. Added any MS1 precursor referenced from the selected interval."
+    }
+  ],
+  "reference": {
+    "source_name": "SIHUMI_DB1UNIPROT.faa",
+    "source_sha256": "b7625253e172991f19f4183521c60066f508c2f2217d19d3f4195de1a753d5ca",
+    "source_sha1": "65b2440a81c56b9f210f77183e482ffc17e7a277",
+    "target_records": 29673,
+    "excluded_DECOY_records": 29673,
+    "sha256": "9d4def2d1de49d61e88f163e8c456da891b407d77e8959f58da9dbead6d9fce9",
+    "policy": "All original target records retained; only deposited DECOY_ records excluded. The example runner normalizes and hashes sequences before selection; SAGE generates new decoys."
+  }
+}

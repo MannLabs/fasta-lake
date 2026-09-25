@@ -1,0 +1,3 @@
+# Preserve the cited upstream JavaScript and compatibility patch bytes.
+fasta_lake/assets/unipept-visualizations.js -text -whitespace
+integrations/ckg/compatibility.patch -text -whitespace

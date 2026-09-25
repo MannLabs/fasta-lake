@@ -1,0 +1,63 @@
+# cargo-deny configuration for FastaLake Rust crates.
+#
+# Each crate under rust/ is a STANDALONE package (there is no Cargo workspace),
+# so the CI job `cargo-deny` invokes `cargo deny check` once per crate with
+# --manifest-path and `--config rust/deny.toml`. This shared configuration
+# applies to every crate. CI fails on any warning.
+#
+# Run locally:
+#   cargo install cargo-deny
+#   cargo deny --manifest-path rust/lake_stats/Cargo.toml --config rust/deny.toml check
+
+# ---------------------------------------------------------------------------
+# Security advisories (RUSTSEC database)
+# ---------------------------------------------------------------------------
+[advisories]
+version = 2
+# Fail on any security vulnerability; warn on unmaintained/yanked crates.
+yanked = "warn"
+ignore = []
+
+# ---------------------------------------------------------------------------
+# License policy — permissive OSI licenses only (matches the crate ecosystem
+# these tools depend on). FastaLake itself is MIT.
+# ---------------------------------------------------------------------------
+[licenses]
+version = 2
+# One config serves six standalone crates, so not every allowed licence occurs in
+# every lockfile; that is expected and not reported. The list is exactly the set
+# of licences that occur across the six lockfiles (cargo deny list).
+unused-allowed-license = "allow"
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "Apache-2.0 WITH LLVM-exception",
+    "BSD-2-Clause",
+    "BSL-1.0",
+    "Unicode-3.0",
+    "Unlicense",
+]
+# Require a high confidence when guessing a license from file contents.
+confidence-threshold = 0.8
+
+# ---------------------------------------------------------------------------
+# Dependency bans. Multiple versions of one crate are allowed: they arise from
+# unrelated dependents pinning different majors of a procedural-macro crate
+# (serde_derive on syn 2, clap_derive on syn 3) and never reach the binaries;
+# a per-crate skip cannot be expressed in one config shared by six crates
+# without a warning in the crates it does not apply to, and CI accepts no
+# warnings. Wildcard version requirements are still reported.
+# ---------------------------------------------------------------------------
+[bans]
+multiple-versions = "allow"
+wildcards = "warn"
+allow = []
+deny = []
+
+# ---------------------------------------------------------------------------
+# Source policy — only crates.io by default; flag anything from elsewhere.
+# ---------------------------------------------------------------------------
+[sources]
+unknown-registry = "warn"
+unknown-git = "warn"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]

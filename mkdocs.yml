@@ -1,0 +1,287 @@
+site_name: FastaLake
+site_description: Protein database construction from de novo peptide evidence for proteomics and metaproteomics.
+site_url: https://mannlabs.github.io/fasta-lake/
+repo_url: https://github.com/MannLabs/fasta-lake
+repo_name: MannLabs/fasta-lake
+edit_uri: edit/main/docs/
+copyright: MIT licence. FastaLake is developed in the Mann Lab, Max Planck Institute of Biochemistry.
+docs_dir: docs
+not_in_nav: |
+  /figure/LABEL_SOURCES.md
+  /figure/PIPELINE_INVENTORY.md
+  /figure/README_SNIPPET.md
+strict: true
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
+theme:
+  name: material
+  language: en
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.action.edit
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - glightbox:
+      touchNavigation: true
+      skip_classes: [no-lightbox]
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [.]
+          options:
+            docstring_style: numpy
+            show_source: true
+            show_root_heading: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            members_order: source
+            separate_signature: true
+            show_signature_annotations: true
+            signature_crossrefs: true
+
+  - mkdocs-jupyter:
+      include: ["*.ipynb"]
+      ignore: ["*.md"]  # otherwise every page is probed with jupytext (and pandoc, when installed)
+      include_source: true
+      execute: false
+      allow_errors: false
+      ignore_h1_titles: true
+      show_input: true
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: "#"
+      toc_depth: 3
+  - mkdocs-click
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      base_path: [".", "docs"]
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js  # exact version, not a floating major
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/MannLabs
+      name: Mann Lab on GitHub
+
+nav:
+  - Home: index.md
+  - Get started:
+      - Understand the idea: concepts/principle.md
+      - Try the demo: get-started/demo.md
+      - Install: get-started/install.md
+      - Set up with an assistant: how-to/assistants.md
+      - What computer do I need?: how-to/compute.md
+      - Your first study: get-started/first-study.md
+      - Read your results: how-to/read-outputs.md
+      - Run with Docker: get-started/docker.md
+      - Environment and site configuration: get-started/environment.md
+  - How-to guides:
+      - Inputs:
+          - Choose and download references: how-to/references.md
+          - Build a reference lake: how-to/build-a-lake.md
+          - Prepare an acquisition manifest: how-to/acquisition-manifest.md
+          - Bring existing DIANovo predictions: how-to/de-novo-inputs.md
+          - Molecular inputs (metaG and metaT): how-to/molecular-inputs.md
+          - Add matched DNA and RNA with Docker: how-to/molecular-docker.md
+      - Search and quantify:
+          - Search settings: how-to/search-settings.md
+          - Quantification: how-to/quantification.md
+          - Downstream analysis: how-to/downstream-analysis.md
+          - Molecular gains and losses: how-to/protein-increments.md
+      - Community and function:
+          - Taxonomy: how-to/taxonomy.md
+          - Annotation and embeddings: how-to/annotation.md
+          - Evidence networks: how-to/evidence-networks.md
+          - Core biological functions: how-to/core-functions.md
+          - Experimental functional exploration: how-to/functional-exploration.md
+      - Running and reporting:
+          - Troubleshooting: how-to/troubleshooting.md
+          - Report and share a study: how-to/reporting.md
+  - Tutorials:
+      - tutorials/index.md
+      - Your first result: tutorials/01_first_result.ipynb
+      - QC, replicates and PCA: tutorials/02_qc_and_pca.ipynb
+      - Community and function: tutorials/03_community_and_function.ipynb
+      - Matched DNA and RNA: tutorials/04_molecular_additions.ipynb
+  - Concepts:
+      - Illustrated workflow: concepts/pipeline-stages.md
+      - Glossary: concepts/terminology.md
+      - Algorithms: concepts/algorithms.md
+      - Output contract: concepts/output-contract.md
+      - Error control and entrapment: concepts/error-control.md
+      - Methods: concepts/methods.md
+      - Validation: concepts/validation.md
+      - Molecular benchmark: concepts/molecular-benchmark.md
+      - Molecular complementarity: concepts/molecular-complementarity.md
+      - Performance: concepts/performance.md
+  - Reference:
+      - Command line: reference/cli.md
+      - Study runner: reference/run-manifest.md
+      - Configuration file: reference/configuration.md
+      - Resource controls: reference/resource-controls.md
+      - Quantification details: reference/quantification-details.md
+      - Functions in execution order: reference/function-map.md
+      - Python function index: reference/function-index.md
+      - Rust function index: reference/rust-function-index.md
+      - Python API:
+          - reference/api/index.md
+          - Workflow:
+              - run_config: reference/api/run_config.md
+              - config: reference/api/config.md
+              - provenance: reference/api/provenance.md
+              - helpers: reference/api/helpers.md
+              - hashing: reference/api/hashing.md
+              - gzip_io: reference/api/gzip_io.md
+              - search: reference/api/search.md
+              - study: reference/api/study.md
+              - quantification: reference/api/quantification.md
+              - aggregate: reference/api/aggregate.md
+              - downstream: reference/api/downstream.md
+              - qc_plots: reference/api/qc_plots.md
+              - quality: reference/api/quality.md
+              - capacity: reference/api/capacity.md
+              - chunked: reference/api/chunked.md
+              - presets: reference/api/presets.md
+              - contaminants: reference/api/contaminants.md
+              - canonical: reference/api/canonical.md
+              - canonical_comparison: reference/api/canonical_comparison.md
+          - Inference and selection:
+              - inference.base: reference/api/inference.base.md
+              - inference.runner: reference/api/inference.runner.md
+              - inference.strategies: reference/api/inference.strategies.md
+              - proteomics.grouping: reference/api/proteomics.grouping.md
+              - proteomics.cascade: reference/api/proteomics.cascade.md
+              - complexity: reference/api/complexity.md
+              - blosum: reference/api/blosum.md
+              - ics: reference/api/ics.md
+              - refine: reference/api/refine.md
+              - lake_builder: reference/api/lake_builder.md
+              - lake_merge: reference/api/lake_merge.md
+              - dianovo: reference/api/dianovo.md
+              - headers.fasta_io: reference/api/headers.fasta_io.md
+              - headers.validation: reference/api/headers.validation.md
+          - Entrapment and diagnostics:
+              - entrapment: reference/api/entrapment.md
+              - entrapment_classes: reference/api/entrapment_classes.md
+              - entrapment_stages: reference/api/entrapment_stages.md
+              - entrapment_workflow: reference/api/entrapment_workflow.md
+              - benchmark: reference/api/benchmark.md
+              - diagnose: reference/api/diagnose.md
+              - tune: reference/api/tune.md
+          - Molecular evidence:
+              - multi_omics.sources: reference/api/multi_omics.sources.md
+              - multi_omics.selection: reference/api/multi_omics.selection.md
+              - multi_omics.exact: reference/api/multi_omics.exact.md
+              - multi_omics.evidence_gate: reference/api/multi_omics.evidence_gate.md
+              - multi_omics.runner: reference/api/multi_omics.runner.md
+              - multi_omics.increments: reference/api/multi_omics.increments.md
+              - multi_omics.complementarity: reference/api/multi_omics.complementarity.md
+              - multi_omics.reproduce: reference/api/multi_omics.reproduce.md
+          - Community and function:
+              - taxonomy: reference/api/taxonomy.md
+              - taxonomy_reference: reference/api/taxonomy_reference.md
+              - annotation: reference/api/annotation.md
+              - embeddings: reference/api/embeddings.md
+              - networks: reference/api/networks.md
+              - network_annotations: reference/api/network_annotations.md
+              - community_plots: reference/api/community_plots.md
+              - metaproteomics: reference/api/metaproteomics.md
+              - exploration: reference/api/exploration.md
+              - downloads: reference/api/downloads.md
+              - resources: reference/api/resources.md
+          - Command-line modules:
+              - cli: reference/api/cli.md
+              - annotation_cli: reference/api/annotation_cli.md
+              - download_cli: reference/api/download_cli.md
+              - exploration_cli: reference/api/exploration_cli.md
+              - network_cli: reference/api/network_cli.md
+              - taxonomy_cli: reference/api/taxonomy_cli.md
+              - multi_omics.cli: reference/api/multi_omics.cli.md
+              - rust.binaries: reference/api/rust.binaries.md
+      - Rust crates: reference/rust-crates.md
+  - Project:
+      - Workflow artwork: figure/README.md
+      - Contributing: project/contributing.md
+      - Development: project/development.md

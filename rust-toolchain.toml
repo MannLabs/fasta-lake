@@ -1,0 +1,14 @@
+# Pinned Rust toolchain — LOAD-BEARING.
+#
+# FastaLake's headline scientific claim is byte-identical, thread-invariant,
+# reproducible database construction. Reproducibility is only guaranteed against
+# a fixed compiler version: codegen, std-library behaviour, and hash/iteration
+# details can change across rustc releases and silently perturb output bytes.
+# The manuscript's determinism claim therefore depends on everyone (CI, authors,
+# reviewers re-running from raw) building with the exact same toolchain.
+#
+# Do NOT bump this channel without re-verifying byte-identical output of the full
+# pipeline against the published reference hashes.
+[toolchain]
+channel = "1.91.1"
+components = ["rustfmt", "clippy"]

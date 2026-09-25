@@ -1,0 +1,4777 @@
+{
+  "browser": "153.0.8010.12",
+  "renders": [
+    {
+      "asset": "fastalake-pipeline-light.svg",
+      "width": 880,
+      "browser_scheme": "light",
+      "png": "renders/svg-light-880-browser-light.png",
+      "sha256": "538f8b93ec9a4c7e3683541d675e69f9b7ec13ef615c846b06cd01307bf528e4",
+      "image_and_inline_identical": true,
+      "fonts": [
+        {
+          "family": "Plus Jakarta Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "JetBrains Mono",
+          "status": "loaded"
+        }
+      ],
+      "metrics": [
+        {
+          "key": "brand",
+          "x": 118,
+          "y": 41,
+          "width": 168.9375,
+          "height": 43,
+          "ink": {
+            "x": 120,
+            "y": 50,
+            "width": 166.12062072753906,
+            "height": 26
+          }
+        },
+        {
+          "key": "subtitle",
+          "x": 48,
+          "y": 96,
+          "width": 440.9375,
+          "height": 24,
+          "ink": {
+            "x": 49,
+            "y": 100,
+            "width": 439.04718017578125,
+            "height": 19
+          }
+        },
+        {
+          "key": "badge",
+          "x": 957,
+          "y": 55,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 958,
+            "y": 58,
+            "width": 180.80038452148438,
+            "height": 13
+          }
+        },
+        {
+          "key": "study",
+          "x": 48,
+          "y": 157,
+          "width": 122.32823181152344,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 162,
+            "width": 121.32823181152344,
+            "height": 12
+          }
+        },
+        {
+          "key": "reservoir",
+          "x": 66,
+          "y": 202,
+          "width": 160.1898956298828,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 207,
+            "width": 159.1898956298828,
+            "height": 15
+          }
+        },
+        {
+          "key": "reservoir_type",
+          "x": 66,
+          "y": 230,
+          "width": 240.015625,
+          "height": 21,
+          "ink": {
+            "x": 67,
+            "y": 233,
+            "width": 238.4005126953125,
+            "height": 16
+          }
+        },
+        {
+          "key": "predictions",
+          "x": 66,
+          "y": 282,
+          "width": 194.5625,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 287,
+            "width": 193.29981994628906,
+            "height": 19
+          }
+        },
+        {
+          "key": "csv",
+          "x": 295,
+          "y": 285,
+          "width": 28.8125,
+          "height": 21,
+          "ink": {
+            "x": 296,
+            "y": 289,
+            "width": 27.200042724609375,
+            "height": 12
+          }
+        },
+        {
+          "key": "predictions_gloss",
+          "x": 66,
+          "y": 317,
+          "width": 258.265625,
+          "height": 19,
+          "ink": {
+            "x": 66,
+            "y": 320,
+            "width": 257.39617919921875,
+            "height": 15
+          }
+        },
+        {
+          "key": "pool_title",
+          "x": 417,
+          "y": 205,
+          "width": 392.296875,
+          "height": 33,
+          "ink": {
+            "x": 418,
+            "y": 212,
+            "width": 390.9243469238281,
+            "height": 26
+          }
+        },
+        {
+          "key": "pool_body",
+          "x": 417,
+          "y": 249,
+          "width": 459.09375,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 253,
+            "width": 456.7886962890625,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_il",
+          "x": 417,
+          "y": 275,
+          "width": 416.5,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 279,
+            "width": 414.2015380859375,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_filter",
+          "x": 417,
+          "y": 313,
+          "width": 499.203125,
+          "height": 21,
+          "ink": {
+            "x": 417,
+            "y": 316,
+            "width": 498.60113525390625,
+            "height": 16
+          }
+        },
+        {
+          "key": "acquisition",
+          "x": 48,
+          "y": 405,
+          "width": 191.234375,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 410,
+            "width": 189.37637329101562,
+            "height": 14
+          }
+        },
+        {
+          "key": "all_predictions",
+          "x": 444,
+          "y": 404,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 444,
+            "y": 407,
+            "width": 287.4006042480469,
+            "height": 16
+          }
+        },
+        {
+          "key": "spectra",
+          "x": 830,
+          "y": 404,
+          "width": 220.8125,
+          "height": 21,
+          "ink": {
+            "x": 831,
+            "y": 408,
+            "width": 219.20046997070312,
+            "height": 15
+          }
+        },
+        {
+          "key": "candidate_title_1",
+          "x": 72,
+          "y": 463,
+          "width": 191.5625,
+          "height": 32,
+          "ink": {
+            "x": 73,
+            "y": 470,
+            "width": 189.7256622314453,
+            "height": 24
+          }
+        },
+        {
+          "key": "candidate_title_2",
+          "x": 72,
+          "y": 494,
+          "width": 136.96875,
+          "height": 32,
+          "ink": {
+            "x": 72,
+            "y": 501,
+            "width": 136.1129913330078,
+            "height": 19
+          }
+        },
+        {
+          "key": "candidate_body_1",
+          "x": 72,
+          "y": 538,
+          "width": 238.453125,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 543,
+            "width": 237.28260803222656,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_body_2",
+          "x": 72,
+          "y": 564,
+          "width": 211.921875,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 569,
+            "width": 209.76473999023438,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_tool",
+          "x": 72,
+          "y": 624,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 628,
+            "width": 180.80038452148438,
+            "height": 15
+          }
+        },
+        {
+          "key": "select_title_1",
+          "x": 452,
+          "y": 463,
+          "width": 123.515625,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 470,
+            "width": 123.20042419433594,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_title_2",
+          "x": 452,
+          "y": 494,
+          "width": 201.6875,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 501,
+            "width": 201.37574768066406,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_body_1",
+          "x": 452,
+          "y": 538,
+          "width": 249.34375,
+          "height": 23,
+          "ink": {
+            "x": 453,
+            "y": 543,
+            "width": 248.0205535888672,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_body_2",
+          "x": 452,
+          "y": 564,
+          "width": 285.3125,
+          "height": 23,
+          "ink": {
+            "x": 452,
+            "y": 569,
+            "width": 284.1502685546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_tool",
+          "x": 452,
+          "y": 624,
+          "width": 249.609375,
+          "height": 21,
+          "ink": {
+            "x": 453,
+            "y": 627,
+            "width": 248.0005340576172,
+            "height": 16
+          }
+        },
+        {
+          "key": "search_title_1",
+          "x": 832,
+          "y": 463,
+          "width": 211.703125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 470,
+            "width": 210.90077209472656,
+            "height": 19
+          }
+        },
+        {
+          "key": "search_title_2",
+          "x": 832,
+          "y": 494,
+          "width": 94.328125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 503,
+            "width": 92.8253173828125,
+            "height": 22
+          }
+        },
+        {
+          "key": "search_body_1",
+          "x": 832,
+          "y": 538,
+          "width": 254.25,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 543,
+            "width": 252.2425079345703,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_body_2",
+          "x": 832,
+          "y": 564,
+          "width": 151.796875,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 569,
+            "width": 149.6450958251953,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_tool",
+          "x": 832,
+          "y": 603,
+          "width": 105.609375,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 607,
+            "width": 104.00021362304688,
+            "height": 15
+          }
+        },
+        {
+          "key": "search_q",
+          "x": 832,
+          "y": 628,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 631,
+            "width": 286.400634765625,
+            "height": 16
+          }
+        },
+        {
+          "key": "summary_output",
+          "x": 893,
+          "y": 731,
+          "width": 194.75,
+          "height": 22,
+          "ink": {
+            "x": 893,
+            "y": 737,
+            "width": 194.0475311279297,
+            "height": 15
+          }
+        },
+        {
+          "key": "results",
+          "x": 48,
+          "y": 745,
+          "width": 157.1123046875,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 750,
+            "width": 157.1123046875,
+            "height": 12
+          }
+        },
+        {
+          "key": "group_title",
+          "x": 72,
+          "y": 812,
+          "width": 357.8125,
+          "height": 33,
+          "ink": {
+            "x": 73,
+            "y": 819,
+            "width": 356.44830322265625,
+            "height": 26
+          }
+        },
+        {
+          "key": "group_body_1",
+          "x": 72,
+          "y": 866,
+          "width": 441.703125,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 870,
+            "width": 440.02862548828125,
+            "height": 18
+          }
+        },
+        {
+          "key": "group_body_2",
+          "x": 72,
+          "y": 894,
+          "width": 309.5,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 898,
+            "width": 308.19708251953125,
+            "height": 14
+          }
+        },
+        {
+          "key": "group_tool",
+          "x": 72,
+          "y": 952,
+          "width": 307.203125,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 955,
+            "width": 305.6006774902344,
+            "height": 16
+          }
+        },
+        {
+          "key": "qc_title",
+          "x": 708,
+          "y": 812,
+          "width": 189.1875,
+          "height": 33,
+          "ink": {
+            "x": 709,
+            "y": 819,
+            "width": 186.6241455078125,
+            "height": 26
+          }
+        },
+        {
+          "key": "qc_body_1",
+          "x": 708,
+          "y": 866,
+          "width": 271.4375,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 870,
+            "width": 269.142333984375,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_body_2",
+          "x": 708,
+          "y": 894,
+          "width": 351.46875,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 898,
+            "width": 349.1737060546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_tool",
+          "x": 708,
+          "y": 952,
+          "width": 230.40625,
+          "height": 21,
+          "ink": {
+            "x": 708,
+            "y": 956,
+            "width": 229.8004913330078,
+            "height": 15
+          }
+        },
+        {
+          "key": "acquisition_gloss",
+          "x": 48,
+          "y": 1036,
+          "width": 182.078125,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 1041,
+            "width": 181.8962860107422,
+            "height": 15
+          }
+        },
+        {
+          "key": "footer",
+          "x": 843,
+          "y": 1036,
+          "width": 250.078125,
+          "height": 21,
+          "ink": {
+            "x": 844,
+            "y": 1041,
+            "width": 248.46450805664062,
+            "height": 12
+          }
+        }
+      ]
+    },
+    {
+      "asset": "fastalake-pipeline-dark.svg",
+      "width": 880,
+      "browser_scheme": "light",
+      "png": "renders/svg-dark-880-browser-light.png",
+      "sha256": "2c9108907eaeee75659cf7be0d5bb1a4a045b16dd75e4dec0e9c4569d97a50bd",
+      "image_and_inline_identical": true,
+      "fonts": [
+        {
+          "family": "Plus Jakarta Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "JetBrains Mono",
+          "status": "loaded"
+        }
+      ],
+      "metrics": [
+        {
+          "key": "brand",
+          "x": 118,
+          "y": 41,
+          "width": 168.9375,
+          "height": 43,
+          "ink": {
+            "x": 120,
+            "y": 50,
+            "width": 166.12062072753906,
+            "height": 26
+          }
+        },
+        {
+          "key": "subtitle",
+          "x": 48,
+          "y": 96,
+          "width": 440.9375,
+          "height": 24,
+          "ink": {
+            "x": 49,
+            "y": 100,
+            "width": 439.04718017578125,
+            "height": 19
+          }
+        },
+        {
+          "key": "badge",
+          "x": 957,
+          "y": 55,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 958,
+            "y": 58,
+            "width": 180.80038452148438,
+            "height": 13
+          }
+        },
+        {
+          "key": "study",
+          "x": 48,
+          "y": 157,
+          "width": 122.32823181152344,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 162,
+            "width": 121.32823181152344,
+            "height": 12
+          }
+        },
+        {
+          "key": "reservoir",
+          "x": 66,
+          "y": 202,
+          "width": 160.1898956298828,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 207,
+            "width": 159.1898956298828,
+            "height": 15
+          }
+        },
+        {
+          "key": "reservoir_type",
+          "x": 66,
+          "y": 230,
+          "width": 240.015625,
+          "height": 21,
+          "ink": {
+            "x": 67,
+            "y": 233,
+            "width": 238.4005126953125,
+            "height": 16
+          }
+        },
+        {
+          "key": "predictions",
+          "x": 66,
+          "y": 282,
+          "width": 194.5625,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 287,
+            "width": 193.29981994628906,
+            "height": 19
+          }
+        },
+        {
+          "key": "csv",
+          "x": 295,
+          "y": 285,
+          "width": 28.8125,
+          "height": 21,
+          "ink": {
+            "x": 296,
+            "y": 289,
+            "width": 27.200042724609375,
+            "height": 12
+          }
+        },
+        {
+          "key": "predictions_gloss",
+          "x": 66,
+          "y": 317,
+          "width": 258.265625,
+          "height": 19,
+          "ink": {
+            "x": 66,
+            "y": 320,
+            "width": 257.39617919921875,
+            "height": 15
+          }
+        },
+        {
+          "key": "pool_title",
+          "x": 417,
+          "y": 205,
+          "width": 392.296875,
+          "height": 33,
+          "ink": {
+            "x": 418,
+            "y": 212,
+            "width": 390.9243469238281,
+            "height": 26
+          }
+        },
+        {
+          "key": "pool_body",
+          "x": 417,
+          "y": 249,
+          "width": 459.09375,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 253,
+            "width": 456.7886962890625,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_il",
+          "x": 417,
+          "y": 275,
+          "width": 416.5,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 279,
+            "width": 414.2015380859375,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_filter",
+          "x": 417,
+          "y": 313,
+          "width": 499.203125,
+          "height": 21,
+          "ink": {
+            "x": 417,
+            "y": 316,
+            "width": 498.60113525390625,
+            "height": 16
+          }
+        },
+        {
+          "key": "acquisition",
+          "x": 48,
+          "y": 405,
+          "width": 191.234375,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 410,
+            "width": 189.37637329101562,
+            "height": 14
+          }
+        },
+        {
+          "key": "all_predictions",
+          "x": 444,
+          "y": 404,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 444,
+            "y": 407,
+            "width": 287.4006042480469,
+            "height": 16
+          }
+        },
+        {
+          "key": "spectra",
+          "x": 830,
+          "y": 404,
+          "width": 220.8125,
+          "height": 21,
+          "ink": {
+            "x": 831,
+            "y": 408,
+            "width": 219.20046997070312,
+            "height": 15
+          }
+        },
+        {
+          "key": "candidate_title_1",
+          "x": 72,
+          "y": 463,
+          "width": 191.5625,
+          "height": 32,
+          "ink": {
+            "x": 73,
+            "y": 470,
+            "width": 189.7256622314453,
+            "height": 24
+          }
+        },
+        {
+          "key": "candidate_title_2",
+          "x": 72,
+          "y": 494,
+          "width": 136.96875,
+          "height": 32,
+          "ink": {
+            "x": 72,
+            "y": 501,
+            "width": 136.1129913330078,
+            "height": 19
+          }
+        },
+        {
+          "key": "candidate_body_1",
+          "x": 72,
+          "y": 538,
+          "width": 238.453125,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 543,
+            "width": 237.28260803222656,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_body_2",
+          "x": 72,
+          "y": 564,
+          "width": 211.921875,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 569,
+            "width": 209.76473999023438,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_tool",
+          "x": 72,
+          "y": 624,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 628,
+            "width": 180.80038452148438,
+            "height": 15
+          }
+        },
+        {
+          "key": "select_title_1",
+          "x": 452,
+          "y": 463,
+          "width": 123.515625,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 470,
+            "width": 123.20042419433594,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_title_2",
+          "x": 452,
+          "y": 494,
+          "width": 201.6875,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 501,
+            "width": 201.37574768066406,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_body_1",
+          "x": 452,
+          "y": 538,
+          "width": 249.34375,
+          "height": 23,
+          "ink": {
+            "x": 453,
+            "y": 543,
+            "width": 248.0205535888672,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_body_2",
+          "x": 452,
+          "y": 564,
+          "width": 285.3125,
+          "height": 23,
+          "ink": {
+            "x": 452,
+            "y": 569,
+            "width": 284.1502685546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_tool",
+          "x": 452,
+          "y": 624,
+          "width": 249.609375,
+          "height": 21,
+          "ink": {
+            "x": 453,
+            "y": 627,
+            "width": 248.0005340576172,
+            "height": 16
+          }
+        },
+        {
+          "key": "search_title_1",
+          "x": 832,
+          "y": 463,
+          "width": 211.703125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 470,
+            "width": 210.90077209472656,
+            "height": 19
+          }
+        },
+        {
+          "key": "search_title_2",
+          "x": 832,
+          "y": 494,
+          "width": 94.328125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 503,
+            "width": 92.8253173828125,
+            "height": 22
+          }
+        },
+        {
+          "key": "search_body_1",
+          "x": 832,
+          "y": 538,
+          "width": 254.25,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 543,
+            "width": 252.2425079345703,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_body_2",
+          "x": 832,
+          "y": 564,
+          "width": 151.796875,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 569,
+            "width": 149.6450958251953,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_tool",
+          "x": 832,
+          "y": 603,
+          "width": 105.609375,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 607,
+            "width": 104.00021362304688,
+            "height": 15
+          }
+        },
+        {
+          "key": "search_q",
+          "x": 832,
+          "y": 628,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 631,
+            "width": 286.400634765625,
+            "height": 16
+          }
+        },
+        {
+          "key": "summary_output",
+          "x": 893,
+          "y": 731,
+          "width": 194.75,
+          "height": 22,
+          "ink": {
+            "x": 893,
+            "y": 737,
+            "width": 194.0475311279297,
+            "height": 15
+          }
+        },
+        {
+          "key": "results",
+          "x": 48,
+          "y": 745,
+          "width": 157.1123046875,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 750,
+            "width": 157.1123046875,
+            "height": 12
+          }
+        },
+        {
+          "key": "group_title",
+          "x": 72,
+          "y": 812,
+          "width": 357.8125,
+          "height": 33,
+          "ink": {
+            "x": 73,
+            "y": 819,
+            "width": 356.44830322265625,
+            "height": 26
+          }
+        },
+        {
+          "key": "group_body_1",
+          "x": 72,
+          "y": 866,
+          "width": 441.703125,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 870,
+            "width": 440.02862548828125,
+            "height": 18
+          }
+        },
+        {
+          "key": "group_body_2",
+          "x": 72,
+          "y": 894,
+          "width": 309.5,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 898,
+            "width": 308.19708251953125,
+            "height": 14
+          }
+        },
+        {
+          "key": "group_tool",
+          "x": 72,
+          "y": 952,
+          "width": 307.203125,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 955,
+            "width": 305.6006774902344,
+            "height": 16
+          }
+        },
+        {
+          "key": "qc_title",
+          "x": 708,
+          "y": 812,
+          "width": 189.1875,
+          "height": 33,
+          "ink": {
+            "x": 709,
+            "y": 819,
+            "width": 186.6241455078125,
+            "height": 26
+          }
+        },
+        {
+          "key": "qc_body_1",
+          "x": 708,
+          "y": 866,
+          "width": 271.4375,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 870,
+            "width": 269.142333984375,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_body_2",
+          "x": 708,
+          "y": 894,
+          "width": 351.46875,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 898,
+            "width": 349.1737060546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_tool",
+          "x": 708,
+          "y": 952,
+          "width": 230.40625,
+          "height": 21,
+          "ink": {
+            "x": 708,
+            "y": 956,
+            "width": 229.8004913330078,
+            "height": 15
+          }
+        },
+        {
+          "key": "acquisition_gloss",
+          "x": 48,
+          "y": 1036,
+          "width": 182.078125,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 1041,
+            "width": 181.8962860107422,
+            "height": 15
+          }
+        },
+        {
+          "key": "footer",
+          "x": 843,
+          "y": 1036,
+          "width": 250.078125,
+          "height": 21,
+          "ink": {
+            "x": 844,
+            "y": 1041,
+            "width": 248.46450805664062,
+            "height": 12
+          }
+        }
+      ]
+    },
+    {
+      "asset": "fastalake-pipeline.html",
+      "width": 880,
+      "browser_scheme": "light",
+      "png": "renders/html-light-880.png",
+      "sha256": "2b5ebfb2decfa4b6978e5e8473d8a6cac59e3664e45ac13086169bb2b3606d57",
+      "page_width": 880
+    },
+    {
+      "asset": "fastalake-pipeline-light.svg",
+      "width": 880,
+      "browser_scheme": "dark",
+      "png": "renders/svg-light-880-browser-dark.png",
+      "sha256": "212aeae30f0712518fa3cc1e825f9aa7bba6134c868cd5188b14bb2e1f3d8af2",
+      "image_and_inline_identical": true,
+      "fonts": [
+        {
+          "family": "Plus Jakarta Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "JetBrains Mono",
+          "status": "loaded"
+        }
+      ],
+      "metrics": [
+        {
+          "key": "brand",
+          "x": 118,
+          "y": 41,
+          "width": 168.9375,
+          "height": 43,
+          "ink": {
+            "x": 120,
+            "y": 50,
+            "width": 166.12062072753906,
+            "height": 26
+          }
+        },
+        {
+          "key": "subtitle",
+          "x": 48,
+          "y": 96,
+          "width": 440.9375,
+          "height": 24,
+          "ink": {
+            "x": 49,
+            "y": 100,
+            "width": 439.04718017578125,
+            "height": 19
+          }
+        },
+        {
+          "key": "badge",
+          "x": 957,
+          "y": 55,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 958,
+            "y": 58,
+            "width": 180.80038452148438,
+            "height": 13
+          }
+        },
+        {
+          "key": "study",
+          "x": 48,
+          "y": 157,
+          "width": 122.32823181152344,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 162,
+            "width": 121.32823181152344,
+            "height": 12
+          }
+        },
+        {
+          "key": "reservoir",
+          "x": 66,
+          "y": 202,
+          "width": 160.1898956298828,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 207,
+            "width": 159.1898956298828,
+            "height": 15
+          }
+        },
+        {
+          "key": "reservoir_type",
+          "x": 66,
+          "y": 230,
+          "width": 240.015625,
+          "height": 21,
+          "ink": {
+            "x": 67,
+            "y": 233,
+            "width": 238.4005126953125,
+            "height": 16
+          }
+        },
+        {
+          "key": "predictions",
+          "x": 66,
+          "y": 282,
+          "width": 194.5625,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 287,
+            "width": 193.29981994628906,
+            "height": 19
+          }
+        },
+        {
+          "key": "csv",
+          "x": 295,
+          "y": 285,
+          "width": 28.8125,
+          "height": 21,
+          "ink": {
+            "x": 296,
+            "y": 289,
+            "width": 27.200042724609375,
+            "height": 12
+          }
+        },
+        {
+          "key": "predictions_gloss",
+          "x": 66,
+          "y": 317,
+          "width": 258.265625,
+          "height": 19,
+          "ink": {
+            "x": 66,
+            "y": 320,
+            "width": 257.39617919921875,
+            "height": 15
+          }
+        },
+        {
+          "key": "pool_title",
+          "x": 417,
+          "y": 205,
+          "width": 392.296875,
+          "height": 33,
+          "ink": {
+            "x": 418,
+            "y": 212,
+            "width": 390.9243469238281,
+            "height": 26
+          }
+        },
+        {
+          "key": "pool_body",
+          "x": 417,
+          "y": 249,
+          "width": 459.09375,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 253,
+            "width": 456.7886962890625,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_il",
+          "x": 417,
+          "y": 275,
+          "width": 416.5,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 279,
+            "width": 414.2015380859375,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_filter",
+          "x": 417,
+          "y": 313,
+          "width": 499.203125,
+          "height": 21,
+          "ink": {
+            "x": 417,
+            "y": 316,
+            "width": 498.60113525390625,
+            "height": 16
+          }
+        },
+        {
+          "key": "acquisition",
+          "x": 48,
+          "y": 405,
+          "width": 191.234375,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 410,
+            "width": 189.37637329101562,
+            "height": 14
+          }
+        },
+        {
+          "key": "all_predictions",
+          "x": 444,
+          "y": 404,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 444,
+            "y": 407,
+            "width": 287.4006042480469,
+            "height": 16
+          }
+        },
+        {
+          "key": "spectra",
+          "x": 830,
+          "y": 404,
+          "width": 220.8125,
+          "height": 21,
+          "ink": {
+            "x": 831,
+            "y": 408,
+            "width": 219.20046997070312,
+            "height": 15
+          }
+        },
+        {
+          "key": "candidate_title_1",
+          "x": 72,
+          "y": 463,
+          "width": 191.5625,
+          "height": 32,
+          "ink": {
+            "x": 73,
+            "y": 470,
+            "width": 189.7256622314453,
+            "height": 24
+          }
+        },
+        {
+          "key": "candidate_title_2",
+          "x": 72,
+          "y": 494,
+          "width": 136.96875,
+          "height": 32,
+          "ink": {
+            "x": 72,
+            "y": 501,
+            "width": 136.1129913330078,
+            "height": 19
+          }
+        },
+        {
+          "key": "candidate_body_1",
+          "x": 72,
+          "y": 538,
+          "width": 238.453125,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 543,
+            "width": 237.28260803222656,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_body_2",
+          "x": 72,
+          "y": 564,
+          "width": 211.921875,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 569,
+            "width": 209.76473999023438,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_tool",
+          "x": 72,
+          "y": 624,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 628,
+            "width": 180.80038452148438,
+            "height": 15
+          }
+        },
+        {
+          "key": "select_title_1",
+          "x": 452,
+          "y": 463,
+          "width": 123.515625,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 470,
+            "width": 123.20042419433594,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_title_2",
+          "x": 452,
+          "y": 494,
+          "width": 201.6875,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 501,
+            "width": 201.37574768066406,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_body_1",
+          "x": 452,
+          "y": 538,
+          "width": 249.34375,
+          "height": 23,
+          "ink": {
+            "x": 453,
+            "y": 543,
+            "width": 248.0205535888672,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_body_2",
+          "x": 452,
+          "y": 564,
+          "width": 285.3125,
+          "height": 23,
+          "ink": {
+            "x": 452,
+            "y": 569,
+            "width": 284.1502685546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_tool",
+          "x": 452,
+          "y": 624,
+          "width": 249.609375,
+          "height": 21,
+          "ink": {
+            "x": 453,
+            "y": 627,
+            "width": 248.0005340576172,
+            "height": 16
+          }
+        },
+        {
+          "key": "search_title_1",
+          "x": 832,
+          "y": 463,
+          "width": 211.703125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 470,
+            "width": 210.90077209472656,
+            "height": 19
+          }
+        },
+        {
+          "key": "search_title_2",
+          "x": 832,
+          "y": 494,
+          "width": 94.328125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 503,
+            "width": 92.8253173828125,
+            "height": 22
+          }
+        },
+        {
+          "key": "search_body_1",
+          "x": 832,
+          "y": 538,
+          "width": 254.25,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 543,
+            "width": 252.2425079345703,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_body_2",
+          "x": 832,
+          "y": 564,
+          "width": 151.796875,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 569,
+            "width": 149.6450958251953,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_tool",
+          "x": 832,
+          "y": 603,
+          "width": 105.609375,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 607,
+            "width": 104.00021362304688,
+            "height": 15
+          }
+        },
+        {
+          "key": "search_q",
+          "x": 832,
+          "y": 628,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 631,
+            "width": 286.400634765625,
+            "height": 16
+          }
+        },
+        {
+          "key": "summary_output",
+          "x": 893,
+          "y": 731,
+          "width": 194.75,
+          "height": 22,
+          "ink": {
+            "x": 893,
+            "y": 737,
+            "width": 194.0475311279297,
+            "height": 15
+          }
+        },
+        {
+          "key": "results",
+          "x": 48,
+          "y": 745,
+          "width": 157.1123046875,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 750,
+            "width": 157.1123046875,
+            "height": 12
+          }
+        },
+        {
+          "key": "group_title",
+          "x": 72,
+          "y": 812,
+          "width": 357.8125,
+          "height": 33,
+          "ink": {
+            "x": 73,
+            "y": 819,
+            "width": 356.44830322265625,
+            "height": 26
+          }
+        },
+        {
+          "key": "group_body_1",
+          "x": 72,
+          "y": 866,
+          "width": 441.703125,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 870,
+            "width": 440.02862548828125,
+            "height": 18
+          }
+        },
+        {
+          "key": "group_body_2",
+          "x": 72,
+          "y": 894,
+          "width": 309.5,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 898,
+            "width": 308.19708251953125,
+            "height": 14
+          }
+        },
+        {
+          "key": "group_tool",
+          "x": 72,
+          "y": 952,
+          "width": 307.203125,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 955,
+            "width": 305.6006774902344,
+            "height": 16
+          }
+        },
+        {
+          "key": "qc_title",
+          "x": 708,
+          "y": 812,
+          "width": 189.1875,
+          "height": 33,
+          "ink": {
+            "x": 709,
+            "y": 819,
+            "width": 186.6241455078125,
+            "height": 26
+          }
+        },
+        {
+          "key": "qc_body_1",
+          "x": 708,
+          "y": 866,
+          "width": 271.4375,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 870,
+            "width": 269.142333984375,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_body_2",
+          "x": 708,
+          "y": 894,
+          "width": 351.46875,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 898,
+            "width": 349.1737060546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_tool",
+          "x": 708,
+          "y": 952,
+          "width": 230.40625,
+          "height": 21,
+          "ink": {
+            "x": 708,
+            "y": 956,
+            "width": 229.8004913330078,
+            "height": 15
+          }
+        },
+        {
+          "key": "acquisition_gloss",
+          "x": 48,
+          "y": 1036,
+          "width": 182.078125,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 1041,
+            "width": 181.8962860107422,
+            "height": 15
+          }
+        },
+        {
+          "key": "footer",
+          "x": 843,
+          "y": 1036,
+          "width": 250.078125,
+          "height": 21,
+          "ink": {
+            "x": 844,
+            "y": 1041,
+            "width": 248.46450805664062,
+            "height": 12
+          }
+        }
+      ]
+    },
+    {
+      "asset": "fastalake-pipeline-dark.svg",
+      "width": 880,
+      "browser_scheme": "dark",
+      "png": "renders/svg-dark-880-browser-dark.png",
+      "sha256": "a0fea7b8d60ec693868938b12de87676633f4fcb395013335f2b3c1c8934ecae",
+      "image_and_inline_identical": true,
+      "fonts": [
+        {
+          "family": "Plus Jakarta Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "JetBrains Mono",
+          "status": "loaded"
+        }
+      ],
+      "metrics": [
+        {
+          "key": "brand",
+          "x": 118,
+          "y": 41,
+          "width": 168.9375,
+          "height": 43,
+          "ink": {
+            "x": 120,
+            "y": 50,
+            "width": 166.12062072753906,
+            "height": 26
+          }
+        },
+        {
+          "key": "subtitle",
+          "x": 48,
+          "y": 96,
+          "width": 440.9375,
+          "height": 24,
+          "ink": {
+            "x": 49,
+            "y": 100,
+            "width": 439.04718017578125,
+            "height": 19
+          }
+        },
+        {
+          "key": "badge",
+          "x": 957,
+          "y": 55,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 958,
+            "y": 58,
+            "width": 180.80038452148438,
+            "height": 13
+          }
+        },
+        {
+          "key": "study",
+          "x": 48,
+          "y": 157,
+          "width": 122.32823181152344,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 162,
+            "width": 121.32823181152344,
+            "height": 12
+          }
+        },
+        {
+          "key": "reservoir",
+          "x": 66,
+          "y": 202,
+          "width": 160.1898956298828,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 207,
+            "width": 159.1898956298828,
+            "height": 15
+          }
+        },
+        {
+          "key": "reservoir_type",
+          "x": 66,
+          "y": 230,
+          "width": 240.015625,
+          "height": 21,
+          "ink": {
+            "x": 67,
+            "y": 233,
+            "width": 238.4005126953125,
+            "height": 16
+          }
+        },
+        {
+          "key": "predictions",
+          "x": 66,
+          "y": 282,
+          "width": 194.5625,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 287,
+            "width": 193.29981994628906,
+            "height": 19
+          }
+        },
+        {
+          "key": "csv",
+          "x": 295,
+          "y": 285,
+          "width": 28.8125,
+          "height": 21,
+          "ink": {
+            "x": 296,
+            "y": 289,
+            "width": 27.200042724609375,
+            "height": 12
+          }
+        },
+        {
+          "key": "predictions_gloss",
+          "x": 66,
+          "y": 317,
+          "width": 258.265625,
+          "height": 19,
+          "ink": {
+            "x": 66,
+            "y": 320,
+            "width": 257.39617919921875,
+            "height": 15
+          }
+        },
+        {
+          "key": "pool_title",
+          "x": 417,
+          "y": 205,
+          "width": 392.296875,
+          "height": 33,
+          "ink": {
+            "x": 418,
+            "y": 212,
+            "width": 390.9243469238281,
+            "height": 26
+          }
+        },
+        {
+          "key": "pool_body",
+          "x": 417,
+          "y": 249,
+          "width": 459.09375,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 253,
+            "width": 456.7886962890625,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_il",
+          "x": 417,
+          "y": 275,
+          "width": 416.5,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 279,
+            "width": 414.2015380859375,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_filter",
+          "x": 417,
+          "y": 313,
+          "width": 499.203125,
+          "height": 21,
+          "ink": {
+            "x": 417,
+            "y": 316,
+            "width": 498.60113525390625,
+            "height": 16
+          }
+        },
+        {
+          "key": "acquisition",
+          "x": 48,
+          "y": 405,
+          "width": 191.234375,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 410,
+            "width": 189.37637329101562,
+            "height": 14
+          }
+        },
+        {
+          "key": "all_predictions",
+          "x": 444,
+          "y": 404,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 444,
+            "y": 407,
+            "width": 287.4006042480469,
+            "height": 16
+          }
+        },
+        {
+          "key": "spectra",
+          "x": 830,
+          "y": 404,
+          "width": 220.8125,
+          "height": 21,
+          "ink": {
+            "x": 831,
+            "y": 408,
+            "width": 219.20046997070312,
+            "height": 15
+          }
+        },
+        {
+          "key": "candidate_title_1",
+          "x": 72,
+          "y": 463,
+          "width": 191.5625,
+          "height": 32,
+          "ink": {
+            "x": 73,
+            "y": 470,
+            "width": 189.7256622314453,
+            "height": 24
+          }
+        },
+        {
+          "key": "candidate_title_2",
+          "x": 72,
+          "y": 494,
+          "width": 136.96875,
+          "height": 32,
+          "ink": {
+            "x": 72,
+            "y": 501,
+            "width": 136.1129913330078,
+            "height": 19
+          }
+        },
+        {
+          "key": "candidate_body_1",
+          "x": 72,
+          "y": 538,
+          "width": 238.453125,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 543,
+            "width": 237.28260803222656,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_body_2",
+          "x": 72,
+          "y": 564,
+          "width": 211.921875,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 569,
+            "width": 209.76473999023438,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_tool",
+          "x": 72,
+          "y": 624,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 628,
+            "width": 180.80038452148438,
+            "height": 15
+          }
+        },
+        {
+          "key": "select_title_1",
+          "x": 452,
+          "y": 463,
+          "width": 123.515625,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 470,
+            "width": 123.20042419433594,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_title_2",
+          "x": 452,
+          "y": 494,
+          "width": 201.6875,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 501,
+            "width": 201.37574768066406,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_body_1",
+          "x": 452,
+          "y": 538,
+          "width": 249.34375,
+          "height": 23,
+          "ink": {
+            "x": 453,
+            "y": 543,
+            "width": 248.0205535888672,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_body_2",
+          "x": 452,
+          "y": 564,
+          "width": 285.3125,
+          "height": 23,
+          "ink": {
+            "x": 452,
+            "y": 569,
+            "width": 284.1502685546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_tool",
+          "x": 452,
+          "y": 624,
+          "width": 249.609375,
+          "height": 21,
+          "ink": {
+            "x": 453,
+            "y": 627,
+            "width": 248.0005340576172,
+            "height": 16
+          }
+        },
+        {
+          "key": "search_title_1",
+          "x": 832,
+          "y": 463,
+          "width": 211.703125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 470,
+            "width": 210.90077209472656,
+            "height": 19
+          }
+        },
+        {
+          "key": "search_title_2",
+          "x": 832,
+          "y": 494,
+          "width": 94.328125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 503,
+            "width": 92.8253173828125,
+            "height": 22
+          }
+        },
+        {
+          "key": "search_body_1",
+          "x": 832,
+          "y": 538,
+          "width": 254.25,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 543,
+            "width": 252.2425079345703,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_body_2",
+          "x": 832,
+          "y": 564,
+          "width": 151.796875,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 569,
+            "width": 149.6450958251953,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_tool",
+          "x": 832,
+          "y": 603,
+          "width": 105.609375,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 607,
+            "width": 104.00021362304688,
+            "height": 15
+          }
+        },
+        {
+          "key": "search_q",
+          "x": 832,
+          "y": 628,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 631,
+            "width": 286.400634765625,
+            "height": 16
+          }
+        },
+        {
+          "key": "summary_output",
+          "x": 893,
+          "y": 731,
+          "width": 194.75,
+          "height": 22,
+          "ink": {
+            "x": 893,
+            "y": 737,
+            "width": 194.0475311279297,
+            "height": 15
+          }
+        },
+        {
+          "key": "results",
+          "x": 48,
+          "y": 745,
+          "width": 157.1123046875,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 750,
+            "width": 157.1123046875,
+            "height": 12
+          }
+        },
+        {
+          "key": "group_title",
+          "x": 72,
+          "y": 812,
+          "width": 357.8125,
+          "height": 33,
+          "ink": {
+            "x": 73,
+            "y": 819,
+            "width": 356.44830322265625,
+            "height": 26
+          }
+        },
+        {
+          "key": "group_body_1",
+          "x": 72,
+          "y": 866,
+          "width": 441.703125,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 870,
+            "width": 440.02862548828125,
+            "height": 18
+          }
+        },
+        {
+          "key": "group_body_2",
+          "x": 72,
+          "y": 894,
+          "width": 309.5,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 898,
+            "width": 308.19708251953125,
+            "height": 14
+          }
+        },
+        {
+          "key": "group_tool",
+          "x": 72,
+          "y": 952,
+          "width": 307.203125,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 955,
+            "width": 305.6006774902344,
+            "height": 16
+          }
+        },
+        {
+          "key": "qc_title",
+          "x": 708,
+          "y": 812,
+          "width": 189.1875,
+          "height": 33,
+          "ink": {
+            "x": 709,
+            "y": 819,
+            "width": 186.6241455078125,
+            "height": 26
+          }
+        },
+        {
+          "key": "qc_body_1",
+          "x": 708,
+          "y": 866,
+          "width": 271.4375,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 870,
+            "width": 269.142333984375,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_body_2",
+          "x": 708,
+          "y": 894,
+          "width": 351.46875,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 898,
+            "width": 349.1737060546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_tool",
+          "x": 708,
+          "y": 952,
+          "width": 230.40625,
+          "height": 21,
+          "ink": {
+            "x": 708,
+            "y": 956,
+            "width": 229.8004913330078,
+            "height": 15
+          }
+        },
+        {
+          "key": "acquisition_gloss",
+          "x": 48,
+          "y": 1036,
+          "width": 182.078125,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 1041,
+            "width": 181.8962860107422,
+            "height": 15
+          }
+        },
+        {
+          "key": "footer",
+          "x": 843,
+          "y": 1036,
+          "width": 250.078125,
+          "height": 21,
+          "ink": {
+            "x": 844,
+            "y": 1041,
+            "width": 248.46450805664062,
+            "height": 12
+          }
+        }
+      ]
+    },
+    {
+      "asset": "fastalake-pipeline.html",
+      "width": 880,
+      "browser_scheme": "dark",
+      "png": "renders/html-dark-880.png",
+      "sha256": "5846d5ad7fe72eb98d815381987d590397a2e3ae43df5d88f5b854867c135d62",
+      "page_width": 880
+    },
+    {
+      "asset": "fastalake-pipeline-light.svg",
+      "width": 1600,
+      "browser_scheme": "light",
+      "png": "renders/svg-light-1600-browser-light.png",
+      "sha256": "0e028409fd47249290a5d49c478b5a8bf6c6b18ba8384cf871749372859d834e",
+      "image_and_inline_identical": true,
+      "fonts": [
+        {
+          "family": "Plus Jakarta Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "JetBrains Mono",
+          "status": "loaded"
+        }
+      ],
+      "metrics": [
+        {
+          "key": "brand",
+          "x": 118,
+          "y": 41,
+          "width": 168.9375,
+          "height": 43,
+          "ink": {
+            "x": 120,
+            "y": 50,
+            "width": 166.12062072753906,
+            "height": 26
+          }
+        },
+        {
+          "key": "subtitle",
+          "x": 48,
+          "y": 96,
+          "width": 440.9375,
+          "height": 24,
+          "ink": {
+            "x": 49,
+            "y": 100,
+            "width": 439.04718017578125,
+            "height": 19
+          }
+        },
+        {
+          "key": "badge",
+          "x": 957,
+          "y": 55,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 958,
+            "y": 58,
+            "width": 180.80038452148438,
+            "height": 13
+          }
+        },
+        {
+          "key": "study",
+          "x": 48,
+          "y": 157,
+          "width": 122.32823181152344,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 162,
+            "width": 121.32823181152344,
+            "height": 12
+          }
+        },
+        {
+          "key": "reservoir",
+          "x": 66,
+          "y": 202,
+          "width": 160.1898956298828,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 207,
+            "width": 159.1898956298828,
+            "height": 15
+          }
+        },
+        {
+          "key": "reservoir_type",
+          "x": 66,
+          "y": 230,
+          "width": 240.015625,
+          "height": 21,
+          "ink": {
+            "x": 67,
+            "y": 233,
+            "width": 238.4005126953125,
+            "height": 16
+          }
+        },
+        {
+          "key": "predictions",
+          "x": 66,
+          "y": 282,
+          "width": 194.5625,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 287,
+            "width": 193.29981994628906,
+            "height": 19
+          }
+        },
+        {
+          "key": "csv",
+          "x": 295,
+          "y": 285,
+          "width": 28.8125,
+          "height": 21,
+          "ink": {
+            "x": 296,
+            "y": 289,
+            "width": 27.200042724609375,
+            "height": 12
+          }
+        },
+        {
+          "key": "predictions_gloss",
+          "x": 66,
+          "y": 317,
+          "width": 258.265625,
+          "height": 19,
+          "ink": {
+            "x": 66,
+            "y": 320,
+            "width": 257.39617919921875,
+            "height": 15
+          }
+        },
+        {
+          "key": "pool_title",
+          "x": 417,
+          "y": 205,
+          "width": 392.296875,
+          "height": 33,
+          "ink": {
+            "x": 418,
+            "y": 212,
+            "width": 390.9243469238281,
+            "height": 26
+          }
+        },
+        {
+          "key": "pool_body",
+          "x": 417,
+          "y": 249,
+          "width": 459.09375,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 253,
+            "width": 456.7886962890625,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_il",
+          "x": 417,
+          "y": 275,
+          "width": 416.5,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 279,
+            "width": 414.2015380859375,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_filter",
+          "x": 417,
+          "y": 313,
+          "width": 499.203125,
+          "height": 21,
+          "ink": {
+            "x": 417,
+            "y": 316,
+            "width": 498.60113525390625,
+            "height": 16
+          }
+        },
+        {
+          "key": "acquisition",
+          "x": 48,
+          "y": 405,
+          "width": 191.234375,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 410,
+            "width": 189.37637329101562,
+            "height": 14
+          }
+        },
+        {
+          "key": "all_predictions",
+          "x": 444,
+          "y": 404,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 444,
+            "y": 407,
+            "width": 287.4006042480469,
+            "height": 16
+          }
+        },
+        {
+          "key": "spectra",
+          "x": 830,
+          "y": 404,
+          "width": 220.8125,
+          "height": 21,
+          "ink": {
+            "x": 831,
+            "y": 408,
+            "width": 219.20046997070312,
+            "height": 15
+          }
+        },
+        {
+          "key": "candidate_title_1",
+          "x": 72,
+          "y": 463,
+          "width": 191.5625,
+          "height": 32,
+          "ink": {
+            "x": 73,
+            "y": 470,
+            "width": 189.7256622314453,
+            "height": 24
+          }
+        },
+        {
+          "key": "candidate_title_2",
+          "x": 72,
+          "y": 494,
+          "width": 136.96875,
+          "height": 32,
+          "ink": {
+            "x": 72,
+            "y": 501,
+            "width": 136.1129913330078,
+            "height": 19
+          }
+        },
+        {
+          "key": "candidate_body_1",
+          "x": 72,
+          "y": 538,
+          "width": 238.453125,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 543,
+            "width": 237.28260803222656,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_body_2",
+          "x": 72,
+          "y": 564,
+          "width": 211.921875,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 569,
+            "width": 209.76473999023438,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_tool",
+          "x": 72,
+          "y": 624,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 628,
+            "width": 180.80038452148438,
+            "height": 15
+          }
+        },
+        {
+          "key": "select_title_1",
+          "x": 452,
+          "y": 463,
+          "width": 123.515625,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 470,
+            "width": 123.20042419433594,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_title_2",
+          "x": 452,
+          "y": 494,
+          "width": 201.6875,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 501,
+            "width": 201.37574768066406,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_body_1",
+          "x": 452,
+          "y": 538,
+          "width": 249.34375,
+          "height": 23,
+          "ink": {
+            "x": 453,
+            "y": 543,
+            "width": 248.0205535888672,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_body_2",
+          "x": 452,
+          "y": 564,
+          "width": 285.3125,
+          "height": 23,
+          "ink": {
+            "x": 452,
+            "y": 569,
+            "width": 284.1502685546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_tool",
+          "x": 452,
+          "y": 624,
+          "width": 249.609375,
+          "height": 21,
+          "ink": {
+            "x": 453,
+            "y": 627,
+            "width": 248.0005340576172,
+            "height": 16
+          }
+        },
+        {
+          "key": "search_title_1",
+          "x": 832,
+          "y": 463,
+          "width": 211.703125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 470,
+            "width": 210.90077209472656,
+            "height": 19
+          }
+        },
+        {
+          "key": "search_title_2",
+          "x": 832,
+          "y": 494,
+          "width": 94.328125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 503,
+            "width": 92.8253173828125,
+            "height": 22
+          }
+        },
+        {
+          "key": "search_body_1",
+          "x": 832,
+          "y": 538,
+          "width": 254.25,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 543,
+            "width": 252.2425079345703,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_body_2",
+          "x": 832,
+          "y": 564,
+          "width": 151.796875,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 569,
+            "width": 149.6450958251953,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_tool",
+          "x": 832,
+          "y": 603,
+          "width": 105.609375,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 607,
+            "width": 104.00021362304688,
+            "height": 15
+          }
+        },
+        {
+          "key": "search_q",
+          "x": 832,
+          "y": 628,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 631,
+            "width": 286.400634765625,
+            "height": 16
+          }
+        },
+        {
+          "key": "summary_output",
+          "x": 893,
+          "y": 731,
+          "width": 194.75,
+          "height": 22,
+          "ink": {
+            "x": 893,
+            "y": 737,
+            "width": 194.0475311279297,
+            "height": 15
+          }
+        },
+        {
+          "key": "results",
+          "x": 48,
+          "y": 745,
+          "width": 157.1123046875,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 750,
+            "width": 157.1123046875,
+            "height": 12
+          }
+        },
+        {
+          "key": "group_title",
+          "x": 72,
+          "y": 812,
+          "width": 357.8125,
+          "height": 33,
+          "ink": {
+            "x": 73,
+            "y": 819,
+            "width": 356.44830322265625,
+            "height": 26
+          }
+        },
+        {
+          "key": "group_body_1",
+          "x": 72,
+          "y": 866,
+          "width": 441.703125,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 870,
+            "width": 440.02862548828125,
+            "height": 18
+          }
+        },
+        {
+          "key": "group_body_2",
+          "x": 72,
+          "y": 894,
+          "width": 309.5,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 898,
+            "width": 308.19708251953125,
+            "height": 14
+          }
+        },
+        {
+          "key": "group_tool",
+          "x": 72,
+          "y": 952,
+          "width": 307.203125,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 955,
+            "width": 305.6006774902344,
+            "height": 16
+          }
+        },
+        {
+          "key": "qc_title",
+          "x": 708,
+          "y": 812,
+          "width": 189.1875,
+          "height": 33,
+          "ink": {
+            "x": 709,
+            "y": 819,
+            "width": 186.6241455078125,
+            "height": 26
+          }
+        },
+        {
+          "key": "qc_body_1",
+          "x": 708,
+          "y": 866,
+          "width": 271.4375,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 870,
+            "width": 269.142333984375,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_body_2",
+          "x": 708,
+          "y": 894,
+          "width": 351.46875,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 898,
+            "width": 349.1737060546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_tool",
+          "x": 708,
+          "y": 952,
+          "width": 230.40625,
+          "height": 21,
+          "ink": {
+            "x": 708,
+            "y": 956,
+            "width": 229.8004913330078,
+            "height": 15
+          }
+        },
+        {
+          "key": "acquisition_gloss",
+          "x": 48,
+          "y": 1036,
+          "width": 182.078125,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 1041,
+            "width": 181.8962860107422,
+            "height": 15
+          }
+        },
+        {
+          "key": "footer",
+          "x": 843,
+          "y": 1036,
+          "width": 250.078125,
+          "height": 21,
+          "ink": {
+            "x": 844,
+            "y": 1041,
+            "width": 248.46450805664062,
+            "height": 12
+          }
+        }
+      ]
+    },
+    {
+      "asset": "fastalake-pipeline-dark.svg",
+      "width": 1600,
+      "browser_scheme": "light",
+      "png": "renders/svg-dark-1600-browser-light.png",
+      "sha256": "f715ce9c8ef74421e0f185b363c9144774da6ffefab9a9789a29067513e87b19",
+      "image_and_inline_identical": true,
+      "fonts": [
+        {
+          "family": "Plus Jakarta Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "JetBrains Mono",
+          "status": "loaded"
+        }
+      ],
+      "metrics": [
+        {
+          "key": "brand",
+          "x": 118,
+          "y": 41,
+          "width": 168.9375,
+          "height": 43,
+          "ink": {
+            "x": 120,
+            "y": 50,
+            "width": 166.12062072753906,
+            "height": 26
+          }
+        },
+        {
+          "key": "subtitle",
+          "x": 48,
+          "y": 96,
+          "width": 440.9375,
+          "height": 24,
+          "ink": {
+            "x": 49,
+            "y": 100,
+            "width": 439.04718017578125,
+            "height": 19
+          }
+        },
+        {
+          "key": "badge",
+          "x": 957,
+          "y": 55,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 958,
+            "y": 58,
+            "width": 180.80038452148438,
+            "height": 13
+          }
+        },
+        {
+          "key": "study",
+          "x": 48,
+          "y": 157,
+          "width": 122.32823181152344,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 162,
+            "width": 121.32823181152344,
+            "height": 12
+          }
+        },
+        {
+          "key": "reservoir",
+          "x": 66,
+          "y": 202,
+          "width": 160.1898956298828,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 207,
+            "width": 159.1898956298828,
+            "height": 15
+          }
+        },
+        {
+          "key": "reservoir_type",
+          "x": 66,
+          "y": 230,
+          "width": 240.015625,
+          "height": 21,
+          "ink": {
+            "x": 67,
+            "y": 233,
+            "width": 238.4005126953125,
+            "height": 16
+          }
+        },
+        {
+          "key": "predictions",
+          "x": 66,
+          "y": 282,
+          "width": 194.5625,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 287,
+            "width": 193.29981994628906,
+            "height": 19
+          }
+        },
+        {
+          "key": "csv",
+          "x": 295,
+          "y": 285,
+          "width": 28.8125,
+          "height": 21,
+          "ink": {
+            "x": 296,
+            "y": 289,
+            "width": 27.200042724609375,
+            "height": 12
+          }
+        },
+        {
+          "key": "predictions_gloss",
+          "x": 66,
+          "y": 317,
+          "width": 258.265625,
+          "height": 19,
+          "ink": {
+            "x": 66,
+            "y": 320,
+            "width": 257.39617919921875,
+            "height": 15
+          }
+        },
+        {
+          "key": "pool_title",
+          "x": 417,
+          "y": 205,
+          "width": 392.296875,
+          "height": 33,
+          "ink": {
+            "x": 418,
+            "y": 212,
+            "width": 390.9243469238281,
+            "height": 26
+          }
+        },
+        {
+          "key": "pool_body",
+          "x": 417,
+          "y": 249,
+          "width": 459.09375,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 253,
+            "width": 456.7886962890625,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_il",
+          "x": 417,
+          "y": 275,
+          "width": 416.5,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 279,
+            "width": 414.2015380859375,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_filter",
+          "x": 417,
+          "y": 313,
+          "width": 499.203125,
+          "height": 21,
+          "ink": {
+            "x": 417,
+            "y": 316,
+            "width": 498.60113525390625,
+            "height": 16
+          }
+        },
+        {
+          "key": "acquisition",
+          "x": 48,
+          "y": 405,
+          "width": 191.234375,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 410,
+            "width": 189.37637329101562,
+            "height": 14
+          }
+        },
+        {
+          "key": "all_predictions",
+          "x": 444,
+          "y": 404,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 444,
+            "y": 407,
+            "width": 287.4006042480469,
+            "height": 16
+          }
+        },
+        {
+          "key": "spectra",
+          "x": 830,
+          "y": 404,
+          "width": 220.8125,
+          "height": 21,
+          "ink": {
+            "x": 831,
+            "y": 408,
+            "width": 219.20046997070312,
+            "height": 15
+          }
+        },
+        {
+          "key": "candidate_title_1",
+          "x": 72,
+          "y": 463,
+          "width": 191.5625,
+          "height": 32,
+          "ink": {
+            "x": 73,
+            "y": 470,
+            "width": 189.7256622314453,
+            "height": 24
+          }
+        },
+        {
+          "key": "candidate_title_2",
+          "x": 72,
+          "y": 494,
+          "width": 136.96875,
+          "height": 32,
+          "ink": {
+            "x": 72,
+            "y": 501,
+            "width": 136.1129913330078,
+            "height": 19
+          }
+        },
+        {
+          "key": "candidate_body_1",
+          "x": 72,
+          "y": 538,
+          "width": 238.453125,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 543,
+            "width": 237.28260803222656,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_body_2",
+          "x": 72,
+          "y": 564,
+          "width": 211.921875,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 569,
+            "width": 209.76473999023438,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_tool",
+          "x": 72,
+          "y": 624,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 628,
+            "width": 180.80038452148438,
+            "height": 15
+          }
+        },
+        {
+          "key": "select_title_1",
+          "x": 452,
+          "y": 463,
+          "width": 123.515625,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 470,
+            "width": 123.20042419433594,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_title_2",
+          "x": 452,
+          "y": 494,
+          "width": 201.6875,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 501,
+            "width": 201.37574768066406,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_body_1",
+          "x": 452,
+          "y": 538,
+          "width": 249.34375,
+          "height": 23,
+          "ink": {
+            "x": 453,
+            "y": 543,
+            "width": 248.0205535888672,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_body_2",
+          "x": 452,
+          "y": 564,
+          "width": 285.3125,
+          "height": 23,
+          "ink": {
+            "x": 452,
+            "y": 569,
+            "width": 284.1502685546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_tool",
+          "x": 452,
+          "y": 624,
+          "width": 249.609375,
+          "height": 21,
+          "ink": {
+            "x": 453,
+            "y": 627,
+            "width": 248.0005340576172,
+            "height": 16
+          }
+        },
+        {
+          "key": "search_title_1",
+          "x": 832,
+          "y": 463,
+          "width": 211.703125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 470,
+            "width": 210.90077209472656,
+            "height": 19
+          }
+        },
+        {
+          "key": "search_title_2",
+          "x": 832,
+          "y": 494,
+          "width": 94.328125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 503,
+            "width": 92.8253173828125,
+            "height": 22
+          }
+        },
+        {
+          "key": "search_body_1",
+          "x": 832,
+          "y": 538,
+          "width": 254.25,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 543,
+            "width": 252.2425079345703,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_body_2",
+          "x": 832,
+          "y": 564,
+          "width": 151.796875,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 569,
+            "width": 149.6450958251953,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_tool",
+          "x": 832,
+          "y": 603,
+          "width": 105.609375,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 607,
+            "width": 104.00021362304688,
+            "height": 15
+          }
+        },
+        {
+          "key": "search_q",
+          "x": 832,
+          "y": 628,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 631,
+            "width": 286.400634765625,
+            "height": 16
+          }
+        },
+        {
+          "key": "summary_output",
+          "x": 893,
+          "y": 731,
+          "width": 194.75,
+          "height": 22,
+          "ink": {
+            "x": 893,
+            "y": 737,
+            "width": 194.0475311279297,
+            "height": 15
+          }
+        },
+        {
+          "key": "results",
+          "x": 48,
+          "y": 745,
+          "width": 157.1123046875,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 750,
+            "width": 157.1123046875,
+            "height": 12
+          }
+        },
+        {
+          "key": "group_title",
+          "x": 72,
+          "y": 812,
+          "width": 357.8125,
+          "height": 33,
+          "ink": {
+            "x": 73,
+            "y": 819,
+            "width": 356.44830322265625,
+            "height": 26
+          }
+        },
+        {
+          "key": "group_body_1",
+          "x": 72,
+          "y": 866,
+          "width": 441.703125,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 870,
+            "width": 440.02862548828125,
+            "height": 18
+          }
+        },
+        {
+          "key": "group_body_2",
+          "x": 72,
+          "y": 894,
+          "width": 309.5,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 898,
+            "width": 308.19708251953125,
+            "height": 14
+          }
+        },
+        {
+          "key": "group_tool",
+          "x": 72,
+          "y": 952,
+          "width": 307.203125,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 955,
+            "width": 305.6006774902344,
+            "height": 16
+          }
+        },
+        {
+          "key": "qc_title",
+          "x": 708,
+          "y": 812,
+          "width": 189.1875,
+          "height": 33,
+          "ink": {
+            "x": 709,
+            "y": 819,
+            "width": 186.6241455078125,
+            "height": 26
+          }
+        },
+        {
+          "key": "qc_body_1",
+          "x": 708,
+          "y": 866,
+          "width": 271.4375,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 870,
+            "width": 269.142333984375,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_body_2",
+          "x": 708,
+          "y": 894,
+          "width": 351.46875,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 898,
+            "width": 349.1737060546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_tool",
+          "x": 708,
+          "y": 952,
+          "width": 230.40625,
+          "height": 21,
+          "ink": {
+            "x": 708,
+            "y": 956,
+            "width": 229.8004913330078,
+            "height": 15
+          }
+        },
+        {
+          "key": "acquisition_gloss",
+          "x": 48,
+          "y": 1036,
+          "width": 182.078125,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 1041,
+            "width": 181.8962860107422,
+            "height": 15
+          }
+        },
+        {
+          "key": "footer",
+          "x": 843,
+          "y": 1036,
+          "width": 250.078125,
+          "height": 21,
+          "ink": {
+            "x": 844,
+            "y": 1041,
+            "width": 248.46450805664062,
+            "height": 12
+          }
+        }
+      ]
+    },
+    {
+      "asset": "fastalake-pipeline.html",
+      "width": 1600,
+      "browser_scheme": "light",
+      "png": "renders/html-light-1600.png",
+      "sha256": "d063f2a32127ae3b20c3a25bf9d519b68334ff6b0a842868c97efe4279420539",
+      "page_width": 1600
+    },
+    {
+      "asset": "fastalake-pipeline-light.svg",
+      "width": 1600,
+      "browser_scheme": "dark",
+      "png": "renders/svg-light-1600-browser-dark.png",
+      "sha256": "c96d1a8fb00a8354333fb4bd5d66bfed62caf01286933f0659706d2de6d9b2b0",
+      "image_and_inline_identical": true,
+      "fonts": [
+        {
+          "family": "Plus Jakarta Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "JetBrains Mono",
+          "status": "loaded"
+        }
+      ],
+      "metrics": [
+        {
+          "key": "brand",
+          "x": 118,
+          "y": 41,
+          "width": 168.9375,
+          "height": 43,
+          "ink": {
+            "x": 120,
+            "y": 50,
+            "width": 166.12062072753906,
+            "height": 26
+          }
+        },
+        {
+          "key": "subtitle",
+          "x": 48,
+          "y": 96,
+          "width": 440.9375,
+          "height": 24,
+          "ink": {
+            "x": 49,
+            "y": 100,
+            "width": 439.04718017578125,
+            "height": 19
+          }
+        },
+        {
+          "key": "badge",
+          "x": 957,
+          "y": 55,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 958,
+            "y": 58,
+            "width": 180.80038452148438,
+            "height": 13
+          }
+        },
+        {
+          "key": "study",
+          "x": 48,
+          "y": 157,
+          "width": 122.32823181152344,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 162,
+            "width": 121.32823181152344,
+            "height": 12
+          }
+        },
+        {
+          "key": "reservoir",
+          "x": 66,
+          "y": 202,
+          "width": 160.1898956298828,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 207,
+            "width": 159.1898956298828,
+            "height": 15
+          }
+        },
+        {
+          "key": "reservoir_type",
+          "x": 66,
+          "y": 230,
+          "width": 240.015625,
+          "height": 21,
+          "ink": {
+            "x": 67,
+            "y": 233,
+            "width": 238.4005126953125,
+            "height": 16
+          }
+        },
+        {
+          "key": "predictions",
+          "x": 66,
+          "y": 282,
+          "width": 194.5625,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 287,
+            "width": 193.29981994628906,
+            "height": 19
+          }
+        },
+        {
+          "key": "csv",
+          "x": 295,
+          "y": 285,
+          "width": 28.8125,
+          "height": 21,
+          "ink": {
+            "x": 296,
+            "y": 289,
+            "width": 27.200042724609375,
+            "height": 12
+          }
+        },
+        {
+          "key": "predictions_gloss",
+          "x": 66,
+          "y": 317,
+          "width": 258.265625,
+          "height": 19,
+          "ink": {
+            "x": 66,
+            "y": 320,
+            "width": 257.39617919921875,
+            "height": 15
+          }
+        },
+        {
+          "key": "pool_title",
+          "x": 417,
+          "y": 205,
+          "width": 392.296875,
+          "height": 33,
+          "ink": {
+            "x": 418,
+            "y": 212,
+            "width": 390.9243469238281,
+            "height": 26
+          }
+        },
+        {
+          "key": "pool_body",
+          "x": 417,
+          "y": 249,
+          "width": 459.09375,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 253,
+            "width": 456.7886962890625,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_il",
+          "x": 417,
+          "y": 275,
+          "width": 416.5,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 279,
+            "width": 414.2015380859375,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_filter",
+          "x": 417,
+          "y": 313,
+          "width": 499.203125,
+          "height": 21,
+          "ink": {
+            "x": 417,
+            "y": 316,
+            "width": 498.60113525390625,
+            "height": 16
+          }
+        },
+        {
+          "key": "acquisition",
+          "x": 48,
+          "y": 405,
+          "width": 191.234375,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 410,
+            "width": 189.37637329101562,
+            "height": 14
+          }
+        },
+        {
+          "key": "all_predictions",
+          "x": 444,
+          "y": 404,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 444,
+            "y": 407,
+            "width": 287.4006042480469,
+            "height": 16
+          }
+        },
+        {
+          "key": "spectra",
+          "x": 830,
+          "y": 404,
+          "width": 220.8125,
+          "height": 21,
+          "ink": {
+            "x": 831,
+            "y": 408,
+            "width": 219.20046997070312,
+            "height": 15
+          }
+        },
+        {
+          "key": "candidate_title_1",
+          "x": 72,
+          "y": 463,
+          "width": 191.5625,
+          "height": 32,
+          "ink": {
+            "x": 73,
+            "y": 470,
+            "width": 189.7256622314453,
+            "height": 24
+          }
+        },
+        {
+          "key": "candidate_title_2",
+          "x": 72,
+          "y": 494,
+          "width": 136.96875,
+          "height": 32,
+          "ink": {
+            "x": 72,
+            "y": 501,
+            "width": 136.1129913330078,
+            "height": 19
+          }
+        },
+        {
+          "key": "candidate_body_1",
+          "x": 72,
+          "y": 538,
+          "width": 238.453125,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 543,
+            "width": 237.28260803222656,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_body_2",
+          "x": 72,
+          "y": 564,
+          "width": 211.921875,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 569,
+            "width": 209.76473999023438,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_tool",
+          "x": 72,
+          "y": 624,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 628,
+            "width": 180.80038452148438,
+            "height": 15
+          }
+        },
+        {
+          "key": "select_title_1",
+          "x": 452,
+          "y": 463,
+          "width": 123.515625,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 470,
+            "width": 123.20042419433594,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_title_2",
+          "x": 452,
+          "y": 494,
+          "width": 201.6875,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 501,
+            "width": 201.37574768066406,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_body_1",
+          "x": 452,
+          "y": 538,
+          "width": 249.34375,
+          "height": 23,
+          "ink": {
+            "x": 453,
+            "y": 543,
+            "width": 248.0205535888672,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_body_2",
+          "x": 452,
+          "y": 564,
+          "width": 285.3125,
+          "height": 23,
+          "ink": {
+            "x": 452,
+            "y": 569,
+            "width": 284.1502685546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_tool",
+          "x": 452,
+          "y": 624,
+          "width": 249.609375,
+          "height": 21,
+          "ink": {
+            "x": 453,
+            "y": 627,
+            "width": 248.0005340576172,
+            "height": 16
+          }
+        },
+        {
+          "key": "search_title_1",
+          "x": 832,
+          "y": 463,
+          "width": 211.703125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 470,
+            "width": 210.90077209472656,
+            "height": 19
+          }
+        },
+        {
+          "key": "search_title_2",
+          "x": 832,
+          "y": 494,
+          "width": 94.328125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 503,
+            "width": 92.8253173828125,
+            "height": 22
+          }
+        },
+        {
+          "key": "search_body_1",
+          "x": 832,
+          "y": 538,
+          "width": 254.25,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 543,
+            "width": 252.2425079345703,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_body_2",
+          "x": 832,
+          "y": 564,
+          "width": 151.796875,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 569,
+            "width": 149.6450958251953,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_tool",
+          "x": 832,
+          "y": 603,
+          "width": 105.609375,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 607,
+            "width": 104.00021362304688,
+            "height": 15
+          }
+        },
+        {
+          "key": "search_q",
+          "x": 832,
+          "y": 628,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 631,
+            "width": 286.400634765625,
+            "height": 16
+          }
+        },
+        {
+          "key": "summary_output",
+          "x": 893,
+          "y": 731,
+          "width": 194.75,
+          "height": 22,
+          "ink": {
+            "x": 893,
+            "y": 737,
+            "width": 194.0475311279297,
+            "height": 15
+          }
+        },
+        {
+          "key": "results",
+          "x": 48,
+          "y": 745,
+          "width": 157.1123046875,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 750,
+            "width": 157.1123046875,
+            "height": 12
+          }
+        },
+        {
+          "key": "group_title",
+          "x": 72,
+          "y": 812,
+          "width": 357.8125,
+          "height": 33,
+          "ink": {
+            "x": 73,
+            "y": 819,
+            "width": 356.44830322265625,
+            "height": 26
+          }
+        },
+        {
+          "key": "group_body_1",
+          "x": 72,
+          "y": 866,
+          "width": 441.703125,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 870,
+            "width": 440.02862548828125,
+            "height": 18
+          }
+        },
+        {
+          "key": "group_body_2",
+          "x": 72,
+          "y": 894,
+          "width": 309.5,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 898,
+            "width": 308.19708251953125,
+            "height": 14
+          }
+        },
+        {
+          "key": "group_tool",
+          "x": 72,
+          "y": 952,
+          "width": 307.203125,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 955,
+            "width": 305.6006774902344,
+            "height": 16
+          }
+        },
+        {
+          "key": "qc_title",
+          "x": 708,
+          "y": 812,
+          "width": 189.1875,
+          "height": 33,
+          "ink": {
+            "x": 709,
+            "y": 819,
+            "width": 186.6241455078125,
+            "height": 26
+          }
+        },
+        {
+          "key": "qc_body_1",
+          "x": 708,
+          "y": 866,
+          "width": 271.4375,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 870,
+            "width": 269.142333984375,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_body_2",
+          "x": 708,
+          "y": 894,
+          "width": 351.46875,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 898,
+            "width": 349.1737060546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_tool",
+          "x": 708,
+          "y": 952,
+          "width": 230.40625,
+          "height": 21,
+          "ink": {
+            "x": 708,
+            "y": 956,
+            "width": 229.8004913330078,
+            "height": 15
+          }
+        },
+        {
+          "key": "acquisition_gloss",
+          "x": 48,
+          "y": 1036,
+          "width": 182.078125,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 1041,
+            "width": 181.8962860107422,
+            "height": 15
+          }
+        },
+        {
+          "key": "footer",
+          "x": 843,
+          "y": 1036,
+          "width": 250.078125,
+          "height": 21,
+          "ink": {
+            "x": 844,
+            "y": 1041,
+            "width": 248.46450805664062,
+            "height": 12
+          }
+        }
+      ]
+    },
+    {
+      "asset": "fastalake-pipeline-dark.svg",
+      "width": 1600,
+      "browser_scheme": "dark",
+      "png": "renders/svg-dark-1600-browser-dark.png",
+      "sha256": "be69e08b12db7c6c9cd8cfcb4252bee18410f50018012138a6226a4a1168a1d3",
+      "image_and_inline_identical": true,
+      "fonts": [
+        {
+          "family": "Plus Jakarta Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "JetBrains Mono",
+          "status": "loaded"
+        }
+      ],
+      "metrics": [
+        {
+          "key": "brand",
+          "x": 118,
+          "y": 41,
+          "width": 168.9375,
+          "height": 43,
+          "ink": {
+            "x": 120,
+            "y": 50,
+            "width": 166.12062072753906,
+            "height": 26
+          }
+        },
+        {
+          "key": "subtitle",
+          "x": 48,
+          "y": 96,
+          "width": 440.9375,
+          "height": 24,
+          "ink": {
+            "x": 49,
+            "y": 100,
+            "width": 439.04718017578125,
+            "height": 19
+          }
+        },
+        {
+          "key": "badge",
+          "x": 957,
+          "y": 55,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 958,
+            "y": 58,
+            "width": 180.80038452148438,
+            "height": 13
+          }
+        },
+        {
+          "key": "study",
+          "x": 48,
+          "y": 157,
+          "width": 122.32823181152344,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 162,
+            "width": 121.32823181152344,
+            "height": 12
+          }
+        },
+        {
+          "key": "reservoir",
+          "x": 66,
+          "y": 202,
+          "width": 160.1898956298828,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 207,
+            "width": 159.1898956298828,
+            "height": 15
+          }
+        },
+        {
+          "key": "reservoir_type",
+          "x": 66,
+          "y": 230,
+          "width": 240.015625,
+          "height": 21,
+          "ink": {
+            "x": 67,
+            "y": 233,
+            "width": 238.4005126953125,
+            "height": 16
+          }
+        },
+        {
+          "key": "predictions",
+          "x": 66,
+          "y": 282,
+          "width": 194.5625,
+          "height": 25,
+          "ink": {
+            "x": 67,
+            "y": 287,
+            "width": 193.29981994628906,
+            "height": 19
+          }
+        },
+        {
+          "key": "csv",
+          "x": 295,
+          "y": 285,
+          "width": 28.8125,
+          "height": 21,
+          "ink": {
+            "x": 296,
+            "y": 289,
+            "width": 27.200042724609375,
+            "height": 12
+          }
+        },
+        {
+          "key": "predictions_gloss",
+          "x": 66,
+          "y": 317,
+          "width": 258.265625,
+          "height": 19,
+          "ink": {
+            "x": 66,
+            "y": 320,
+            "width": 257.39617919921875,
+            "height": 15
+          }
+        },
+        {
+          "key": "pool_title",
+          "x": 417,
+          "y": 205,
+          "width": 392.296875,
+          "height": 33,
+          "ink": {
+            "x": 418,
+            "y": 212,
+            "width": 390.9243469238281,
+            "height": 26
+          }
+        },
+        {
+          "key": "pool_body",
+          "x": 417,
+          "y": 249,
+          "width": 459.09375,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 253,
+            "width": 456.7886962890625,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_il",
+          "x": 417,
+          "y": 275,
+          "width": 416.5,
+          "height": 23,
+          "ink": {
+            "x": 418,
+            "y": 279,
+            "width": 414.2015380859375,
+            "height": 18
+          }
+        },
+        {
+          "key": "pool_filter",
+          "x": 417,
+          "y": 313,
+          "width": 499.203125,
+          "height": 21,
+          "ink": {
+            "x": 417,
+            "y": 316,
+            "width": 498.60113525390625,
+            "height": 16
+          }
+        },
+        {
+          "key": "acquisition",
+          "x": 48,
+          "y": 405,
+          "width": 191.234375,
+          "height": 21,
+          "ink": {
+            "x": 49,
+            "y": 410,
+            "width": 189.37637329101562,
+            "height": 14
+          }
+        },
+        {
+          "key": "all_predictions",
+          "x": 444,
+          "y": 404,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 444,
+            "y": 407,
+            "width": 287.4006042480469,
+            "height": 16
+          }
+        },
+        {
+          "key": "spectra",
+          "x": 830,
+          "y": 404,
+          "width": 220.8125,
+          "height": 21,
+          "ink": {
+            "x": 831,
+            "y": 408,
+            "width": 219.20046997070312,
+            "height": 15
+          }
+        },
+        {
+          "key": "candidate_title_1",
+          "x": 72,
+          "y": 463,
+          "width": 191.5625,
+          "height": 32,
+          "ink": {
+            "x": 73,
+            "y": 470,
+            "width": 189.7256622314453,
+            "height": 24
+          }
+        },
+        {
+          "key": "candidate_title_2",
+          "x": 72,
+          "y": 494,
+          "width": 136.96875,
+          "height": 32,
+          "ink": {
+            "x": 72,
+            "y": 501,
+            "width": 136.1129913330078,
+            "height": 19
+          }
+        },
+        {
+          "key": "candidate_body_1",
+          "x": 72,
+          "y": 538,
+          "width": 238.453125,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 543,
+            "width": 237.28260803222656,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_body_2",
+          "x": 72,
+          "y": 564,
+          "width": 211.921875,
+          "height": 23,
+          "ink": {
+            "x": 73,
+            "y": 569,
+            "width": 209.76473999023438,
+            "height": 18
+          }
+        },
+        {
+          "key": "candidate_tool",
+          "x": 72,
+          "y": 624,
+          "width": 182.40625,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 628,
+            "width": 180.80038452148438,
+            "height": 15
+          }
+        },
+        {
+          "key": "select_title_1",
+          "x": 452,
+          "y": 463,
+          "width": 123.515625,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 470,
+            "width": 123.20042419433594,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_title_2",
+          "x": 452,
+          "y": 494,
+          "width": 201.6875,
+          "height": 32,
+          "ink": {
+            "x": 452,
+            "y": 501,
+            "width": 201.37574768066406,
+            "height": 19
+          }
+        },
+        {
+          "key": "select_body_1",
+          "x": 452,
+          "y": 538,
+          "width": 249.34375,
+          "height": 23,
+          "ink": {
+            "x": 453,
+            "y": 543,
+            "width": 248.0205535888672,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_body_2",
+          "x": 452,
+          "y": 564,
+          "width": 285.3125,
+          "height": 23,
+          "ink": {
+            "x": 452,
+            "y": 569,
+            "width": 284.1502685546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "select_tool",
+          "x": 452,
+          "y": 624,
+          "width": 249.609375,
+          "height": 21,
+          "ink": {
+            "x": 453,
+            "y": 627,
+            "width": 248.0005340576172,
+            "height": 16
+          }
+        },
+        {
+          "key": "search_title_1",
+          "x": 832,
+          "y": 463,
+          "width": 211.703125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 470,
+            "width": 210.90077209472656,
+            "height": 19
+          }
+        },
+        {
+          "key": "search_title_2",
+          "x": 832,
+          "y": 494,
+          "width": 94.328125,
+          "height": 32,
+          "ink": {
+            "x": 832,
+            "y": 503,
+            "width": 92.8253173828125,
+            "height": 22
+          }
+        },
+        {
+          "key": "search_body_1",
+          "x": 832,
+          "y": 538,
+          "width": 254.25,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 543,
+            "width": 252.2425079345703,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_body_2",
+          "x": 832,
+          "y": 564,
+          "width": 151.796875,
+          "height": 23,
+          "ink": {
+            "x": 833,
+            "y": 569,
+            "width": 149.6450958251953,
+            "height": 18
+          }
+        },
+        {
+          "key": "search_tool",
+          "x": 832,
+          "y": 603,
+          "width": 105.609375,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 607,
+            "width": 104.00021362304688,
+            "height": 15
+          }
+        },
+        {
+          "key": "search_q",
+          "x": 832,
+          "y": 628,
+          "width": 288.015625,
+          "height": 21,
+          "ink": {
+            "x": 833,
+            "y": 631,
+            "width": 286.400634765625,
+            "height": 16
+          }
+        },
+        {
+          "key": "summary_output",
+          "x": 893,
+          "y": 731,
+          "width": 194.75,
+          "height": 22,
+          "ink": {
+            "x": 893,
+            "y": 737,
+            "width": 194.0475311279297,
+            "height": 15
+          }
+        },
+        {
+          "key": "results",
+          "x": 48,
+          "y": 745,
+          "width": 157.1123046875,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 750,
+            "width": 157.1123046875,
+            "height": 12
+          }
+        },
+        {
+          "key": "group_title",
+          "x": 72,
+          "y": 812,
+          "width": 357.8125,
+          "height": 33,
+          "ink": {
+            "x": 73,
+            "y": 819,
+            "width": 356.44830322265625,
+            "height": 26
+          }
+        },
+        {
+          "key": "group_body_1",
+          "x": 72,
+          "y": 866,
+          "width": 441.703125,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 870,
+            "width": 440.02862548828125,
+            "height": 18
+          }
+        },
+        {
+          "key": "group_body_2",
+          "x": 72,
+          "y": 894,
+          "width": 309.5,
+          "height": 23,
+          "ink": {
+            "x": 72,
+            "y": 898,
+            "width": 308.19708251953125,
+            "height": 14
+          }
+        },
+        {
+          "key": "group_tool",
+          "x": 72,
+          "y": 952,
+          "width": 307.203125,
+          "height": 21,
+          "ink": {
+            "x": 73,
+            "y": 955,
+            "width": 305.6006774902344,
+            "height": 16
+          }
+        },
+        {
+          "key": "qc_title",
+          "x": 708,
+          "y": 812,
+          "width": 189.1875,
+          "height": 33,
+          "ink": {
+            "x": 709,
+            "y": 819,
+            "width": 186.6241455078125,
+            "height": 26
+          }
+        },
+        {
+          "key": "qc_body_1",
+          "x": 708,
+          "y": 866,
+          "width": 271.4375,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 870,
+            "width": 269.142333984375,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_body_2",
+          "x": 708,
+          "y": 894,
+          "width": 351.46875,
+          "height": 23,
+          "ink": {
+            "x": 709,
+            "y": 898,
+            "width": 349.1737060546875,
+            "height": 18
+          }
+        },
+        {
+          "key": "qc_tool",
+          "x": 708,
+          "y": 952,
+          "width": 230.40625,
+          "height": 21,
+          "ink": {
+            "x": 708,
+            "y": 956,
+            "width": 229.8004913330078,
+            "height": 15
+          }
+        },
+        {
+          "key": "acquisition_gloss",
+          "x": 48,
+          "y": 1036,
+          "width": 182.078125,
+          "height": 21,
+          "ink": {
+            "x": 48,
+            "y": 1041,
+            "width": 181.8962860107422,
+            "height": 15
+          }
+        },
+        {
+          "key": "footer",
+          "x": 843,
+          "y": 1036,
+          "width": 250.078125,
+          "height": 21,
+          "ink": {
+            "x": 844,
+            "y": 1041,
+            "width": 248.46450805664062,
+            "height": 12
+          }
+        }
+      ]
+    },
+    {
+      "asset": "fastalake-pipeline.html",
+      "width": 1600,
+      "browser_scheme": "dark",
+      "png": "renders/html-dark-1600.png",
+      "sha256": "21f11571a1365d922ee9dfb314546b3c879d8df37d002c114de72d11c3a9bea5",
+      "page_width": 1600
+    }
+  ],
+  "external_requests": [],
+  "errors": [],
+  "status": "PASS",
+  "visual_inspection": "pending; separate human-visible review required"
+}

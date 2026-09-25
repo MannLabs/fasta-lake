@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FastaLake · Taxonomic evidence</title>
+    <style>
+      :root {
+        --ink: #243746;
+        --muted: #526673;
+        --line: #e0e8ed;
+        --accent: #256879;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f5f8fa;
+        color: var(--ink);
+        font:
+          16px/1.55 system-ui,
+          -apple-system,
+          sans-serif;
+      }
+      main {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 28px;
+      }
+      header {
+        margin-bottom: 28px;
+      }
+      .eyebrow {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+      }
+      h1 {
+        font-size: 38px;
+        letter-spacing: -0.025em;
+        line-height: 1.2;
+        margin: 8px 0 12px;
+      }
+      h2 {
+        font-size: 23px;
+        line-height: 1.3;
+        margin: 0 0 10px;
+      }
+      p {
+        margin: 8px 0 14px;
+      }
+      .muted,
+      small {
+        color: var(--muted);
+      }
+      a {
+        color: var(--accent);
+      }
+      .panel {
+        border: 1px solid var(--line);
+        background: white;
+        border-radius: 12px;
+        padding: 24px;
+        margin: 20px 0;
+        box-shadow: 0 3px 16px #26374604;
+      }
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: end;
+        gap: 18px;
+      }
+      label {
+        display: block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        margin-bottom: 5px;
+      }
+      select,
+      button {
+        background: white;
+        color: var(--ink);
+        border: 1px solid #b9cbd4;
+        border-radius: 6px;
+        font: inherit;
+        padding: 9px 12px;
+        cursor: pointer;
+      }
+      select {
+        max-width: 470px;
+      }
+      button[aria-pressed="true"] {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: white;
+      }
+      .tabs {
+        display: flex;
+        gap: 8px;
+        margin: 18px 0 8px;
+        flex-wrap: wrap;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 22px;
+      }
+      .card {
+        padding: 14px 18px;
+        border-left: 3px solid #91b9c0;
+        background: #f6fafb;
+      }
+      .number {
+        font-size: 26px;
+        font-weight: 650;
+        margin-top: 4px;
+      }
+      .caption {
+        font-size: 12px;
+        color: var(--muted);
+        padding: 10px 0;
+        border-top: 1px solid var(--line);
+      }
+      #taxonomy-stage {
+        min-height: 610px;
+        overflow: auto;
+      }
+      #taxonomy-stage svg {
+        font-family: system-ui, sans-serif;
+      }
+      #taxonomy-stage .toHide {
+        display: none;
+      }
+      #taxonomy-stage.treemap .node {
+        font-size: 12px;
+        line-height: 18px;
+      }
+      .unipept-tooltip {
+        font: 13px/1.5 system-ui;
+        background: #243746;
+        color: white;
+        padding: 12px;
+        border-radius: 6px;
+        max-width: 320px;
+        box-shadow: 0 2px 8px #0002;
+      }
+      .balance-bar {
+        display: flex;
+        height: 34px;
+        border-radius: 5px;
+        overflow: hidden;
+        background: #edf2f5;
+      }
+      .balance-segment {
+        min-width: 0;
+      }
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 24px;
+        font-size: 13px;
+        margin-top: 14px;
+      }
+      .swatch {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 7px;
+        border-radius: 2px;
+      }
+      .note {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 18px;
+      }
+      footer {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 28px 0 40px;
+      }
+      .error {
+        padding: 20px;
+        background: #fff2e6;
+      }
+      @media (max-width: 750px) {
+        main {
+          padding: 0 16px;
+          margin-top: 24px;
+        }
+        h1 {
+          font-size: 30px;
+        }
+        .panel {
+          padding: 16px;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .controls {
+          display: block;
+        }
+        .controls > div {
+          margin-bottom: 12px;
+        }
+        select {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="eyebrow">FASTALAKE · COMMUNITY CONTEXT</div>
+        <h1>Taxonomic evidence</h1>
+        <p class="muted">
+          Explore the peptide evidence with Unipept’s taxonomy and
+          visualisations.
+        </p>
+        <p>
+          <strong>Reference:</strong> __DATABASE_LABEL__ · I/L-equivalent lookup
+          · Lowest common ancestor (LCA)
+        </p>
+      </header>
+      <section class="panel">
+        <div class="controls">
+          <div>
+            <label for="sample">ACQUISITION</label
+            ><select id="sample"></select>
+          </div>
+          <div>
+            <label for="metric">MEASURE</label
+            ><select id="metric">
+              <option value="peptides">Distinct accepted peptides</option>
+              <option value="signal">
+                Summed LFQ-feature intensity (a.u.)
+              </option>
+            </select>
+          </div>
+          <button id="reset">Reset view</button>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <small>Accepted peptides</small>
+            <div id="n-peptides" class="number"></div>
+          </div>
+          <div class="card">
+            <small>Resolved share of selected measure</small>
+            <div id="resolved" class="number"></div>
+          </div>
+          <div class="card">
+            <small>Acquisition total · selected measure</small>
+            <div id="total" class="number"></div>
+          </div>
+        </div>
+      </section>
+      <section class="panel" id="taxonomy-panel">
+        <h2>Taxonomy, from broad groups to the supported rank</h2>
+        <p class="muted">
+          Click a taxon to explore its descendants. Hover for its name, rank and
+          contribution.
+        </p>
+        <div class="tabs">
+          <button data-view="sunburst" aria-pressed="true">Sunburst</button
+          ><button data-view="treemap" aria-pressed="false">Treemap</button
+          ><button data-view="treeview" aria-pressed="false">
+            Taxonomy tree</button
+          ><button id="save-svg">Download SVG</button
+          ><button id="save-png">Download PNG</button>
+        </div>
+        <div
+          id="taxonomy-stage"
+          aria-label="Interactive Unipept taxonomy visualisation"
+        ></div>
+        <p id="figure-context" class="caption"></p>
+        <p class="caption">
+          Visualisation: <strong>Unipept Visualizations 3.0.0</strong> —
+          Verschaffelt et al., <i>Bioinformatics</i> 38, 562–563 (2022).
+          <a href="https://doi.org/10.1093/bioinformatics/btab590"
+            >doi:10.1093/bioinformatics/btab590</a
+          >. Data integration: FastaLake.
+        </p>
+        <p class="note">
+          Unresolved and truncated lookups remain visible. A genus-level LCA
+          stays at genus level; it is never distributed into species. This
+          classification depends on the searched reference.
+        </p>
+      </section>
+      <section class="panel">
+        <h2>Holobiont balance</h2>
+        <p class="muted" id="host-note"></p>
+        <div class="balance-bar" id="balance"></div>
+        <div class="legend" id="balance-legend"></div>
+        <p id="static-links">
+          <a href="Holobiont_balance.pdf">All acquisitions: PDF</a> ·
+          <a href="Holobiont_balance.svg">SVG</a>
+        </p>
+        <p class="note">
+          Fractions use all evidence in the selected measure, including
+          unresolved evidence. Intensity shares describe measured signal, not
+          organism counts or biomass. Host signal can be biologically
+          meaningful.
+        </p>
+        <h2 style="margin-top: 28px; font-size: 19px">
+          Contaminant-reference overlap
+        </h2>
+        <p id="contamination"></p>
+        <p class="note">
+          Reported separately from taxonomy. Reference overlap alone does not
+          establish laboratory contamination; shared sequences and biological
+          context still matter.
+        </p>
+      </section>
+      <section class="panel">
+        <h2>Source tables and interpretation</h2>
+        <p>
+          <a href="peptide_taxonomy.tsv">Peptide taxonomy and quantities</a> ·
+          <a href="holobiont_balance.tsv">Holobiont balance</a> ·
+          <a href="taxonomy.json">Full taxonomic trees</a> ·
+          <a href="COMPLETE.json">Inputs and settings</a>
+        </p>
+        <p class="note">
+          Signal is the sum of assigned LFQ features per canonical peptide. It
+          is separate from directLFQ protein-group quantities. Missing
+          measurements are not imputed. Native Unipept output is retained
+          alongside these files.
+        </p>
+      </section>
+      <footer>
+        <strong>Please cite the tools behind these results.</strong>
+        <p>
+          Verschaffelt P, Collier J, Botzki A, Martens L, Dawyndt P, Mesuere B.
+          Unipept Visualizations: an interactive visualization library for
+          biological data. <i>Bioinformatics</i> 38(2), 562–563 (2022).
+          <a href="https://doi.org/10.1093/bioinformatics/btab590">btab590</a
+          >.<br />
+          Mesuere B et al. Unipept web services for metaproteomics analysis.
+          <i>Bioinformatics</i> 32(11), 1746–1748 (2016).
+          <a href="https://doi.org/10.1093/bioinformatics/btw039">btw039</a>.
+        </p>
+        <p>
+          <a href="https://github.com/unipept/unipept-visualizations"
+            >Unipept visualisation source</a
+          >
+          · <a href="UNIPEPT_LICENSE.md">MIT licence</a>. The report embeds the
+          upstream library and opens locally without downloading scripts or
+          sending data.
+        </p>
+      </footer>
+    </main>
+    <!-- Unmodified MIT Unipept Visualizations 3.0.0 is embedded below.
+Source: https://github.com/unipept/unipept-visualizations
+Verschaffelt et al. (2022), https://doi.org/10.1093/bioinformatics/btab590.
+FastaLake adapter: input controls, explicit internal-rank leaves and export captions. -->
+    <script type="module">
+      const data = __TAXONOMY_DATA__;
+      const up = await import("data:text/javascript;base64,__UNIPEPT_MODULE__");
+      const sample = document.getElementById("sample"),
+        metric = document.getElementById("metric"),
+        stage = document.getElementById("taxonomy-stage");
+      const colours = {
+        Host: "#a65f69",
+        Bacteria: "#398795",
+        Archaea: "#d29b43",
+        "Other assigned taxa": "#8575ae",
+        Unresolved: "#b7c1c9",
+      };
+      let view = "sunburst";
+      if (data.static_plots?.status !== "PASS")
+        document.getElementById("static-links").remove();
+      for (const [i, item] of data.samples.entries()) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = item.sample;
+        sample.append(option);
+      }
+      const escape = (value) =>
+        String(value).replace(
+          /[&<>"']/g,
+          (c) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[c],
+        );
+      const number = (value) =>
+        new Intl.NumberFormat("en", {
+          maximumFractionDigits: metric.value === "peptides" ? 0 : 2,
+          notation: value >= 1e6 ? "scientific" : "standard",
+        }).format(value);
+      function visualTree(node) {
+        const result = {
+          ...node,
+          extra: {
+            rank: node.rank || "",
+            ncbi_taxon_id: node.id > 0 ? node.id : null,
+          },
+          children: node.children.map(visualTree),
+        };
+        // The upstream treemap lays out leaf weights. Preserve broad-rank LCA evidence
+        // as an explicit direct-assignment leaf; do not redistribute it to named taxa.
+        if (result.children.length && result.selfCount > 0) {
+          result.children.push({
+            id: -(10000000 + result.id),
+            name: result.name + " (assigned at this rank)",
+            count: result.selfCount,
+            selfCount: result.selfCount,
+            children: [],
+            extra: {
+              rank: node.rank || "",
+              direct_assignment: true,
+              ncbi_taxon_id: node.id,
+            },
+          });
+          result.selfCount = 0;
+        }
+        return result;
+      }
+      function render() {
+        const item = data.samples[Number(sample.value)],
+          measure = metric.value;
+        stage.replaceChildren();
+        stage.className = "";
+        for (const id of ["save-svg", "save-png"])
+          document.getElementById(id).disabled = !item;
+        document.body.dataset.ready = "true";
+        if (!item) {
+          stage.textContent = "No acquisitions in this report.";
+          return;
+        }
+        const tree = visualTree(item.trees[measure]),
+          total = item.totals[measure];
+        document.body.dataset.expectedTotal = String(total);
+        for (const id of ["save-svg", "save-png"])
+          document.getElementById(id).disabled = !total;
+        document.getElementById("n-peptides").textContent =
+          item.totals.peptides.toLocaleString("en");
+        document.getElementById("total").textContent = number(total);
+        document.getElementById("resolved").textContent = total
+          ? ((1 - item.balance.Unresolved[measure] / total) * 100).toFixed(1) +
+            "%"
+          : "Not available";
+        document.getElementById("figure-context").textContent =
+          `${item.sample} · ${data.metrics[measure]} · ${data.database}. Parent areas include their descendants; the same evidence is not counted twice.`;
+        document.getElementById("host-note").textContent =
+          `Host reference: NCBI taxon ${data.host_taxon_id}. Measure: ${data.metrics[measure]}.`;
+        const bar = document.getElementById("balance"),
+          legend = document.getElementById("balance-legend");
+        bar.replaceChildren();
+        legend.replaceChildren();
+        for (const [category, value] of Object.entries(item.balance)) {
+          const fraction = total ? value[measure] / total : 0,
+            segment = document.createElement("div");
+          segment.className = "balance-segment";
+          segment.style.width = fraction * 100 + "%";
+          segment.style.background = colours[category];
+          segment.title = `${category}: ${(fraction * 100).toFixed(2)}%`;
+          bar.append(segment);
+          const entry = document.createElement("span"),
+            swatch = document.createElement("span");
+          swatch.className = "swatch";
+          swatch.style.background = colours[category];
+          entry.append(
+            swatch,
+            document.createTextNode(
+              `${category} ${total ? (fraction * 100).toFixed(1) + "%" : "—"}`,
+            ),
+          );
+          legend.append(entry);
+        }
+        document.getElementById("contamination").textContent =
+          data.contaminant_reference_supplied
+            ? `${number(item.overlap[measure])} (${total ? ((100 * item.overlap[measure]) / total).toFixed(2) + "%" : "fraction unavailable"}) overlaps the supplied contaminant peptide reference.`
+            : "Not assessed: no contaminant peptide reference was supplied.";
+        if (!total) {
+          stage.textContent =
+            "No measured evidence for this acquisition and measure.";
+          return;
+        }
+        const width = Math.max(600, Math.min(1060, stage.clientWidth));
+        const options = {
+          width: view === "sunburst" ? 620 : width,
+          height: 620,
+          radius: 300,
+          breadcrumbWidth: 200,
+          labelHeight: 18,
+          colorBreadcrumbs: "#256879",
+          colorRoot: "#386b80",
+          colorLeaf: "#e4efcf",
+          useFixedColors: true,
+          animationDuration: 0,
+          fixedColorHash: (n) =>
+            up.StringUtils.stringHash(n.name + " " + (n.extra?.rank || "")),
+          getTooltip: (n) =>
+            `<strong>${escape(n.name)}</strong><br>${escape(n.extra?.rank || "Taxonomic group")}<br>${number(n.count)} including descendants<br>${number(n.selfCount)} assigned directly<br>${escape(data.metrics[measure])}`,
+        };
+        const Constructor = {
+          sunburst: up.Sunburst,
+          treemap: up.Treemap,
+          treeview: up.Treeview,
+        }[view];
+        new Constructor(stage, tree, options);
+        const chart = stage.querySelector(":scope > svg");
+        if (chart) {
+          chart.style.display = "block";
+          chart.style.maxWidth = "100%";
+          chart.style.margin = "0 auto";
+        }
+        document.body.dataset.expectedTotal = String(total);
+        document.body.dataset.ready = "true";
+      }
+      function saveBlob(blob, name) {
+        const url = URL.createObjectURL(blob),
+          link = document.createElement("a");
+        link.href = url;
+        link.download = name;
+        link.click();
+        setTimeout(() => URL.revokeObjectURL(url), 2000);
+      }
+      function treemapSVG() {
+        // Export the rectangles laid out by Unipept itself. No second layout algorithm.
+        const elements = [...stage.querySelectorAll(".node")];
+        if (!elements.length)
+          throw new Error("No rendered taxonomy is available.");
+        const ns = "http://www.w3.org/2000/svg",
+          svg = document.createElementNS(ns, "svg");
+        const bounds = stage.getBoundingClientRect(),
+          width = stage.clientWidth,
+          height = stage.scrollHeight;
+        svg.setAttribute("width", String(width));
+        svg.setAttribute("height", String(height));
+        svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+        for (const [i, element] of elements.entries()) {
+          const r = element.getBoundingClientRect(),
+            style = getComputedStyle(element),
+            x = r.x - bounds.x,
+            y = r.y - bounds.y;
+          if (!r.width || !r.height) continue;
+          const rect = document.createElementNS(ns, "rect");
+          for (const [k, v] of Object.entries({
+            x,
+            y,
+            width: r.width,
+            height: r.height,
+            fill: style.backgroundColor,
+          }))
+            rect.setAttribute(k, String(v));
+          svg.append(rect);
+          const clip = document.createElementNS(ns, "clipPath");
+          clip.id = "label-" + i;
+          const cut = rect.cloneNode();
+          clip.append(cut);
+          svg.append(clip);
+          const text = document.createElementNS(ns, "text");
+          text.setAttribute("x", String(x + r.width / 2));
+          text.setAttribute("y", String(y + 13));
+          text.setAttribute("text-anchor", "middle");
+          text.setAttribute("font-size", "12");
+          text.setAttribute("font-family", "Arial,sans-serif");
+          text.setAttribute("fill", style.color);
+          text.setAttribute("clip-path", `url(#label-${i})`);
+          text.textContent = element.textContent;
+          svg.append(text);
+        }
+        return svg;
+      }
+      function exportedSVG() {
+        const ns = "http://www.w3.org/2000/svg";
+        const original = stage.querySelector(":scope > svg") || treemapSVG();
+        const svg = original.cloneNode(true);
+        const box = original.viewBox.baseVal;
+        const chartWidth =
+            box.width || parseFloat(original.getAttribute("width")) || 1000,
+          width = Math.max(1000, chartWidth),
+          height =
+            box.height || parseFloat(original.getAttribute("height")) || 620;
+        const item = data.samples[Number(sample.value)];
+        const captions = [
+          `${item.sample} · ${data.metrics[metric.value]}`,
+          `Reference: ${data.database} · I/L-equivalent Unipept LCA`,
+          "Unipept Visualizations 3.0.0 · Verschaffelt et al., Bioinformatics 38:562–563 (2022)",
+          "doi:10.1093/bioinformatics/btab590 · Data integration: FastaLake",
+          "Taxonomy: Mesuere et al. (2016) · doi:10.1093/bioinformatics/btw039",
+        ];
+        // Wrap exported labels by measured text width, including long unbroken acquisition IDs.
+        const measureCanvas = document.createElement("canvas").getContext("2d");
+        measureCanvas.font = "12px Arial";
+        const lines = [];
+        for (const caption of captions) {
+          let line = "";
+          for (const character of caption) {
+            if (
+              line &&
+              measureCanvas.measureText(line + character).width > width - 36
+            ) {
+              lines.push(line);
+              line = "";
+            }
+            line += character;
+          }
+          lines.push(line);
+        }
+        const totalHeight = height + 48 + lines.length * 23;
+        const wrapper = document.createElementNS(ns, "svg");
+        wrapper.setAttribute("xmlns", ns);
+        wrapper.setAttribute("width", width);
+        wrapper.setAttribute("height", totalHeight);
+        wrapper.setAttribute("viewBox", `0 0 ${width} ${totalHeight}`);
+        const style = document.createElementNS(ns, "style");
+        style.textContent = ".toHide{display:none}.hidden{visibility:hidden}";
+        wrapper.append(style);
+        const bg = document.createElementNS(ns, "rect");
+        bg.setAttribute("width", "100%");
+        bg.setAttribute("height", "100%");
+        bg.setAttribute("fill", "white");
+        wrapper.append(bg);
+        svg.setAttribute("x", String((width - chartWidth) / 2));
+        svg.setAttribute("y", "0");
+        wrapper.append(svg);
+        for (const [i, line] of lines.entries()) {
+          const text = document.createElementNS(ns, "text");
+          text.setAttribute("x", "18");
+          text.setAttribute("y", height + 30 + i * 23);
+          text.setAttribute("font-family", "Arial,sans-serif");
+          text.setAttribute("font-size", "12");
+          text.setAttribute("fill", "#334e60");
+          text.textContent = line;
+          wrapper.append(text);
+        }
+        return {
+          xml: new XMLSerializer().serializeToString(wrapper),
+          width,
+          height: totalHeight,
+        };
+      }
+      for (const button of document.querySelectorAll("[data-view]")) {
+        button.onclick = () => {
+          view = button.dataset.view;
+          for (const b of document.querySelectorAll("[data-view]"))
+            b.setAttribute("aria-pressed", String(b === button));
+          render();
+        };
+      }
+      sample.onchange = render;
+      metric.onchange = render;
+      document.getElementById("reset").onclick = render;
+      document.getElementById("save-svg").onclick = () => {
+        const result = exportedSVG();
+        saveBlob(
+          new Blob([result.xml], { type: "image/svg+xml" }),
+          `FastaLake_Unipept_${view}.svg`,
+        );
+      };
+      document.getElementById("save-png").onclick = () => {
+        const result = exportedSVG(),
+          image = new Image(),
+          url = URL.createObjectURL(
+            new Blob([result.xml], { type: "image/svg+xml" }),
+          );
+        image.onload = () => {
+          const canvas = document.createElement("canvas");
+          canvas.width = result.width * 2;
+          canvas.height = result.height * 2;
+          canvas
+            .getContext("2d")
+            .drawImage(image, 0, 0, canvas.width, canvas.height);
+          canvas.toBlob((blob) =>
+            saveBlob(blob, `FastaLake_Unipept_${view}.png`),
+          );
+          URL.revokeObjectURL(url);
+        };
+        image.src = url;
+      };
+      try {
+        render();
+      } catch (error) {
+        stage.classList.add("error");
+        stage.textContent = "Visualisation error: " + error.message;
+        throw error;
+      }
+    </script>
+  </body>
+</html>

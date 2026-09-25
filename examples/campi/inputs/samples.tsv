@@ -1,0 +1,3 @@
+sample	predictions	mzml
+S01	S01_predictions.csv	S01_45-50min.mzML
+S02	S02_predictions.csv	S02_45-50min.mzML

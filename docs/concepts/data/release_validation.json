@@ -1,0 +1,620 @@
+{
+  "date": "2026-09-06",
+  "version": "1.1.0rc1",
+  "base_commit": "f9000cc9550bfa3cad06d4f5b028fc8d45f084d4",
+  "binary_build_revision": "review-c48a6ace3c0d0824",
+  "build_source_manifest_files_unchanged": 147,
+  "original_source_manifest_files_unchanged": 282,
+  "environment": {
+    "platform": "Linux x86_64",
+    "python": "3.12.4",
+    "rust": "1.91.1",
+    "click": "8.3.3",
+    "pyahocorasick": "2.2.0",
+    "sage": "0.14.6"
+  },
+  "python_tests": {
+    "passed": 623,
+    "skipped": 49,
+    "statement_coverage_percent": 69.90396811016488,
+    "skip_scope": "optional data and study infrastructure excluded from this source distribution"
+  },
+  "build_and_acceptance_checks": [
+    {
+      "name": "fmt_fasta_extractor_v2",
+      "status": 0,
+      "seconds": 0.4254776444286108
+    },
+    {
+      "name": "test_fasta_extractor_v2",
+      "status": 0,
+      "seconds": 43.2193363904953
+    },
+    {
+      "name": "clippy_fasta_extractor_v2",
+      "status": 0,
+      "seconds": 11.60669734235853
+    },
+    {
+      "name": "build_fasta_extractor_v2",
+      "status": 0,
+      "seconds": 59.7992693008855
+    },
+    {
+      "name": "fmt_parsimony_engine",
+      "status": 0,
+      "seconds": 0.19181374832987785
+    },
+    {
+      "name": "test_parsimony_engine",
+      "status": 0,
+      "seconds": 16.410806796513498
+    },
+    {
+      "name": "clippy_parsimony_engine",
+      "status": 0,
+      "seconds": 5.654210920445621
+    },
+    {
+      "name": "build_parsimony_engine",
+      "status": 0,
+      "seconds": 28.20499558467418
+    },
+    {
+      "name": "fmt_aggregation_engine",
+      "status": 0,
+      "seconds": 0.1560625983402133
+    },
+    {
+      "name": "test_aggregation_engine",
+      "status": 0,
+      "seconds": 13.29449874162674
+    },
+    {
+      "name": "clippy_aggregation_engine",
+      "status": 0,
+      "seconds": 4.869462618604302
+    },
+    {
+      "name": "build_aggregation_engine",
+      "status": 0,
+      "seconds": 21.770997951738536
+    },
+    {
+      "name": "fmt_fasta_export",
+      "status": 0,
+      "seconds": 0.15005946066230536
+    },
+    {
+      "name": "test_fasta_export",
+      "status": 0,
+      "seconds": 10.385582114569843
+    },
+    {
+      "name": "clippy_fasta_export",
+      "status": 0,
+      "seconds": 4.087702676653862
+    },
+    {
+      "name": "build_fasta_export",
+      "status": 0,
+      "seconds": 11.809648506343365
+    },
+    {
+      "name": "fmt_lake_stats",
+      "status": 0,
+      "seconds": 0.13439700938761234
+    },
+    {
+      "name": "test_lake_stats",
+      "status": 0,
+      "seconds": 12.266457322984934
+    },
+    {
+      "name": "clippy_lake_stats",
+      "status": 0,
+      "seconds": 4.581997620873153
+    },
+    {
+      "name": "build_lake_stats",
+      "status": 0,
+      "seconds": 17.91067339014262
+    },
+    {
+      "name": "fmt_shared_peptide_classifier",
+      "status": 0,
+      "seconds": 0.14166892506182194
+    },
+    {
+      "name": "test_shared_peptide_classifier",
+      "status": 0,
+      "seconds": 13.533279777504504
+    },
+    {
+      "name": "clippy_shared_peptide_classifier",
+      "status": 0,
+      "seconds": 4.686457673087716
+    },
+    {
+      "name": "build_shared_peptide_classifier",
+      "status": 0,
+      "seconds": 19.887441869825125
+    },
+    {
+      "name": "venv",
+      "status": 0,
+      "seconds": 4.671440655365586
+    },
+    {
+      "name": "patched_click",
+      "status": 0,
+      "seconds": 1.6363795502111316
+    },
+    {
+      "name": "ruff",
+      "status": 0,
+      "seconds": 0.06232414394617081
+    },
+    {
+      "name": "source_scan",
+      "status": 0,
+      "seconds": 0.2339235171675682
+    },
+    {
+      "name": "pytest",
+      "status": 0,
+      "seconds": 8.857902776449919
+    },
+    {
+      "name": "demo",
+      "status": 0,
+      "seconds": 0.12932034209370613
+    },
+    {
+      "name": "shared_fixture",
+      "status": 0,
+      "seconds": 0.037097266875207424
+    },
+    {
+      "name": "weighted_fixture",
+      "status": 0,
+      "seconds": 0.052226279862225056
+    },
+    {
+      "name": "wheel",
+      "status": 0,
+      "seconds": 2.4966708794236183
+    },
+    {
+      "name": "install_wheel",
+      "status": 0,
+      "seconds": 1.215257934294641
+    },
+    {
+      "name": "installed_cli",
+      "status": 0,
+      "seconds": 0.09618399757891893
+    },
+    {
+      "name": "installed_import",
+      "status": 0,
+      "seconds": 0.10900222230702639
+    }
+  ],
+  "dependency_audit": {
+    "source": "https://api.osv.dev/v1/querybatch",
+    "date": "2026-09-06",
+    "packages_checked": 156,
+    "packages_with_advisories": 0,
+    "scope": "locked Rust packages and the two pinned Python runtime packages",
+    "limits": "A dated advisory lookup, not proof that dependencies contain no defects. Does not audit SAGE or optional documentation dependencies."
+  },
+  "empirical_searches": {
+    "fastalake": 20,
+    "matched_metagenome": 10,
+    "starts_from": "existing prediction CSV and mzML inputs"
+  },
+  "final_binary_fasta_comparisons": [
+    {
+      "cohort": "HSTOOL",
+      "sample": "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_10",
+      "drawn": {
+        "candidate_sha256": "fd82ad1976b70d4db828ab2846a49a48cac88d10202cd5b4573562fffe3b2230",
+        "original_sha256": "fd82ad1976b70d4db828ab2846a49a48cac88d10202cd5b4573562fffe3b2230",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "c669a2de5fd73a369677f4ecec8de44d086cca5ac274f28fb4b9712532241326",
+        "original_sha256": "c669a2de5fd73a369677f4ecec8de44d086cca5ac274f28fb4b9712532241326",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "HSTOOL",
+      "sample": "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_1_190104120800",
+      "drawn": {
+        "candidate_sha256": "b36ad311971328610170d7000120c95346d9c70e6bc8a09ed2b93579a6ef22ad",
+        "original_sha256": "b36ad311971328610170d7000120c95346d9c70e6bc8a09ed2b93579a6ef22ad",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "7212b020716dff804368b5be02099eaf12cf8c06c44dc1aa6e26e70410a18d1f",
+        "original_sha256": "7212b020716dff804368b5be02099eaf12cf8c06c44dc1aa6e26e70410a18d1f",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "HSTOOL",
+      "sample": "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_2_190104150314",
+      "drawn": {
+        "candidate_sha256": "9465f164d3fc8e1eb2ddd3f564ec23506e81157888f569e917b0fa6f6831a699",
+        "original_sha256": "9465f164d3fc8e1eb2ddd3f564ec23506e81157888f569e917b0fa6f6831a699",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "659899a78d5d5e6b885a8e84466b911c0790bdcab10a5b2900c80ac7e1fa3e56",
+        "original_sha256": "659899a78d5d5e6b885a8e84466b911c0790bdcab10a5b2900c80ac7e1fa3e56",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "HSTOOL",
+      "sample": "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_3_190104175825",
+      "drawn": {
+        "candidate_sha256": "1ad692d4bc13e102739cc7965e09095fa4dec7b67d3c5cb9a0d5ec892787cbf1",
+        "original_sha256": "1ad692d4bc13e102739cc7965e09095fa4dec7b67d3c5cb9a0d5ec892787cbf1",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "66b2e35651febb4cca573df47e0d23c20f35c9f002306610d64c05cd6928085d",
+        "original_sha256": "66b2e35651febb4cca573df47e0d23c20f35c9f002306610d64c05cd6928085d",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "HSTOOL",
+      "sample": "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_4_190104205346",
+      "drawn": {
+        "candidate_sha256": "4513175a721c9d836021d036c4a2fd67dc850ec974be02af2bd4b4cc92875876",
+        "original_sha256": "4513175a721c9d836021d036c4a2fd67dc850ec974be02af2bd4b4cc92875876",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "ec25803f510c15613452c7f84d073240888c00d6adc65c8dcc9282e419cee7d5",
+        "original_sha256": "ec25803f510c15613452c7f84d073240888c00d6adc65c8dcc9282e419cee7d5",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "HSTOOL",
+      "sample": "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_5_190104234917",
+      "drawn": {
+        "candidate_sha256": "bb6f839537bd1326465fef63f51b34c2e256d21bee5bdb7f713c2421fd8bd115",
+        "original_sha256": "bb6f839537bd1326465fef63f51b34c2e256d21bee5bdb7f713c2421fd8bd115",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "01c61f990c7c87c74c239557550c901a24a7004ac802d619591a7bdd1110082b",
+        "original_sha256": "01c61f990c7c87c74c239557550c901a24a7004ac802d619591a7bdd1110082b",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "HSTOOL",
+      "sample": "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_6",
+      "drawn": {
+        "candidate_sha256": "a7c1f590df66c8ea3ca9781a014c18a33813f3d0f4c8462fefa5e2a3c3db966b",
+        "original_sha256": "a7c1f590df66c8ea3ca9781a014c18a33813f3d0f4c8462fefa5e2a3c3db966b",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "c5cdff36f2d6ec1e7b4beead3c2dbb48a3610296e1c66f682c7e54d28f7773be",
+        "original_sha256": "c5cdff36f2d6ec1e7b4beead3c2dbb48a3610296e1c66f682c7e54d28f7773be",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "HSTOOL",
+      "sample": "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_7",
+      "drawn": {
+        "candidate_sha256": "c04818df7c932c9fc15d2136add68c0c66819ebba7b4e708a6e3fcf1f2700059",
+        "original_sha256": "c04818df7c932c9fc15d2136add68c0c66819ebba7b4e708a6e3fcf1f2700059",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "f5d068c07ec4c4380a0a28e5794cfb11cc5981cf0092586703eaf830882b2b64",
+        "original_sha256": "f5d068c07ec4c4380a0a28e5794cfb11cc5981cf0092586703eaf830882b2b64",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "HSTOOL",
+      "sample": "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_8",
+      "drawn": {
+        "candidate_sha256": "8563635408a6b31cc24ad877ece58ed8368942e3315d3d7bc3118fd3605de244",
+        "original_sha256": "8563635408a6b31cc24ad877ece58ed8368942e3315d3d7bc3118fd3605de244",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "83cfb76f08b5adc2c7d4cb0f7e7b904cc43ac217ad2d18570a7433709f24f05c",
+        "original_sha256": "83cfb76f08b5adc2c7d4cb0f7e7b904cc43ac217ad2d18570a7433709f24f05c",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "HSTOOL",
+      "sample": "20181231_QX7_PhGe_LC95_SA_TechnicalReplicates_9",
+      "drawn": {
+        "candidate_sha256": "cdeca545349f9ed46f203f9e44830a248d05f4f138cdd138db3bc71f30593459",
+        "original_sha256": "cdeca545349f9ed46f203f9e44830a248d05f4f138cdd138db3bc71f30593459",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "b04e20dedffe2227305d6592b8ac06866bd4cff5c9218cde0ce3534a18971528",
+        "original_sha256": "b04e20dedffe2227305d6592b8ac06866bd4cff5c9218cde0ce3534a18971528",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "PREDICT",
+      "sample": "20191024_QX7_PeTr_LC02_SA_MicrobPred_10_191025211701",
+      "drawn": {
+        "candidate_sha256": "ab8e21d4072559a8b2cf12756daf8d6adc53ae452e50157cc3bc3e82712483a4",
+        "original_sha256": "ab8e21d4072559a8b2cf12756daf8d6adc53ae452e50157cc3bc3e82712483a4",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "a037b06ba86babbbf8a1a05dc52c794c09ca2a17ea52b8c3c3101a64ec1ca235",
+        "original_sha256": "a037b06ba86babbbf8a1a05dc52c794c09ca2a17ea52b8c3c3101a64ec1ca235",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "PREDICT",
+      "sample": "20191024_QX7_PeTr_LC02_SA_MicrobPred_11",
+      "drawn": {
+        "candidate_sha256": "5c367ceb0b856a5eed491c2e57cf742338bf76df5d7c8938ccefa64d31ab7776",
+        "original_sha256": "5c367ceb0b856a5eed491c2e57cf742338bf76df5d7c8938ccefa64d31ab7776",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "33f7442c865fdcc3556e442c9b0ce46d6bc922ef64333cc29b021bd665b8acaf",
+        "original_sha256": "33f7442c865fdcc3556e442c9b0ce46d6bc922ef64333cc29b021bd665b8acaf",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "PREDICT",
+      "sample": "20191024_QX7_PeTr_LC02_SA_MicrobPred_12",
+      "drawn": {
+        "candidate_sha256": "5862d8695877d7c6f735808de649d2c6f016e0ce1e2c6e2ea3c435136229c6be",
+        "original_sha256": "5862d8695877d7c6f735808de649d2c6f016e0ce1e2c6e2ea3c435136229c6be",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "535ead6afef700aefeb50bfb599c550a374f0915a4e7cef846995c3621fe14ab",
+        "original_sha256": "535ead6afef700aefeb50bfb599c550a374f0915a4e7cef846995c3621fe14ab",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "PREDICT",
+      "sample": "20191024_QX7_PeTr_LC02_SA_MicrobPred_13",
+      "drawn": {
+        "candidate_sha256": "5e76014bc4279b95d4d2ecde5ad1defaeee9b6734dc16b938ac409523890bcc2",
+        "original_sha256": "5e76014bc4279b95d4d2ecde5ad1defaeee9b6734dc16b938ac409523890bcc2",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "ecf97d071721b8da4d18ce417b4aca1e3648cce92b1989e26026a0ebd730c79c",
+        "original_sha256": "ecf97d071721b8da4d18ce417b4aca1e3648cce92b1989e26026a0ebd730c79c",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "PREDICT",
+      "sample": "20191024_QX7_PeTr_LC02_SA_MicrobPred_14",
+      "drawn": {
+        "candidate_sha256": "c18d9f71341ffe0795afbd82144b5113c49c388fcff5b6c4f8a183482f3ad62c",
+        "original_sha256": "c18d9f71341ffe0795afbd82144b5113c49c388fcff5b6c4f8a183482f3ad62c",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "1201a28062a483a5a44aaeb871bbe10f70b9e161773dc1c3f01040e57159a95a",
+        "original_sha256": "1201a28062a483a5a44aaeb871bbe10f70b9e161773dc1c3f01040e57159a95a",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "PREDICT",
+      "sample": "20191024_QX7_PeTr_LC02_SA_MicrobPred_15",
+      "drawn": {
+        "candidate_sha256": "e15d4f9ea4d4bccb3a7dd19bfdce10dfaf32e56422d4d63263a7961548ec30fe",
+        "original_sha256": "e15d4f9ea4d4bccb3a7dd19bfdce10dfaf32e56422d4d63263a7961548ec30fe",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "a37dabbfe20df81f18f5ed217e00dd873ca72ce1424fe9f4b04d2b68037ed9c8",
+        "original_sha256": "a37dabbfe20df81f18f5ed217e00dd873ca72ce1424fe9f4b04d2b68037ed9c8",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "PREDICT",
+      "sample": "20191024_QX7_PeTr_LC02_SA_MicrobPred_16",
+      "drawn": {
+        "candidate_sha256": "f5cadd2f0b9001adf8e051bc4f3787e8920947a5fecdffa3b500fc537df11cd2",
+        "original_sha256": "f5cadd2f0b9001adf8e051bc4f3787e8920947a5fecdffa3b500fc537df11cd2",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "2bbb7df18ce6b8bddebc6ccb6ad8ece2974bf5fb59dc6fcdc2d36438edb338fb",
+        "original_sha256": "2bbb7df18ce6b8bddebc6ccb6ad8ece2974bf5fb59dc6fcdc2d36438edb338fb",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "PREDICT",
+      "sample": "20191024_QX7_PeTr_LC02_SA_MicrobPred_17",
+      "drawn": {
+        "candidate_sha256": "0bd9df7f4e28ed0c27f0bb989e670b5600f06710ca0f23cb9be2ddf1b1077a1a",
+        "original_sha256": "0bd9df7f4e28ed0c27f0bb989e670b5600f06710ca0f23cb9be2ddf1b1077a1a",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "dbd7bd41dedf3d80cec848d544b59c4e23c90e38f66388650791bf1a5432fdef",
+        "original_sha256": "dbd7bd41dedf3d80cec848d544b59c4e23c90e38f66388650791bf1a5432fdef",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "PREDICT",
+      "sample": "20191024_QX7_PeTr_LC02_SA_MicrobPred_18",
+      "drawn": {
+        "candidate_sha256": "c3dc12f3e0b4ef849ebe9e3dd7da01e51aac93fd8c6c5ec0d2b3abb91b368ca1",
+        "original_sha256": "c3dc12f3e0b4ef849ebe9e3dd7da01e51aac93fd8c6c5ec0d2b3abb91b368ca1",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "8c5e629ed1f505079a2c6dd3178948d0ae87b576d0f5603fb65f8bdfb14bc9d8",
+        "original_sha256": "8c5e629ed1f505079a2c6dd3178948d0ae87b576d0f5603fb65f8bdfb14bc9d8",
+        "identical": true
+      }
+    },
+    {
+      "cohort": "PREDICT",
+      "sample": "20191024_QX7_PeTr_LC02_SA_MicrobPred_19",
+      "drawn": {
+        "candidate_sha256": "afa05901b3a0f2b648bad9c248a8bb29d67e2596dac51d70b042869a88c92cfa",
+        "original_sha256": "afa05901b3a0f2b648bad9c248a8bb29d67e2596dac51d70b042869a88c92cfa",
+        "identical": true
+      },
+      "inferred": {
+        "candidate_sha256": "725d015a0dcd2409a19b4fa0ca4ac9769d500b272bb1c6ff664d1a8c06a95a03",
+        "original_sha256": "725d015a0dcd2409a19b4fa0ca4ac9769d500b272bb1c6ff664d1a8c06a95a03",
+        "identical": true
+      }
+    }
+  ],
+  "final_binary_aggregation_comparisons": [
+    {
+      "cohort_method": "HSTOOL_fastalake",
+      "table": "FastaLake_HSTOOL_fastalake_lfq_peptidelevel_181808rows_10samples_q0.01.tsv",
+      "original_rows": "181808",
+      "candidate_rows": "181808",
+      "sample_columns": "10",
+      "changed_cells": "0",
+      "changed_occupancy": "0",
+      "original_intensity": "125451167995585.5",
+      "corrected_intensity": "125451167995585.5",
+      "removed_fraction": "0.0",
+      "largest_cell_relative_change": "0.0"
+    },
+    {
+      "cohort_method": "HSTOOL_fastalake",
+      "table": "FastaLake_HSTOOL_fastalake_lfq_proteingroup_99306grp_10samples_q0.01.tsv",
+      "original_rows": "99306",
+      "candidate_rows": "99306",
+      "sample_columns": "10",
+      "changed_cells": "0",
+      "changed_occupancy": "0",
+      "original_intensity": "125451167995588.42",
+      "corrected_intensity": "125451167995588.42",
+      "removed_fraction": "0.0",
+      "largest_cell_relative_change": "0.0"
+    },
+    {
+      "cohort_method": "PREDICT_fastalake",
+      "table": "FastaLake_PREDICT_fastalake_lfq_peptidelevel_236114rows_10samples_q0.01.tsv",
+      "original_rows": "236114",
+      "candidate_rows": "236114",
+      "sample_columns": "10",
+      "changed_cells": "0",
+      "changed_occupancy": "0",
+      "original_intensity": "110645750324618.9",
+      "corrected_intensity": "110645750324618.9",
+      "removed_fraction": "0.0",
+      "largest_cell_relative_change": "0.0"
+    },
+    {
+      "cohort_method": "PREDICT_fastalake",
+      "table": "FastaLake_PREDICT_fastalake_lfq_proteingroup_102399grp_10samples_q0.01.tsv",
+      "original_rows": "102399",
+      "candidate_rows": "102399",
+      "sample_columns": "10",
+      "changed_cells": "0",
+      "changed_occupancy": "0",
+      "original_intensity": "110645621673677.6",
+      "corrected_intensity": "110645621673677.6",
+      "removed_fraction": "0.0",
+      "largest_cell_relative_change": "0.0"
+    },
+    {
+      "cohort_method": "PREDICT_matched_metag",
+      "table": "FastaLake_PREDICT_matched_metag_lfq_peptidelevel_174917rows_10samples_q0.01.tsv",
+      "original_rows": "174917",
+      "candidate_rows": "174917",
+      "sample_columns": "10",
+      "changed_cells": "0",
+      "changed_occupancy": "0",
+      "original_intensity": "49301351760576.55",
+      "corrected_intensity": "49301351760576.55",
+      "removed_fraction": "0.0",
+      "largest_cell_relative_change": "0.0"
+    },
+    {
+      "cohort_method": "PREDICT_matched_metag",
+      "table": "FastaLake_PREDICT_matched_metag_lfq_proteingroup_83980grp_10samples_q0.01.tsv",
+      "original_rows": "83980",
+      "candidate_rows": "83980",
+      "sample_columns": "10",
+      "changed_cells": "0",
+      "changed_occupancy": "0",
+      "original_intensity": "47449251805735.016",
+      "corrected_intensity": "47449251805735.016",
+      "removed_fraction": "0.0",
+      "largest_cell_relative_change": "0.0"
+    }
+  ],
+  "final_installed_wheel_real_acquisition": [
+    {
+      "name": "installed_import",
+      "status": 0,
+      "seconds": 0.17963736411184072
+    },
+    {
+      "name": "real_acquisition",
+      "status": 0,
+      "seconds": 179.9777907198295
+    },
+    {
+      "name": "real_study",
+      "status": 0,
+      "seconds": 1.389787619933486
+    }
+  ],
+  "integration_scope": "One real HSTOOL acquisition from the final installed wheel, outside the checkout, with patched runtime dependencies and final Rust binaries. The retained HSTOOL evidence lake was supplied as the reference. A system-site-packages environment was used.",
+  "binaries_sha256": {
+    "aggregation_engine": "4ef1c182c2e35b3cd7c169c13f1b6c20ec99c595909f1771e7a241c926492ab9",
+    "fasta_export": "762664b1512ee040cefce251f87e4b7557dee48fcba01f4d5f95827734ddcfc3",
+    "fasta_extractor": "b30848eb7da07036f88bded0af343f1c8f6dc9e252d907e180e3225ba6c77818",
+    "fasta_sort_by_id": "b400e158557b23a9acef2f09d815d3a22e13a0690fe04a595834aad0d99cf689",
+    "hash_fasta": "5b5e8c29167923e8cd62a2231500c89067a3730e359bbdff8a7a000dfd334512",
+    "lake_builder": "5f1497009760bf5f0457352dc3cfe93e8493618acc54fd12674235924a50c2eb",
+    "lake_stats": "44e710f9342be6ee9c297e23b959fb81441437ea4b3c620d1c9b3a6b2e35415c",
+    "mass_corasick": "cf644d499d62783053cc1a845a4ce5c89de4bedcd7df50e7de1700206958ba57",
+    "mass_corasick_v2": "3d3f211ef8cc1cefa069a7e0d6b571bdae87ceb671f7f5c2e422d4e4af6d9aee",
+    "mass_corasick_v3": "5b2720aa06445deea9093c1379a007f868696bcc388b6edfd7fe2b79ad59c594",
+    "mass_kmer_anchor": "7a31a8d5a96f369acefa7fbecd41f83cdb3f98bf8e835b308d36a8a0ee6fad7e",
+    "parsimony": "74d567f576ce29a85f7594fa3df109ba64deb36f8efdb0d1ab15b2d3d538e3bb",
+    "parsimony_engine": "e4e89259b0c22b2e615a3f36b9ec9d6bb61342f5ff53f94ed0c40352acc8ce14",
+    "shared_peptide_classifier": "050fd8a94a0957a84ecd4d863dc85cfd2a2a224819adba97ecdeb41b5717fee3"
+  },
+  "boundaries": [
+    "No upstream de novo model inference or raw conversion rerun",
+    "No new independent FDR calibration or unseen-cohort experiment",
+    "Replicate and metagenome biological pairing metadata require study confirmation",
+    "Docker and hosted GitHub CI have not been executed",
+    "No GitHub upload, software DOI or data deposition is claimed"
+  ]
+}

@@ -1,0 +1,7 @@
+recursive-include fasta_lake/configs *.json *.tsv *.params
+recursive-include fasta_lake/multi_omics/verification *.tsv SHA256SUMS
+recursive-include fasta_lake/assets *.js *.html *.md *.json
+include release/SOURCE_MANIFEST.json
+include release/RELEASE_PROVENANCE.json release/README.md
+include requirements/*.txt
+include tools/source_manifest.py tools/check_no_site_paths.py

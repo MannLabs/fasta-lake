@@ -1,0 +1,21 @@
+[package]
+name = "lake_stats"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["Peter Treit"]
+description = "Compute sequence-space saturation (D/K) of tryptic peptides in a FASTA database"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+rayon = "1.10"
+ahash = "0.8"
+
+[[bin]]
+name = "lake_stats"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

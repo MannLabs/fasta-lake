@@ -1,0 +1,116 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fasta-lake"
+description = "Sample-specific protein database construction for metaproteomics"
+dynamic = ["version"]
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.3.3,<9",
+    "pyahocorasick>=2.0",
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Peter Treit"},
+    {name = "Mann Labs"},
+]
+keywords = [
+    "metaproteomics",
+    "proteomics",
+    "bioinformatics",
+    "fasta",
+    "protein inference",
+    "mass spectrometry",
+    "AlphaPept ecosystem",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Rust",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.urls]
+Repository = "https://github.com/MannLabs/fasta-lake"
+Documentation = "https://mannlabs.github.io/fasta-lake/"
+Issues = "https://github.com/MannLabs/fasta-lake/issues"
+
+[project.scripts]
+fasta-lake = "fasta_lake.cli:cli"
+
+[project.optional-dependencies]
+# Separate model environment; not needed for basic construction or QC.
+embeddings = ["esm==3.2.3", "torch==2.13.0", "numpy>=1.24"]
+# Version used in the audited 14-run study comparison.
+directlfq = ["directlfq==0.3.3", "pandas>=2.2.3,<3", "PyYAML>=6,<7"]
+# AlphaPeptTools requires Python >=3.11; kept out of the core installation.
+analysis = ["alphapepttools[stable]==0.4.0", "pandas>=2.2.3,<3"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.4",
+    "numpy>=1.24",  # Descriptive HSTOOL comparison tests; not a core runtime dependency.
+    "pandas>=2.0",  # Matched HSTOOL reproducibility comparison tests.
+]
+
+# Documentation site (MkDocs Material); `mkdocs serve` from the repository root.
+docs = [
+    "mkdocs>=1.6,<2",
+    "mkdocs-material>=9.5,<10",
+    "mkdocstrings[python]>=0.26",
+    "mkdocs-click>=0.8",
+    "mkdocs-jupyter>=0.25",
+    "mkdocs-glightbox>=0.4",
+    "matplotlib>=3.7",  # tools/plot_concepts.py and tools/plot_validation.py draw the concept figures.
+    "numpy>=1.24",
+]
+
+[tool.setuptools]
+packages = ["fasta_lake", "fasta_lake.headers", "fasta_lake.inference",
+            "fasta_lake.multi_omics", "fasta_lake.proteomics", "fasta_lake.rust"]
+
+[tool.setuptools.package-data]
+"fasta_lake" = ["configs/*.json", "configs/*.tsv", "configs/*.params", "assets/*.js", "assets/*.html", "assets/*.md", "assets/*.json"]
+# The frozen per-sample depth tables `fasta_lake.multi_omics.reproduce` verifies
+# the published median against. Shipped so `reproduce()` works from a clone.
+"fasta_lake.multi_omics" = ["verification/*.tsv", "verification/SHA256SUMS"]
+
+[tool.setuptools.dynamic]
+version = {attr = "fasta_lake.__version__"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = ["-v", "--tb=short"]
+# Every warning is a failure. The three ignores below are third-party warnings
+# that FastaLake cannot fix and does not act on; each names its origin.
+filterwarnings = [
+    "error",
+    # mudata (pulled in by alphapepttools) deprecates two arguments of its own
+    # namespace-registration decorator at import time.
+    "ignore:The decorator_name argument is deprecated:DeprecationWarning",
+    "ignore:The docstring_style argument is deprecated:DeprecationWarning",
+    # directLFQ's optional dask backend is deliberately not installed; it falls
+    # back to the single-process path we test against.
+    "ignore:Dependency 'dask' not installed:UserWarning",
+]
+markers = [
+    "e2e: end-to-end tests requiring golden reference data",
+    "slow: tests that take >10s",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]

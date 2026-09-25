@@ -1,0 +1,41 @@
+{
+  "scope": "Recorded public CAMPI taxonomy and one real eggNOG enolase annotation; not full-cohort functional annotation",
+  "unipept": {
+    "status": "PASS",
+    "source": "Public CAMPI example bundled with FastaLake",
+    "requested_peptide_file": "peptides.txt",
+    "command": [
+      "unipept",
+      "pept2lca",
+      "--all",
+      "--equate",
+      "--format",
+      "json",
+      "--input",
+      "campi_queries/peptides.txt"
+    ],
+    "version": "4.2.2 (UniProt 2026.02)",
+    "output_sha256": "27eb072355d0430482b60c3a1ab725d9d60834adb991570f636bbd5e2695ec5d",
+    "queried_utc": "2026-09-15T14:31:13.260502+00:00"
+  },
+  "eggnog": {
+    "version": "emapper-2.1.12-3-g3666cb0",
+    "database": "eggNOG 5.0.2",
+    "original_output_sha256": "009ab47b0c33e73b7b88ab698f8feb37412d14b74bfa4ab498b510e33d461adf",
+    "portable_derivative": "Removed only ## comment lines containing site execution paths; native table header and row bytes unchanged",
+    "query": "One sequence-exact CAMPI representative: enolase; other representatives deliberately unannotated",
+    "source_database_sha256": {
+      "eggnog.db": "4d6857c129423889edcd607995b28d97944787a588224f31dd7f745fe9ef1e4f",
+      "eggnog.taxa.db": "84d56ba1cbb091cc4c4064ba0f8235020654ed50fd6d617f829c4e45551faffd",
+      "eggnog_proteins.dmnd": "f4b63db0313021e4a2ca1d47a6b3f7862a3c8c2016abf3b51ef5865e653642a7",
+      "emapper.py": "d728b2df585debcd9306cb24c5f2675387b1d5023237fa36abfd7193e3af9070"
+    },
+    "citation": "Cantalapiedra et al. (2021), doi:10.1093/molbev/msab293"
+  },
+  "files": {
+    "campi_unipept.json": "27eb072355d0430482b60c3a1ab725d9d60834adb991570f636bbd5e2695ec5d",
+    "peptides.txt": "05e84b685146c645233bbc16b93dd5a49339e06ef3e7c471b689a10bb42f8b43",
+    "eggnog.annotations.tsv": "75b8c16ecf5f1168b28b8f6a80d3344ab29fc88a5c3ca5a45406eec67168ab51",
+    "eggnog_query.fasta": "54e3541e8155c748e536fce2075a25f13516c6ea067bf22d2fc8a3e1dba71715"
+  }
+}

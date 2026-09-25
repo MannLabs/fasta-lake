@@ -1,0 +1,9 @@
+{
+  "scope": "Public CAMPI S01 cropped acquisition, recorded Unipept 4.2.2 / UniProt 2026.02",
+  "native_output_sha256": "27eb072355d0430482b60c3a1ab725d9d60834adb991570f636bbd5e2695ec5d",
+  "figure_sha256": "a9576f6a5e03bff536f2abb80baba62654e1640870a3d4ed90cd9244db037afc",
+  "measure": "Summed positive assigned LFQ-feature intensity; unresolved retained",
+  "renderer": "Unipept Visualizations 3.0.0; doi:10.1093/bioinformatics/btab590",
+  "taxonomy_citation": "doi:10.1093/bioinformatics/btw039",
+  "full_cohort_supplement": false
+}

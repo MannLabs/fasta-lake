@@ -1,0 +1,52 @@
+{
+  "reference_environment": {
+    "system": "Linux x86_64",
+    "python": "3.12.4",
+    "sage": "0.14.6",
+    "sage_archive_sha256": "3492d04b9c922d47ee44fd7fd4248b946d8afb7e88893d1d97c403bb3760be30",
+    "rust": "1.91.1",
+    "threads": 2
+  },
+  "measurements": {
+    "reference_sequences": 29635,
+    "reference_sha256": "41acd91421f75bb9d674ba80fb92e24c14cf4a114ec29348d1273ad4b7267269",
+    "evidence_sequences": 538,
+    "evidence_sha256": "5023c4c30c3c5eedf58f774817fd7a0b9047ff8d86f45d16ac949f53fa81b633",
+    "samples": {
+      "S01": {
+        "drawn_sequences": 370,
+        "drawn_sha256": "508df4a763b14fc8b2ee01e18f35a1313e868497126ce0d745863f900f41aaf6",
+        "selected_sequences": 348,
+        "selected_sha256": "652c096ccda639eb2987823790f2f879d22b7f84ceac92ce274a606bf6e1ca4d",
+        "target_psms_spectrum_q_001": 758,
+        "canonical_target_peptides_peptide_q_001": 548
+      },
+      "S02": {
+        "drawn_sequences": 316,
+        "drawn_sha256": "819a1db3c30b668f5e6f9764759726531ffc8b3b4b58bfdee6fdb4e7fd2d9d54",
+        "selected_sequences": 287,
+        "selected_sha256": "172225c842ec90c40c90fdb4ebb86514b35a7ac13d10e1e71a46bc2c30dcd8b7",
+        "target_psms_spectrum_q_001": 593,
+        "canonical_target_peptides_peptide_q_001": 426
+      }
+    },
+    "study": {
+      "acquisitions": 2,
+      "searched_universe": 498,
+      "proteins_with_observed_evidence": 448,
+      "unobserved_searched_proteins": 50,
+      "study_groups": 448,
+      "pooled_canonical_peptides": 819,
+      "intensity_in": 87045942192.60388,
+      "intensity_out": 87045942192.60388,
+      "q_threshold": 0.01,
+      "grouping_rule": "greedy set cover; lexical gain ties; plurality protein mapping",
+      "confidence": "post-search grouping; no study-wide FDR recalibration"
+    },
+    "dual_key_rows": 577
+  },
+  "search_count_relative_tolerance": 0.02,
+  "minimum_peptide_jaccard": 0.98,
+  "acceptance_rule": "Exact FASTA bytes and counts. Search PSM/peptide and study-group counts within 2% (at least 2 counts); accepted peptide-set Jaccard at least 0.98. Included study intensity conserved at relative tolerance 1e-12. This permits small downstream floating-point/threshold differences; it does not declare such differences biologically negligible.",
+  "selection": "S01 and S02, retention time [45,50) minutes. The interval was specified before inspecting the new search outcomes. All 29,673 published target reference entries retained; 29,673 deposited DECOY_ entries excluded."
+}

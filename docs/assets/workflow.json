@@ -1,0 +1,48 @@
+{
+  "generator": "tools/render_workflow.py",
+  "dimensions": [
+    860,
+    1330
+  ],
+  "frame_ms": [
+    1800,
+    1800,
+    1800,
+    1800,
+    1800,
+    1800,
+    1800,
+    3000
+  ],
+  "stages": [
+    [
+      "Protein reservoir",
+      "Complete protein sequences from your chosen sources"
+    ],
+    [
+      "Study-supported sequence space",
+      "Exact lookup of retained queries pooled across the study"
+    ],
+    [
+      "Acquisition-specific candidate set",
+      "Exact lookup of this acquisition's retained queries"
+    ],
+    [
+      "Selected acquisition-specific database",
+      "Selection parsimony retains complete proteins"
+    ],
+    [
+      "Sage database search",
+      "Search the original spectra against the final target FASTA"
+    ],
+    [
+      "Study-level protein groups",
+      "Assign accepted peptides to fixed reporting representatives"
+    ],
+    [
+      "Quantification and QC",
+      "Sum or directLFQ; coverage, missingness and eligible PCA"
+    ]
+  ],
+  "optional": "Matched DNA/RNA exact additions after selection and before search"
+}

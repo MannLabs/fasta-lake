@@ -1,0 +1,14 @@
+:root {
+  --md-primary-fg-color: #1f4e5f;
+  --md-primary-fg-color--light: #2f6b80;
+  --md-primary-fg-color--dark: #163a47;
+  --md-accent-fg-color: #d55e00;
+}
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #163a47;
+  --md-accent-fg-color: #e69f00;
+  --md-typeset-a-color: #85c6a9;
+}
+.md-typeset h1 { font-weight: 600; }
+.md-typeset table:not([class]) { font-size: 0.8rem; }
+.md-typeset .mermaid { text-align: center; }

@@ -1,0 +1,116 @@
+name: Docker examples
+on:
+  push:
+    paths-ignore: ['docs/**', '*.md']
+  pull_request:
+    paths-ignore: ['docs/**', '*.md']
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Build the Linux x86_64 image
+        run: |
+          docker build --platform linux/amd64 -t fastalake:ci \
+            --label "org.opencontainers.image.source=https://github.com/$GITHUB_REPOSITORY" \
+            --label "org.opencontainers.image.revision=$GITHUB_SHA" \
+            -f Dockerfile .
+      - name: Verify offline examples without a toolchain
+        run: bash tools/test_container.sh fastalake:ci docker_check
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - name: Check offline taxonomy interactions and exported citations
+        run: |
+          npm ci --prefix tools/browser
+          npx --prefix tools/browser playwright install --with-deps chromium
+          node tools/browser/check_taxonomy.mjs docker_check/community/taxonomy/index.html docker_check/taxonomy_browser
+      - name: Reclaim build cache before image export
+        run: |
+          docker builder prune --all --force
+          docker system df
+          df -h .
+      - name: Export the tested image
+        run: |
+          mkdir -p docker_image
+          docker save fastalake:ci | gzip -1 > docker_image/fastalake-docker-linux-amd64.tar.gz
+          docker image inspect fastalake:ci > docker_image/image.json
+          printf '%s\n' "$GITHUB_SHA" > docker_image/SOURCE_COMMIT.txt
+          cp tools/test_container.sh docker_image/test_container.sh
+          cp tools/PREBUILT_IMAGE_README.md docker_image/README.md
+          (cd docker_image && sha256sum fastalake-docker-linux-amd64.tar.gz \
+            test_container.sh README.md image.json SOURCE_COMMIT.txt > SHA256SUMS)
+      - name: Reload and verify the exported image
+        run: |
+          expected_image="$(docker image inspect fastalake:ci --format '{{.Id}}')"
+          docker image rm fastalake:ci
+          docker load -i docker_image/fastalake-docker-linux-amd64.tar.gz
+          test "$(docker image inspect fastalake:ci --format '{{.Id}}')" = "$expected_image"
+          docker run --rm --platform linux/amd64 --network none fastalake:ci fasta-lake --help
+      - name: Retain tested image
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: fastalake-docker-linux-amd64
+          path: docker_image/
+          compression-level: 0
+          retention-days: 14
+      - name: Retain container diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: docker-example-diagnostics
+          path: |
+            docker_check/*.log
+            docker_check/image.json
+            docker_check/*/VALIDATION.json
+            docker_check/*/commands.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+
+  publish:
+    if: github.event_name == 'release'
+    needs: docker
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: fastalake-docker-linux-amd64
+          path: docker_image
+      - name: Verify and load the tested image
+        run: |
+          (cd docker_image && sha256sum --check SHA256SUMS)
+          test "$(cat docker_image/SOURCE_COMMIT.txt)" = "$GITHUB_SHA"
+          docker load -i docker_image/fastalake-docker-linux-amd64.tar.gz
+      - name: Publish the tested release to GHCR
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          PRERELEASE: ${{ github.event.release.prerelease }}
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_TAG" =~ ^[A-Za-z0-9_][A-Za-z0-9_.-]{0,127}$ ]] || {
+            echo "Release tag is not a valid container tag" >&2
+            exit 1
+          }
+          image="ghcr.io/${GITHUB_REPOSITORY,,}"
+          printf '%s' "$GHCR_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          for tag in "$RELEASE_TAG" "sha-$GITHUB_SHA"; do
+            docker tag fastalake:ci "$image:$tag"
+            docker push "$image:$tag"
+          done
+          if [[ "$PRERELEASE" == false ]]; then
+            docker tag fastalake:ci "$image:latest"
+            docker push "$image:latest"
+          fi
