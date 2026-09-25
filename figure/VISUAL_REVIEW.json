@@ -1,0 +1,68 @@
+{
+  "checked_utc": "2026-09-23T13:07:50.016912+00:00",
+  "reviewer": "Codex, direct inspection with view_image",
+  "status": "PASS",
+  "renders": [
+    {
+      "png": "renders/svg-light-880-browser-light.png",
+      "sha256": "538f8b93ec9a4c7e3683541d675e69f9b7ec13ef615c846b06cd01307bf528e4",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    },
+    {
+      "png": "renders/svg-dark-880-browser-light.png",
+      "sha256": "2c9108907eaeee75659cf7be0d5bb1a4a045b16dd75e4dec0e9c4569d97a50bd",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    },
+    {
+      "png": "renders/html-light-880.png",
+      "sha256": "2b5ebfb2decfa4b6978e5e8473d8a6cac59e3664e45ac13086169bb2b3606d57",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    },
+    {
+      "png": "renders/svg-light-880-browser-dark.png",
+      "sha256": "212aeae30f0712518fa3cc1e825f9aa7bba6134c868cd5188b14bb2e1f3d8af2",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    },
+    {
+      "png": "renders/svg-dark-880-browser-dark.png",
+      "sha256": "a0fea7b8d60ec693868938b12de87676633f4fcb395013335f2b3c1c8934ecae",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    },
+    {
+      "png": "renders/html-dark-880.png",
+      "sha256": "5846d5ad7fe72eb98d815381987d590397a2e3ae43df5d88f5b854867c135d62",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    },
+    {
+      "png": "renders/svg-light-1600-browser-light.png",
+      "sha256": "0e028409fd47249290a5d49c478b5a8bf6c6b18ba8384cf871749372859d834e",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    },
+    {
+      "png": "renders/svg-dark-1600-browser-light.png",
+      "sha256": "f715ce9c8ef74421e0f185b363c9144774da6ffefab9a9789a29067513e87b19",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    },
+    {
+      "png": "renders/html-light-1600.png",
+      "sha256": "d063f2a32127ae3b20c3a25bf9d519b68334ff6b0a842868c97efe4279420539",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    },
+    {
+      "png": "renders/svg-light-1600-browser-dark.png",
+      "sha256": "c96d1a8fb00a8354333fb4bd5d66bfed62caf01286933f0659706d2de6d9b2b0",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    },
+    {
+      "png": "renders/svg-dark-1600-browser-dark.png",
+      "sha256": "be69e08b12db7c6c9cd8cfcb4252bee18410f50018012138a6226a4a1168a1d3",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    },
+    {
+      "png": "renders/html-dark-1600.png",
+      "sha256": "21f11571a1365d922ee9dfb314546b3c879d8df37d002c114de72d11c3a9bea5",
+      "finding": "Viewed: no clipping, overlap, misalignment or unreadable text at the recorded width and theme."
+    }
+  ],
+  "notes": "All twelve final PNGs viewed individually. The two browser preference variants of a fixed SVG differ only in the outside corner background. Initial text-width overflow in the search cutoff gloss was shortened and all twelve renders regenerated before this review."
+}

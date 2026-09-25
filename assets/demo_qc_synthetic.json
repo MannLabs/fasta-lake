@@ -1,0 +1,10 @@
+{
+  "scope": "Synthetic three-acquisition demo, not measured biology",
+  "generator": "examples/analysis/run_example.py",
+  "analysis_backend": "AlphaPeptTools 0.4.0",
+  "plot_source_sha256": "793f6d15a11d94780bd53f1ddecb18eee5e4c18f153c61b365fefbd602d0c8cb",
+  "image_sha256": "a4aaea55f6474fd925d994750326aab68a59a9ef8b8d3a6e5b8626668f3d64a1",
+  "source_acceptance": "presentation_validation_v1/COMPLETE.json",
+  "numeric_baseline": "validation_extended_v2/synthetic_analysis/sum/qc",
+  "numeric_tables_identical": true
+}

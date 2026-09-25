@@ -1,0 +1,57 @@
+{
+  "pages": 1,
+  "size_points": [
+    900,
+    810
+  ],
+  "fonts": [
+    {
+      "name": "/F5",
+      "type": "/Type3",
+      "embedded_outlines": true
+    },
+    {
+      "name": "/F6",
+      "type": "/Type3",
+      "embedded_outlines": true
+    },
+    {
+      "name": "/F8",
+      "type": "/Type3",
+      "embedded_outlines": true
+    },
+    {
+      "name": "/F10",
+      "type": "/Type3",
+      "embedded_outlines": true
+    },
+    {
+      "name": "/F11",
+      "type": "/Type3",
+      "embedded_outlines": true
+    },
+    {
+      "name": "/F12",
+      "type": "/Type3",
+      "embedded_outlines": true
+    },
+    {
+      "name": "/F15",
+      "type": "/Type3",
+      "embedded_outlines": true
+    },
+    {
+      "name": "/F20",
+      "type": "/Type3",
+      "embedded_outlines": true
+    },
+    {
+      "name": "/F25",
+      "type": "/Type3",
+      "embedded_outlines": true
+    }
+  ],
+  "text_extracts": true,
+  "sha256": "94ef97cb147f09524fcee1d44fc139b934988b046a198aae8e2e6a195adc9dc0",
+  "status": "PASS"
+}

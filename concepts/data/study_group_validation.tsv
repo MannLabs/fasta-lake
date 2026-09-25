@@ -1,0 +1,3 @@
+cohort	searched_universe	proteins_with_observed_evidence	unobserved_searched_proteins	study_groups	pooled_canonical_peptides	unmapped_lfq_features	intensity_in	intensity_out	unassigned_fraction
+HSTOOL	32008	31375	633	14458	56667	0	125451167995586.03	125451167995586.03	0.0
+PREDICT	55369	54015	1354	31335	139130	0	110645750324617.02	110645750324617.02	0.0

@@ -1,0 +1,6181 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Protein database construction from de novo peptide evidence for proteomics and metaproteomics.">
+      
+      
+      
+        <link rel="canonical" href="https://mannlabs.github.io/fasta-lake/figure/PIPELINE_INVENTORY/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>FastaLake pipeline inventory and final figure audit - FastaLake</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fastalake-pipeline-inventory-and-final-figure-audit" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FastaLake" class="md-header__button md-logo" aria-label="FastaLake" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FastaLake
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FastaLake pipeline inventory and final figure audit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MannLabs/fasta-lake" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    MannLabs/fasta-lake
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/principle/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Get started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../how-to/references/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  How-to guides
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tutorials/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/pipeline-stages/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/cli/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Project
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FastaLake" class="md-nav__button md-logo" aria-label="FastaLake" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    FastaLake
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MannLabs/fasta-lake" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    MannLabs/fasta-lake
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Get started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/principle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understand the idea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Try the demo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/assistants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up with an assistant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What computer do I need?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/first-study/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your first study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/read-outputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Read your results
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run with Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../get-started/environment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environment and site configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-to guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How-to guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inputs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inputs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose and download references
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/build-a-lake/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a reference lake
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/acquisition-manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prepare an acquisition manifest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/de-novo-inputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bring existing DIANovo predictions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/molecular-inputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Molecular inputs (metaG and metaT)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/molecular-docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Add matched DNA and RNA with Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search and quantify
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Search and quantify
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/search-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/quantification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/downstream-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Downstream analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/protein-increments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Molecular gains and losses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community and function
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Community and function
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/annotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Annotation and embeddings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/evidence-networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Evidence networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/core-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core biological functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/functional-exploration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experimental functional exploration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4">
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running and reporting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Running and reporting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Report and share a study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/01_first_result/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your first result
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/02_qc_and_pca/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    QC, replicates and PCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/03_community_and_function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community and function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/04_molecular_additions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matched DNA and RNA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/pipeline-stages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Illustrated workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/terminology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/output-contract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Output contract
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/error-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error control and entrapment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/molecular-benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Molecular benchmark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/molecular-complementarity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Molecular complementarity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/run-manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study runner
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration file
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/resource-controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resource controls
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/quantification-details/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantification details
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/function-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functions in execution order
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/function-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python function index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rust-function-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust function index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reference/api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9_2">
+        
+          
+          <label class="md-nav__link" for="__nav_6_9_2" id="__nav_6_9_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflow
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/run_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    run_config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/provenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    provenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/helpers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    helpers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/hashing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    hashing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/gzip_io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    gzip_io
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/study/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    study
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/quantification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    quantification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/aggregate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    aggregate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/downstream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    downstream
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/qc_plots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    qc_plots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/capacity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    capacity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/chunked/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    chunked
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    presets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/contaminants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    contaminants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/canonical/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    canonical
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/canonical_comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    canonical_comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9_3">
+        
+          
+          <label class="md-nav__link" for="__nav_6_9_3" id="__nav_6_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inference and selection
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inference and selection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/inference.base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    inference.base
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/inference.runner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    inference.runner
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/inference.strategies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    inference.strategies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/proteomics.grouping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    proteomics.grouping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/proteomics.cascade/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    proteomics.cascade
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/complexity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    complexity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/blosum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    blosum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/ics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/refine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    refine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/lake_builder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lake_builder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/lake_merge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    lake_merge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/dianovo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    dianovo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/headers.fasta_io/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    headers.fasta_io
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/headers.validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    headers.validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9_4">
+        
+          
+          <label class="md-nav__link" for="__nav_6_9_4" id="__nav_6_9_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrapment and diagnostics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Entrapment and diagnostics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/entrapment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    entrapment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/entrapment_classes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    entrapment_classes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/entrapment_stages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    entrapment_stages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/entrapment_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    entrapment_workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/benchmark/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    benchmark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/diagnose/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    diagnose
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/tune/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    tune
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9_5">
+        
+          
+          <label class="md-nav__link" for="__nav_6_9_5" id="__nav_6_9_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Molecular evidence
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Molecular evidence
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/multi_omics.sources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    multi_omics.sources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/multi_omics.selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    multi_omics.selection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/multi_omics.exact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    multi_omics.exact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/multi_omics.evidence_gate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    multi_omics.evidence_gate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/multi_omics.runner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    multi_omics.runner
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/multi_omics.increments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    multi_omics.increments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/multi_omics.complementarity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    multi_omics.complementarity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/multi_omics.reproduce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    multi_omics.reproduce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9_6">
+        
+          
+          <label class="md-nav__link" for="__nav_6_9_6" id="__nav_6_9_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Community and function
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_9_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Community and function
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/taxonomy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    taxonomy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/taxonomy_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    taxonomy_reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/annotation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    annotation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/embeddings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    embeddings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/networks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    networks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/network_annotations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    network_annotations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/community_plots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    community_plots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/metaproteomics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    metaproteomics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/exploration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    exploration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/downloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    downloads
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9_7">
+        
+          
+          <label class="md-nav__link" for="__nav_6_9_7" id="__nav_6_9_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command-line modules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_9_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Command-line modules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/annotation_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    annotation_cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/download_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    download_cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/exploration_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    exploration_cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/network_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    network_cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/taxonomy_cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    taxonomy_cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/multi_omics.cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    multi_omics.cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/rust.binaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    rust.binaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/rust-crates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rust crates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#source-identity-and-audit-boundary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source identity and audit boundary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entry-points-and-actual-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entry points and actual orchestration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-stages-in-execution-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default stages, in execution order
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Default stages, in execution order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exact-eligibility-definition-behind-the-short-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exact eligibility definition behind the short labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparation-before-the-default-runner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preparation before the default runner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#existing-code-outside-the-default-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing code outside the default path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v11-terminology-cross-check-and-genuine-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v11 terminology cross-check and genuine differences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numbers-permitted-sources-and-disposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numbers: permitted sources and disposition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#figure-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Figure scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explicit-old-figure-stage-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit old-figure stage check
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completed-figure-verification-and-omissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completed figure verification and omissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-figure-labels-and-source-lines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final figure labels and source lines
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Final figure labels and source lines">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#html-stage-details-and-svg-tooltips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTML stage details and SVG tooltips
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/MannLabs/fasta-lake/edit/main/docs/figure/PIPELINE_INVENTORY.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+    </a>
+  
+  
+
+
+<h1 id="fastalake-pipeline-inventory-and-final-figure-audit">FastaLake pipeline inventory and final figure audit<a class="headerlink" href="#fastalake-pipeline-inventory-and-final-figure-audit" title="Permanent link">#</a></h1>
+<p><strong>Scope: the default manifest-runner workflow.</strong> Readable definitions take priority over implementation labels. The current MannLabs executable code determines behavior; the current v11 manuscript supplies the terminology cross-check. No older figure was used as evidence.</p>
+<h2 id="source-identity-and-audit-boundary">Source identity and audit boundary<a class="headerlink" href="#source-identity-and-audit-boundary" title="Permanent link">#</a></h2>
+<ul>
+<li>Repository: <a href="https://github.com/MannLabs/fasta-lake">MannLabs/fasta-lake</a>, default branch <code>main</code>, observed live through <code>git ls-remote --symref</code> on 23 September 2026.</li>
+<li>Audited commit: <code>e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773</code> (22 September 2026, “Organize repository support files by purpose (#59)”). An isolated clean clone was inspected; the much larger local manuscript repository and another window's edited checkout were not used as software authority.</li>
+<li>Package version: <code>1.1.0rc2</code>. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/__init__.py#L13-L13">fasta_lake/<strong>init</strong>.py::<strong>version</strong> L13–13</a></li>
+<li>Manuscript terminology was checked against the v11 review package dated 23 September 2026 (DOCX SHA-256 <code>aaeccb7b9efe589e0187b0a992ce449d28464d56b1af71ac71fa4f0cd8bb1ccd</code>). The twelve audited Methods paragraphs match the earlier integrated v11. This checks terminology; scientific Methods review remains separate. Manuscript files and private coordination records are not distributed with the figure.</li>
+<li>This is static execution-path inspection, not a new proteomics run, performance benchmark or independent error-calibration study.</li>
+</ul>
+<p><strong>Meaning of scope:</strong> “study-level” means once for the declared acquisition roster; “sample-level” means once per mass-spectrometry acquisition (one manifest row), not necessarily once per biological specimen. Use <strong>“For the study”</strong> and <strong>“For each acquisition”</strong>, with “acquisition = one MS run” in the figure. This distinction is enforced by manifest and search identities. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a></p>
+<h2 id="entry-points-and-actual-orchestration">Entry points and actual orchestration<a class="headerlink" href="#entry-points-and-actual-orchestration" title="Permanent link">#</a></h2>
+<p>The primary end-to-end route is <code>python tools/run_manifest.py --manifest … --lake … --out …</code>. It starts with an existing protein FASTA, prediction CSVs and mzML files. It has no JSON pipeline-config argument. Its argument defaults and generated <code>fasta_lake.search.sage_config()</code> control the route below. The installed <code>fasta-lake</code> command instead dispatches individual Click commands. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L99-L183">tools/run_manifest.py::main L99–183</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/pyproject.toml#L48-L49">pyproject.toml::[project.scripts] L48–49</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/search.py#L60-L108">fasta_lake/search.py::sage_config L60–108</a></p>
+<p>Actual call path, in execution order:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tools/run_manifest.py::main
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  load_manifest; validate arguments, binaries and dependencies
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  create provenance and pooled prediction-file links
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  extract("evidence", lake, pooled_predictions, evidence.fasta)
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    fasta_extractor: filter each CSV, pool queries, exact lookup
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  for each manifest row:
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    extract("&lt;sample&gt;_extract", evidence.fasta, that CSV, sample_lake.fasta)
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    execute("&lt;sample&gt;_infer", parsimony_engine --strategy razor --tiebreak hash-acc)
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    [molecular add, only when a specimen-qualified source is supplied]
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    sage_config → execute("&lt;sample&gt;_search", Sage 0.14.6 --write-pin)
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>  execute("aggregate", aggregation_engine)
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  execute("study_quantification", tools/group_study.py --quantification sum)
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    study.group_searches → study_dictionary → _quantify
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    quantification.quantify_study(method="sum")
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    downstream.analyze_study [unless --skip-qc]
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  [annotate study, only with --annotation-settings]
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>  COMPLETE.json
+</span></code></pre></div>
+<p>The per-acquisition loop completes extraction, selection and search for one row before the next. <code>aggregate</code> executes before study grouping, but its matrices are <strong>not inputs to the study dictionary</strong>: both independently read <code>search/</code>. This is a branch in data flow, even though it is sequential in execution. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L544-L567">tools/run_manifest.py::main L544–567</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L568-L584">tools/run_manifest.py::main L568–584</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/group_study.py#L14-L77">tools/group_study.py::main L14–77</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a></p>
+<p>The measured-data example prepares a reference with the Rust lake builder, then invokes this same manifest runner. Docker's default command only displays CLI help; its example wrapper is a separate launch route. GitHub Actions build/test code and run explicit examples; they are not additional scientific stages. The older small shell demo is a different route, described below. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/examples/campi/run_example.py#L265-L309">examples/campi/run_example.py::main L265–309</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/Dockerfile#L63-L78">Dockerfile::runtime command L63–78</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/.github/workflows/ci.yml#L104-L142">.github/workflows/ci.yml::jobs.python / jobs.real-data-example L104–142</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/demo/run_demo.sh#L67-L108">demo/run_demo.sh::top-level shell stages L67–108</a></p>
+<h2 id="default-stages-in-execution-order">Default stages, in execution order<a class="headerlink" href="#default-stages-in-execution-order" title="Permanent link">#</a></h2>
+<p>Rows are audit IDs, not inherited figure-stage numbers. The scope column describes execution; grouping and quantification still retain a separate column for each acquisition.</p>
+<table>
+<thead>
+<tr>
+<th>ID; code stage → short display name</th>
+<th>What it does</th>
+<th>Inputs → outputs</th>
+<th>Invoked tools / algorithms</th>
+<th>Scope</th>
+<th>Defaults and filters</th>
+<th>Sources for this row</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D0; <code>load_manifest</code>, preflight and provenance → <strong>Check inputs</strong></td>
+<td>Checks the declared files and settings, then records the inputs and tools for this study.</td>
+<td>TSV (<code>sample</code>, <code>predictions</code>, <code>mzml</code>) + protein FASTA + CSV/mzML files → validated records, <code>PROVENANCE.json</code>, <code>pooled_predictions/*.csv</code> symlinks; later <code>commands.json</code>.</td>
+<td>Python; file/schema checks; SHA-256 identities; executable lookup.</td>
+<td>Study-level.</td>
+<td>New output directory; finite top fraction in (0,1]; valid lengths; normally 4 Rust threads; Sage exactly 0.14.6; sum selected by default; AlphaPeptTools required unless <code>--skip-qc</code>; <code>--validate-only</code> stops before execution.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L242-L309">tools/run_manifest.py::main L242–309</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a></td>
+</tr>
+<tr>
+<td>D1; <code>evidence</code> / <code>fasta_extractor</code> → <strong>Find study-supported proteins</strong></td>
+<td>Uses filtered predictions from all acquisitions to retrieve complete proteins containing an exact predicted sequence.</td>
+<td>Prepared reservoir FASTA + directory of per-acquisition prediction CSVs → <code>evidence.fasta</code> + <code>evidence.stats.json</code>; query collection is an in-memory object.</td>
+<td>Rust <code>fasta_extractor</code>; Aho–Corasick overlapping substring matching; I/L-equivalent lookup; memory-mapped FASTA with Rayon parallelism. Aho–Corasick locked at 1.1.5.</td>
+<td>Study-level, with prediction filtering independently within each acquisition file.</td>
+<td>Positive finite scores; 9–50 residues; low-complexity exclusions; retain scores at or above rank <code>ceil(0.30N)</code> among eligible rows, including ties; then deduplicate I/L-normalized queries. Full query must occur contiguously; no digestion rule is applied in this lookup.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L99-L183">tools/run_manifest.py::main L99–183</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L376-L440">tools/run_manifest.py::main.extract L376–440</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L207-L248">rust/fasta_extractor_v2/src/main.rs::parse_prediction_csv L207–248</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L305-L347">rust/fasta_extractor_v2/src/main.rs::normalize_il_seq / is_low_complexity L305–347</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L408-L465">rust/fasta_extractor_v2/src/main.rs::load_peptides_top_percent L408–465</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L1182-L1209">rust/fasta_extractor_v2/src/main.rs::main L1182–1209</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/Cargo.lock#L5-L10">rust/fasta_extractor_v2/Cargo.lock::aho-corasick package L5–10</a></td>
+</tr>
+<tr>
+<td>D2; <code>&lt;sample&gt;_extract</code> / <code>fasta_extractor</code> → <strong>Find acquisition candidates</strong></td>
+<td>Retrieves the study-supported proteins containing this acquisition's retained predictions.</td>
+<td><code>evidence.fasta</code> + this acquisition's CSV → <code>samples/&lt;sample&gt;/sample_lake.fasta</code> + <code>.stats.json</code>.</td>
+<td>Same Rust exact-matching engine as D1; full-length protein export.</td>
+<td>Sample-level: each acquisition.</td>
+<td>Same top-30% lookup threshold, tie handling, 9–50-residue eligibility and I/L rule as D1; no clustering. Stops if no protein matches.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L376-L440">tools/run_manifest.py::main.extract L376–440</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L568-L620">rust/fasta_extractor_v2/src/main.rs::load_peptides_top_percent_single_csv L568–620</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L1182-L1209">rust/fasta_extractor_v2/src/main.rs::main L1182–1209</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a></td>
+</tr>
+<tr>
+<td>D3; <code>&lt;sample&gt;_infer</code> / <code>parsimony_engine --strategy razor</code> → <strong>Select the search database</strong></td>
+<td>Assigns each eligible mapped prediction to one compatible protein and retains every protein receiving an assignment.</td>
+<td>Candidate FASTA + original acquisition prediction CSV → <code>inference/&lt;sample&gt;_razor.fasta</code> + <code>&lt;sample&gt;_razor_stats.json</code>.</td>
+<td>Rust Aho–Corasick maps all eligible evidence; fixed counts rank proteins by unique evidence, then total evidence, then smallest FNV-1a accession hash, then lexical accession. This is <strong>selection parsimony</strong>, not the later study-group inference.</td>
+<td>Sample-level: each acquisition.</td>
+<td><code>razor</code>, <code>hash-acc</code>, I/L normalization, 9–50 residues, positive finite scores and complexity filter. <strong>No top-percent argument is passed here:</strong> predictions below the lookup cutoff can contribute if they map to retrieved candidates. No two-peptide requirement. Complete selected proteins are written, not just the matched peptide pieces.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L545-L628">rust/parsimony_engine/src/main.rs::load_peptides L545–628</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L692-L776">rust/parsimony_engine/src/main.rs::map_peptides_parallel L692–776</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L783-L895">rust/parsimony_engine/src/main.rs::run_razor L783–895</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L1528-L1569">rust/parsimony_engine/src/main.rs::main L1528–1569</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L1436-L1458">rust/parsimony_engine/src/main.rs::write_fasta L1436–1458</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L1643-L1682">rust/parsimony_engine/src/main.rs::main L1643–1682</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/Cargo.lock#L5-L10">rust/parsimony_engine/Cargo.lock::aho-corasick package L5–10</a></td>
+</tr>
+<tr>
+<td>D4; <code>&lt;sample&gt;_search</code> / <code>sage</code> → <strong>Search measured spectra</strong></td>
+<td>Searches this acquisition's spectra against its selected database and reports peptide matches and label-free intensities.</td>
+<td>Selected target FASTA + this acquisition's mzML → <code>search/&lt;sample&gt;/config.json</code>, <code>results.sage.tsv</code>, <code>lfq.tsv</code>; <code>--write-pin</code> is also requested.</td>
+<td>Sage <strong>0.14.6</strong>; database spectrum search, native target/decoy confidence and native LFQ. No Percolator process is invoked by this route.</td>
+<td>Sample-level: one Sage invocation per acquisition.</td>
+<td>Closed tryptic search: K/R except before P, 2 missed cleavages; search peptides <strong>5–50 residues</strong> and 500–5,000 Da; precursor/fragment ±20 ppm; fixed C +57.0215, variable M +15.9949, at most 2 variable modifications; b/y ions; generated <code>rev_</code> decoys; one reported PSM per spectrum. LFQ: Hybrid peak scoring, Sum integration, spectral angle 0.7. The acceptance gate occurs in D5/D6; it is not a universal 9-residue final-identification gate.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L242-L309">tools/run_manifest.py::main L242–309</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/search.py#L13-L57">fasta_lake/search.py::_dda_config L13–57</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/search.py#L60-L108">fasta_lake/search.py::sage_config L60–108</a></td>
+</tr>
+<tr>
+<td>D5; <code>aggregate</code> / <code>aggregation_engine</code> → <strong>Export search summaries</strong></td>
+<td>Exports additional cross-acquisition matrices keyed by the search-reported peptide and protein-member sets.</td>
+<td>Each acquisition's <code>results.sage.tsv</code> + <code>lfq.tsv</code> → matrices and metadata/summary TSVs under <code>aggregate/</code>.</td>
+<td>Rust aggregation; search q values joined to LFQ features; member-set group keys.</td>
+<td>Study-level.</td>
+<td>Runner explicitly requests LFQ, <code>member-set</code>, threshold 0.01 and <code>--no-functional</code>. Peptide matrix uses peptide q; member-set protein matrix uses protein q. These are separate gates, not a double gate on the primary study-group matrix. Global BH on search q values is rejected.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L544-L567">tools/run_manifest.py::main L544–567</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/aggregation_engine/src/main.rs#L470-L522">rust/aggregation_engine/src/main.rs::load_search_q L470–522</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/aggregation_engine/src/main.rs#L2072-L2091">rust/aggregation_engine/src/main.rs::main L2072–2091</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/aggregation_engine/src/main.rs#L2170-L2200">rust/aggregation_engine/src/main.rs::main L2170–2200</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/aggregation_engine/src/main.rs#L1801-L1807">rust/aggregation_engine/src/main.rs::main L1801–1807</a></td>
+</tr>
+<tr>
+<td>D6; <code>study_quantification</code> → <code>group_searches</code>, <code>study_dictionary</code>, <code>_quantify</code> → <strong>Assign peptides to study groups</strong></td>
+<td>Builds one study dictionary from accepted peptides and sums each admitted feature once into its assigned group within its own acquisition.</td>
+<td><code>search/</code> configs, searched FASTAs, PSM and LFQ TSVs → <code>study_groups.tsv</code>, <code>peptide_to_study_group.tsv</code>, <code>representatives.fasta</code>, <code>study_group_matrix.tsv</code>, long table, feature/evidence ledgers and summary JSON.</td>
+<td>Python deterministic greedy cover of the observed peptide–protein graph; choose largest uncovered gain, then lexical accession; assign a peptide to the first selected representative explaining it; verify exact I/L-equivalent containment.</td>
+<td>Study-level dictionary; per-acquisition quantities.</td>
+<td>Target <code>label == 1</code> and finite <code>0 ≤ peptide_q ≤ 0.01</code>; canonicalize after acceptance by removing bracket modifications and collapsing I/L. Search universe is the union of FASTAs actually searched. Admit LFQ only when its canonical peptide passed in the <strong>same acquisition</strong>, intensity is positive and finite, and target members exist. Full feature intensity goes to one group; mass balance checked; absent matrix cells blank. No new protein-group/study-wide FDR is estimated. The default search reports one PSM, but this reader does not independently check a rank column.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L568-L584">tools/run_manifest.py::main L568–584</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/group_study.py#L14-L77">tools/group_study.py::main L14–77</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L26-L87">fasta_lake/study.py::canonical_peptide / _passing L26–87</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L40-L79">fasta_lake/study.py::greedy_set_cover / study_dictionary L40–79</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L258-L317">fasta_lake/study.py::group_searches L258–317</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L321-L447">fasta_lake/study.py::_quantify L321–447</a></td>
+</tr>
+<tr>
+<td>D7; <code>quantify_study(method="sum")</code> → <strong>Export group intensities</strong></td>
+<td>Exports the selected quantification matrix while preserving the study dictionary and peptide assignments.</td>
+<td>D6 grouping bundle → <code>study_groups/quantification/study_group_matrix.tsv</code>, <code>coverage.tsv</code>, <code>summary.json</code>.</td>
+<td>Python; default <code>sum</code> copies the already-summed D6 matrix without reassigning peptides.</td>
+<td>Study-level export, group × acquisition matrix.</td>
+<td><code>sum</code>; no sample normalization or imputation. directLFQ is an explicit alternative, not the default. D6 and D7 can share one figure card if the figure explains grouping and summed intensity together.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L242-L309">tools/run_manifest.py::main L242–309</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/group_study.py#L14-L77">tools/group_study.py::main L14–77</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L73-L143">fasta_lake/quantification.py::quantify_study L73–143</a></td>
+</tr>
+<tr>
+<td>D8; <code>analyze_study</code> → <strong>Review quality and variation</strong></td>
+<td>Summarizes detection and intensity distributions, and runs PCA when sufficient complete measurements exist.</td>
+<td>Fixed group matrix + grouping evidence → <code>qc/sample_qc.tsv</code>, <code>group_qc.tsv</code>, <code>study.h5ad</code>, QC figures, <code>summary.json</code>; PCA tables only if eligible.</td>
+<td>Python adapter; <strong>AlphaPeptTools 0.4.0</strong> QC, log2 transformation and PCA; plotting helpers. PCA = a summary of variation among runs.</td>
+<td>Study-level.</td>
+<td>Runs automatically unless <code>--skip-qc</code>. No normalization/imputation; PCA needs at least 3 nonempty acquisitions and 2 complete varying groups; feature centering, no unit-variance scaling; explicit skipped status otherwise. The main runner does not pass replicate metadata, so replicate CV is not a default endpoint.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/group_study.py#L14-L77">tools/group_study.py::main L14–77</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L21-L48">fasta_lake/downstream.py::ALPHAPEPTTOOLS_VERSION / require_analysis L21–48</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L160-L219">fasta_lake/downstream.py::analyze_study L160–219</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L290-L341">fasta_lake/downstream.py::analyze_study L290–341</a></td>
+</tr>
+<tr>
+<td>D9; completion receipt → <strong>Results and provenance</strong></td>
+<td>Writes the completion record after all requested work finishes.</td>
+<td>Completed stage outputs and flags → top-level <code>COMPLETE.json</code>, linked QC/optional annotation receipt.</td>
+<td>Python; <code>execute</code> rejects any nonzero stage exit.</td>
+<td>Study-level.</td>
+<td>Receipt records chosen quantification, optional annotation and QC status. This is an output/provenance label, not another scientific transformation.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L602-L625">tools/run_manifest.py::main L602–625</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="exact-eligibility-definition-behind-the-short-labels">Exact eligibility definition behind the short labels<a class="headerlink" href="#exact-eligibility-definition-behind-the-short-labels" title="Permanent link">#</a></h3>
+<p>The lookup filter removes a prediction when any residue exceeds 60% of its sequence, when a sequence of at least 12 residues has at most 2 residue types, or when a sequence of at least 10 residues is an alternating two-residue repeat. Complexity is checked before I/L normalization. The top-30% rule applies to eligible <strong>rows</strong>, includes cutoff ties, and is followed by unique-sequence pooling. A short figure label can say <strong>“Filtered de novo predictions”</strong>; detailed rules belong here or in HTML hover text. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L305-L347">rust/fasta_extractor_v2/src/main.rs::normalize_il_seq / is_low_complexity L305–347</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L408-L465">rust/fasta_extractor_v2/src/main.rs::load_peptides_top_percent L408–465</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L568-L620">rust/fasta_extractor_v2/src/main.rs::load_peptides_top_percent_single_csv L568–620</a></p>
+<p>Selection parsimony ranks fixed evidence counts; it does not repeatedly recompute uncovered peptide gains. Post-search study grouping does recompute uncovered gains. Both can reduce a protein representation, but they act on different evidence at different times. Do not collapse them into one “protein inference” box. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L783-L895">rust/parsimony_engine/src/main.rs::run_razor L783–895</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L40-L79">fasta_lake/study.py::greedy_set_cover / study_dictionary L40–79</a></p>
+<h2 id="preparation-before-the-default-runner">Preparation before the default runner<a class="headerlink" href="#preparation-before-the-default-runner" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Code / proposed label</th>
+<th>What is actually connected</th>
+<th>Inputs → outputs / scope</th>
+<th>Source and figure consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>lake-build</code> → <strong>Prepare the protein reservoir</strong></td>
+<td>Independent CLI command calls <code>run_lake_builder</code>, which invokes Rust <code>lake_builder</code>; the default manifest runner requires its output but does not call it. The measured-data example explicitly calls it first.</td>
+<td>One or more source FASTAs → cleaned sequence-deduplicated FASTA; reference-level preparation reusable across studies. SHA-256 of uppercase A–Z sequences, with I and L still distinct.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L1323-L1339">fasta_lake/cli.py::lake_build L1323–1339</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/rust/binaries.py#L198-L241">fasta_lake/rust/binaries.py::run_lake_builder L198–241</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/bin/lake_builder.rs#L329-L339">rust/fasta_extractor_v2/src/bin/lake_builder.rs::extract_clean_sequence L329–339</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/bin/lake_builder.rs#L531-L563">rust/fasta_extractor_v2/src/bin/lake_builder.rs::main L531–563</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/examples/campi/run_example.py#L265-L309">examples/campi/run_example.py::main L265–309</a> Show as preparation or as a prepared input, not as an automatic per-cohort step.</td>
+</tr>
+<tr>
+<td>Provenance-preserving reservoir preparation</td>
+<td>Rust supports joint-header TSV, uniform sequence-hash accessions and <code>--track-all-sources</code>; the measured-data example requests all three. The simple <code>lake-build</code> wrapper passes sources/output/threads only.</td>
+<td>FASTAs + source tags → reservoir; sidecars only with the explicit Rust options.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/bin/lake_builder.rs#L64-L155">rust/fasta_extractor_v2/src/bin/lake_builder.rs::Args L64–155</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/rust/binaries.py#L198-L241">fasta_lake/rust/binaries.py::run_lake_builder L198–241</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/examples/campi/run_example.py#L265-L309">examples/campi/run_example.py::main L265–309</a> Do not claim the simple wrapper automatically exports all original source headers.</td>
+</tr>
+<tr>
+<td><code>convert</code> → <strong>Prepare spectra and de novo predictions</strong></td>
+<td>Experimental wrapper invokes externally configured shell scripts through <code>FASTALAKE_CONVERSION_SCRIPTS</code>; not called by the manifest runner.</td>
+<td>RAW → mzML → HDF → prediction CSV in the optional wrapper; sample-level upstream work.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L1237-L1313">fasta_lake/cli.py::convert L1237–1313</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a> AlphaNovo is the v11 prediction source, but its model inference/checkpoint is not pinned or run by this default GitHub pipeline. Show supplied predictions as input; do not invent an AlphaNovo version.</td>
+</tr>
+</tbody>
+</table>
+<p>No particular catalogue combination, human reference, contaminants, lake size or assembly input is selected automatically by the default runner: it receives <code>--lake</code>. Catalogue names can describe a chosen reference input, not an unconditional code stage. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L99-L183">tools/run_manifest.py::main L99–183</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L242-L309">tools/run_manifest.py::main L242–309</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a></p>
+<h2 id="existing-code-outside-the-default-path">Existing code outside the default path<a class="headerlink" href="#existing-code-outside-the-default-path" title="Permanent link">#</a></h2>
+<p>“Optional” means callable but requires a different command/flag/input; it does not mean broken. “Unwired” means not called by the audited default route, not necessarily globally unused.</p>
+<table>
+<thead>
+<tr>
+<th>Code / feature</th>
+<th>Classification and activation</th>
+<th>Why it is outside the default figure</th>
+<th>Exact source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MMseqs2 clustering</td>
+<td>Optional older shell-demo branch, activated only by an explicit working <code>MMSEQS</code> environment variable. The branch invokes <code>easy-cluster</code>; it is not the manifest runner.</td>
+<td>No clustering in D0–D9. The demo also uses an 8-residue selection minimum and does not perform the default Sage/study analysis, so neither its numbering nor thresholds describe this figure.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/demo/run_demo.sh#L67-L108">demo/run_demo.sh::top-level shell stages L67–108</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a></td>
+</tr>
+<tr>
+<td><code>RunConfig.cluster_enabled=True</code>; <code>shared_peptide_classifier</code></td>
+<td>Legacy configuration field and separate cluster-member projection binary. Neither is invoked by the manifest runner.</td>
+<td>These artifacts explain why searching for “cluster” can produce misleading results. Compiling a binary in Docker does not place it on the pipeline's call path.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/run_config.py#L66-L79">fasta_lake/run_config.py::RunConfig L66–79</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/shared_peptide_classifier/src/main.rs#L44-L74">rust/shared_peptide_classifier/src/main.rs::Args L44–74</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/Dockerfile#L15-L27">Dockerfile::build/runtime stages L15–27</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L376-L440">tools/run_manifest.py::main.extract L376–440</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a></td>
+</tr>
+<tr>
+<td>Python <code>fasta-lake infer</code>, species budgets and alternate strategies</td>
+<td>Explicit experimental CLI; <code>species_budget</code> default is for this command, not for D3.</td>
+<td>The current runner invokes the Rust razor engine directly.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L979-L1049">fasta_lake/cli.py::infer L979–1049</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a></td>
+</tr>
+<tr>
+<td>k-mer rescue</td>
+<td>Conditional branch of the experimental Python inference runner, requiring <code>kmer_rescue_db</code>.</td>
+<td>No rescue in D1–D3; no approximate matching label.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/inference/runner.py#L276-L304">fasta_lake/inference/runner.py::run_inference L276–304</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L979-L1049">fasta_lake/cli.py::infer L979–1049</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a></td>
+</tr>
+<tr>
+<td><code>evidence-lake</code> / <code>extract-sample</code> wrappers</td>
+<td>Independent low-level commands. <code>evidence-lake --top-percent</code> defaults to None; <code>extract-sample</code> does not expose the runner's top-fraction option.</td>
+<td>Do not use these wrapper defaults to describe <code>run_manifest.py</code>.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L1342-L1448">fasta_lake/cli.py::evidence_lake / extract_sample L1342–1448</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L99-L183">tools/run_manifest.py::main L99–183</a></td>
+</tr>
+<tr>
+<td><code>extract-chunked</code>, <code>--laptop</code>, resource planning</td>
+<td>Optional execution strategy: divide reference into pieces and merge the extracted evidence before selection.</td>
+<td>Same scientific data flow; execution/resource detail can stay out of the main figure. A planning budget is not an enforced memory cap.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L99-L183">tools/run_manifest.py::main L99–183</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L376-L440">tools/run_manifest.py::main.extract L376–440</a></td>
+</tr>
+<tr>
+<td><code>--databases-only</code>, <code>--validate-only</code>, <code>--skip-qc</code></td>
+<td>Explicit early stop / QC omission flags.</td>
+<td>The table describes the complete default route; these give shorter routes.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L99-L183">tools/run_manifest.py::main L99–183</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L242-L309">tools/run_manifest.py::main L242–309</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L544-L567">tools/run_manifest.py::main L544–567</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/group_study.py#L14-L77">tools/group_study.py::main L14–77</a></td>
+</tr>
+<tr>
+<td><code>molecular add</code>: DNA/RNA TPM and metabolite-supported proteins</td>
+<td>Conditional after D3, only for rows with <code>molecular_source</code> and matching <code>specimen</code>; additive union retains baseline targets. In this runner, DNA percentage defaults to 1.0, RNA to 0.0; optional absolute cutoffs and metabolites. <code>--molecular-reference shared</code> uses a specimen gene reference instead of pooled reservoir extraction.</td>
+<td>Molecular evidence is optional, not a required TPM filter on de novo-selected proteins. Never label this as removing low-TPM baseline proteins.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L99-L183">tools/run_manifest.py::main L99–183</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L486-L517">tools/run_manifest.py::main L486–517</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/multi_omics/selection.py#L49-L132">fasta_lake/multi_omics/selection.py::build_selection L49–132</a></td>
+</tr>
+<tr>
+<td>directLFQ</td>
+<td>Explicit <code>--quantification directlfq</code>; pinned/enforced 0.3.3; <code>lfq_manager.run_lfq</code> works from fixed group assignments.</td>
+<td>Default is summed intensities. Optional alternative only.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L242-L309">tools/run_manifest.py::main L242–309</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L27-L50">fasta_lake/quantification.py::DIRECTLFQ_VERSION / require_directlfq L27–50</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L245-L257">fasta_lake/quantification.py::_directlfq L245–257</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L73-L143">fasta_lake/quantification.py::quantify_study L73–143</a></td>
+</tr>
+<tr>
+<td>Semi-tryptic / unspecific / open searching</td>
+<td>Explicit search flags handled by <code>sage_config</code>.</td>
+<td>Default is closed tryptic searching. These are search choices, not automatic later passes.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L99-L183">tools/run_manifest.py::main L99–183</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/search.py#L60-L108">fasta_lake/search.py::sage_config L60–108</a></td>
+</tr>
+<tr>
+<td><code>annotate study</code>, eggNOG, ESM-C</td>
+<td>Conditional <code>--annotation-settings</code> after grouping/QC; annotates exported <strong>representatives</strong>. eggNOG-mapper 2.1.12 and database 5.0.2 are enforced; DIAMOND mode is requested; optional embedding flag.</td>
+<td>Optional output extension. This is not the full peptide-based functional attribution described by v11; see mismatch table.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L585-L601">tools/run_manifest.py::main L585–601</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/annotation.py#L325-L375">fasta_lake/annotation.py::annotate_study L325–375</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/annotation.py#L146-L195">fasta_lake/annotation.py::annotate_fasta L146–195</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/pyproject.toml#L51-L57">pyproject.toml::[project.optional-dependencies] L51–57</a></td>
+</tr>
+<tr>
+<td><code>taxonomy</code>, <code>network</code>, <code>explore-study</code>, <code>resources</code></td>
+<td>Separately registered commands for prepared taxonomy input/reporting, network export/rendering, exploratory analysis and selected downloads.</td>
+<td>Not called by the manifest runner, and not prerequisites for obtaining the group matrix.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L2008-L2020">fasta_lake/cli.py::cli.add_command registrations L2008–2020</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/taxonomy_cli.py#L14-L67">fasta_lake/taxonomy_cli.py::prepare / report L14–67</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/network_cli.py#L14-L77">fasta_lake/network_cli.py::export_cmd / render_cmd L14–77</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/exploration_cli.py#L9-L55">fasta_lake/exploration_cli.py::explore_cmd L9–55</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/download_cli.py#L80-L121">fasta_lake/download_cli.py::download_cmd / unpack_cmd L80–121</a></td>
+</tr>
+<tr>
+<td>Entrapment, tuning, diagnostics, alternative inference and research helpers</td>
+<td>Separately registered interfaces rather than stages in the manifest call graph.</td>
+<td>Do not put experimental controls or parameter tuning on the default path. Presence in a package does not establish workflow-wide FDR.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L210-L253">fasta_lake/cli.py::entrapment_grp L210–253</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L792-L855">fasta_lake/cli.py::tune_cmd L792–855</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L871-L944">fasta_lake/cli.py::diagnose_cmd L871–944</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L979-L1049">fasta_lake/cli.py::infer L979–1049</a></td>
+</tr>
+<tr>
+<td><code>run_refinement</code></td>
+<td>Explicitly unimplemented; raises <code>NotImplementedError</code>; candidate proposal helpers exist.</td>
+<td>No refinement/search feedback loop in the default figure.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/refine.py#L229-L254">fasta_lake/refine.py::run_refinement L229–254</a></td>
+</tr>
+<tr>
+<td>Global BH correction of search q values</td>
+<td>Legacy helper code remains, but CLI activation is rejected before execution.</td>
+<td>Do not call the FDR method “global BH” or “Percolator”; the default accepts Sage peptide q values.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/aggregation_engine/src/main.rs#L1801-L1807">rust/aggregation_engine/src/main.rs::main L1801–1807</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="v11-terminology-cross-check-and-genuine-differences">v11 terminology cross-check and genuine differences<a class="headerlink" href="#v11-terminology-cross-check-and-genuine-differences" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>v11 definition</th>
+<th>Current code and figure wording</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reservoir / study-supported space / acquisition candidates</td>
+<td>Distinct sequence spaces before selection.</td>
+<td>Matches D1/D2; use “Protein reservoir”, “Study-supported proteins”, “Acquisition candidates”. Do not call pre-search candidates identifications. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a></td>
+</tr>
+<tr>
+<td>Exact lookup</td>
+<td>Full predicted sequence containment; I/L equivalent; no enzyme or approximate-matching constraint.</td>
+<td>Matches Rust search. “Exact sequence lookup” with short gloss “find proteins containing the prediction”. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a></td>
+</tr>
+<tr>
+<td>Selection parsimony</td>
+<td>All eligible mapped predictions, fixed evidence ranking, complete proteins retained.</td>
+<td>Matches D3. “Select the search database” with sublabel “selection parsimony”. Avoid “minimum protein set”; this rule does not solve exact minimum set cover. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L545-L628">rust/parsimony_engine/src/main.rs::load_peptides L545–628</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L783-L895">rust/parsimony_engine/src/main.rs::run_razor L783–895</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L1436-L1458">rust/parsimony_engine/src/main.rs::write_fasta L1436–1458</a></td>
+</tr>
+<tr>
+<td>Search acceptance</td>
+<td>Sage peptide q ≤ 0.01; 5–50-residue search distinct from 9–50-residue lookup.</td>
+<td>Matches the generated default search and primary study gate. Use “Peptide q ≤ 0.01”, not “1% workflow FDR”. Group reader relies on the default single reported PSM rather than independently filtering rank. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/search.py#L13-L57">fasta_lake/search.py::_dda_config L13–57</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a></td>
+</tr>
+<tr>
+<td>Study protein groups</td>
+<td>Greedy uncovered-peptide cover; direct assignment to the first explaining representative; labels do not prove unique origin.</td>
+<td>Matches D6. Use “Study protein groups” and “Sum assigned peptide intensities”. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L40-L79">fasta_lake/study.py::greedy_set_cover / study_dictionary L40–79</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L321-L447">fasta_lake/study.py::_quantify L321–447</a></td>
+</tr>
+<tr>
+<td>Additional <code>aggregate/</code> matrices</td>
+<td>v11 primary reporting uses direct study assignment.</td>
+<td>The current default still exports separate member-set matrices first, including a protein-q-gated matrix. They are auxiliary outputs, not the manuscript's primary group definition and not the input to D6. Recommend a side-output label rather than a second main “protein groups” card. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L544-L567">tools/run_manifest.py::main L544–567</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/aggregation_engine/src/main.rs#L2072-L2091">rust/aggregation_engine/src/main.rs::main L2072–2091</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a></td>
+</tr>
+<tr>
+<td>Functional / taxonomic attribution</td>
+<td>v11 uses compatible peptide-containing proteins in the searched sequence union and divides peptide intensity among supported annotations.</td>
+<td>The optional automated <code>annotate study</code> route annotates only reporting representatives. Do not present it as reproducing all v11 functional/species profiles. Recommend leave it off the first figure, or label narrowly “Optional representative annotation”. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/annotation.py#L325-L375">fasta_lake/annotation.py::annotate_study L325–375</a></td>
+</tr>
+<tr>
+<td>Joint common-database search</td>
+<td>Explicit manuscript sensitivity with shared FASTA and combined invocation.</td>
+<td>Default GitHub runner searches one acquisition against its own FASTA; no common-study FASTA union or joint Sage invocation. Keep “study-wide grouping” distinct from “joint search”. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/search.py#L13-L57">fasta_lake/search.py::_dda_config L13–57</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a></td>
+</tr>
+<tr>
+<td>Molecular layers</td>
+<td>v11's assembly-inclusive reservoirs and downstream molecular comparisons are distinct from the public-sequence benchmark.</td>
+<td>Optional TPM-based augmentation is an extra software route, not an automatic interpretation of those manuscript analyses. Avoid inserting it into the baseline flow. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L486-L517">tools/run_manifest.py::main L486–517</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/multi_omics/selection.py#L49-L132">fasta_lake/multi_omics/selection.py::build_selection L49–132</a></td>
+</tr>
+<tr>
+<td>Reservoir provenance</td>
+<td>v11 retains source provenance.</td>
+<td>Raw Rust builder supports full source sidecars, but the simple <code>lake-build</code> wrapper does not request them. Treat a prepared, documented reservoir as the input rather than promising universal sidecars. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/rust/binaries.py#L198-L241">fasta_lake/rust/binaries.py::run_lake_builder L198–241</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/bin/lake_builder.rs#L64-L155">rust/fasta_extractor_v2/src/bin/lake_builder.rs::Args L64–155</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/examples/campi/run_example.py#L265-L309">examples/campi/run_example.py::main L265–309</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="numbers-permitted-sources-and-disposition">Numbers: permitted sources and disposition<a class="headerlink" href="#numbers-permitted-sources-and-disposition" title="Permanent link">#</a></h2>
+<p>The figure should carry only a few method settings. No single lake size, retained-protein count, protein-group count, RAM requirement or runtime describes an arbitrary user study.</p>
+<table>
+<thead>
+<tr>
+<th>Number / possible claim</th>
+<th>Code or result-file source</th>
+<th>Decision for figure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Top 30%; prediction length 9–50 residues; positive scores; complexity cutoffs</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L99-L183">tools/run_manifest.py::main L99–183</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L207-L248">rust/fasta_extractor_v2/src/main.rs::parse_prediction_csv L207–248</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L305-L347">rust/fasta_extractor_v2/src/main.rs::normalize_il_seq / is_low_complexity L305–347</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L408-L465">rust/fasta_extractor_v2/src/main.rs::load_peptides_top_percent L408–465</a></td>
+<td>Eligible method labels. Prefer “top 30% by score; ties retained” if displayed; scope to <strong>lookup</strong>, not all selection.</td>
+</tr>
+<tr>
+<td>Search length 5–50; peptide q ≤ 0.01</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/search.py#L13-L57">fasta_lake/search.py::_dda_config L13–57</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/group_study.py#L14-L77">tools/group_study.py::main L14–77</a></td>
+<td>Eligible. The q cutoff is a default acceptance criterion, not a measured workflow-wide error rate.</td>
+</tr>
+<tr>
+<td>Sage 0.14.6; AlphaPeptTools 0.4.0; optional directLFQ 0.3.3</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L242-L309">tools/run_manifest.py::main L242–309</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L21-L48">fasta_lake/downstream.py::ALPHAPEPTTOOLS_VERSION / require_analysis L21–48</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L27-L50">fasta_lake/quantification.py::DIRECTLFQ_VERSION / require_directlfq L27–50</a></td>
+<td>Verified pins. Tool versions can stay in HTML detail/inventory to reduce card text.</td>
+</tr>
+<tr>
+<td>Rust 1.91.1; Aho–Corasick 1.1.5</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/Dockerfile#L4-L4">Dockerfile::rust-builder base L4–4</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/Cargo.lock#L5-L10">rust/fasta_extractor_v2/Cargo.lock::aho-corasick package L5–10</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/Cargo.lock#L5-L10">rust/parsimony_engine/Cargo.lock::aho-corasick package L5–10</a></td>
+<td>Implementation provenance, not performance numbers. Small “Rust selection core” badge is supported; a claim that the whole workflow is Rust would hide Python orchestration/grouping.</td>
+</tr>
+<tr>
+<td>HSTOOL reservoir 233,497,702; evidence 8,785,676; median selected 11,022.5</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/docs/concepts/data/construction_counts.tsv#L1-L3">docs/concepts/data/construction_counts.tsv::HSTOOL/PREDICT result rows L1–3</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/docs/concepts/data/summary.json#L1-L23">docs/concepts/data/summary.json::definitions and limits L1–23</a></td>
+<td>Result records exist, but describe a repository validation subset. The v11 study-supported count is 18,007,876 for its final 58-acquisition roster, so do not mix the two. Omit these quantities from a general README pipeline.</td>
+</tr>
+<tr>
+<td>PREDICT reservoir 272,919,212; median selected 9,176.0</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/docs/concepts/data/construction_counts.tsv#L1-L3">docs/concepts/data/construction_counts.tsv::HSTOOL/PREDICT result rows L1–3</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/docs/concepts/data/summary.json#L1-L23">docs/concepts/data/summary.json::definitions and limits L1–23</a></td>
+<td>Also a specific retained validation result, not a default or universal count. Omit.</td>
+</tr>
+<tr>
+<td>CAMPI example reference 29,635; selected 348/287; recorded groups 448</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/examples/campi/expected/results.json#L10-L51">examples/campi/expected/results.json::measurements / selection L10–51</a></td>
+<td>Limited acquisition windows; expected JSON still labels grouping as “plurality protein mapping”. Current D6 uses direct assignment. Do not promote these values to current full-cohort pipeline claims.</td>
+</tr>
+<tr>
+<td>General RAM/runtime or speedup</td>
+<td>Runner records per-command resources/seconds but provides no invariant measured result for an arbitrary input. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L602-L625">tools/run_manifest.py::main L602–625</a></td>
+<td>Omit. Do not substitute a thread default, laptop planning allowance, old figure, manuscript timing paragraph, or demo prose estimate for a measured benchmark.</td>
+</tr>
+<tr>
+<td>Whole-workflow FDR / protein-group FDR</td>
+<td>Current grouping explicitly emits no new estimate. <a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L258-L317">fasta_lake/study.py::group_searches L258–317</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L73-L143">fasta_lake/quantification.py::quantify_study L73–143</a></td>
+<td>No measured value established by this audit. Omit.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="figure-scope">Figure scope<a class="headerlink" href="#figure-scope" title="Permanent link">#</a></h2>
+<p>The figure uses these boundaries:</p>
+<ol>
+<li>Begin with the prepared protein reservoir, supplied prediction CSVs and measured mzML spectra. Reservoir construction, conversion and model inference are upstream inputs.</li>
+<li>Show the default route through summed group intensities and QC. Optional directLFQ, molecular additions and representative annotation appear only in the HTML notes.</li>
+<li>Show the auxiliary search-summary tables as a branch from search results. Combine D6/D7 into “Study groups and intensities”; the primary study matrix does not consume the auxiliary summaries.</li>
+</ol>
+<p>The design uses <strong>study lookup → each acquisition → study results</strong>, with one accent colour for each group. All eligible predictions enter selection separately from the filtered lookup queries. The code provenance and reproducible assets are included alongside this inventory.</p>
+<h2 id="explicit-old-figure-stage-check">Explicit old-figure stage check<a class="headerlink" href="#explicit-old-figure-stage-check" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Named stage</th>
+<th>Current default route?</th>
+<th>Finding / future figure decision</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clustering</td>
+<td>No</td>
+<td>Exists only in an explicitly activated older shell-demo branch and legacy helper/configuration code. Omit.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/demo/run_demo.sh#L67-L108">demo/run_demo.sh::top-level shell stages L67–108</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/run_config.py#L66-L79">fasta_lake/run_config.py::RunConfig L66–79</a></td>
+</tr>
+<tr>
+<td>k-mer rescue</td>
+<td>No</td>
+<td>Experimental Python inference option, not Rust selection. Omit.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/inference/runner.py#L276-L304">fasta_lake/inference/runner.py::run_inference L276–304</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a></td>
+</tr>
+<tr>
+<td>TPM filtering</td>
+<td>No</td>
+<td>Optional molecular additions can use TPM; baseline selected targets are retained. Omit from default.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L486-L517">tools/run_manifest.py::main L486–517</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/multi_omics/selection.py#L49-L132">fasta_lake/multi_omics/selection.py::build_selection L49–132</a></td>
+</tr>
+<tr>
+<td>directLFQ</td>
+<td>No, optional</td>
+<td>Sum is default; optional backend is still real code. Omit from main path or mark explicitly optional.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L242-L309">tools/run_manifest.py::main L242–309</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L73-L143">fasta_lake/quantification.py::quantify_study L73–143</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L27-L50">fasta_lake/quantification.py::DIRECTLFQ_VERSION / require_directlfq L27–50</a></td>
+</tr>
+<tr>
+<td>Parsimony</td>
+<td><strong>Yes</strong></td>
+<td>Pre-search Rust selection parsimony is active. Post-search study greedy cover is a separate operation. Keep both purposes clear.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L783-L895">rust/parsimony_engine/src/main.rs::run_razor L783–895</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L40-L79">fasta_lake/study.py::greedy_set_cover / study_dictionary L40–79</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="completed-figure-verification-and-omissions">Completed figure verification and omissions<a class="headerlink" href="#completed-figure-verification-and-omissions" title="Permanent link">#</a></h2>
+<p>The figure was audited against code commit <code>e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773</code>. Selection, search and reporting definitions were cross-checked against the v11 review package dated 23 September 2026; the twelve audited Methods paragraphs are unchanged from the earlier integrated v11. Subsequent application edits in this documentation update change docstrings only.</p>
+<p>Both handwritten SVGs and the HTML are generated from <code>pipeline_data.json</code> by <code>build_figure.py</code>. Plus Jakarta Sans and JetBrains Mono are embedded as subsetted WOFF2 fonts, with pinned source hashes and OFL licences. The minimum text size is 11.37 px when the figure is displayed at 880 px width. <a href="../BUILD_RECEIPT.json">Build receipt</a></p>
+<p>Playwright rendered each SVG at 880 and 1600 px under both browser colour preferences (eight PNGs), plus the HTML at both widths in light and dark (four PNGs). All twelve PNGs were individually opened and inspected. SVG image embedding matches inline rendering byte-for-byte at each size/theme, confirming embedded-font rendering in the README embedding context. Text stays within its allocated width and canvas; the final glyph bounds do not intersect. Both SVGs pass <code>xmllint --noout</code>, contain no scripts or external hrefs, and make no external asset requests. Rebuilding reproduces the generated asset hashes. <a href="../RENDER_RECEIPT.json">Browser receipt</a> · <a href="../VISUAL_REVIEW.json">Visual inspection</a> · <a href="../VERIFICATION.json">Verification</a></p>
+<p>The one-page vector PDF is an extra author-review export of the same light figure; its glyph outlines are embedded. <a href="../PDF_CHECK.json">PDF check</a></p>
+<table>
+<thead>
+<tr>
+<th>Left off the main figure</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clustering, k-mer rescue and TPM filtering</td>
+<td>Not in the default execution path; clustering is excluded from this figure. The source-cited old-stage check above remains the audit record.</td>
+</tr>
+<tr>
+<td>directLFQ, molecular additions and representative annotation</td>
+<td>Optional code paths. Only the HTML notes mention them, with explicit optional status.</td>
+</tr>
+<tr>
+<td>Reservoir construction, raw conversion and AlphaNovo inference</td>
+<td>Upstream of the manifest runner’s supplied inputs; no tool version or model checkpoint is invented.</td>
+</tr>
+<tr>
+<td>Preflight, provenance recording and completion receipt</td>
+<td>Operational bookkeeping rather than scientific transformations; all remain documented as D0/D9 in the inventory.</td>
+</tr>
+<tr>
+<td>Lake size, protein counts, protein-group counts, RAM and runtime</td>
+<td>No universal number is justified by the current source/benchmark scope. No estimate or older-figure number was imported.</td>
+</tr>
+<tr>
+<td>Whole-workflow or protein-group FDR</td>
+<td>The displayed q cutoff is search-level peptide acceptance, not measured whole-workflow error control.</td>
+</tr>
+<tr>
+<td>v11 biological functional-attribution layer or joint searching</td>
+<td>These are distinct from the default GitHub orchestration; the current representative-annotation adapter does not implement all manuscript attribution analyses.</td>
+</tr>
+</tbody>
+</table>
+<p>Selection parsimony remains on the figure because it is invoked in the current default route. The audit distinguishes its fixed-count evidence assignment from post-search greedy study grouping.</p>
+<h2 id="final-figure-labels-and-source-lines">Final figure labels and source lines<a class="headerlink" href="#final-figure-labels-and-source-lines" title="Permanent link">#</a></h2>
+<p>Generated from <code>pipeline_data.json</code> and <code>code_sources.json</code>; the code commit is e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773.</p>
+<table>
+<thead>
+<tr>
+<th>Literal label</th>
+<th>Exact source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Study-wide exact protein lookup; per-acquisition candidate retrieval, selection parsimony and Sage search; shared study groups, summed intensities and quality control.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L568-L584">tools/run_manifest.py::main L568–584</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L160-L219">fasta_lake/downstream.py::analyze_study L160–219</a></td>
+</tr>
+<tr>
+<td>FastaLake default pipeline</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a></td>
+</tr>
+<tr>
+<td>FOR EACH ACQUISITION</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a></td>
+</tr>
+<tr>
+<td>Acquisition = one MS run</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a></td>
+</tr>
+<tr>
+<td>All eligible predictions · CSV</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L545-L628">rust/parsimony_engine/src/main.rs::load_peptides L545–628</a></td>
+</tr>
+<tr>
+<td>Rust selection core</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L376-L440">tools/run_manifest.py::main.extract L376–440</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/Dockerfile#L15-L27">Dockerfile::build/runtime stages L15–27</a></td>
+</tr>
+<tr>
+<td>FastaLake</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/pyproject.toml#L48-L49">pyproject.toml::[project.scripts] L48–49</a></td>
+</tr>
+<tr>
+<td>Find proteins containing this</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L568-L620">rust/fasta_extractor_v2/src/main.rs::load_peptides_top_percent_single_csv L568–620</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a></td>
+</tr>
+<tr>
+<td>run’s filtered predictions.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L568-L620">rust/fasta_extractor_v2/src/main.rs::load_peptides_top_percent_single_csv L568–620</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a></td>
+</tr>
+<tr>
+<td>Find acquisition</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a></td>
+</tr>
+<tr>
+<td>candidates</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a></td>
+</tr>
+<tr>
+<td>Exact lookup · Rust</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L376-L440">tools/run_manifest.py::main.extract L376–440</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a></td>
+</tr>
+<tr>
+<td>Peptide q ≤ 0.01 is the default Sage search-acceptance cutoff. It is not a measured error rate for the whole workflow. Study groups provide consistent reporting labels; a representative does not establish the unique protein or organism of origin. The additional search-summary tables use the search-reported member sets and remain separate from the primary study-group matrix.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L258-L317">fasta_lake/study.py::group_searches L258–317</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L40-L79">fasta_lake/study.py::greedy_set_cover / study_dictionary L40–79</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/aggregation_engine/src/main.rs#L2072-L2091">rust/aggregation_engine/src/main.rs::main L2072–2091</a></td>
+</tr>
+<tr>
+<td>How to read the outputs</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L258-L317">fasta_lake/study.py::group_searches L258–317</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L321-L447">fasta_lake/study.py::_quantify L321–447</a></td>
+</tr>
+<tr>
+<td>CSV</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a></td>
+</tr>
+<tr>
+<td>A closer look at each stage</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/group_study.py#L14-L77">tools/group_study.py::main L14–77</a></td>
+</tr>
+<tr>
+<td>Default workflow · code e072ca2</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a><br><a href="../code_sources.json#L3">code_sources.json::commit L3</a></td>
+</tr>
+<tr>
+<td>Assign accepted peptides to shared study groups;</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L40-L79">fasta_lake/study.py::greedy_set_cover / study_dictionary L40–79</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a></td>
+</tr>
+<tr>
+<td>sum their intensities within each run.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L321-L447">fasta_lake/study.py::_quantify L321–447</a></td>
+</tr>
+<tr>
+<td>Study groups and intensities</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L40-L79">fasta_lake/study.py::greedy_set_cover / study_dictionary L40–79</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L321-L447">fasta_lake/study.py::_quantify L321–447</a></td>
+</tr>
+<tr>
+<td>Group × acquisition matrix · TSV</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L321-L447">fasta_lake/study.py::_quantify L321–447</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L73-L143">fasta_lake/quantification.py::quantify_study L73–143</a></td>
+</tr>
+<tr>
+<td>FastaLake pipeline</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/pyproject.toml#L48-L49">pyproject.toml::[project.scripts] L48–49</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a></td>
+</tr>
+<tr>
+<td>Summed intensities are the default. directLFQ 0.3.3 can be selected explicitly. Specimen-matched molecular evidence can add protein candidates after selection; optional eggNOG annotation describes the reporting representatives. These extensions are outside the default flow shown above.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L73-L143">fasta_lake/quantification.py::quantify_study L73–143</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L27-L50">fasta_lake/quantification.py::DIRECTLFQ_VERSION / require_directlfq L27–50</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L486-L517">tools/run_manifest.py::main L486–517</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/multi_omics/selection.py#L49-L132">fasta_lake/multi_omics/selection.py::build_selection L49–132</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/annotation.py#L325-L375">fasta_lake/annotation.py::annotate_study L325–375</a></td>
+</tr>
+<tr>
+<td>Optional extensions</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L242-L309">tools/run_manifest.py::main L242–309</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L486-L517">tools/run_manifest.py::main L486–517</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L585-L601">tools/run_manifest.py::main L585–601</a></td>
+</tr>
+<tr>
+<td>Retrieve complete proteins by exact peptide lookup.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L1182-L1209">rust/fasta_extractor_v2/src/main.rs::main L1182–1209</a></td>
+</tr>
+<tr>
+<td>9–50 residues · top 30% per run; score ties retained</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L99-L183">tools/run_manifest.py::main L99–183</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L408-L465">rust/fasta_extractor_v2/src/main.rs::load_peptides_top_percent L408–465</a></td>
+</tr>
+<tr>
+<td>Isoleucine and leucine are treated as equivalent.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L305-L347">rust/fasta_extractor_v2/src/main.rs::normalize_il_seq / is_low_complexity L305–347</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a></td>
+</tr>
+<tr>
+<td>Find study-supported proteins</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a></td>
+</tr>
+<tr>
+<td>De novo predictions</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L207-L248">rust/fasta_extractor_v2/src/main.rs::parse_prediction_csv L207–248</a></td>
+</tr>
+<tr>
+<td>Sequences predicted from spectra</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L1237-L1313">fasta_lake/cli.py::convert L1237–1313</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a></td>
+</tr>
+<tr>
+<td>Review detection and intensity.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L160-L219">fasta_lake/downstream.py::analyze_study L160–219</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L290-L341">fasta_lake/downstream.py::analyze_study L290–341</a></td>
+</tr>
+<tr>
+<td>PCA summarizes variation, when eligible.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L160-L219">fasta_lake/downstream.py::analyze_study L160–219</a></td>
+</tr>
+<tr>
+<td>Quality control</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/group_study.py#L14-L77">tools/group_study.py::main L14–77</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L160-L219">fasta_lake/downstream.py::analyze_study L160–219</a></td>
+</tr>
+<tr>
+<td>AlphaPeptTools · reports</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L21-L48">fasta_lake/downstream.py::ALPHAPEPTTOOLS_VERSION / require_analysis L21–48</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L290-L341">fasta_lake/downstream.py::analyze_study L290–341</a></td>
+</tr>
+<tr>
+<td>Protein reservoir</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L99-L183">tools/run_manifest.py::main L99–183</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a></td>
+</tr>
+<tr>
+<td>FASTA · complete proteins</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L376-L440">tools/run_manifest.py::main.extract L376–440</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L1182-L1209">rust/fasta_extractor_v2/src/main.rs::main L1182–1209</a></td>
+</tr>
+<tr>
+<td>ACROSS THE STUDY</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L544-L567">tools/run_manifest.py::main L544–567</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L568-L584">tools/run_manifest.py::main L568–584</a></td>
+</tr>
+<tr>
+<td>The workflow starts with a prepared protein reservoir, de novo prediction CSVs and one mzML file per acquisition. Raw-file conversion and de novo model inference are upstream. Selection and search run separately for each acquisition; the study dictionary is built afterward from the accepted peptides.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/cli.py#L1237-L1313">fasta_lake/cli.py::convert L1237–1313</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a></td>
+</tr>
+<tr>
+<td>Inputs and scope</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a></td>
+</tr>
+<tr>
+<td>Match spectra to the selected</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/search.py#L13-L57">fasta_lake/search.py::_dda_config L13–57</a></td>
+</tr>
+<tr>
+<td>protein database.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/search.py#L13-L57">fasta_lake/search.py::_dda_config L13–57</a></td>
+</tr>
+<tr>
+<td>Peptide error cutoff: q ≤ 0.01</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/group_study.py#L14-L77">tools/group_study.py::main L14–77</a></td>
+</tr>
+<tr>
+<td>Search measured</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a></td>
+</tr>
+<tr>
+<td>spectra</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a></td>
+</tr>
+<tr>
+<td>Sage 0.14.6</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L242-L309">tools/run_manifest.py::main L242–309</a></td>
+</tr>
+<tr>
+<td>Keep full proteins that explain</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L783-L895">rust/parsimony_engine/src/main.rs::run_razor L783–895</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L1436-L1458">rust/parsimony_engine/src/main.rs::write_fasta L1436–1458</a></td>
+</tr>
+<tr>
+<td>the mapped prediction evidence.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L692-L776">rust/parsimony_engine/src/main.rs::map_peptides_parallel L692–776</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L783-L895">rust/parsimony_engine/src/main.rs::run_razor L783–895</a></td>
+</tr>
+<tr>
+<td>Select the</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a></td>
+</tr>
+<tr>
+<td>search database</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a></td>
+</tr>
+<tr>
+<td>Selection parsimony · Rust</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L783-L895">rust/parsimony_engine/src/main.rs::run_razor L783–895</a></td>
+</tr>
+<tr>
+<td>View the source workflow</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a></td>
+</tr>
+<tr>
+<td>The figure follows MannLabs/fasta-lake at the recorded source commit. Both SVG themes and this page are generated from the same stage data. Fonts are embedded; the figure makes no external requests.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a><br><a href="../build_figure.py#L51-L78">build_figure.py::font_css L51–78</a><br><a href="../build_figure.py#L307-L348">build_figure.py::main L307–348</a><br><a href="../code_sources.json#L3">code_sources.json::commit L3</a></td>
+</tr>
+<tr>
+<td>Code and reproducibility</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L325-L374">tools/run_manifest.py::main / execute L325–374</a></td>
+</tr>
+<tr>
+<td>Measured spectra · mzML</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L40-L96">tools/run_manifest.py::load_manifest L40–96</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/search.py#L13-L57">fasta_lake/search.py::_dda_config L13–57</a></td>
+</tr>
+<tr>
+<td>FOR THE STUDY</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a></td>
+</tr>
+<tr>
+<td>Protein selection, search and study quantification</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L568-L584">tools/run_manifest.py::main L568–584</a></td>
+</tr>
+<tr>
+<td>Search-summary tables</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L544-L567">tools/run_manifest.py::main L544–567</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/aggregation_engine/src/main.rs#L2072-L2091">rust/aggregation_engine/src/main.rs::main L2072–2091</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="html-stage-details-and-svg-tooltips">HTML stage details and SVG tooltips<a class="headerlink" href="#html-stage-details-and-svg-tooltips" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Literal detail</th>
+<th>Exact source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Within each acquisition, retain positive-score predictions of 9–50 residues after the complexity filter, using the top-30% score threshold and retaining ties. Pool distinct I/L-equivalent queries and retrieve complete proteins by exact containment with Aho–Corasick.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L207-L248">rust/fasta_extractor_v2/src/main.rs::parse_prediction_csv L207–248</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L305-L347">rust/fasta_extractor_v2/src/main.rs::normalize_il_seq / is_low_complexity L305–347</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L408-L465">rust/fasta_extractor_v2/src/main.rs::load_peptides_top_percent L408–465</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L1182-L1209">rust/fasta_extractor_v2/src/main.rs::main L1182–1209</a></td>
+</tr>
+<tr>
+<td>Use the same lookup filter on each acquisition’s predictions to retrieve candidates from the study-supported protein space. Lookup uses the entire predicted sequence, with isoleucine and leucine equivalent and no enzyme constraint.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L442-L456">tools/run_manifest.py::main L442–456</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L568-L620">rust/fasta_extractor_v2/src/main.rs::load_peptides_top_percent_single_csv L568–620</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/fasta_extractor_v2/src/main.rs#L854-L935">rust/fasta_extractor_v2/src/main.rs::main L854–935</a></td>
+</tr>
+<tr>
+<td>Selection parsimony uses all eligible predictions mapping to the candidates, including those below the lookup score threshold. Fixed unique- and total-evidence counts rank compatible proteins; accession hashes resolve ties. Retain complete proteins receiving evidence. This operation is separate from post-search study grouping.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L457-L485">tools/run_manifest.py::main L457–485</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L545-L628">rust/parsimony_engine/src/main.rs::load_peptides L545–628</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L692-L776">rust/parsimony_engine/src/main.rs::map_peptides_parallel L692–776</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L783-L895">rust/parsimony_engine/src/main.rs::run_razor L783–895</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/rust/parsimony_engine/src/main.rs#L1436-L1458">rust/parsimony_engine/src/main.rs::write_fasta L1436–1458</a></td>
+</tr>
+<tr>
+<td>Sage 0.14.6 searches one acquisition at a time against its selected FASTA. The default is closed tryptic searching over peptides of 5–50 residues, with generated decoys and native label-free intensities. Target peptides pass at peptide q ≤ 0.01 before study grouping. The lookup minimum of nine residues is not a final-identification length filter.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L242-L309">tools/run_manifest.py::main L242–309</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/tools/run_manifest.py#L518-L543">tools/run_manifest.py::main L518–543</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/search.py#L13-L57">fasta_lake/search.py::_dda_config L13–57</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a></td>
+</tr>
+<tr>
+<td>A deterministic greedy cover of the accepted peptide–protein graph defines a single study dictionary, restricted to the FASTAs actually searched. Each canonical peptide is assigned to the first selected representative explaining it. Sum positive finite LFQ feature intensities only where that peptide was accepted in the same acquisition, preserving missing values and counting each admitted feature once.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L40-L79">fasta_lake/study.py::greedy_set_cover / study_dictionary L40–79</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L174-L256">fasta_lake/study.py::group_searches L174–256</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/study.py#L321-L447">fasta_lake/study.py::_quantify L321–447</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/quantification.py#L73-L143">fasta_lake/quantification.py::quantify_study L73–143</a></td>
+</tr>
+<tr>
+<td>AlphaPeptTools 0.4.0 reports detection, intensity and missingness without extra normalization or imputation. PCA runs on complete varying groups when at least three nonempty acquisitions and two eligible groups are available; otherwise the output records why it was skipped.</td>
+<td><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L21-L48">fasta_lake/downstream.py::ALPHAPEPTTOOLS_VERSION / require_analysis L21–48</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L160-L219">fasta_lake/downstream.py::analyze_study L160–219</a><br><a href="https://github.com/MannLabs/fasta-lake/blob/e072ca2a9b73dcd16f85ebc73bec9f2d9f9e2773/fasta_lake/downstream.py#L290-L341">fasta_lake/downstream.py::analyze_study L290–341</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      MIT licence. FastaLake is developed in the Mann Lab, Max Planck Institute of Biochemistry.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/MannLabs" target="_blank" rel="noopener" title="Mann Lab on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "navigation.instant", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -1,0 +1,23 @@
+{
+  "n_acquisitions": 20,
+  "n_successful_searches": 30,
+  "hstool_median_peptide_jaccard": 0.5969305123525026,
+  "hstool_median_database_jaccard": 0.366143928593566,
+  "hstool_complete_case_peptides": 12057,
+  "hstool_median_peptide_cv": 0.431353758983303,
+  "predict_median_paired_peptide_ratio": 1.2672380078923329,
+  "definitions": {
+    "peptide": "SAGE target label=1, 0<=peptide_q<=.01, bracket modifications removed, I->L",
+    "quantification": "positive finite LFQ feature intensity, gated by canonical target peptide IDs; summed over charge/modification features",
+    "CV": "sample standard deviation / arithmetic mean over all 10 technical acquisitions, complete cases, no normalization or imputation",
+    "study_group": "greedy set cover of pooled observed target peptide-protein graph, restricted to union of actually searched FASTAs; lexical gain ties",
+    "sample_group": "lexically smallest member of the feature protein set, not new within-sample parsimony"
+  },
+  "limits": [
+    "Reused reference lakes and existing de novo predictions; no new raw conversion or de novo model inference.",
+    "No independent FDR validation was performed in these 30 searches; reported q values are search-engine estimates.",
+    "Pooled evidence couples technical replicates; these runs do not establish out-of-cohort generalization.",
+    "The matched metagenome is a comparator, not a complete ground truth.",
+    "Study keys are defined for observed evidence-bearing proteins; searched proteins without observed peptides remain unassigned."
+  ]
+}

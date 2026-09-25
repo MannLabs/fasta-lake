@@ -1,0 +1,45 @@
+{
+  "FastaLake_Defence_Companion": {
+    "pdf_pages": 13,
+    "pdf_outside_page_words": [],
+    "docx_zip_integrity": "passed",
+    "docx_paragraphs": 91,
+    "docx_tables": 0,
+    "docx_local_links_checked": [],
+    "pdf_local_links_checked": []
+  },
+  "FastaLake_Methods": {
+    "pdf_pages": 8,
+    "pdf_outside_page_words": [],
+    "docx_zip_integrity": "passed",
+    "docx_paragraphs": 69,
+    "docx_tables": 1,
+    "docx_local_links_checked": [],
+    "pdf_local_links_checked": []
+  },
+  "FastaLake_Release_Review": {
+    "pdf_pages": 6,
+    "pdf_outside_page_words": [],
+    "docx_zip_integrity": "passed",
+    "docx_paragraphs": 40,
+    "docx_tables": 1,
+    "docx_local_links_checked": [],
+    "pdf_local_links_checked": []
+  },
+  "FastaLake_User_Manual": {
+    "pdf_pages": 24,
+    "pdf_outside_page_words": [],
+    "docx_zip_integrity": "passed",
+    "docx_paragraphs": 292,
+    "docx_tables": 8,
+    "docx_local_links_checked": [
+      "../examples/campi/DATA_PROVENANCE.md",
+      "../examples/campi/README.md"
+    ],
+    "pdf_local_links_checked": [
+      "../examples/campi/DATA_PROVENANCE.md",
+      "../examples/campi/README.md",
+      "../examples/campi/README.md"
+    ]
+  }
+}

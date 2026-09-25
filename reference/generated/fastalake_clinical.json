@@ -1,0 +1,88 @@
+{
+  "acquisition": "dda",
+  "search_engine": "sage",
+  "database": {
+    "sources": [
+      {
+        "tag": "SwissProt",
+        "priority": 1,
+        "path": "/data/uniprot_sprot_human.fasta",
+        "type": "reference"
+      },
+      {
+        "tag": "TrEMBL",
+        "priority": 2,
+        "path": "/data/uniprot_trembl_human.fasta",
+        "type": "reference"
+      },
+      {
+        "tag": "gnomAD",
+        "priority": 3,
+        "path": "/data/gnomad_variants.fasta",
+        "type": "variant"
+      },
+      {
+        "tag": "cRAP",
+        "priority": 99,
+        "path": "/data/cRAP_contaminants.fasta",
+        "type": "contaminant"
+      },
+      {
+        "tag": "Entrap_Arabidopsis",
+        "priority": 100,
+        "path": "/data/arabidopsis_thaliana.fasta",
+        "type": "entrapment"
+      }
+    ],
+    "output": "clinical_lake.fasta"
+  },
+  "sequence_quality": {
+    "min_length": 6,
+    "max_length": 50000,
+    "reject_poly_runs": true,
+    "poly_run_length": 10,
+    "reject_low_complexity": true,
+    "low_complexity_threshold": 0.3,
+    "reject_fragments": true,
+    "fragment_length_threshold": 100
+  },
+  "peptide_evidence": {
+    "predictions_dir": "/data/alphanovo_results",
+    "min_length": 8,
+    "max_length": 50,
+    "min_score": 0.5,
+    "top_percent": 0.5,
+    "normalize_il": true
+  },
+  "complexity": {
+    "enabled": true,
+    "auto_recommend": true,
+    "report_metrics": [
+      "hit_rate",
+      "species_richness",
+      "peptide_diversity",
+      "db_coverage"
+    ]
+  },
+  "inference": {
+    "strategy": "razor",
+    "min_peptides": 1,
+    "strain_resolution": true,
+    "keep_contaminants": true,
+    "keep_entrapment": true
+  },
+  "entrapment": {
+    "enabled": true,
+    "method": "phylogenetic",
+    "source": "/data/arabidopsis_thaliana.fasta",
+    "n_proteins": 1000,
+    "expected_fdr": 0.01
+  },
+  "output": {
+    "directory": "./output",
+    "write_stats": true,
+    "write_hits_tsv": true,
+    "write_audit_log": true,
+    "provenance_tracking": true
+  }
+}

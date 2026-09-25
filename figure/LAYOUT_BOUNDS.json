@@ -1,0 +1,706 @@
+[
+  {
+    "theme": "light",
+    "key": "brand",
+    "x": 118,
+    "y": 76,
+    "max_width": 350,
+    "size": 34
+  },
+  {
+    "theme": "light",
+    "key": "subtitle",
+    "x": 48,
+    "y": 115,
+    "max_width": 850,
+    "size": 19
+  },
+  {
+    "theme": "light",
+    "key": "badge",
+    "x": 957,
+    "y": 71,
+    "max_width": 184,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "study",
+    "x": 48,
+    "y": 174,
+    "max_width": 310,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "reservoir",
+    "x": 66,
+    "y": 222,
+    "max_width": 257,
+    "size": 20
+  },
+  {
+    "theme": "light",
+    "key": "reservoir_type",
+    "x": 66,
+    "y": 246,
+    "max_width": 257,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "predictions",
+    "x": 66,
+    "y": 302,
+    "max_width": 220,
+    "size": 20
+  },
+  {
+    "theme": "light",
+    "key": "csv",
+    "x": 295,
+    "y": 301,
+    "max_width": 32,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "predictions_gloss",
+    "x": 66,
+    "y": 332,
+    "max_width": 258,
+    "size": 15.5
+  },
+  {
+    "theme": "light",
+    "key": "pool_title",
+    "x": 417,
+    "y": 232,
+    "max_width": 640,
+    "size": 26
+  },
+  {
+    "theme": "light",
+    "key": "pool_body",
+    "x": 417,
+    "y": 267,
+    "max_width": 700,
+    "size": 18.5
+  },
+  {
+    "theme": "light",
+    "key": "pool_il",
+    "x": 417,
+    "y": 293,
+    "max_width": 700,
+    "size": 18.5
+  },
+  {
+    "theme": "light",
+    "key": "pool_filter",
+    "x": 417,
+    "y": 329,
+    "max_width": 700,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "acquisition",
+    "x": 48,
+    "y": 422,
+    "max_width": 290,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "all_predictions",
+    "x": 444,
+    "y": 420,
+    "max_width": 312,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "spectra",
+    "x": 830,
+    "y": 420,
+    "max_width": 300,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "candidate_title_1",
+    "x": 72,
+    "y": 489,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "light",
+    "key": "candidate_title_2",
+    "x": 72,
+    "y": 520,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "light",
+    "key": "candidate_body_1",
+    "x": 72,
+    "y": 557,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "light",
+    "key": "candidate_body_2",
+    "x": 72,
+    "y": 583,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "light",
+    "key": "candidate_tool",
+    "x": 72,
+    "y": 640,
+    "max_width": 296,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "select_title_1",
+    "x": 452,
+    "y": 489,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "light",
+    "key": "select_title_2",
+    "x": 452,
+    "y": 520,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "light",
+    "key": "select_body_1",
+    "x": 452,
+    "y": 557,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "light",
+    "key": "select_body_2",
+    "x": 452,
+    "y": 583,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "light",
+    "key": "select_tool",
+    "x": 452,
+    "y": 640,
+    "max_width": 296,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "search_title_1",
+    "x": 832,
+    "y": 489,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "light",
+    "key": "search_title_2",
+    "x": 832,
+    "y": 520,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "light",
+    "key": "search_body_1",
+    "x": 832,
+    "y": 557,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "light",
+    "key": "search_body_2",
+    "x": 832,
+    "y": 583,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "light",
+    "key": "search_tool",
+    "x": 832,
+    "y": 619,
+    "max_width": 296,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "search_q",
+    "x": 832,
+    "y": 644,
+    "max_width": 296,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "summary_output",
+    "x": 893,
+    "y": 749,
+    "max_width": 244,
+    "size": 17
+  },
+  {
+    "theme": "light",
+    "key": "results",
+    "x": 48,
+    "y": 762,
+    "max_width": 280,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "group_title",
+    "x": 72,
+    "y": 839,
+    "max_width": 520,
+    "size": 26
+  },
+  {
+    "theme": "light",
+    "key": "group_body_1",
+    "x": 72,
+    "y": 884,
+    "max_width": 546,
+    "size": 18.5
+  },
+  {
+    "theme": "light",
+    "key": "group_body_2",
+    "x": 72,
+    "y": 912,
+    "max_width": 546,
+    "size": 18.5
+  },
+  {
+    "theme": "light",
+    "key": "group_tool",
+    "x": 72,
+    "y": 968,
+    "max_width": 546,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "qc_title",
+    "x": 708,
+    "y": 839,
+    "max_width": 368,
+    "size": 26
+  },
+  {
+    "theme": "light",
+    "key": "qc_body_1",
+    "x": 708,
+    "y": 884,
+    "max_width": 419,
+    "size": 18.5
+  },
+  {
+    "theme": "light",
+    "key": "qc_body_2",
+    "x": 708,
+    "y": 912,
+    "max_width": 419,
+    "size": 18.5
+  },
+  {
+    "theme": "light",
+    "key": "qc_tool",
+    "x": 708,
+    "y": 968,
+    "max_width": 419,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "acquisition_gloss",
+    "x": 48,
+    "y": 1053,
+    "max_width": 550,
+    "size": 16
+  },
+  {
+    "theme": "light",
+    "key": "footer",
+    "x": 843,
+    "y": 1053,
+    "max_width": 309,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "brand",
+    "x": 118,
+    "y": 76,
+    "max_width": 350,
+    "size": 34
+  },
+  {
+    "theme": "dark",
+    "key": "subtitle",
+    "x": 48,
+    "y": 115,
+    "max_width": 850,
+    "size": 19
+  },
+  {
+    "theme": "dark",
+    "key": "badge",
+    "x": 957,
+    "y": 71,
+    "max_width": 184,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "study",
+    "x": 48,
+    "y": 174,
+    "max_width": 310,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "reservoir",
+    "x": 66,
+    "y": 222,
+    "max_width": 257,
+    "size": 20
+  },
+  {
+    "theme": "dark",
+    "key": "reservoir_type",
+    "x": 66,
+    "y": 246,
+    "max_width": 257,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "predictions",
+    "x": 66,
+    "y": 302,
+    "max_width": 220,
+    "size": 20
+  },
+  {
+    "theme": "dark",
+    "key": "csv",
+    "x": 295,
+    "y": 301,
+    "max_width": 32,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "predictions_gloss",
+    "x": 66,
+    "y": 332,
+    "max_width": 258,
+    "size": 15.5
+  },
+  {
+    "theme": "dark",
+    "key": "pool_title",
+    "x": 417,
+    "y": 232,
+    "max_width": 640,
+    "size": 26
+  },
+  {
+    "theme": "dark",
+    "key": "pool_body",
+    "x": 417,
+    "y": 267,
+    "max_width": 700,
+    "size": 18.5
+  },
+  {
+    "theme": "dark",
+    "key": "pool_il",
+    "x": 417,
+    "y": 293,
+    "max_width": 700,
+    "size": 18.5
+  },
+  {
+    "theme": "dark",
+    "key": "pool_filter",
+    "x": 417,
+    "y": 329,
+    "max_width": 700,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "acquisition",
+    "x": 48,
+    "y": 422,
+    "max_width": 290,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "all_predictions",
+    "x": 444,
+    "y": 420,
+    "max_width": 312,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "spectra",
+    "x": 830,
+    "y": 420,
+    "max_width": 300,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "candidate_title_1",
+    "x": 72,
+    "y": 489,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "dark",
+    "key": "candidate_title_2",
+    "x": 72,
+    "y": 520,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "dark",
+    "key": "candidate_body_1",
+    "x": 72,
+    "y": 557,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "dark",
+    "key": "candidate_body_2",
+    "x": 72,
+    "y": 583,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "dark",
+    "key": "candidate_tool",
+    "x": 72,
+    "y": 640,
+    "max_width": 296,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "select_title_1",
+    "x": 452,
+    "y": 489,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "dark",
+    "key": "select_title_2",
+    "x": 452,
+    "y": 520,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "dark",
+    "key": "select_body_1",
+    "x": 452,
+    "y": 557,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "dark",
+    "key": "select_body_2",
+    "x": 452,
+    "y": 583,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "dark",
+    "key": "select_tool",
+    "x": 452,
+    "y": 640,
+    "max_width": 296,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "search_title_1",
+    "x": 832,
+    "y": 489,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "dark",
+    "key": "search_title_2",
+    "x": 832,
+    "y": 520,
+    "max_width": 288,
+    "size": 25
+  },
+  {
+    "theme": "dark",
+    "key": "search_body_1",
+    "x": 832,
+    "y": 557,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "dark",
+    "key": "search_body_2",
+    "x": 832,
+    "y": 583,
+    "max_width": 296,
+    "size": 18
+  },
+  {
+    "theme": "dark",
+    "key": "search_tool",
+    "x": 832,
+    "y": 619,
+    "max_width": 296,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "search_q",
+    "x": 832,
+    "y": 644,
+    "max_width": 296,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "summary_output",
+    "x": 893,
+    "y": 749,
+    "max_width": 244,
+    "size": 17
+  },
+  {
+    "theme": "dark",
+    "key": "results",
+    "x": 48,
+    "y": 762,
+    "max_width": 280,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "group_title",
+    "x": 72,
+    "y": 839,
+    "max_width": 520,
+    "size": 26
+  },
+  {
+    "theme": "dark",
+    "key": "group_body_1",
+    "x": 72,
+    "y": 884,
+    "max_width": 546,
+    "size": 18.5
+  },
+  {
+    "theme": "dark",
+    "key": "group_body_2",
+    "x": 72,
+    "y": 912,
+    "max_width": 546,
+    "size": 18.5
+  },
+  {
+    "theme": "dark",
+    "key": "group_tool",
+    "x": 72,
+    "y": 968,
+    "max_width": 546,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "qc_title",
+    "x": 708,
+    "y": 839,
+    "max_width": 368,
+    "size": 26
+  },
+  {
+    "theme": "dark",
+    "key": "qc_body_1",
+    "x": 708,
+    "y": 884,
+    "max_width": 419,
+    "size": 18.5
+  },
+  {
+    "theme": "dark",
+    "key": "qc_body_2",
+    "x": 708,
+    "y": 912,
+    "max_width": 419,
+    "size": 18.5
+  },
+  {
+    "theme": "dark",
+    "key": "qc_tool",
+    "x": 708,
+    "y": 968,
+    "max_width": 419,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "acquisition_gloss",
+    "x": 48,
+    "y": 1053,
+    "max_width": 550,
+    "size": 16
+  },
+  {
+    "theme": "dark",
+    "key": "footer",
+    "x": 843,
+    "y": 1053,
+    "max_width": 309,
+    "size": 16
+  }
+]

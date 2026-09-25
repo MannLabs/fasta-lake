@@ -1,0 +1,54 @@
+{
+  "started_at": "2026-09-12T18:21:44.753219+00:00",
+  "host": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "architecture": "arm64",
+  "source_files_verified": 277,
+  "source_archive_checksum_verified": true,
+  "base_commit": "0492c3c5020eb5e9af97d92ee3c6b9d8ea8b695f",
+  "hello_world_linux_amd64": "passed",
+  "status": "passed",
+  "fixes": [
+    "Added /Applications/Docker.app/Contents/Resources/bin to command PATH so bundled Docker CLI and credential helper are available.",
+    "Made bundled /opt/fastalake and /opt/fastalake-runtime readable/traversable with chmod -R a+rX, preserving read-only non-root execution.",
+    "Renamed image, archive, documentation and workflow artifacts to neutral Docker names."
+  ],
+  "source_changes": [
+    "software/Dockerfile",
+    "software/docs/DOCKER.md",
+    "software/tools/test_container.sh",
+    ".github/workflows/docker.yml"
+  ],
+  "completed_at": "2026-09-12T19:03:33.261760+00:00",
+  "image_id": "sha256:d01e738acd087a55228ca98523bbdc784db84c008558c2bbb7ee6b71c7cc3d2f",
+  "image_platform": "linux/amd64",
+  "image_tag": "fastalake:docker",
+  "archive": "fastalake-docker-linux-amd64.tar.gz",
+  "archive_sha256": "bcddd2565f192dab47fc61c6a60f4a9e283ea027d5a52283652b73d0abd11929",
+  "archive_reload": "passed",
+  "reloaded_cli": "passed",
+  "default_user": "10001:10001",
+  "tests": {
+    "all_nine_rust_executables_sage_python_cli": "passed",
+    "compiler_absence": "passed",
+    "synthetic_evidence_sequences": 14,
+    "synthetic_selected_sequences": [
+      4,
+      4,
+      3
+    ],
+    "campi": "passed",
+    "hstool": "passed",
+    "network_disabled": true,
+    "read_only_rootfs": true,
+    "non_root_user": true,
+    "existing_output_refusal": "passed"
+  },
+  "failed_attempts": [
+    {
+      "output": "docker_check_mac",
+      "failure": "demo/run_demo.sh permission denied for non-root user",
+      "resolved": true
+    }
+  ],
+  "scope": "Actual local Docker Desktop amd64 emulation acceptance and exported-image verification; earlier native Linux validation remains separate. No scientific parameters, expected results or input checksums changed."
+}

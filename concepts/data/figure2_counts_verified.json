@@ -1,0 +1,43 @@
+{
+  "checks": [
+    {
+      "control": "thermophilic",
+      "acquisitions": 15,
+      "admitted": 55,
+      "exposed": 7680,
+      "empty_denominators": 0,
+      "pooled_admission": 0.007161458333333333,
+      "frozen_table_matches": true
+    },
+    {
+      "control": "plant",
+      "acquisitions": 15,
+      "admitted": 817,
+      "exposed": 246270,
+      "empty_denominators": 0,
+      "pooled_admission": 0.0033174970560766637,
+      "frozen_table_matches": true
+    },
+    {
+      "control": "archaea",
+      "acquisitions": 15,
+      "admitted": 208,
+      "exposed": 98520,
+      "empty_denominators": 0,
+      "pooled_admission": 0.0021112464474218433,
+      "frozen_table_matches": true
+    },
+    {
+      "control": "shuffled",
+      "acquisitions": 15,
+      "admitted": 5,
+      "exposed": 246270,
+      "empty_denominators": 0,
+      "pooled_admission": 2.0302919559832705e-05,
+      "frozen_table_matches": true
+    }
+  ],
+  "source_sha256": "ff6c4c59e4547eafa6ead9287cc596dc427abd1c49d362b668bcc88e6959338a",
+  "frozen_sha256": "c154da8bc501b32cade9288b41f439f44d6b88e3d32d4482f56e76e145107ac9",
+  "scope": "Recomputed the frozen Figure 2c table from its retained per-acquisition counts. This verifies arithmetic and nonempty exposure, not biological absence, peptide overlap, selection provenance, or independent FDR calibration."
+}
