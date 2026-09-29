@@ -1,0 +1,18 @@
+[
+  {
+    "image": "step_00.svg",
+    "caption": "Keep the local acceptance gate. S1 p5 fails peptide q. Its intensity of 1,000 is excluded even though p5 is accepted in S2.  S2 p5 has no positive quantity to contribute. Peptide acceptance is acquisition-specific; this is not an MS1 q-value filter."
+  },
+  {
+    "image": "step_01.svg",
+    "caption": "Assign each included feature. Both charge states of p1 follow p1 to A. p3 also follows A. p4 follows C.  Each included feature contributes once. Two features for p1 still count as one canonical peptide."
+  },
+  {
+    "image": "step_02.svg",
+    "caption": "Sum within each acquisition. S1 A: 10 + 20 + 5 = 35 S1 C: 40 S2 A: 70 S2 C: no positive value  Input = output = 145. Sum conservation checks accounting, not biological accuracy."
+  },
+  {
+    "image": "step_03.svg",
+    "caption": "Read the resulting matrix. Rows: reporting groups Columns: acquisitions  Blank means unquantified. It does not establish biological absence. This illustrates sum quantification. directLFQ estimates quantities differently."
+  }
+]

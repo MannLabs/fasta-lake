@@ -183,7 +183,7 @@ class PeptideEvidenceConfig:
     predictions_dir : str
         Path to directory containing AlphaNovo prediction CSVs.
     min_length : int
-        Minimum peptide length (amino acids). Default: 8.
+        Minimum peptide length (amino acids). Default: 9.
     max_length : int
         Maximum peptide length (amino acids). Default: 50.
     min_score : float

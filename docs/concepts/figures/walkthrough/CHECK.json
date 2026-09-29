@@ -1,0 +1,45 @@
+{
+  "selected": [
+    [
+      "A",
+      3
+    ],
+    [
+      "C",
+      2
+    ]
+  ],
+  "peptide_to_group": {
+    "p1": "A",
+    "p2": "A",
+    "p3": "A",
+    "p4": "C",
+    "p5": "C"
+  },
+  "matrix": [
+    {
+      "study_group": "A",
+      "S1": "35.0",
+      "S2": "70.0"
+    },
+    {
+      "study_group": "C",
+      "S1": "40.0",
+      "S2": ""
+    }
+  ],
+  "accepted_intensity": 145,
+  "rejected_S1_intensity": 1000,
+  "scope": "Synthetic production-function fixture; no empirical or FDR claim",
+  "source_sha256": {
+    "fasta_lake/study.py": "f2fa3f287d8c5282e58a5a91428457ae422efc9221974bab861e7d4ac8a80970",
+    "rust/parsimony_engine/src/main.rs": "d0268b6b68143c26dede46ef054da0513abea06c5e2de105bb43dbfe8b245378"
+  },
+  "razor_assignments": {
+    "s2": "A",
+    "s1": "A",
+    "uA": "A",
+    "uB": "B",
+    "s3": "C"
+  }
+}

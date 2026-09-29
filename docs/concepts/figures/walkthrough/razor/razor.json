@@ -1,0 +1,26 @@
+[
+  {
+    "image": "step_00.svg",
+    "caption": "Count the evidence. U = unique peptides T = all mapped peptides  A: 1 unique, 3 total B: 1 unique, 2 total C: 0 unique, 2 total D: 0 unique, 1 total Count once on the full graph. These counts stay fixed."
+  },
+  {
+    "image": "step_01.svg",
+    "caption": "A wins shared s1. A and B each have one unique peptide.  A has more total evidence: 3 versus 2. Compare unique evidence first, then total evidence."
+  },
+  {
+    "image": "step_02.svg",
+    "caption": "A wins shared s2. A has unique support; C has none.  The first criterion already resolves s2. Earlier assignments do not change the evidence counts."
+  },
+  {
+    "image": "step_03.svg",
+    "caption": "C wins shared s3. C and D both have zero unique peptides.  C wins on total evidence: 2 versus 1. A protein supported only by shared peptides can survive."
+  },
+  {
+    "image": "step_04.svg",
+    "caption": "Unique peptides. uA maps only to A. uB maps only to B.  Each goes to its sole compatible protein. Illustration order only: hash-acc assignments are order-independent."
+  },
+  {
+    "image": "step_05.svg",
+    "caption": "Keep A, B and C. Each receives at least one assignment. D receives none.  This selects complete searchable sequences. Selection supports candidates; it does not identify a biological source."
+  }
+]

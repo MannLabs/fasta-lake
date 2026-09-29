@@ -85,10 +85,10 @@ separately because some accepted evidence has no positive quantified feature.
 
 This route's per-acquisition group count means quantified presence under the
 declared study dictionary. It is not the historical independently inferred
-`pg_parsimony` endpoint. The v3_simplified manuscript (kept privately)
-uses the completed four-cohort reanalysis, with updated figure inputs and
-explicit endpoint definitions. The current working draft is
-6.1 (manuscript drafts are kept privately).
+`pg_parsimony` endpoint. A manuscript comparison must identify its exact
+snapshot, roster and producing code; see [manuscript reproduction](../reference/manuscript-reproduction.md).
+For a small example of the current rule, follow the
+[visual walkthrough](walkthrough.md).
 
 Representative annotations still require interpretation against the contributing
 evidence. Direct peptide assignment repairs the sequence-support detour. It does

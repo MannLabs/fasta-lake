@@ -46,6 +46,7 @@ terminal access, use the same files and run the checked commands yourself.
 | A large reference and limited memory | [Compute choices and measured limits](docs/how-to/compute.md) |
 | Help from an agent or LLM | [Assistant guide](docs/how-to/assistants.md): scheduler-first prompts for ChatGPT, Claude or a coding agent |
 | Methods and interpretation | [How FastaLake works](docs/concepts/principle.md), then the [output contract](docs/concepts/output-contract.md) |
+| A visual explanation | [Step through selection, grouping and aggregation](docs/concepts/walkthrough.md), with optional GIF downloads |
 
 Source installation (Python 3.12 on Linux x86_64, hash-locked to the same package set as the container) is described under [source installation](docs/get-started/install.md#source-installation).
 

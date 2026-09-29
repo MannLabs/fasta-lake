@@ -5,6 +5,8 @@ selection, Sage searching and a study-level result. The small bundled example
 lets you learn the workflow before processing full acquisitions.
 For the scientific rationale and terminology, see
 [the principle behind FastaLake](../concepts/principle.md).
+The [visual walkthrough](../concepts/walkthrough.md) shows how the selected
+FASTA, peptide dictionary and quantity matrix relate before you run anything.
 
 ## Prepare the environment
 
@@ -50,6 +52,20 @@ The separately labelled [synthetic analysis example](https://github.com/MannLabs
 exercises that three-acquisition route.
 
 ## Use your own acquisitions
+
+Check what you already have before preparing the manifest:
+
+| Input | Required for the standard workflow? | Where to start |
+|---|---|---|
+| One mzML per acquisition | Yes | Convert instrument RAW files upstream; preserve acquisition identities |
+| De novo peptide predictions with scores | Yes | [Supported formats and conversion](../how-to/de-novo-inputs.md); model inference happens upstream |
+| A prepared protein reference FASTA | Yes | [Choose references](../how-to/references.md) and [build a lake](../how-to/build-a-lake.md) |
+| An acquisition manifest linking predictions and spectra | Yes | [Manifest guide](../how-to/acquisition-manifest.md) |
+| Matched DNA/RNA measurements | Optional | [Molecular inputs](../how-to/molecular-inputs.md); confirm specimen pairing |
+
+For a cluster, use the [compute guide](../how-to/compute.md) to plan an allocated
+pilot. The small Docker example above is an installation check; its memory limit
+does not size a full acquisition against a large reference.
 
 Create `inputs/samples.tsv` with real tab separators and one row per
 acquisition. Repeated measurements of a specimen still have distinct sample IDs.
@@ -104,4 +120,3 @@ columns described in [Molecular inputs](../how-to/molecular-inputs.md).
 ## When something needs attention
 
 The [troubleshooting page](../how-to/troubleshooting.md) lists the first messages a run can produce and what to do about each.
-
