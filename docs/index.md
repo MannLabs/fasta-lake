@@ -38,6 +38,10 @@ files to adapt.
 
 ## Documentation guide
 
+New to the method? Follow the [visual walkthrough](concepts/walkthrough.md):
+step through candidate selection, study grouping and intensity aggregation,
+then inspect the same files in the measured example.
+
 <div class="grid cards" markdown>
 
 -   :material-play-circle:{ .lg .middle } **Example data**
@@ -84,9 +88,9 @@ files to adapt.
 
     ---
 
-    The principle, the algorithms and the output contract.
+    Watch the decisions, inspect the rules and understand the resulting matrix.
 
-    [:octicons-arrow-right-24: Concepts](concepts/principle.md)
+    [:octicons-arrow-right-24: Visual walkthrough](concepts/walkthrough.md)
 
 </div>
 

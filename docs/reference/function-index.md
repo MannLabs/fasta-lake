@@ -1,7 +1,7 @@
 # Python function index
 
 For a first reading, use [functions in execution order](function-map.md).
-This generated index contains **479 functions and methods**, including private
+This generated index contains **480 functions and methods**, including private
 and nested helpers, from the Python package and the two main workflow tools.
 Sections follow workflow purpose; modules and names are alphabetical within them.
 Links open the exact definition. The [Python API](api/index.md) renders full
@@ -400,19 +400,20 @@ CI checks the index against the source.
 
 | Function | Purpose |
 |---|---|
-| [`_members`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L205) | Collect distinct nonempty accessions, excluding the rev_ decoy prefix. |
+| [`_members`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L213) | Collect distinct nonempty accessions, excluding the rev_ decoy prefix. |
 | [`_passing`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L121) | Accept only a finite q value between zero and the inclusive threshold. |
-| [`_peptide_evidence`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L533) | Retain accepted identifications, including peptides without positive LFQ features. |
-| [`_quantify`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L398) | Assign positive finite LFQ features to the fixed peptide-to-group dictionary. |
-| [`_read_fasta`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L165) | Verify accession identity before merging acquisition evidence. |
-| [`_read_fasta.retain`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L170) | Merge a nonempty FASTA record after checking local IDs and sequence identity. |
-| [`_rows`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L135) | Hash the actual bytes read, then parse strict, tab-delimited records. |
-| [`_rows.lines`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L140) | Decode TSV lines while hashing exactly the bytes consumed by the parser. |
+| [`_peptide_evidence`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L560) | Retain accepted identifications, including peptides without positive LFQ features. |
+| [`_quantify`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L410) | Assign positive finite LFQ features to the fixed peptide-to-group dictionary. |
+| [`_rank_one`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L135) | Require a positive integer Sage rank and retain only the first hit. |
+| [`_read_fasta`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L173) | Verify accession identity before merging acquisition evidence. |
+| [`_read_fasta.retain`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L178) | Merge a nonempty FASTA record after checking local IDs and sequence identity. |
+| [`_rows`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L143) | Hash the actual bytes read, then parse strict, tab-delimited records. |
+| [`_rows.lines`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L148) | Decode TSV lines while hashing exactly the bytes consumed by the parser. |
 | [`_sage_filename`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L130) | Sage emits the basename including mzML extension; accept recorded full paths. |
-| [`_write_table`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L210) | Create a TSV exclusively, preserving the caller's column and row order. |
+| [`_write_table`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L218) | Create a TSV exclusively, preserving the caller's column and row order. |
 | [`canonical_peptide`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L26) | Remove Sage modifications and use the declared I/L equivalence. |
 | [`greedy_set_cover`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L40) | Choose study representatives by maximum uncovered peptide gain. |
-| [`group_searches`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L218) | Build study groups and sum quantities from completed acquisition searches. |
+| [`group_searches`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L226) | Build study groups and sum quantities from completed acquisition searches. |
 | [`member_set_key`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L35) | Preserve the full distinct accession membership, without source-tag stripping. |
 | [`study_dictionary`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py#L76) | Assign accepted peptides to a fixed set of study representatives. |
 
@@ -820,36 +821,36 @@ CI checks the index against the source.
 
 | Function | Purpose |
 |---|---|
-| [`_config_class_name`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1796) | Map an :class:`EntrapmentConfig` onto a registered class name. |
-| [`_find_search_db`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1232) | Return the first sorted matching search database, or None if absent. |
-| [`_reconcile`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1646) | Prefer an explicit value, but never let it silently contradict a manifest. |
+| [`_config_class_name`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1808) | Map an :class:`EntrapmentConfig` onto a registered class name. |
+| [`_find_search_db`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1244) | Return the first sorted matching search database, or None if absent. |
+| [`_reconcile`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1658) | Prefer an explicit value, but never let it silently contradict a manifest. |
 | [`_sha256_file`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L334) | SHA-256 of a file, streamed. |
-| [`bootstrap_median_ci`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1104) | Seeded percentile bootstrap CI on the median. |
+| [`bootstrap_median_ci`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1116) | Seeded percentile bootstrap CI on the median. |
 | [`classify_psms`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L725) | Classify accepted PSMs into target / entrapment / shared. |
-| [`compute_fdp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1240) | Compute one FDP record for a (dataset, class, stage) triple. |
-| [`compute_fdp._governing_manifest`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1359) | Find the nearest governing injection manifest, with a single-manifest fallback. |
-| [`conserved_peptide_scan`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L854) | Test entrapment-attributed peptides for occurrence in the target space. |
-| [`conserved_peptide_scan.norm`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L882) | Apply I/L equivalence only when requested for this diagnostic scan. |
-| [`ConservedScan.control_rate`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L849) | Fraction of reversed entrapment peptides found -- should be ~0. |
-| [`ConservedScan.rate`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L844) | Fraction of entrapment peptides also present in the target space. |
+| [`compute_fdp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1252) | Compute one FDP record for a (dataset, class, stage) triple. |
+| [`compute_fdp._governing_manifest`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1371) | Find the nearest governing injection manifest, with a single-manifest fallback. |
+| [`conserved_peptide_scan`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L866) | Test entrapment-attributed peptides for occurrence in the target space. |
+| [`conserved_peptide_scan.norm`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L894) | Apply I/L equivalence only when requested for this diagnostic scan. |
+| [`ConservedScan.control_rate`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L861) | Fraction of reversed entrapment peptides found -- should be ~0. |
+| [`ConservedScan.rate`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L856) | Fraction of entrapment peptides also present in the target space. |
 | [`count_fasta_headers`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L200) | Count proteins in a FASTA by counting **header lines only**. |
 | [`detect_prefixes`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L247) | Report the entrapment-like prefixes actually present in a FASTA. |
-| [`expected_results_subdir`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1165) | The per-sample subdirectory the run templates write for an entrapment class. |
-| [`fdp_estimates`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L966) | Compute every FDP estimator, returning ``None`` where undefined. |
-| [`find_sample_results`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1174) | Find ``(sample_id, results_tsv)`` under ``results_dir``. |
+| [`expected_results_subdir`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1177) | The per-sample subdirectory the run templates write for an entrapment class. |
+| [`fdp_estimates`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L978) | Compute every FDP estimator, returning ``None`` where undefined. |
+| [`find_sample_results`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1186) | Find ``(sample_id, results_tsv)`` under ``results_dir``. |
 | [`generate_entrapment_fasta`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L400) | Write an entrapment FASTA for one entrapment class. |
 | [`inject_entrapment`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L537) | Concatenate entrapment into a database and record what was done. |
 | [`iter_fasta`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L178) | Stream ``(header, sequence)`` pairs from a FASTA file. |
 | [`load_manifests`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L642) | Load entrapment manifests, refusing to mix injection stages or classes. |
 | [`partition_counts`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L219) | Return ``(n_target, n_entrapment)`` protein counts for a FASTA. |
-| [`prepare_from_config`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1748) | Honour ``entrapment.enabled`` in a FastaLake JSON config. |
+| [`prepare_from_config`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1760) | Honour ``entrapment.enabled`` in a FastaLake JSON config. |
 | [`shuffle_sequence`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L351) | Shuffle a sequence, optionally holding K/R residues in place. |
 | [`stage_measures`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L168) | One-line statement of what an FDP at this injection stage estimates. |
 | [`strip_modifications`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L698) | Reduce a modified peptide string to bare uppercase residues. |
-| [`summarize`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1130) | n, median, IQR and a seeded bootstrap CI for a list of per-sample values. |
+| [`summarize`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1142) | n, median, IQR and a seeded bootstrap CI for a list of per-sample values. |
 | [`verify_prefix_matches`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L301) | Assert the configured prefix finds the entrapment partition that is declared. |
-| [`write_conserved_report`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L947) | Write the conserved peptides and their target proteins to TSV. |
-| [`write_fdp_reports`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1656) | Write the per-sample TSV, the (dataset, class, stage) record, and conserved peptides. |
+| [`write_conserved_report`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L959) | Write the conserved peptides and their target proteins to TSV. |
+| [`write_fdp_reports`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1668) | Write the per-sample TSV, the (dataset, class, stage) record, and conserved peptides. |
 
 ### fasta_lake.tune
 

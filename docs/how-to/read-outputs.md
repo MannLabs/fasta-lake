@@ -4,6 +4,11 @@ This page lists the files a completed run writes, what each one means and the
 first check to make on it. You need a completed run directory from the manifest
 runner.
 
+For a worked example of how these files relate, use the
+[interactive grouping and aggregation walkthrough](../concepts/walkthrough.md).
+It follows shared peptides, multiple charge states and excluded intensities into
+a small matrix.
+
 ## Open these first
 
 Inside your completed run directory:

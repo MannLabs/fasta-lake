@@ -12,3 +12,14 @@
 .md-typeset h1 { font-weight: 600; }
 .md-typeset table:not([class]) { font-size: 0.8rem; }
 .md-typeset .mermaid { text-align: center; }
+
+.fl-explainer { border: 1px solid var(--md-default-fg-color--lightest); border-radius: .4rem; padding: .6rem; margin: 1.2rem 0; }
+.fl-explainer img { width: 100%; height: auto; background: white; }
+.fl-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.fl-controls button { border: 1px solid var(--md-default-fg-color--light); border-radius: .25rem; padding: .35rem .7rem; font: inherit; cursor: pointer; color: var(--md-default-fg-color); background: var(--md-default-bg-color); }
+.fl-controls button:hover:not(:disabled) { border-color: var(--md-accent-fg-color); }
+.fl-controls button:focus-visible { outline: 3px solid var(--md-accent-fg-color); outline-offset: 2px; }
+.fl-controls button:disabled { opacity: .4; cursor: default; }
+.fl-controls span { margin-left: auto; font-size: .75rem; }
+.fl-caption { font-size: .8rem; line-height: 1.6; }
+@media print { .fl-controls, .fl-caption { display: none; } }

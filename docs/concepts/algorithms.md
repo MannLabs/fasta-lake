@@ -1,5 +1,8 @@
 # Algorithms, identity and protein inference
 
+For a step-by-step introduction, start with the [visual walkthrough](walkthrough.md).
+This page gives the exact rules and the distinctions behind those examples.
+
 ## The objects the workflow manipulates
 
 FastaLake operates on a reference sequence universe, peptide evidence and the relations between those objects. A FASTA record has an accession, a sequence and descriptive provenance. A prediction row has a peptide sequence and a score. A mapping edge means that the normalized peptide occurs as a contiguous substring of the normalized protein sequence. An edge does not assert that the peptide was correctly predicted or that the protein was present.

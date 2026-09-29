@@ -164,8 +164,8 @@ def acquisition(root, name, intensity, *, raw=None, search_name=None, lfq_name=N
         )
     )
     (sample / "results.sage.tsv").write_text(
-        "peptide\tproteins\tlabel\tpeptide_q\tfilename\n"
-        f"PEPTIDEAK\tA\t1\t0.001\t{search_name or raw}\n"
+        "peptide\tproteins\tlabel\tpeptide_q\tfilename\trank\n"
+        f"PEPTIDEAK\tA\t1\t0.001\t{search_name or raw}\t1\n"
     )
     (sample / "lfq.tsv").write_text(
         f"peptide\tproteins\t{lfq_name or raw}\nPEPTIDEAK\tA\t{intensity}\n"

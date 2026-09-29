@@ -744,6 +744,11 @@ def classify_psms(
     A PSM whose peptide maps to both an entrapment and a target protein is counted
     as ``shared`` rather than being silently dropped, so a sensitivity bound that
     treats shared as entrapment can be reported alongside the headline.
+
+    When a rank column is supplied, only positive-integer rank-one rows enter
+    the counts. Legacy tables without rank remain supported; their caller must
+    establish that the input contains only winning PSMs. Invalid q values are
+    excluded from both target and control discoveries.
     """
     counts = PsmCounts()
     path = Path(results_tsv)
@@ -771,6 +776,12 @@ def classify_psms(
 
         for row in reader:
             counts.n_rows += 1
+            if "rank" in fields:
+                rank = row.get("rank", "")
+                if not re.fullmatch(r"[0-9]+", rank or "") or int(rank) < 1:
+                    raise ValueError(f"{path}:{reader.line_num}: invalid PSM rank {rank!r}")
+                if int(rank) != 1:
+                    continue
             prots = [p for p in (row.get("proteins", "") or "").replace(",", ";").split(";") if p]
 
             if has_label:
@@ -787,7 +798,8 @@ def classify_psms(
 
             peptide = strip_modifications(row.get("peptide", "") or "")
             try:
-                if float(row[q_column]) > q_threshold:
+                q_value = float(row[q_column])
+                if not math.isfinite(q_value) or not 0 <= q_value <= q_threshold:
                     continue
                 plen = int(row.get("peptide_len", 0) or 0) or len(peptide)
                 if plen < min_length:

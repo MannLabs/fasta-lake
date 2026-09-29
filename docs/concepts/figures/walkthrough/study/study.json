@@ -1,0 +1,18 @@
+[
+  {
+    "image": "step_00.svg",
+    "caption": "Start with accepted peptides. Choose the protein that explains the most unassigned peptides.  Initial gains: A: 3; B: 2; C: 2; D: 1. Here the graph pools accepted target peptides from both acquisitions."
+  },
+  {
+    "image": "step_01.svg",
+    "caption": "Select A: gain 3. A covers p1, p2 and p3.  Recalculate the gains: B: 1; C: 2; D: 1.  Already covered p3 no longer counts for B. Study grouping recalculates gains after every selection."
+  },
+  {
+    "image": "step_02.svg",
+    "caption": "Select C: gain 2. C covers p4 and p5. All five peptides now have an assignment.  B and D add no uncovered evidence. Each peptide stays with the first selected representative explaining it."
+  },
+  {
+    "image": "step_03.svg",
+    "caption": "Two reporting groups. A: p1, p2, p3 C: p4, p5  Equal gains would use lexical accession order. The heuristic need not find a minimum cover. A group label does not prove a unique protein or species origin."
+  }
+]

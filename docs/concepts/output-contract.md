@@ -66,9 +66,18 @@ These are evidence-integrity checks, not FDR calibration or unique-source proof.
 
 ## Populations and biological interpretation
 
-Input target rows pass finite peptide q in [0, threshold]. Modification brackets
+Input target rows require an explicit positive-integer `rank` column, retain
+rank one only, and pass finite peptide q in [0, threshold]. An imported table
+without rank must be regenerated with rank preserved; missing rank is not
+assumed to mean a winning hit. The exported peptide evidence uses this same rule.
+Modification brackets
 are removed and I/L collapsed before pooling and the local LFQ peptide gate.
-Positive finite LFQ rows contribute once each; charge/modification features are
+Positive finite LFQ rows contribute once each. Repeated modified-peptide/charge
+keys within an acquisition are rejected, even when their intensities differ:
+the table cannot distinguish an accidental duplicate from an additional feature.
+Keep a provenance-backed feature identifier upstream if a different quantifier
+reports multiple chromatographic features for that key. Distinct
+charge/modification features are
 counted separately from canonical peptides. Peptide acceptance is not replaced
 with the LFQ row's own q-value. Zero-output acquisitions remain in the acquisition
 summary and matrix columns. Inferred groups and quantified groups are reported
@@ -76,10 +85,10 @@ separately because some accepted evidence has no positive quantified feature.
 
 This route's per-acquisition group count means quantified presence under the
 declared study dictionary. It is not the historical independently inferred
-`pg_parsimony` endpoint. The v3_simplified manuscript (kept privately)
-uses the completed four-cohort reanalysis, with updated figure inputs and
-explicit endpoint definitions. The current working draft is
-6.1 (manuscript drafts are kept privately).
+`pg_parsimony` endpoint. A manuscript comparison must identify its exact
+snapshot, roster and producing code; see [manuscript reproduction](../reference/manuscript-reproduction.md).
+For a small example of the current rule, follow the
+[visual walkthrough](walkthrough.md).
 
 Representative annotations still require interpretation against the contributing
 evidence. Direct peptide assignment repairs the sequence-support detour. It does

@@ -136,6 +136,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_javascript:
+  - javascripts/explainers.js
   - javascripts/mathjax.js
   - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js  # exact version, not a floating major
 
@@ -149,6 +150,7 @@ nav:
   - Home: index.md
   - Get started:
       - Understand the idea: concepts/principle.md
+      - Visual walkthrough: concepts/walkthrough.md
       - Try the demo: get-started/demo.md
       - Install: get-started/install.md
       - Set up with an assistant: how-to/assistants.md
@@ -193,10 +195,12 @@ nav:
       - Error control and entrapment: concepts/error-control.md
       - Methods: concepts/methods.md
       - Validation: concepts/validation.md
+      - Acceptance record (September 2026): concepts/validation-acceptance-2026-09.md
       - Molecular benchmark: concepts/molecular-benchmark.md
       - Molecular complementarity: concepts/molecular-complementarity.md
       - Performance: concepts/performance.md
   - Reference:
+      - Reproduce a manuscript result: reference/manuscript-reproduction.md
       - Command line: reference/cli.md
       - Study runner: reference/run-manifest.md
       - Configuration file: reference/configuration.md
