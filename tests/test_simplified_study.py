@@ -22,8 +22,8 @@ def search(tmp_path, name, sequences, observations, features, config_name="confi
     )
     with (folder / "results.sage.tsv").open("w") as f:
         w = csv.writer(f, delimiter="\t")
-        w.writerow(["peptide", "proteins", "label", "peptide_q", "filename"])
-        w.writerows([*row, name + ".mzML"] for row in observations)
+        w.writerow(["peptide", "proteins", "label", "peptide_q", "filename", "rank"])
+        w.writerows([*row, name + ".mzML", 1] for row in observations)
     with (folder / "lfq.tsv").open("w") as f:
         w = csv.writer(f, delimiter="\t")
         w.writerow(

@@ -24,8 +24,7 @@ def grouped(tmp_path):
             {"A": P1 + P2, "B": P1},
             [(P1, "A;B", 1, 0.001), (P2, "A", 1, 0.001)],
             [
-                (P1, 2, "A;B", factor * 100),
-                (P1, 2, "A;B", factor * 25),
+                (P1, 2, "A;B", factor * 125),
                 (P1, 3, "A;B", factor * 30),
                 (P2, 2, "A", factor * 10),
             ],
@@ -79,7 +78,7 @@ def test_local_and_study_ambiguity_are_different(tmp_path):
     assert (first["n_reported_proteins_sample"], first["n_reported_proteins_study"]) == ("1", "2")
 
 
-def test_real_backend_preserves_duplicates_empty_sample_and_peptide_support(grouped, tmp_path):
+def test_real_backend_preserves_ions_empty_sample_and_peptide_support(grouped, tmp_path):
     require_backend()
     out = tmp_path / "lfq"
     record = quantify_study(grouped, out, method="directlfq")

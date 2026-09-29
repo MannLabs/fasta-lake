@@ -132,6 +132,14 @@ def _sage_filename(value: str) -> str:
     return value.replace("\\", "/").rsplit("/", 1)[-1]
 
 
+def _rank_one(row: dict, path: Path, line: int) -> bool:
+    """Require a positive integer Sage rank and retain only the first hit."""
+    value = row["rank"]
+    if not re.fullmatch(r"[0-9]+", value) or int(value) < 1:
+        raise ValueError(f"{path}:{line}: invalid PSM rank {value!r}")
+    return int(value) == 1
+
+
 def _rows(path: Path, required: set[str], *, registry: list, acquisition=None, lfq=False):
     """Hash the actual bytes read, then parse strict, tab-delimited records."""
     digest = hashlib.sha256()
@@ -306,12 +314,14 @@ def group_searches(
         searched = _read_fasta(fasta, sequences, registry)
         searched_by_sample[sample.name] = searched
         gate = set()
-        for _, row, _ in _rows(
+        for line, row, _ in _rows(
             sample / "results.sage.tsv",
-            {"peptide", "proteins", "label", "peptide_q", "filename"},
+            {"peptide", "proteins", "label", "peptide_q", "filename", "rank"},
             registry=registry,
             acquisition=acquisition,
         ):
+            if not _rank_one(row, sample / "results.sage.tsv", line):
+                continue
             if row["label"] != "1" or not _passing(row["peptide_q"], q_threshold):
                 continue
             peptide = canonical_peptide(row["peptide"])
@@ -352,6 +362,8 @@ def group_searches(
             pooled_canonical_peptides=len(dictionary["covered"]),
             representative_sequence_compatibility_checked=True,
             acquisition_identity_checked=True,
+            identification_rank_policy="require explicit positive integer rank; accept rank 1 only",
+            lfq_feature_policy="unique modified peptide and charge within each acquisition",
             q_threshold=q_threshold,
             config_name=config_name,
             confidence="post-search reporting; no new protein-group or study-wide FDR estimate",
@@ -424,6 +436,7 @@ def _quantify(samples, dictionary, gates, searched_by_sample, out, registry, acq
         for sample in samples:
             aggregates = defaultdict(lambda: [set(), 0, 0.0])
             sample_peptides, sample_features, sample_total = set(), 0, 0.0
+            feature_lines = {}
             for line, row, fields in _rows(
                 sample / "lfq.tsv",
                 {"peptide", "proteins"},
@@ -434,6 +447,20 @@ def _quantify(samples, dictionary, gates, searched_by_sample, out, registry, acq
                 columns = [c for c in fields if c not in _LFQ_FIXED]
                 if len(columns) != 1:
                     raise ValueError(f"{sample}: expected exactly one LFQ intensity column")
+                charge = row.get("charge")
+                if charge is not None:
+                    if not re.fullmatch(r"(?:0*[1-9][0-9]*|-1)", charge):
+                        raise ValueError(f"{sample}/lfq.tsv:{line}: invalid charge {charge!r}")
+                    charge = int(charge)  # Sage uses -1 for combined-charge features.
+                # Do not collapse modifications or I/L here: these identify input
+                # features, whereas canonical peptides identify the evidence gate.
+                feature = (row["peptide"], charge)
+                if feature in feature_lines:
+                    raise ValueError(
+                        f"{sample}/lfq.tsv:{line}: Duplicate LFQ feature; "
+                        f"first seen at line {feature_lines[feature]}"
+                    )
+                feature_lines[feature] = line
                 peptide = canonical_peptide(row["peptide"])
                 if peptide not in gates[sample.name]:
                     continue
@@ -548,9 +575,11 @@ def _peptide_evidence(samples, dictionary, gates, protein_counts, out, registry,
         for sample in samples:
             local = defaultdict(set)
             path = sample / "results.sage.tsv"
-            for _, row, _ in _rows(
-                path, {"peptide", "proteins", "label", "peptide_q"}, registry=registry
+            for line, row, _ in _rows(
+                path, {"peptide", "proteins", "label", "peptide_q", "rank"}, registry=registry
             ):
+                if not _rank_one(row, path, line):
+                    continue
                 if row["label"] == "1" and _passing(row["peptide_q"], q_threshold):
                     peptide = canonical_peptide(row["peptide"])
                     if peptide:

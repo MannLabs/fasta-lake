@@ -9,8 +9,8 @@ from fasta_lake.study import group_searches, member_set_key, study_dictionary
 
 def _write_sage(sample, text):
     lines = text.splitlines()
-    lines[0] += "\tfilename"
-    lines[1:] = [line + "\t" + sample.name + ".mzML" for line in lines[1:]]
+    lines[0] += "\tfilename\trank"
+    lines[1:] = [line + "\t" + sample.name + ".mzML\t1" for line in lines[1:]]
     (sample / "results.sage.tsv").write_text("\n".join(lines) + "\n")
 
 

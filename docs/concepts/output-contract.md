@@ -66,9 +66,18 @@ These are evidence-integrity checks, not FDR calibration or unique-source proof.
 
 ## Populations and biological interpretation
 
-Input target rows pass finite peptide q in [0, threshold]. Modification brackets
+Input target rows require an explicit positive-integer `rank` column, retain
+rank one only, and pass finite peptide q in [0, threshold]. An imported table
+without rank must be regenerated with rank preserved; missing rank is not
+assumed to mean a winning hit. The exported peptide evidence uses this same rule.
+Modification brackets
 are removed and I/L collapsed before pooling and the local LFQ peptide gate.
-Positive finite LFQ rows contribute once each; charge/modification features are
+Positive finite LFQ rows contribute once each. Repeated modified-peptide/charge
+keys within an acquisition are rejected, even when their intensities differ:
+the table cannot distinguish an accidental duplicate from an additional feature.
+Keep a provenance-backed feature identifier upstream if a different quantifier
+reports multiple chromatographic features for that key. Distinct
+charge/modification features are
 counted separately from canonical peptides. Peptide acceptance is not replaced
 with the LFQ row's own q-value. Zero-output acquisitions remain in the acquisition
 summary and matrix columns. Inferred groups and quantified groups are reported
