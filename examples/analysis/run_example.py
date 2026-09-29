@@ -27,12 +27,12 @@ def main():
         (folder / "config.json").write_text(
             json.dumps({"database": {"fasta": str(fasta)}, "mzml_paths": [str(mzml)]})
         )
-        psms = ["peptide\tproteins\tlabel\tpeptide_q\tfilename\n"]
+        psms = ["peptide\tproteins\tlabel\tpeptide_q\tfilename\trank\n"]
         lfq = ["peptide\tcharge\tproteins\t" + sample + ".mzML\n"]
         for (peptide, protein), value in zip(
             (("ACDEK", "A"), ("QQQQK", "B"), ("SSSSK", "C")), values
         ):
-            psms.append(f"{peptide}\t{protein}\t1\t0.001\t{sample}.mzML\n")
+            psms.append(f"{peptide}\t{protein}\t1\t0.001\t{sample}.mzML\t1\n")
             lfq.append(f"{peptide}\t2\t{protein}\t{value}\n")
         (folder / "results.sage.tsv").write_text("".join(psms))
         (folder / "lfq.tsv").write_text("".join(lfq))

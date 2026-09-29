@@ -1373,8 +1373,8 @@
     },
     {
       "path": "examples/analysis/run_example.py",
-      "bytes": 3717,
-      "sha256": "5d596a3665ae8d4bf3bdc5041cb48ff8be69848f446d2d8a1e110c8a03674223"
+      "bytes": 3726,
+      "sha256": "c07fa9c95401ec32a8849afad5c744b7102a5f0b4aa38523221cc2fa1f81ed01"
     },
     {
       "path": "examples/assistant-tasks/README.md",
