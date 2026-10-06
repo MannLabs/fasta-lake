@@ -741,8 +741,8 @@ CI checks the index against the source.
 |---|---|
 | [`load_manifest`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L47) | Validate acquisitions and resolve inputs relative to the manifest. |
 | [`main`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L129) | Validate and execute the acquisition-manifest workflow. |
-| [`main.execute`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L390) | Run one command with resource measurements and append its result to commands.json. |
-| [`main.extract`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L442) | Run whole-reference or chunked exact lookup with the same declared evidence settings. |
+| [`main.execute`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L394) | Run one command with resource measurements and append its result to commands.json. |
+| [`main.extract`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L446) | Run whole-reference or chunked exact lookup with the same declared evidence settings. |
 | [`sha256`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L38) | Stream file bytes into a SHA-256 digest for the run's provenance. |
 
 ## 7. Diagnostics and comparisons

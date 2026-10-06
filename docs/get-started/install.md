@@ -90,8 +90,9 @@ installed Sage v0.14.7. Use the official Linux x86_64 release asset
 the same archive is bundled at `examples/campi/runtime/`. Its executable reports
 `sage 0.14.6` because upstream did not change the version string for this tag, so
 `tools/run_manifest.py` identifies it by executable SHA-256
-`d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625` and refuses any other
-Sage binary, including the v0.14.6 release:
+`d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625` and warns for any other
+Sage binary (including the v0.14.6 release, a self-built or a macOS build), because
+results may then differ from the validated configuration:
 
 ```bash
 python -m venv .venv

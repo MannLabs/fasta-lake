@@ -793,8 +793,8 @@
     },
     {
       "path": "docs/get-started/install.md",
-      "bytes": 9417,
-      "sha256": "6818081e1a964bdcb2e64c4a3a651e2c4fa717c5d033bf250de1bae4c29b7427"
+      "bytes": 9517,
+      "sha256": "e4c07c5f64557bdc0da54a6a47570a61a1db5341b2d62ebbe7cf6a7d8c93956c"
     },
     {
       "path": "docs/how-to/acquisition-manifest.md",
@@ -1274,7 +1274,7 @@
     {
       "path": "docs/reference/function-index.md",
       "bytes": 88449,
-      "sha256": "fea082782bde5ef1cfc9883227cf5f61d5cccd1c5819241f64791fb2cb2c5994"
+      "sha256": "6192e0dd3bb4c4398b7330501392ecbc33e116d59fdd237b7bb371ab022b6861"
     },
     {
       "path": "docs/reference/function-map.md",
@@ -2898,8 +2898,8 @@
     },
     {
       "path": "tools/run_manifest.py",
-      "bytes": 27272,
-      "sha256": "9d16b53f08eee12d41bf37ee452f6b301a6b07218c4e17a01ddee116e541f1db"
+      "bytes": 27485,
+      "sha256": "86fbf119812b7e885c641087a860af8288eed8a8569d5e3cf6c2c406a7b0f6fe"
     },
     {
       "path": "tools/run_tutorials.py",

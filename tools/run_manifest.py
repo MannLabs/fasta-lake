@@ -351,11 +351,15 @@ def main(argv=None):
                 f"which reports 'sage 0.14.6'; found {version}"
             )
         # v0.14.6 and v0.14.7 report the same version string, so the executable
-        # checksum is what identifies the validated release.
-        if sha256(binaries["sage"]) != SAGE_EXECUTABLE_SHA256:
-            parser.error(
-                "SAGE executable is not the official v0.14.7 Linux x86_64 release binary "
-                f"(sha256 {SAGE_EXECUTABLE_SHA256}); found {sha256(binaries['sage'])}"
+        # checksum is what identifies the validated release. A different build
+        # (self-compiled, macOS) is allowed but flagged, since results may differ.
+        found = sha256(binaries["sage"])
+        if found != SAGE_EXECUTABLE_SHA256:
+            print(
+                "WARNING: SAGE executable is not the official v0.14.7 Linux x86_64 "
+                f"release binary (sha256 {SAGE_EXECUTABLE_SHA256}); found {found}. "
+                "Results may differ from the validated configuration.",
+                file=sys.stderr,
             )
     if args.quantification and args.databases_only:
         parser.error("--quantification requires searches; incompatible with --databases-only")
