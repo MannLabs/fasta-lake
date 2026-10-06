@@ -393,8 +393,8 @@ CI checks the index against the source.
 
 | Function | Purpose |
 |---|---|
-| [`_dda_config`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/search.py#L13) | The explicitly versioned DDA settings used in the release acceptance runs. |
-| [`sage_config`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/search.py#L60) | Build the complete configuration for one Sage 0.14.6 acquisition. |
+| [`_dda_config`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/search.py#L21) | The explicitly versioned DDA settings used in the release acceptance runs. |
+| [`sage_config`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/search.py#L68) | Build the complete configuration for one Sage v0.14.7 acquisition. |
 
 ### fasta_lake.study
 
@@ -739,11 +739,11 @@ CI checks the index against the source.
 
 | Function | Purpose |
 |---|---|
-| [`load_manifest`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L41) | Validate acquisitions and resolve inputs relative to the manifest. |
-| [`main`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L123) | Validate and execute the acquisition-manifest workflow. |
-| [`main.execute`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L370) | Run one command with resource measurements and append its result to commands.json. |
-| [`main.extract`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L422) | Run whole-reference or chunked exact lookup with the same declared evidence settings. |
-| [`sha256`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L32) | Stream file bytes into a SHA-256 digest for the run's provenance. |
+| [`load_manifest`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L47) | Validate acquisitions and resolve inputs relative to the manifest. |
+| [`main`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L129) | Validate and execute the acquisition-manifest workflow. |
+| [`main.execute`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L390) | Run one command with resource measurements and append its result to commands.json. |
+| [`main.extract`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L442) | Run whole-reference or chunked exact lookup with the same declared evidence settings. |
+| [`sha256`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L38) | Stream file bytes into a SHA-256 digest for the run's provenance. |
 
 ## 7. Diagnostics and comparisons
 

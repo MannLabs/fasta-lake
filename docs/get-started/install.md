@@ -23,16 +23,16 @@ Prefer help from an agent or LLM? Use the [installation task file](../how-to/ass
 |---|---|---|
 | **Docker, built from the checkout** | Use Docker on a supported machine; examples run offline | Docker |
 | **Tested image download** | You want the exact image a CI run tested, without building | Docker, Bash |
-| **Source installation** | Development, or a cluster without Docker | Python 3.12, Rust toolchain, C compiler, Sage 0.14.6 |
+| **Source installation** | Development, or a cluster without Docker | Python 3.12, Rust toolchain, C compiler, Sage v0.14.7 |
 
-The container includes Python, all nine FastaLake Rust executables, Sage 0.14.6, directLFQ 0.3.3, AlphaPeptTools 0.4.0 and the bundled public CAMPI acquisition windows. The complete Python runtime is pinned with distribution hashes in `requirements/container.txt` for Linux x86_64 and Python 3.12; the source route installs that same set.
+The container includes Python, all nine FastaLake Rust executables, the official Sage v0.14.7 release binary (it reports its version as 0.14.6), directLFQ 0.3.3, AlphaPeptTools 0.4.0 and the bundled public CAMPI acquisition windows. The complete Python runtime is pinned with distribution hashes in `requirements/container.txt` for Linux x86_64 and Python 3.12; the source route installs that same set.
 
 ## Docker, built from the checkout
 
 From the repository root:
 
 ```bash
-docker build --platform linux/amd64 -t fastalake:docker -f Dockerfile .
+docker build --platform linux/amd64 -t ghcr.io/mannlabs/fasta-lake:local -f Dockerfile .
 ```
 
 The first build downloads the base images and dependencies and compiles Rust. Allow several minutes and sufficient Docker memory for compilation. Builds default to two compiler jobs; use `--build-arg CARGO_BUILD_JOBS=1` if memory is limited. Subsequent builds reuse Docker's cache. Python wheels are mounted temporarily during installation so the runtime image does not retain a second copy of the dependency archives ([Docker build mounts](https://docs.docker.com/reference/dockerfile/#run---mounttypebind)).
@@ -49,8 +49,7 @@ access rules. Unpack the download and open a terminal in that folder:
 ```bash
 shasum -a 256 -c SHA256SUMS
 docker load -i fastalake-docker-linux-amd64.tar.gz
-docker tag fastalake:ci fastalake:docker
-bash test_container.sh fastalake:docker demo_run_01
+bash test_container.sh ghcr.io/mannlabs/fasta-lake:local demo_run_01
 ```
 
 On Linux, `sha256sum --check SHA256SUMS` is an alternative. The download includes
@@ -69,7 +68,7 @@ Use the version shown on the corresponding GitHub release:
 # Set this to an existing published release tag.
 FASTALAKE_RELEASE=YOUR_RELEASE_TAG
 docker pull --platform linux/amd64 "ghcr.io/mannlabs/fasta-lake:$FASTALAKE_RELEASE"
-docker tag "ghcr.io/mannlabs/fasta-lake:$FASTALAKE_RELEASE" fastalake:docker
+docker tag "ghcr.io/mannlabs/fasta-lake:$FASTALAKE_RELEASE" ghcr.io/mannlabs/fasta-lake:local
 ```
 
 Until a versioned release and its container job complete, use a tested-image
@@ -85,7 +84,14 @@ the same hash-pinned package set as the container and CI
 (`requirements/container.txt`), so a native run and a container run see the
 same Python dependencies. One pinned package (directLFQ) builds from source, so
 a C compiler is needed. Add the pinned Rust toolchain and a separately
-installed Sage 0.14.6:
+installed Sage v0.14.7. Use the official Linux x86_64 release asset
+[`sage-v0.14.7-x86_64-unknown-linux-gnu.tar.gz`](https://github.com/lazear/sage/releases/tag/v0.14.7)
+(archive SHA-256 `e3dc6b41015cb167574f6c82525b75e946c094f30bd700271b05c051c30cbe8a`);
+the same archive is bundled at `examples/campi/runtime/`. Its executable reports
+`sage 0.14.6` because upstream did not change the version string for this tag, so
+`tools/run_manifest.py` identifies it by executable SHA-256
+`d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625` and refuses any other
+Sage binary, including the v0.14.6 release:
 
 ```bash
 python -m venv .venv
@@ -139,9 +145,9 @@ For actual inputs and registry release instructions, see
 To verify an existing image, or carry it to a computer without internet:
 
 ```bash
-bash tools/test_container.sh fastalake:docker docker_check
-docker image inspect fastalake:docker --format '{{.Id}}'
-docker save -o fastalake-docker-linux-amd64.tar fastalake:docker
+bash tools/test_container.sh ghcr.io/mannlabs/fasta-lake:local docker_check
+docker image inspect ghcr.io/mannlabs/fasta-lake:local --format '{{.Id}}'
+docker save -o fastalake-docker-linux-amd64.tar ghcr.io/mannlabs/fasta-lake:local
 gzip fastalake-docker-linux-amd64.tar
 # On the receiving computer:
 docker load -i fastalake-docker-linux-amd64.tar.gz

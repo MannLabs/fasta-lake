@@ -3,7 +3,8 @@
 
 First use needs Python 3.12, venv/pip, Cargo, a C compiler and internet for Python
 and Rust dependencies. A local Python environment and binaries are created inside
-the new output folder. SAGE 0.14.6 for Linux x86_64 is bundled with its MIT licence.
+the new output folder. The official SAGE v0.14.7 release for Linux x86_64 is bundled
+with its MIT licence; that executable reports its version as "sage 0.14.6".
 Use --runtime PREVIOUS_OUTPUT/_runtime to reuse a completed, verified setup.
 """
 
@@ -28,8 +29,16 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 CRATES = ("fasta_extractor_v2", "parsimony_engine", "aggregation_engine")
 BINARIES = ("lake_builder", "fasta_extractor", "parsimony_engine", "aggregation_engine")
-SAGE_ARCHIVE = "sage-v0.14.6-x86_64-unknown-linux-gnu.tar.gz"
-SAGE_SHA256 = "3492d04b9c922d47ee44fd7fd4248b946d8afb7e88893d1d97c403bb3760be30"
+# Official SAGE v0.14.7 release asset (https://github.com/lazear/sage/releases/tag/v0.14.7),
+# the binary used for the manuscript searches. Upstream did not bump the crate version
+# for this tag, so the executable reports "sage 0.14.6"; the executable checksum is
+# what distinguishes it from the v0.14.6 release (executable 7367d53f...).
+SAGE_RELEASE = "v0.14.7"
+SAGE_ARCHIVE = "sage-v0.14.7-x86_64-unknown-linux-gnu.tar.gz"
+SAGE_MEMBER = "sage-v0.14.7-x86_64-unknown-linux-gnu/sage"
+SAGE_SHA256 = "e3dc6b41015cb167574f6c82525b75e946c094f30bd700271b05c051c30cbe8a"
+SAGE_EXECUTABLE_SHA256 = "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625"
+SAGE_REPORTED_VERSION = "sage 0.14.6"
 
 
 def source_identity():
@@ -203,14 +212,16 @@ def main(example_dir=None, cohort="CAMPI"):
         for name in BINARIES:
             shutil.copy2(runtime / "cargo/release" / name, runtime / "bin" / name)
         with tarfile.open(ROOT / "examples/campi/runtime" / SAGE_ARCHIVE) as archive:
-            member = archive.getmember("sage-v0.14.6-x86_64-unknown-linux-gnu/sage")
+            member = archive.getmember(SAGE_MEMBER)
             if not member.isfile():
                 raise ValueError("SAGE archive contains an invalid executable entry")
             with archive.extractfile(member) as source, (runtime / "bin/sage").open("xb") as target:
                 shutil.copyfileobj(source, target)
         (runtime / "bin/sage").chmod(0o755)
+        if sha(runtime / "bin/sage") != SAGE_EXECUTABLE_SHA256:
+            raise ValueError("Bundled SAGE executable checksum mismatch")
         execute("check_sage_version", [runtime / "bin/sage", "--version"])
-        if (out / "check_sage_version.log").read_text().strip() != "sage 0.14.6":
+        if (out / "check_sage_version.log").read_text().strip() != SAGE_REPORTED_VERSION:
             raise ValueError("Unexpected SAGE version")
         (runtime / "RUNTIME.json").write_text(
             json.dumps(

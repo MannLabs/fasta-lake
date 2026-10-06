@@ -2,7 +2,7 @@
 
 This page adds matched DNA and RNA measurements to a study run in Docker. It
 follows the [first-study tutorial](../get-started/first-study.md), using its
-`fastalake:docker` image. De novo selection remains the baseline; matched
+`ghcr.io/mannlabs/fasta-lake:local` image. De novo selection remains the baseline; matched
 molecular candidates are added before Sage searches the final FASTA.
 
 ## Prepare the local inputs
@@ -35,7 +35,7 @@ docker run --rm --platform linux/amd64 --network none \
   --user "$(id -u):$(id -g)" \
   --mount "type=bind,source=$PWD/inputs,target=/data,readonly" \
   --mount "type=bind,source=$PWD/prepared,target=/prepared" \
-  fastalake:docker fasta-lake molecular prepare-source \
+  ghcr.io/mannlabs/fasta-lake:local fasta-lake molecular prepare-source \
   --specimen specimen_A --reference-id assembly_A_v1 \
   --tpm /data/raw/specimen_A_tpm.tsv --proteins /data/raw/specimen_A_genes.faa \
   --provenance /data/raw/specimen_A_reference.json --out /prepared/specimen_A
@@ -60,7 +60,7 @@ docker run --rm --platform linux/amd64 --network none \
   --mount "type=bind,source=$PWD/inputs,target=/data,readonly" \
   --mount "type=bind,source=$PWD/prepared,target=/prepared,readonly" \
   --mount "type=bind,source=$PWD/results,target=/work" \
-  fastalake:docker python /opt/fastalake/tools/run_manifest.py \
+  ghcr.io/mannlabs/fasta-lake:local python /opt/fastalake/tools/run_manifest.py \
   --manifest /data/samples.tsv --lake /data/lake.fasta --out /work/study_01 \
   --laptop --quantification directlfq \
   --molecular-dna-percent 1 --molecular-rna-percent 1 --validate-only

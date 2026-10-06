@@ -17,7 +17,7 @@ Or reuse the runtime created by the CAMPI example:
 python3 examples/hstool/run_example.py --out hstool_run_02 --threads 2 --runtime campi_run_01/_runtime
 ~~~
 
-Linux x86_64, Python 3.12, Cargo and a C compiler are required for first setup. Python dependencies install from the hash-locked `requirements/container.txt`; Rust dependencies from the committed lockfiles. SAGE 0.14.6 is bundled under ../campi/runtime with its licence. The source and binary fingerprints must match when reusing a runtime. Choose a fresh output directory; failed output is preserved.
+Linux x86_64, Python 3.12, Cargo and a C compiler are required for first setup. Python dependencies install from the hash-locked `requirements/container.txt`; Rust dependencies from the committed lockfiles. The official SAGE v0.14.7 release (its executable reports 0.14.6) is bundled under ../campi/runtime with its licence. The source and binary fingerprints must match when reusing a runtime. Choose a fresh output directory; failed output is preserved.
 
 ## Included inputs and scope
 

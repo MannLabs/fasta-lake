@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Test an already-built image. Keep the output directory as the validation record.
 set -euo pipefail
-image="${1:-fastalake:docker}"
+image="${1:-ghcr.io/mannlabs/fasta-lake:local}"
 out="${2:-docker_check}"
 if [[ -e "$out" ]]; then
   echo "Output exists: $out; choose a new directory" >&2

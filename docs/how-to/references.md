@@ -32,13 +32,13 @@ mkdir -p resources
 docker run --rm --platform linux/amd64 \
   --user "$(id -u):$(id -g)" \
   --mount "type=bind,source=$PWD/resources,target=/resources" \
-  fastalake:docker fasta-lake resources plan uniprot-swissprot \
+  ghcr.io/mannlabs/fasta-lake:local fasta-lake resources plan uniprot-swissprot \
   --directory /resources
 ```
 
 Replace `plan` with `download` when ready to transfer that resource. These two
 commands need network access. To unpack, replace the command after
-`fastalake:docker` with:
+`ghcr.io/mannlabs/fasta-lake:local` with:
 
 ```bash
 fasta-lake resources unpack /resources/uniprot-swissprot/uniprot_sprot.fasta.gz \

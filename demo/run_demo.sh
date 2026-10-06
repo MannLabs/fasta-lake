@@ -7,7 +7,8 @@
 #   ./demo/run_demo.sh
 #
 # No cluster, no SLURM, no network, no Python, no MMseqs2, no SAGE.
-# Set MMSEQS=/path/to/mmseqs to additionally run the optional clustering stage.
+# Settings match the production workflow: de novo peptides of 9-50 residues and
+# no sequence clustering.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -72,21 +73,12 @@ echo "Keeps only lake sequences that actually contain an observed de novo peptid
   --peptides-dir "$DEMO/predictions" \
   --output "$OUT/evidence_lake.fasta" \
   --output-hits "$OUT/hits.tsv" \
-  --min-length 8 >/dev/null 2>&1
+  --min-length 9 --max-length 50 >/dev/null 2>&1
 echo "  evidence lake: $(grep -c '^>' "$OUT/evidence_lake.fasta") of $(grep -c '^>' "$OUT/lake.fasta") sequences survived"
 
-# ---------------------------------------------------------------- stage 3 (optional)
+# The validated workflow uses no sequence clustering: samples draw directly
+# from the evidence lake.
 DB_FOR_SAMPLES="$OUT/evidence_lake.fasta"
-if [ -n "${MMSEQS:-}" ] && command -v "$MMSEQS" >/dev/null; then
-  rule "Stage 3 - cluster97 (optional, MMseqs2 detected)"
-  "$MMSEQS" easy-cluster "$OUT/evidence_lake.fasta" "$OUT/clu97" "$OUT/tmp" \
-    --min-seq-id 0.97 -c 0.8 --cov-mode 1 >/dev/null 2>&1
-  DB_FOR_SAMPLES="$OUT/clu97_rep_seq.fasta"
-  echo "  clustered to $(grep -c '^>' "$DB_FOR_SAMPLES") representatives"
-else
-  rule "Stage 3 - cluster97 (SKIPPED)"
-  echo "  MMseqs2 not requested. Set MMSEQS=/path/to/mmseqs to enable."
-fi
 
 # ---------------------------------------------------------------- stages 4-5
 rule "Stages 4-5 - per-sample curation + parsimony"
@@ -98,10 +90,10 @@ for p in "$DEMO"/predictions/*_predictions.csv; do
   s=$(basename "$p" _predictions.csv)
   mkdir -p "$OUT/$s/peps"; cp "$p" "$OUT/$s/peps/"
   "$BIN_FE/fasta_extractor" --database "$DB_FOR_SAMPLES" --peptides-dir "$OUT/$s/peps" \
-      --output "$OUT/$s/${s}_db.fasta" --min-length 8 >/dev/null 2>&1
+      --output "$OUT/$s/${s}_db.fasta" --min-length 9 --max-length 50 >/dev/null 2>&1
   "$BIN_PE/parsimony_engine" --fasta "$OUT/$s/${s}_db.fasta" --peptides "$p" \
       --sample "$s" --output-dir "$OUT/$s/inference" --strategy razor --tiebreak hash-acc \
-      --min-length 8 --source-map "$OUT/source_map.tsv" >/dev/null
+      --min-length 9 --max-length 50 --source-map "$OUT/source_map.tsv" >/dev/null
   npep=$(( $(wc -l < "$p") - 1 )); ndb=$(grep -c '^>' "$OUT/$s/${s}_db.fasta" 2>/dev/null || echo 0)
   npars=$(grep -c '^>' "$OUT/$s/inference/${s}_razor.fasta")
   printf '  %-10s %10s %10s %10s\n' "$s" "$npep" "$ndb" "$npars"

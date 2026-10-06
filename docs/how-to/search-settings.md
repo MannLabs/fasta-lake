@@ -43,11 +43,12 @@ expansion, and disable retention-time prediction. LFQ and generated decoys
 remain enabled. The mode is a concrete starting configuration, not an
 automatically optimized instrument or modification model.
 
-These settings target the bundled Sage 0.14.6. The installed
+These settings target the bundled Sage v0.14.7 release binary, which reports its
+version as 0.14.6. The installed
 [`sage_config`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/search.py) function returns a fresh complete JSON
 dictionary for callers who need to inspect settings. See the
 [Sage configuration documentation](https://sage-docs.vercel.app/docs/configuration)
-and [versioned source](https://github.com/lazear/sage/tree/v0.14.6).
+and [versioned source](https://github.com/lazear/sage/tree/v0.14.7).
 
 ## Read the biology carefully
 

@@ -6,6 +6,14 @@ settings; Sage performs spectrum matching, scoring and its native confidence
 estimation. Search q-values are not whole adaptive-workflow FDR calibration.
 """
 
+# Validated search engine: the official Sage v0.14.7 Linux x86_64 release asset
+# (https://github.com/lazear/sage/releases/tag/v0.14.7). Upstream did not bump the
+# crate version for this tag, so the executable reports "sage 0.14.6"; only the
+# executable checksum distinguishes it from the v0.14.6 release.
+SAGE_RELEASE = "v0.14.7"
+SAGE_REPORTED_VERSION = "0.14.6"
+SAGE_EXECUTABLE_SHA256 = "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625"
+
 DIGESTIONS = ("tryptic", "semi-tryptic", "unspecific")
 SEARCH_MODES = ("closed", "open")
 
@@ -60,7 +68,7 @@ def _dda_config(fasta, mzml, output):
 def sage_config(
     fasta, mzml, output, *, digestion="tryptic", search_mode="closed", min_length=5, max_length=50
 ):
-    """Build the complete configuration for one Sage 0.14.6 acquisition.
+    """Build the complete configuration for one Sage v0.14.7 acquisition.
 
     Parameters
     ----------

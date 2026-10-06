@@ -27,6 +27,41 @@ bash tools/check_local_docker.sh docker_check_01
 
 The first Docker build downloads dependencies and compiles the tools. The bundled examples then run offline. A successful check ends with `PASS`. See [the demo tour](docs/get-started/demo.md) and the [Docker guide](https://mannlabs.github.io/fasta-lake/get-started/docker/).
 
+### Docker test on a laptop
+
+The container image is `ghcr.io/mannlabs/fasta-lake`. A local build is tagged
+`ghcr.io/mannlabs/fasta-lake:local`; published releases carry the release
+version as their tag. With Docker Desktop (or Docker Engine) running, from the
+repository root:
+
+```bash
+docker build --platform linux/amd64 -t ghcr.io/mannlabs/fasta-lake:local -f Dockerfile .
+docker run --rm --platform linux/amd64 --network none ghcr.io/mannlabs/fasta-lake:local \
+  sh -c 'sage --version; sha256sum "$(readlink -f "$(command -v sage)")"'
+mkdir demo_check_01
+docker run --rm --platform linux/amd64 --network none --user "$(id -u):$(id -g)" \
+  -v "$PWD/demo_check_01:/work" ghcr.io/mannlabs/fasta-lake:local \
+  bash /opt/fastalake/demo/run_demo.sh /work/demo
+bash tools/test_container.sh ghcr.io/mannlabs/fasta-lake:local docker_check_01
+```
+
+Expected output: the Sage check prints `sage 0.14.6` and
+`d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625` (the official
+Sage v0.14.7 release executable, which reports its version as 0.14.6). The
+synthetic demo prints `lake: 20 unique sequences`,
+`evidence lake: 14 of 20 sequences survived` and the per-sample table
+
+```
+  SAMPLE       PEPTIDES   DB(seqs)  PARSIMONY
+  SAMPLE_A            8         13          4
+  SAMPLE_B            8         12          4
+  SAMPLE_C            7         10          3
+```
+
+The full container test (several minutes; 4 GiB memory and two CPUs per test
+container) ends with a line beginning `PASS: prebuilt runtime, synthetic demo, CAMPI`.
+Apple Silicon Macs run the image through Docker's x86_64 emulation, which is slower.
+
 ## Set up with an assistant
 
 An agent or LLM can help you install FastaLake, prepare inputs and interpret a run.
