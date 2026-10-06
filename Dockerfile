@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1@sha256:ecfaec9ed6d810b56388c508f4121597bfbba70d41a6dfeee4d8cad5f295fc32
 # From the repository root:
-# docker build --platform linux/amd64 -t fastalake:docker .
+# docker build --platform linux/amd64 -t ghcr.io/mannlabs/fasta-lake:local .
 FROM rust:1.91.1-slim-bookworm@sha256:8514999d4786ef12efe89239e86b3d0a021b94b9d35108c8efe6c79ca7dc1a65 AS rust-builder
 RUN test "$(dpkg --print-architecture)" = amd64 || \
     (echo 'The bundled Sage runtime requires --platform linux/amd64' >&2; exit 1)

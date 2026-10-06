@@ -17,6 +17,9 @@ sys.path.insert(0, str(ROOT / "examples/campi"))
 from run_example import (  # noqa: E402
     BINARIES,
     SAGE_ARCHIVE,
+    SAGE_EXECUTABLE_SHA256,
+    SAGE_MEMBER,
+    SAGE_REPORTED_VERSION,
     SAGE_SHA256,
     sha,
     source_identity,
@@ -41,14 +44,16 @@ def prepare(runtime: Path) -> None:
             raise ValueError("Missing prebuilt binary: " + name)
         (runtime / "bin" / name).symlink_to(Path(binary).resolve())
     with tarfile.open(archive_path) as archive:
-        member = archive.getmember("sage-v0.14.6-x86_64-unknown-linux-gnu/sage")
+        member = archive.getmember(SAGE_MEMBER)
         if not member.isfile():
             raise ValueError("Sage archive entry is not a regular file")
         with archive.extractfile(member) as source, (runtime / "bin/sage").open("xb") as target:
             shutil.copyfileobj(source, target)
     (runtime / "bin/sage").chmod(0o755)
+    if sha(runtime / "bin/sage") != SAGE_EXECUTABLE_SHA256:
+        raise ValueError("Bundled Sage executable checksum mismatch")
     version = subprocess.check_output([runtime / "bin/sage", "--version"], text=True).strip()
-    if version != "sage 0.14.6":
+    if version != SAGE_REPORTED_VERSION:
         raise ValueError("Unexpected Sage version: " + version)
     (runtime / "RUNTIME.json").write_text(
         json.dumps(

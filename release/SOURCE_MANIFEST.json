@@ -58,8 +58,8 @@
     },
     {
       "path": ".github/workflows/docker.yml",
-      "bytes": 4771,
-      "sha256": "22feda026abd75b6434f913f77e7f8ade2ad81177d7799d6c79b9d9f8b38cfc0"
+      "bytes": 4981,
+      "sha256": "619c5358d09b21cded4fa3de77a29f9b433316820297a14bb9abf218f597c02c"
     },
     {
       "path": ".github/workflows/docs.yml",
@@ -93,8 +93,8 @@
     },
     {
       "path": "Dockerfile",
-      "bytes": 3887,
-      "sha256": "08d0479892eb725ce34c2187ac3c5fc066a6aabd6b8fe5a36f1de10efc4c7974"
+      "bytes": 3904,
+      "sha256": "4fb60e9757ee663ce7c44ddd9a04862eb784dc8a99db6c75829a7bab9422dcea"
     },
     {
       "path": "LICENSE",
@@ -108,13 +108,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 5891,
-      "sha256": "627575b2735a3ecee5a0707bc38c5d12313d4a47bb8c7e52b487a7f4184c2799"
+      "bytes": 7513,
+      "sha256": "84d57b281d46d72b64f92677dc344ac20fc9c7c70d55669110b7973e047cf839"
     },
     {
       "path": "demo/README.md",
-      "bytes": 2900,
-      "sha256": "4e3f5cd7b94b1e320ba53f75b618c5e5e1bee417e87386a0f1cb2781ad7c9087"
+      "bytes": 2834,
+      "sha256": "1107d52f646ff1700562c2a960d828e5a9e59c329a74378f83fca96f555d6e7a"
     },
     {
       "path": "demo/lake/reference_lake.fasta",
@@ -138,8 +138,8 @@
     },
     {
       "path": "demo/run_demo.sh",
-      "bytes": 5854,
-      "sha256": "25b1f9fab7738a80d03d3f00dbca67bdbd935b61f55307e406bc30757dceb4e0"
+      "bytes": 5448,
+      "sha256": "74261fcfe625651612e656d2348859e87003425b5a2c25b9e5a9ae4d70b91433"
     },
     {
       "path": "docs/assets/demo_qc_synthetic.json",
@@ -523,8 +523,8 @@
     },
     {
       "path": "docs/concepts/methods.md",
-      "bytes": 18613,
-      "sha256": "74d8568ca4ff3fa4c378ece5cb8e778e77b7432dc6ac03e9c1c70adadddbfb85"
+      "bytes": 18667,
+      "sha256": "0c2f247a60c44b95fa56e88beae9a28bfd2876c858eec30e81a624fb0cf820be"
     },
     {
       "path": "docs/concepts/molecular-benchmark.md",
@@ -778,8 +778,8 @@
     },
     {
       "path": "docs/get-started/docker.md",
-      "bytes": 3638,
-      "sha256": "35b3b608012002d308e396ddb2f0011aac9dac44e9d4d1c32a8c8839fc90cc4c"
+      "bytes": 3723,
+      "sha256": "9c0013fd91ef5f5919dd2898b4c5b2e8bbe498c234045ba9462b16cead7160fc"
     },
     {
       "path": "docs/get-started/environment.md",
@@ -788,13 +788,13 @@
     },
     {
       "path": "docs/get-started/first-study.md",
-      "bytes": 6161,
-      "sha256": "b0f471cc11c80f8e9d6cb2ab298188ef751f893415aad732e78774782b32bc2c"
+      "bytes": 6195,
+      "sha256": "53a0e3b3e0fabd95d9587043e6e68ed87f622dd28a8b9ea1a886da924bc044ce"
     },
     {
       "path": "docs/get-started/install.md",
-      "bytes": 8702,
-      "sha256": "64a121032b1f29ebc1ea1198b2ecceaee8ab978499a8422bd87a0e72587de6f4"
+      "bytes": 9517,
+      "sha256": "e4c07c5f64557bdc0da54a6a47570a61a1db5341b2d62ebbe7cf6a7d8c93956c"
     },
     {
       "path": "docs/how-to/acquisition-manifest.md",
@@ -848,8 +848,8 @@
     },
     {
       "path": "docs/how-to/molecular-docker.md",
-      "bytes": 3828,
-      "sha256": "a10550aab9f85dfcd049d17786ae939a26418bd83165f01d1fea4fabf996c5d5"
+      "bytes": 3879,
+      "sha256": "4a055fae76fbf21f6f183fd324bf8ac7c86896b4cfbc6672719f56a8c6233203"
     },
     {
       "path": "docs/how-to/molecular-inputs.md",
@@ -873,8 +873,8 @@
     },
     {
       "path": "docs/how-to/references.md",
-      "bytes": 9180,
-      "sha256": "e418a55aeb58d9bb88f539fe1e000da1f22205d6298c53694eb4c095fab43fbc"
+      "bytes": 9214,
+      "sha256": "3a61743bacb2ac95bcd99ddb1475227ff1ac19a39973969a934193b039588d8f"
     },
     {
       "path": "docs/how-to/reporting.md",
@@ -883,8 +883,8 @@
     },
     {
       "path": "docs/how-to/search-settings.md",
-      "bytes": 3884,
-      "sha256": "09363fcc5c947de46ee8d31020b5af1ea14cf6b5dd70fa8f24a0c0f9631dae63"
+      "bytes": 3937,
+      "sha256": "b91a8979adb0fbed6761dcf3c604318e691cfec72cfa229cd34926eac116ffdc"
     },
     {
       "path": "docs/how-to/taxonomy.md",
@@ -1273,8 +1273,8 @@
     },
     {
       "path": "docs/reference/function-index.md",
-      "bytes": 88448,
-      "sha256": "99fbc8a39d0efd0f9b3dc12092d75f3689225c9eb62af8039b9c25e71da8ce25"
+      "bytes": 88449,
+      "sha256": "6192e0dd3bb4c4398b7330501392ecbc33e116d59fdd237b7bb371ab022b6861"
     },
     {
       "path": "docs/reference/function-map.md",
@@ -1303,8 +1303,8 @@
     },
     {
       "path": "docs/reference/generated/run_manifest_help.txt",
-      "bytes": 3911,
-      "sha256": "5fac151b872dfa358972df4d7dcd9259876345ba0e0a31d42e2784f456c317d2"
+      "bytes": 4002,
+      "sha256": "634d67090497f3b1ca6126b812f8a0f985f1b5e883718e735b55fcc58d7ed7f0"
     },
     {
       "path": "docs/reference/manuscript-reproduction.md",
@@ -1413,13 +1413,13 @@
     },
     {
       "path": "examples/campi/DATA_PROVENANCE.md",
-      "bytes": 6388,
-      "sha256": "92ee8e92b5ec83160161df05e65704645fc1975f3b93b34e7d703a11d8d4a39d"
+      "bytes": 6851,
+      "sha256": "9b20613ab2a375dd03dfc28e9429f09a3dc989b1d1650c67b006faaf4bcd39b1"
     },
     {
       "path": "examples/campi/README.md",
-      "bytes": 12026,
-      "sha256": "f86af03c5c2c199e4815cf400236f4e780eaf36fcdf741ebfab5cdd2e3048b90"
+      "bytes": 12781,
+      "sha256": "eb73fc362fdfc4e67c6f421472747133981113b7a06726189829b86315e4f591"
     },
     {
       "path": "examples/campi/check_results.py",
@@ -1448,8 +1448,8 @@
     },
     {
       "path": "examples/campi/expected/results.json",
-      "bytes": 2503,
-      "sha256": "207f8ddf1046c691a980f56dab84d35ccb8b6531b6c0164cc2c2524a49b5738e"
+      "bytes": 3366,
+      "sha256": "7fc98fb5187bdcfc06a6cacc852790ce2372cdf27d4a3158619a2083b0d21222"
     },
     {
       "path": "examples/campi/inputs/S01_45-50min.mzML",
@@ -1513,8 +1513,8 @@
     },
     {
       "path": "examples/campi/run_example.py",
-      "bytes": 14595,
-      "sha256": "a68078c4be741159b848ce3502f229f8dfb48ec536ed467e9a16208c56499b72"
+      "bytes": 15337,
+      "sha256": "88891f8edd5c8cc6fe5ff01d51a823c6e5a0724fb2f482df1c01d172ec8452e8"
     },
     {
       "path": "examples/campi/runtime/SAGE_LICENSE.txt",
@@ -1522,9 +1522,9 @@
       "sha256": "718ac7a0698e8680faa4e3b5b04af25f44efe2108dca8d445ad2eaed1cb37701"
     },
     {
-      "path": "examples/campi/runtime/sage-v0.14.6-x86_64-unknown-linux-gnu.tar.gz",
-      "bytes": 7912244,
-      "sha256": "3492d04b9c922d47ee44fd7fd4248b946d8afb7e88893d1d97c403bb3760be30"
+      "path": "examples/campi/runtime/sage-v0.14.7-x86_64-unknown-linux-gnu.tar.gz",
+      "bytes": 8135705,
+      "sha256": "e3dc6b41015cb167574f6c82525b75e946c094f30bd700271b05c051c30cbe8a"
     },
     {
       "path": "examples/chunked/README.md",
@@ -1578,8 +1578,8 @@
     },
     {
       "path": "examples/hstool/README.md",
-      "bytes": 4629,
-      "sha256": "e5f59257bb64fa02adc87b101cb41a155a30e54730899a5b7379efc9bbe3144c"
+      "bytes": 4683,
+      "sha256": "eb1d1774aa2b7a7a2fb9e9fffbc6b1d57283fb8f7105b48b84f9cfdd06fcead9"
     },
     {
       "path": "examples/hstool/expected/TR01_canonical_peptides.txt",
@@ -2063,8 +2063,8 @@
     },
     {
       "path": "fasta_lake/search.py",
-      "bytes": 4182,
-      "sha256": "9f529405197b656f79b8f7100fc819f7f03fedd5b2bc2262265e782ac0baa582"
+      "bytes": 4642,
+      "sha256": "185935b921207ccb23d932698b6cb83c5dc0e3e557834219c6d25393d45ffd0b"
     },
     {
       "path": "fasta_lake/study.py",
@@ -2133,8 +2133,8 @@
     },
     {
       "path": "publication/chain/STAGES.md",
-      "bytes": 2188,
-      "sha256": "f8a3ffb47795f33f532a923dbc6f02619293640e1e9f34616fc8fb51fbc1b1ac"
+      "bytes": 2206,
+      "sha256": "a2debcf6aa64b626a737494cc4501f99f71cdae7b18209961f7f8c28a165864d"
     },
     {
       "path": "pyproject.toml",
@@ -2468,8 +2468,8 @@
     },
     {
       "path": "tests/test_bundled_examples.py",
-      "bytes": 2109,
-      "sha256": "0a8cd9163b713a85a00a471de04f931bd4cc4b8767a6e0116b606fd31bce94dd"
+      "bytes": 3438,
+      "sha256": "1a56cf14a25083f1c221218133cecd1d4dee8cd6356b03ff3043edb168ca962d"
     },
     {
       "path": "tests/test_capacity.py",
@@ -2803,8 +2803,8 @@
     },
     {
       "path": "tools/PREBUILT_IMAGE_README.md",
-      "bytes": 1801,
-      "sha256": "ac93dc94a4e7fcc5dfff70fd5fc40244b5e6b38d6a6edcb86aaeaf698cea3d4e"
+      "bytes": 1777,
+      "sha256": "f8438571aee090756df0cb316413167cc789f8fda16c9d97e92f63a0de4bcf88"
     },
     {
       "path": "tools/add_molecular_evidence.py",
@@ -2843,8 +2843,8 @@
     },
     {
       "path": "tools/check_local_docker.sh",
-      "bytes": 480,
-      "sha256": "a76856a60feb4703d7b083eb75ba4422fba7cd85e547020e529a151b9daa2c4a"
+      "bytes": 492,
+      "sha256": "7d6963d2980465540d0d52f8acaa667ba6c1adade12ccdb6316efadaa6d7fabc"
     },
     {
       "path": "tools/check_no_site_paths.py",
@@ -2878,8 +2878,8 @@
     },
     {
       "path": "tools/prepare_container_runtime.py",
-      "bytes": 2406,
-      "sha256": "103fe9123727d4b8a84db419d343e42e2fb01cbbc76c2e4b08c065a38b53f9d2"
+      "bytes": 2583,
+      "sha256": "1f99076cf1e961955162271dda41d99292c859f2113e1d737cfb3e712a7c4c0b"
     },
     {
       "path": "tools/render_function_index.py",
@@ -2898,8 +2898,8 @@
     },
     {
       "path": "tools/run_manifest.py",
-      "bytes": 26564,
-      "sha256": "3389969c48803cdc2d7a2d5a9ff99f08c28af97cb56cc423bbae73b3cfba96ad"
+      "bytes": 27485,
+      "sha256": "86fbf119812b7e885c641087a860af8288eed8a8569d5e3cf6c2c406a7b0f6fe"
     },
     {
       "path": "tools/run_tutorials.py",
@@ -2913,8 +2913,8 @@
     },
     {
       "path": "tools/test_container.sh",
-      "bytes": 3979,
-      "sha256": "99aece6fcc4f0191cc539b17b255b2ddc3f0977c301192e13ba71c237a415c3b"
+      "bytes": 3996,
+      "sha256": "980eb320142e7b18fb8a610be4ad57e6c2e0d0ecd0b54a67f451fee6fc9f27bb"
     }
   ]
 }

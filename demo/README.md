@@ -19,7 +19,6 @@ curated from that sample's own de novo peptide evidence.
 ```
 Stage 0 - build the sequence lake        lake: 20 unique sequences
 Stage 2 - evidence filter                evidence lake: 14 of 20 sequences survived
-Stage 3 - clustering                     SKIPPED
 Stages 4-5 - per-sample curation + parsimony
 
   SAMPLE       PEPTIDES   DB(seqs)  PARSIMONY
@@ -40,9 +39,9 @@ diff <(grep '^>' demo_run_01/SAMPLE_A/SAMPLE_A_db.fasta | sort) \
 In a real run the lake holds hundreds of millions of sequences and each sample's database lands
 around 5,000–15,000 — but the mechanism is exactly the one above.
 
-The validated workflow uses no sequence clustering. The script retains a legacy MMseqs2
-option, but its output is outside the documented expectations above. Leave `MMSEQS` unset
-when reproducing this example. Every run requires a fresh output directory.
+The demo uses the production settings: de novo peptides of 9–50 residues
+(`--min-length 9 --max-length 50`) and no sequence clustering, so each sample draws
+directly from the evidence lake. Every run requires a fresh output directory.
 
 ## The data
 

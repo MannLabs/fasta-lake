@@ -23,7 +23,7 @@ docker run --rm --platform linux/amd64 --network none \
   --memory 4g --memory-swap 4g --cpus 2 \
   --user "$(id -u):$(id -g)" \
   --mount "type=bind,source=$PWD/fastalake-results,target=/work" \
-  fastalake:docker fastalake-example campi --out /work/campi_01 --threads 2
+  ghcr.io/mannlabs/fasta-lake:local fastalake-example campi --out /work/campi_01 --threads 2
 ```
 
 The inputs are real spectra and matching predictions, cropped to two acquisition
@@ -92,7 +92,7 @@ docker run --rm --platform linux/amd64 --network none \
   --user "$(id -u):$(id -g)" \
   --mount "type=bind,source=$PWD/inputs,target=/data,readonly" \
   --mount "type=bind,source=$PWD/fastalake-results,target=/work" \
-  fastalake:docker python /opt/fastalake/tools/run_manifest.py \
+  ghcr.io/mannlabs/fasta-lake:local python /opt/fastalake/tools/run_manifest.py \
   --manifest /data/samples.tsv --lake /data/lake.fasta \
   --out /work/study_01 --laptop --validate-only
 ```

@@ -7,8 +7,7 @@ then open a terminal in this folder.
 ```bash
 shasum -a 256 -c SHA256SUMS
 docker load -i fastalake-docker-linux-amd64.tar.gz
-docker tag fastalake:ci fastalake:docker
-bash test_container.sh fastalake:docker demo_run_01
+bash test_container.sh ghcr.io/mannlabs/fasta-lake:local demo_run_01
 ```
 
 On Linux, `sha256sum --check SHA256SUMS` is an alternative checksum command.

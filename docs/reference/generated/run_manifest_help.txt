@@ -30,7 +30,8 @@ options:
   --manifest MANIFEST
   --lake LAKE           Required reservoir in augment mode
   --out OUT
-  --sage SAGE           Explicit path to SAGE 0.14.6 (otherwise PATH)
+  --sage SAGE           Explicit path to the official SAGE v0.14.7 Linux x86_64
+                        executable, which reports 'sage 0.14.6' (otherwise PATH)
   --threads THREADS     Rust threads (default: 4, automatic in laptop mode)
   --laptop              Detect resources and enable bounded reference pieces
   --memory-budget-gib MEMORY_BUDGET_GIB

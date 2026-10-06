@@ -40,7 +40,7 @@ Every protein receiving at least one peptide assignment was retained in the sear
 
 ## Database searching
 
-Each acquisition was searched separately with SAGE 0.14.6 against its selected FASTA. The ten PREDICT acquisitions were additionally searched against their matched metagenome FASTAs using the same mzML inputs, SAGE executable and search settings. Only the supplied FASTA and corresponding output location differed between paired search configurations.
+Each acquisition was searched separately with SAGE v0.14.7 (official release binary; it reports version 0.14.6) against its selected FASTA. The ten PREDICT acquisitions were additionally searched against their matched metagenome FASTAs using the same mzML inputs, SAGE executable and search settings. Only the supplied FASTA and corresponding output location differed between paired search configurations.
 
 | Parameter | Value |
 |---|---|

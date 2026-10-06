@@ -3,7 +3,10 @@
     "system": "Linux x86_64",
     "python": "3.12.4",
     "sage": "0.14.6",
-    "sage_archive_sha256": "3492d04b9c922d47ee44fd7fd4248b946d8afb7e88893d1d97c403bb3760be30",
+    "sage_release": "v0.14.7",
+    "sage_archive_sha256": "e3dc6b41015cb167574f6c82525b75e946c094f30bd700271b05c051c30cbe8a",
+    "sage_executable_sha256": "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625",
+    "sage_note": "The executable reports 0.14.6. The baseline was first recorded with the v0.14.6 release archive (sha256 3492d04b9c922d47ee44fd7fd4248b946d8afb7e88893d1d97c403bb3760be30); a fresh v0.14.7 run on 2026-10-06 reproduced all FASTA hashes and every count below, both accepted peptide sets (Jaccard 1.0), and a study table byte-identical to a v0.14.6 run of the same code.",
     "rust": "1.91.1",
     "threads": 2
   },
@@ -43,7 +46,9 @@
       "grouping_rule": "greedy set cover; lexical gain ties; plurality protein mapping",
       "confidence": "post-search grouping; no study-wide FDR recalibration"
     },
-    "dual_key_rows": 577
+    "study_group_long_rows": 573,
+    "dual_key_rows": 577,
+    "dual_key_rows_note": "Row count of the archived expected/reference_dual_key_long.tsv (previous rule: one row per acquisition, sample_group and study_group). Not the current output; the current study/study_group_long.tsv has one row per acquisition and study_group. Neither row count is an acceptance check."
   },
   "search_count_relative_tolerance": 0.02,
   "minimum_peptide_jaccard": 0.98,

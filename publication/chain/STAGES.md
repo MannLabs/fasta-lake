@@ -12,7 +12,7 @@ site configuration inventory therefore does not describe this page.
 | Pooled evidence selection | `fasta_extractor` | Reference lake and pooled eligible predictions become an evidence lake |
 | Acquisition-specific drawing | `fasta_extractor` | Evidence lake and one acquisition's ranked predictions become a drawn FASTA |
 | Razor selection | `parsimony_engine` | Drawn FASTA and eligible inference peptides become a selected search FASTA |
-| Search and LFQ | SAGE 0.14.6 | One mzML and its selected FASTA become search and quantitative observations |
+| Search and LFQ | SAGE v0.14.7 (reports 0.14.6) | One mzML and its selected FASTA become search and quantitative observations |
 | Filtered aggregation | `aggregation_engine` | Accepted target observations become peptide-feature and member-set matrices |
 | Study reporting | `tools/group_study.py` | Pooled accepted evidence becomes a study dictionary and dual-key table |
 

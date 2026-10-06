@@ -24,7 +24,13 @@ from pathlib import Path
 from fasta_lake import __version__
 from fasta_lake.resources import run_recorded
 from fasta_lake.rust.binaries import find_binary
-from fasta_lake.search import DIGESTIONS, SEARCH_MODES, sage_config
+from fasta_lake.search import (
+    DIGESTIONS,
+    SAGE_EXECUTABLE_SHA256,
+    SAGE_REPORTED_VERSION,
+    SEARCH_MODES,
+    sage_config,
+)
 
 ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]*\Z")
 
@@ -146,7 +152,11 @@ def main(argv=None):
     parser.add_argument("--manifest", required=True, type=Path)
     parser.add_argument("--lake", type=Path, help="Required reservoir in augment mode")
     parser.add_argument("--out", required=True, type=Path)
-    parser.add_argument("--sage", help="Explicit path to SAGE 0.14.6 (otherwise PATH)")
+    parser.add_argument(
+        "--sage",
+        help="Explicit path to the official SAGE v0.14.7 Linux x86_64 executable, "
+        "which reports 'sage 0.14.6' (otherwise PATH)",
+    )
     parser.add_argument(
         "--threads", type=int, help="Rust threads (default: 4, automatic in laptop mode)"
     )
@@ -335,8 +345,22 @@ def main(argv=None):
         )
         binaries["aggregation_engine"] = find_binary("aggregation_engine")
         version = subprocess.check_output([binaries["sage"], "--version"], text=True).strip()
-        if version.split()[-1] != "0.14.6":
-            parser.error(f"This configuration was validated with SAGE 0.14.6; found {version}")
+        if version.split()[-1] != SAGE_REPORTED_VERSION:
+            parser.error(
+                "This configuration was validated with the official SAGE v0.14.7 release, "
+                f"which reports 'sage 0.14.6'; found {version}"
+            )
+        # v0.14.6 and v0.14.7 report the same version string, so the executable
+        # checksum is what identifies the validated release. A different build
+        # (self-compiled, macOS) is allowed but flagged, since results may differ.
+        found = sha256(binaries["sage"])
+        if found != SAGE_EXECUTABLE_SHA256:
+            print(
+                "WARNING: SAGE executable is not the official v0.14.7 Linux x86_64 "
+                f"release binary (sha256 {SAGE_EXECUTABLE_SHA256}); found {found}. "
+                "Results may differ from the validated configuration.",
+                file=sys.stderr,
+            )
     if args.quantification and args.databases_only:
         parser.error("--quantification requires searches; incompatible with --databases-only")
     if not args.databases_only:

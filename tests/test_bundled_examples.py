@@ -51,3 +51,32 @@ def test_example_rejects_unsupported_qc_python_before_setup(monkeypatch, tmp_pat
         assert error.value.code == 2
         assert "Python 3.12 is required" in capsys.readouterr().err
     assert not destination.exists()
+
+
+def test_bundled_sage_is_the_official_v0_14_7_release(monkeypatch):
+    """v0.14.6 and v0.14.7 both report 'sage 0.14.6'; only checksums tell them apart."""
+    import tarfile
+
+    from fasta_lake.search import SAGE_EXECUTABLE_SHA256, SAGE_RELEASE, SAGE_REPORTED_VERSION
+
+    module = load_example(monkeypatch)
+    archive = module.ROOT / "examples/campi/runtime" / module.SAGE_ARCHIVE
+    assert module.SAGE_RELEASE == SAGE_RELEASE == "v0.14.7"
+    assert module.SAGE_ARCHIVE == "sage-v0.14.7-x86_64-unknown-linux-gnu.tar.gz"
+    assert module.SAGE_SHA256 == (
+        "e3dc6b41015cb167574f6c82525b75e946c094f30bd700271b05c051c30cbe8a"
+    )
+    assert (
+        module.SAGE_EXECUTABLE_SHA256
+        == SAGE_EXECUTABLE_SHA256
+        == "d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625"
+    )
+    assert module.SAGE_REPORTED_VERSION == "sage " + SAGE_REPORTED_VERSION
+    assert module.sha(archive) == module.SAGE_SHA256
+    with tarfile.open(archive) as bundle:
+        executable = bundle.extractfile(bundle.getmember(module.SAGE_MEMBER)).read()
+    assert hashlib.sha256(executable).hexdigest() == SAGE_EXECUTABLE_SHA256
+    # The official v0.14.6 executable must not satisfy the pin.
+    assert SAGE_EXECUTABLE_SHA256 != (
+        "7367d53f5f25d21b8ef182f69a1dd14682a93d551acdf0184a28c50f84dc9f9f"
+    )

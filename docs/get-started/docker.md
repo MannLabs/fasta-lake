@@ -11,7 +11,7 @@ mkdir -p fastalake-results
 docker run --rm --platform linux/amd64 --network none \
   --user "$(id -u):$(id -g)" \
   --mount "type=bind,source=$PWD/fastalake-results,target=/work" \
-  fastalake:docker fastalake-example campi --out /work/campi_01 --threads 2
+  ghcr.io/mannlabs/fasta-lake:local fastalake-example campi --out /work/campi_01 --threads 2
 ```
 
 A successful run prints `PASS` after comparing its results with the bundled expected results. The output directory on your computer contains `VALIDATION.json`, stage logs, selected FASTAs, search results and study groups. Each run needs a new output directory.
@@ -22,10 +22,10 @@ Run the second example using the same image:
 docker run --rm --platform linux/amd64 --network none \
   --user "$(id -u):$(id -g)" \
   --mount "type=bind,source=$PWD/fastalake-results,target=/work" \
-  fastalake:docker fastalake-example campi --out /work/campi_01 --threads 2
+  ghcr.io/mannlabs/fasta-lake:local fastalake-example campi --out /work/campi_01 --threads 2
 ```
 
-For the small synthetic example, replace the command after `fastalake:docker` with `bash /opt/fastalake/demo/run_demo.sh /work/demo_01`. The expected evidence lake has 14 sequences and the three selected databases contain 4, 4 and 3 sequences.
+For the small synthetic example, replace the command after `ghcr.io/mannlabs/fasta-lake:local` with `bash /opt/fastalake/demo/run_demo.sh /work/demo_01`. The expected evidence lake has 14 sequences and the three selected databases contain 4, 4 and 3 sequences.
 
 ## Use your own data
 
@@ -36,7 +36,7 @@ docker run --rm --platform linux/amd64 --network none \
   --user "$(id -u):$(id -g)" \
   --mount "type=bind,source=$PWD/inputs,target=/data,readonly" \
   --mount "type=bind,source=$PWD/fastalake-results,target=/work" \
-  fastalake:docker python /opt/fastalake/tools/run_manifest.py \
+  ghcr.io/mannlabs/fasta-lake:local python /opt/fastalake/tools/run_manifest.py \
   --manifest /data/samples.tsv --lake /data/lake.fasta \
   --out /work/study_01 --sage /usr/local/bin/sage --threads 4 --validate-only
 ```
@@ -51,7 +51,7 @@ Remove `--validate-only` to execute. The runner automatically writes grouping, q
 The image includes the quantification and QC dependencies. Optional eggNOG and
 ESM-C require their separately configured local tools/resources; see
 [annotation](../how-to/annotation.md). After the CAMPI example,
-replace the command after `fastalake:docker` in the run pattern above with:
+replace the command after `ghcr.io/mannlabs/fasta-lake:local` in the run pattern above with:
 
 ```bash
 fasta-lake quantify-study --groups /work/campi_01/study \
