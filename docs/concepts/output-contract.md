@@ -39,6 +39,8 @@ must be new and outside the search-input tree. This command does not run a searc
 |---|---|
 | `study_group_long.tsv` | One row per acquisition and quantified study group; distinct canonical peptide count, LFQ feature count and summed intensity |
 | `study_group_matrix.tsv` | Exactly the same groups and intensities as a wide matrix; unquantified cells are empty |
+| `study_group_annotation.tsv` | Gene, protein name, organism, source catalogue and number of source headers per study group; distinct values from several catalogue entries are joined with `; ` |
+| `annotated_study_group_matrix.tsv` | `study_group_matrix.tsv` with `gene`, `protein_name` and `organism` inserted after the group column |
 | `acquisition_summary.tsv` | Group presence and evidence counts derived from that same quantitative table |
 | `feature_assignments.tsv.gz` | Every eligible positive feature, original file line, peptide/charge, reported proteins, full member set and direct assigned group |
 | `peptide_to_study_group.tsv` | The direct pooled peptide assignment |

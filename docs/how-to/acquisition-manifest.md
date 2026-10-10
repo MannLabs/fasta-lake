@@ -37,9 +37,15 @@ Preflight checks the manifest structure, unique identifiers, nonempty input file
 
 ```bash
 fasta-lake run --manifest samples.tsv --lake lake_build_01/lake.fasta \
+  --lake-headers lake_build_01/joint_headers.tsv \
   --out study_run_01 --sage /path/to/sage --threads 4 \
   --top-fraction 0.30 --min-length 9 --max-length 50
 ```
+
+`--lake-headers` is the sidecar from `lake_builder --output-headers`. It names
+each study group by gene, protein and organism in
+`study_groups/annotated_study_group_matrix.tsv`; leave it out only when the lake
+already keeps catalogue headers.
 
 The runner hashes all inputs, including the full lake, before starting. Hashing a large FASTA adds I/O time and provides an exact input identity. The command records parameter values and executable hashes in `PROVENANCE.json`, and stage commands, return codes and elapsed times in `commands.json`.
 

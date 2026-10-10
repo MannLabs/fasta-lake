@@ -30,6 +30,12 @@ def main(argv=None):
     )
     parser.add_argument("--threads", type=int, default=1, help="Quantification threads")
     parser.add_argument(
+        "--lake-headers",
+        type=Path,
+        help="Lake header sidecar (lake_builder --output-headers) used to name groups; "
+        "otherwise the searched FASTA headers are used",
+    )
+    parser.add_argument(
         "--skip-qc",
         action="store_true",
         help="Explicitly omit AlphaPeptTools QC/PCA for a core-only installation",
@@ -57,6 +63,13 @@ def main(argv=None):
             args.peptide_q,
             config_name=args.config_name,
             acquisition_names=names,
+        )
+        from fasta_lake.study_annotation import annotate_study, searched_fastas
+
+        result["annotation"] = annotate_study(
+            args.out,
+            headers_tsv=args.lake_headers,
+            fastas=searched_fastas(args.search, args.config_name),
         )
         if args.quantification:
             from fasta_lake.quantification import quantify_study

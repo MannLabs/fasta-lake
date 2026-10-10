@@ -157,6 +157,12 @@ def main(argv=None):
     )
     parser.add_argument("--lake", type=Path, help="Required reservoir in augment mode")
     parser.add_argument(
+        "--lake-headers",
+        type=Path,
+        help="Header sidecar written by lake_builder --output-headers; names study groups "
+        "by gene, protein and organism (otherwise the searched FASTA headers are used)",
+    )
+    parser.add_argument(
         "--out", required=True, type=Path, help="New output directory (must not exist)"
     )
     parser.add_argument(
@@ -261,10 +267,14 @@ def main(argv=None):
         help="Top percent of positive available RNA genes; zero disables (default: 0)",
     )
     parser.add_argument(
-        "--molecular-dna-absolute", type=float, help="Strict DNA TPM threshold; requires dna-percent 0"
+        "--molecular-dna-absolute",
+        type=float,
+        help="Strict DNA TPM threshold; requires dna-percent 0",
     )
     parser.add_argument(
-        "--molecular-rna-absolute", type=float, help="Strict RNA TPM threshold; requires rna-percent 0"
+        "--molecular-rna-absolute",
+        type=float,
+        help="Strict RNA TPM threshold; requires rna-percent 0",
     )
     parser.add_argument(
         "--molecular-metabolites",
@@ -352,6 +362,14 @@ def main(argv=None):
             parser.error("Lake FASTA is missing or empty")
     elif args.lake is not None:
         parser.error("Shared-reference mode uses specimen sources; omit --lake")
+    if args.lake_headers is not None:
+        if args.databases_only:
+            parser.error("--lake-headers names study groups; incompatible with --databases-only")
+        if not args.lake_headers.is_file():
+            parser.error(f"Lake header sidecar is missing: {args.lake_headers}")
+        with args.lake_headers.open() as stream:
+            if not stream.readline().startswith("sha256_hash\tn_sources\tkept_header"):
+                parser.error("--lake-headers is not a lake_builder --output-headers sidecar")
     if args.reference_chunk_mib is not None and args.reference_chunk_mib < 1:
         parser.error("--reference-chunk-mib must be positive")
     rows = load_manifest(args.manifest)
@@ -471,6 +489,7 @@ def main(argv=None):
         "manifest_sha256": sha256(args.manifest),
         "lake_sha256": sha256(args.lake) if args.lake else None,
         "background_sha256": sha256(args.background) if args.background else None,
+        "lake_headers_sha256": sha256(args.lake_headers) if args.lake_headers else None,
         "input_sha256": {
             r["sample"]: {key: sha256(r[key]) for key in ("predictions", "mzml")} for r in rows
         },
@@ -698,6 +717,7 @@ def main(argv=None):
                 "--threads",
                 args.threads,
             ]
+            + (["--lake-headers", args.lake_headers.resolve()] if args.lake_headers else [])
             + (["--skip-qc"] if args.skip_qc else []),
         )
     if args.annotation_settings:
