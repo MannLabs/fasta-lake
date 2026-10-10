@@ -134,7 +134,7 @@ def provenance_record(args, rows, binaries):
     """Parameters, input and executable identities written to PROVENANCE.json."""
     return {
         "version": __version__,
-        "parameters": vars(args),
+        "parameters": {k: v for k, v in vars(args).items() if not k.startswith("_")},
         "samples": rows,
         "binary_sha256": {name: sha256(path) for name, path in binaries.items()},
         "runner_sha256": sha256(__file__),
@@ -155,28 +155,8 @@ def provenance_record(args, rows, binaries):
     }
 
 
-def main(argv=None):
-    """Validate and execute the acquisition-manifest workflow.
-
-    Parameters
-    ----------
-    argv : list[str] or None
-        Command-line arguments; None reads the process arguments.
-
-    Returns
-    -------
-    int
-        Zero for a completed requested scope or successful validation.
-
-    Notes
-    -----
-    Preflight checks precede output creation. The normal route extracts pooled
-    evidence, then candidates, selection and Sage for each acquisition before
-    study grouping, quantification and QC. Optional molecular additions enter
-    after selection. --validate-only does not execute analyses; --databases-only
-    omits searching and downstream reporting. A failed command stops the run,
-    preserving logs; COMPLETE.json marks only the scope that actually finished.
-    """
+def build_parser():
+    """Define every `fasta-lake run` option with its help text and default."""
     parser = argparse.ArgumentParser(prog="fasta-lake run", description=__doc__)
     parser.add_argument(
         "--manifest",
@@ -326,7 +306,58 @@ def main(argv=None):
         type=Path,
         help="Optional JSON for local eggNOG/ESM-C annotation after grouping",
     )
+    return parser
+
+
+def parameters_table(args, parser):
+    """One row per runner option: name, value used, and whether it was the default.
+
+    Options adjusted by the laptop plan are labelled ``laptop plan``. The table is
+    written as PARAMETERS.tsv beside PROVENANCE.json for a quick, MaxQuant-style read.
+    """
+    rows = []
+    for action in parser._actions:
+        if action.dest == "help":
+            continue
+        value = getattr(args, action.dest)
+        default = parser.get_default(action.dest)
+        if action.dest in args._sources:
+            source = args._sources[action.dest]
+        elif value == default:
+            source = "default"
+        else:
+            source = "user"
+        if isinstance(value, bool):
+            value = "yes" if value else "no"
+        rows.append(("--" + action.dest.replace("_", "-"), "" if value is None else value, source))
+    return rows
+
+
+def main(argv=None):
+    """Validate and execute the acquisition-manifest workflow.
+
+    Parameters
+    ----------
+    argv : list[str] or None
+        Command-line arguments; None reads the process arguments.
+
+    Returns
+    -------
+    int
+        Zero for a completed requested scope or successful validation.
+
+    Notes
+    -----
+    Preflight checks precede output creation. The normal route extracts pooled
+    evidence, then candidates, selection and Sage for each acquisition before
+    study grouping, quantification and QC. Optional molecular additions enter
+    after selection. --validate-only does not execute analyses; --databases-only
+    omits searching and downstream reporting. A failed command stops the run,
+    preserving logs; COMPLETE.json marks only the scope that actually finished.
+    """
+    parser = build_parser()
     args = parser.parse_args(argv)
+    args._sources = {}
     # Validate scientific options before loading dependencies or creating output.
     sage_config(
         "targets.fasta",
@@ -365,6 +396,7 @@ def main(argv=None):
         )
         args.threads = resource_plan["threads_per_process"]
         args.reference_chunk_mib = resource_plan["reference_chunk_mib"]
+        args._sources.update(threads="laptop plan", reference_chunk_mib="laptop plan")
         # Set helper limits before preflight imports NumPy/AlphaPeptTools.
         for name in (
             "OMP_NUM_THREADS",
@@ -387,7 +419,8 @@ def main(argv=None):
             or args.cpu_fraction != 0.5
         ):
             parser.error("Resource budget options require --laptop")
-        args.threads = 4 if args.threads is None else args.threads
+        if args.threads is None:
+            args.threads, args._sources["threads"] = 4, "default"
     if args.threads < 1 or not 1 <= args.min_length <= args.max_length:
         parser.error("Require positive threads and 1 <= min-length <= max-length")
     if not math.isfinite(args.top_fraction) or not 0 < args.top_fraction <= 1:
@@ -466,7 +499,8 @@ def main(argv=None):
     if args.quantification and args.databases_only:
         parser.error("--quantification requires searches; incompatible with --databases-only")
     if not args.databases_only:
-        args.quantification = args.quantification or "sum"
+        if args.quantification is None:
+            args.quantification, args._sources["quantification"] = "sum", "default"
         if not args.skip_qc:
             from fasta_lake.downstream import require_analysis
 
@@ -520,6 +554,10 @@ def main(argv=None):
 
     provenance = provenance_record(args, rows, binaries)
     (out / "PROVENANCE.json").write_text(json.dumps(provenance, indent=2, default=str) + "\n")
+    with (out / "PARAMETERS.tsv").open("x", newline="") as stream:
+        writer = csv.writer(stream, delimiter="\t", lineterminator="\n")
+        writer.writerow(["parameter", "value", "source"])
+        writer.writerows(parameters_table(args, parser))
     # The Rust readers take plain CSV; decompress gzipped predictions once, after
     # PROVENANCE.json has recorded the checksum of the file the user supplied.
     for row in rows:

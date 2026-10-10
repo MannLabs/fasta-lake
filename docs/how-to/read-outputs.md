@@ -36,6 +36,7 @@ An assistant can walk through them using the
 
 | Output | Meaning | First check |
 |---|---|---|
+| `PARAMETERS.tsv` | Every runner setting in one table: value used and whether it was the default, set by you or chosen by the laptop plan | The settings you meant to change are marked `user` |
 | `PROVENANCE.json` | Parameters, input identities and executable identities | Correct acquisition pairing and versions |
 | `commands.json` and stage logs | Actual execution and failures | Every required stage returned zero |
 | `evidence.fasta` and sidecars | Cohort evidence-supported reference subset | Nonempty output and plausible retained size |

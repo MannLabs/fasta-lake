@@ -39,3 +39,20 @@ def test_manifest_accepts_gzipped_predictions_and_spectra(tmp_path):
     manifest.write_text("sample\tpredictions\tmzml\nS\tS.txt\tS.mzML.gz\n")
     with pytest.raises(ValueError, match="predictions CSV"):
         load_manifest(manifest)
+
+
+def test_parameters_table_lists_every_option_and_its_source():
+    from fasta_lake.workflow import build_parser, parameters_table
+
+    parser = build_parser()
+    args = parser.parse_args(["--manifest", "m.tsv", "--out", "o", "--top-fraction", "0.2"])
+    args._sources = {"threads": "default"}
+    args.threads = 4
+    rows = {name: (value, source) for name, value, source in parameters_table(args, parser)}
+    options = {a.option_strings[0] for a in parser._actions if a.dest != "help"}
+    assert set(rows) == options
+    assert rows["--top-fraction"] == (0.2, "user")
+    assert rows["--min-length"] == (9, "default")
+    assert rows["--threads"] == (4, "default")
+    assert rows["--databases-only"] == ("no", "default")
+    assert rows["--lake"] == ("", "default")
