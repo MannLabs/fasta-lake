@@ -41,7 +41,7 @@ docker run --rm --platform linux/amd64 --network none \
   --out /work/study_01 --sage /usr/local/bin/sage --threads 4 --validate-only
 ```
 
-Remove `--validate-only` to execute. The runner automatically writes grouping, quantification and QC/PCA under `/work/study_01/study_groups/`. Inputs are mzML and de novo prediction files; raw conversion and de novo prediction are upstream steps. A full reference lake still needs the memory recorded in the [compute guide](../how-to/compute.md).
+Remove `--validate-only` to execute. The runner automatically writes grouping, quantification and QC/PCA under `/work/study_01/study_groups/`. Images up to v1.1.0rc2 predate the `fasta-lake run` command; with them, use `python /opt/fastalake/tools/run_manifest.py` with the same options. On a cluster without Docker, use [Apptainer and Slurm](../how-to/cluster.md). Inputs are mzML and de novo prediction files; raw conversion and de novo prediction are upstream steps. A full reference lake still needs the memory recorded in the [compute guide](../how-to/compute.md).
 
 !!! tip "Large references"
     Add `--reference-chunk-mib 256` to the runner command to build the evidence lake in bounded pieces. The pieces merge before per-acquisition inference and molecular additions; the selected databases are identical.
