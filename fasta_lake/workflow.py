@@ -126,6 +126,31 @@ def load_manifest(path):
     return rows
 
 
+def provenance_record(args, rows, binaries):
+    """Parameters, input and executable identities written to PROVENANCE.json."""
+    return {
+        "version": __version__,
+        "parameters": vars(args),
+        "samples": rows,
+        "binary_sha256": {name: sha256(path) for name, path in binaries.items()},
+        "runner_sha256": sha256(__file__),
+        "manifest_sha256": sha256(args.manifest),
+        "lake_sha256": sha256(args.lake) if args.lake else None,
+        "background_sha256": sha256(args.background) if args.background else None,
+        "lake_headers_sha256": sha256(args.lake_headers) if args.lake_headers else None,
+        "input_sha256": {
+            r["sample"]: {key: sha256(r[key]) for key in ("predictions", "mzml")} for r in rows
+        },
+        "inference": {
+            "strategy": "razor",
+            "tiebreak": "hash-acc",
+            "top_fraction": args.top_fraction,
+            "normalize_il": True,
+            "clustering": False,
+        },
+    }
+
+
 def main(argv=None):
     """Validate and execute the acquisition-manifest workflow.
 
@@ -489,27 +514,7 @@ def main(argv=None):
                 f"{name} failed with exit {status}; inspect {out / (name + '.stderr')}"
             )
 
-    provenance = {
-        "version": __version__,
-        "parameters": vars(args),
-        "samples": rows,
-        "binary_sha256": {name: sha256(path) for name, path in binaries.items()},
-        "runner_sha256": sha256(__file__),
-        "manifest_sha256": sha256(args.manifest),
-        "lake_sha256": sha256(args.lake) if args.lake else None,
-        "background_sha256": sha256(args.background) if args.background else None,
-        "lake_headers_sha256": sha256(args.lake_headers) if args.lake_headers else None,
-        "input_sha256": {
-            r["sample"]: {key: sha256(r[key]) for key in ("predictions", "mzml")} for r in rows
-        },
-        "inference": {
-            "strategy": "razor",
-            "tiebreak": "hash-acc",
-            "top_fraction": None,
-            "normalize_il": True,
-            "clustering": False,
-        },
-    }
+    provenance = provenance_record(args, rows, binaries)
     (out / "PROVENANCE.json").write_text(json.dumps(provenance, indent=2, default=str) + "\n")
     pool = out / "pooled_predictions"
     pool.mkdir()
