@@ -23,7 +23,7 @@ broader dictionary does not meet this definition.
 ## Run on completed searches
 
 ```bash
-python tools/group_study.py --search /path/to/completed/acquisitions \
+fasta-lake group-study --search /path/to/completed/acquisitions \
     --out /path/to/new/grouped-output --config-name results.json \
     --samples-file publication/analyses/simplified_grouping_2026-09-10/hstool_samples.txt
 ```
@@ -39,6 +39,8 @@ must be new and outside the search-input tree. This command does not run a searc
 |---|---|
 | `study_group_long.tsv` | One row per acquisition and quantified study group; distinct canonical peptide count, LFQ feature count and summed intensity |
 | `study_group_matrix.tsv` | Exactly the same groups and intensities as a wide matrix; unquantified cells are empty |
+| `study_group_annotation.tsv` | Gene, protein name, organism, source catalogue and number of source headers per study group; distinct values from several catalogue entries are joined with `; ` |
+| `annotated_study_group_matrix.tsv` | `study_group_matrix.tsv` with `gene`, `protein_name` and `organism` inserted after the group column |
 | `acquisition_summary.tsv` | Group presence and evidence counts derived from that same quantitative table |
 | `feature_assignments.tsv.gz` | Every eligible positive feature, original file line, peptide/charge, reported proteins, full member set and direct assigned group |
 | `peptide_to_study_group.tsv` | The direct pooled peptide assignment |
@@ -122,7 +124,7 @@ Generating code commits and input hashes accompany each run.
 ## Provenance
 
 Direct peptide assignment replaced the dual-key rule on 11 September 2026.
-`tools/group_study.py` writes the new schema and the example consumers follow it.
+`fasta-lake group-study` writes the new schema and the example consumers follow it.
 Outputs produced before that date record the previous method.
 
 ## Optional quantification

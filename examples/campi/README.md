@@ -73,7 +73,6 @@ These are different counting units. The 348 and 287 selected sequences are searc
 | `workflow/evidence.fasta` | Pooled construction-evidence lake |
 | `workflow/samples/S01/` and `S02/` | Drawn databases, selected FASTAs and inference sidecars |
 | `workflow/search/S01/` and `S02/` | Search configuration, SAGE identification and LFQ results |
-| `workflow/aggregate/` | Filtered acquisition-level aggregation outputs |
 | `study/summary.json`, `study/study_group_long.tsv` | Study accounting and one quantitative study-group table |
 
 Open `study/study_group_long.tsv` in a spreadsheet or TSV reader. Each row reports one acquisition/study-group combination, its assigned peptides and features, and intensity. Original local memberships are retained in `feature_assignments.tsv.gz`. The accompanying `expected/reference_dual_key_long.tsv` (577 rows) preserves the original-rule reference execution. It is archived historical evidence, not the current output schema or an expected row count. The example checks the unchanged inferred-cover count (448) against that reference; it does not check the long-table row count.
@@ -98,7 +97,7 @@ The retention-time interval was specified before inspecting the new search outco
 
 The supplied predictions were generated earlier with AlphaNovo. Running this example does not download a neural-network checkpoint or reproduce raw conversion or model inference. The recorded checkpoint and decoding configuration are in the provenance note; their relationship to model training data is not established here. This example is consequently unsuitable as an independent de novo accuracy benchmark.
 
-For your own complete acquisitions, use [the user guide](../../docs/how-to/acquisition-manifest.md) and `tools/run_manifest.py` with your own manifest and appropriate reference lake. Do not repurpose these expected counts as thresholds for unrelated samples. To recreate the bundled crops from the original full inputs, the optional `prepare_inputs.py` accepts a TSV containing exactly S01 and S02, original prediction CSV and mzML paths, plus `--reference`, `--out`, `--start-minutes 45` and `--end-minutes 50`. Paths resolve relative to the manifest. The bundled predictions and mzML files are already prepared; recreating them is not required to run the example.
+For your own complete acquisitions, use [the user guide](../../docs/how-to/acquisition-manifest.md) and `fasta-lake run` with your own manifest and appropriate reference lake. Do not repurpose these expected counts as thresholds for unrelated samples. To recreate the bundled crops from the original full inputs, the optional `prepare_inputs.py` accepts a TSV containing exactly S01 and S02, original prediction CSV and mzML paths, plus `--reference`, `--out`, `--start-minutes 45` and `--end-minutes 50`. Paths resolve relative to the manifest. The bundled predictions and mzML files are already prepared; recreating them is not required to run the example.
 
 ## Basic QC output
 

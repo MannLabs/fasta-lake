@@ -109,7 +109,7 @@ logger = logging.getLogger(__name__)
 ENTRAP_PREFIX = "ENTRAP"
 
 #: Conventions observed in this repository, longest first so prefix matching is
-#: unambiguous. This is the matcher ENTRAPMENT_PREFIX_CENSUS.md §8 recommends over
+#: unambiguous. This matcher is preferred over
 #: both a narrow literal (``ENTRAP_``, which silently misses ``ENTRAPHUMAN_`` and
 #: ``ENTRAPNN_``) and a loose substring (which cannot tell a tag from a target
 #: accession that merely contains the letters). ``ENTRAP_SHUFFLED_`` is the legacy
@@ -1192,7 +1192,7 @@ def find_sample_results(
 
     Accepts either ``results_dir/SAMPLE/results.sage.tsv`` or the same file one
     level deeper (``results_dir/SAMPLE/sage/results.sage.tsv``), which is the layout
-    the SLURM templates in this project write.
+    some cluster job layouts write.
 
     A sample directory may hold several entrapment runs side by side
     (``entrapment/``, ``entrapment_plant/``, ``entrapment_archaea/``). When more

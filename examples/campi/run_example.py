@@ -11,6 +11,7 @@ Use --runtime PREVIOUS_OUTPUT/_runtime to reuse a completed, verified setup.
 from __future__ import annotations
 
 import argparse
+import csv
 import gzip
 import hashlib
 import json
@@ -296,11 +297,15 @@ def main(example_dir=None, cohort="CAMPI"):
         "run_acquisitions",
         [
             python,
-            ROOT / "tools/run_manifest.py",
+            "-m",
+            "fasta_lake.cli",
+            "run",
             "--manifest",
             HERE / "inputs/samples.tsv",
             "--lake",
             out / "lake.fasta",
+            "--lake-headers",
+            out / "source_headers.tsv",
             "--out",
             out / "workflow",
             "--sage",
@@ -321,6 +326,19 @@ def main(example_dir=None, cohort="CAMPI"):
     for ext in ("pdf", "png"):
         if (qc / ("QC_overview." + ext)).stat().st_size <= 1000:
             raise RuntimeError("Automatic QC plot is missing or empty")
+    complete = json.loads((out / "workflow/COMPLETE.json").read_text())
+    if (out / "workflow/aggregate").exists() or complete["member_set_aggregate"] is not None:
+        raise RuntimeError("The member-set aggregate must be opt-in")
+    if complete["protein_group_matrix"] != "study_groups/annotated_study_group_matrix.tsv":
+        raise RuntimeError("COMPLETE.json must name the one protein-group matrix")
+    with (out / "study/study_group_annotation.tsv").open() as stream:
+        named = list(csv.DictReader(stream, delimiter="\t"))
+    # Every lake accession has a sidecar entry; nearly all CAMPI records are
+    # UniProt entries with OS= (a few contaminant entries carry no description).
+    if not named or any(row["n_source_headers"] == "0" for row in named):
+        raise RuntimeError("Study groups were not matched to their lake source headers")
+    if sum(bool(row["organism"]) for row in named) < 0.9 * len(named):
+        raise RuntimeError("Fewer than 90% of study groups carry an organism")
     result = validate(out, HERE / "expected")
     result.update(
         workflow_seconds=time.monotonic() - workflow_start,

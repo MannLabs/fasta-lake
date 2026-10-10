@@ -158,6 +158,7 @@ nav:
       - Your first study: get-started/first-study.md
       - Read your results: how-to/read-outputs.md
       - Run with Docker: get-started/docker.md
+      - Run on a cluster (Apptainer, Slurm): how-to/cluster.md
       - Environment and site configuration: get-started/environment.md
   - How-to guides:
       - Inputs:

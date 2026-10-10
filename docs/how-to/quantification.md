@@ -33,7 +33,7 @@ remains in `study_groups/`.
 From the repository root in the [installed environment](../get-started/install.md):
 
 ```bash
-python tools/group_study.py --search study_run/search --out study_groups \
+fasta-lake group-study --search study_run/search --out study_groups \
   --quantification directlfq --threads 4
 ```
 

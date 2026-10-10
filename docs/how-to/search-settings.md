@@ -25,13 +25,13 @@ These are separate from the de novo evidence length filters.
 From the repository root, after installation and preparing the ordinary manifest:
 
 ```bash
-python tools/run_manifest.py --manifest samples.tsv --lake lake.fasta \
+fasta-lake run --manifest samples.tsv --lake lake.fasta \
   --out semitryptic_01 --digestion semi-tryptic --threads 2
 
-python tools/run_manifest.py --manifest samples.tsv --lake lake.fasta \
+fasta-lake run --manifest samples.tsv --lake lake.fasta \
   --out open_01 --search-mode open --threads 2
 
-python tools/run_manifest.py --manifest samples.tsv --lake lake.fasta \
+fasta-lake run --manifest samples.tsv --lake lake.fasta \
   --out unspecific_01 --digestion unspecific \
   --search-min-length 7 --search-max-length 30 --threads 2
 ```

@@ -122,7 +122,9 @@ def main():
         writer.writerows(manifest_rows)
     common = [
         sys.executable,
-        ROOT / "tools/run_manifest.py",
+        "-m",
+        "fasta_lake.cli",
+        "run",
         "--manifest",
         manifest,
         "--lake",
@@ -219,7 +221,9 @@ def main():
         "shared_reference_databases",
         [
             sys.executable,
-            ROOT / "tools/run_manifest.py",
+            "-m",
+        "fasta_lake.cli",
+        "run",
             "--manifest",
             manifest,
             "--molecular-reference",

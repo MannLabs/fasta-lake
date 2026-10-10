@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "fasta-lake"
 description = "Sample-specific protein database construction for metaproteomics"
 dynamic = ["version"]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "click>=8.3.3,<9",
     "pyahocorasick>=2.0",
@@ -32,7 +32,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Rust",
@@ -52,7 +51,7 @@ fasta-lake = "fasta_lake.cli:cli"
 embeddings = ["esm==3.2.3", "torch==2.13.0", "numpy>=1.24"]
 # Version used in the audited 14-run study comparison.
 directlfq = ["directlfq==0.3.3", "pandas>=2.2.3,<3", "PyYAML>=6,<7"]
-# AlphaPeptTools requires Python >=3.11; kept out of the core installation.
+# AlphaPeptTools; kept out of the core installation.
 analysis = ["alphapepttools[stable]==0.4.0", "pandas>=2.2.3,<3"]
 dev = [
     "pytest>=7.0",
@@ -110,7 +109,7 @@ markers = [
 
 [tool.ruff]
 line-length = 100
-target-version = "py310"
+target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "W"]

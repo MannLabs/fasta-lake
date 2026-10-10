@@ -1,8 +1,8 @@
 # Python function index
 
 For a first reading, use [functions in execution order](function-map.md).
-This generated index contains **480 functions and methods**, including private
-and nested helpers, from the Python package and the two main workflow tools.
+This generated index contains **493 functions and methods**, including private
+and nested helpers, from the Python package.
 Sections follow workflow purpose; modules and names are alphabetical within them.
 Links open the exact definition. The [Python API](api/index.md) renders full
 docstrings. Legacy and experimental functions remain listed; their presence
@@ -579,42 +579,46 @@ CI checks the index against the source.
 
 | Function | Purpose |
 |---|---|
-| [`_maybe_inject_entrapment`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1451) | Apply a config's entrapment section to a database, returning what to search. |
-| [`_setup_logging`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L35) | Configure logging for CLI usage. |
-| [`analyze_study_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1890) | Export AnnData and run AlphaPeptTools QC, log2 PCA and optional replicate CV. |
-| [`cli`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L48) | FASTA Lake: Sample-specific protein database construction for metaproteomics. |
-| [`contam_list`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L133) | List the bundled contaminant accessions. |
-| [`contam_tag`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L166) | Scan a FASTA, prefix CON_ on headers matching the contaminant list. |
-| [`contaminants_grp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L122) | Inspect or apply the contaminant database (v5.1). |
-| [`convert`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1196) | Convert raw mass spec data to de novo predictions. |
-| [`diagnose_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L895) | Produce FDR calibration curve + outlier sample list. |
-| [`entrapment_classes_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L256) | List entrapment classes with their difficulty and interpretation. |
-| [`entrapment_fdp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L624) | Compute the FDP from search results, with n, median, IQR and bootstrap CI. |
-| [`entrapment_generate`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L384) | Produce an entrapment FASTA, deterministically. |
-| [`entrapment_grp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L211) | Generate, inject and measure entrapment sequences. |
-| [`entrapment_inject`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L490) | Concatenate entrapment into a database and write a manifest. |
-| [`entrapment_prefixes`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L296) | Report the entrapment prefixes actually present in a FASTA. |
-| [`entrapment_prepare`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L764) | Generate + inject entrapment as configured by a fastalake.json. |
-| [`evidence_lake`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1352) | Stage 1: Create evidence lake from peptide predictions. |
-| [`export`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1129) | Prepare a FASTA for a specific search engine. |
-| [`extract_chunked_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1944) | Build evidence in bounded reference pieces and merge before inference. |
-| [`extract_sample`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1408) | Stage 2: Extract per-sample protein database. |
-| [`fl_mo_gate`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1776) | Run the FL_MO gate for one sample at Stage 3. |
-| [`fl_mo_grp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1722) | Legacy clustered FL_MO reproduction (archived Methods §M5.5). |
-| [`fl_mo_reproduce`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1817) | Reproduce the published FL_MO razor per-sample median (13,776). |
-| [`infer`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1027) | Experimental Python inference, distinct from the validated Rust workflow. |
-| [`init`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1518) | Generate an example fastalake.json configuration. |
-| [`lake_build`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1326) | Stage 0: Build reference protein lake from databases. |
-| [`lake_inspect_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1642) | Query a lake provenance sidecar produced by lake-merge. |
-| [`lake_merge_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1563) | Merge multiple source FASTAs into one lake with field-level annotation merge (v5.2). |
-| [`plan_resources_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1989) | Show laptop planning choices without starting a workflow. |
-| [`preset_grp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L58) | Inspect or export validated parameter presets (v5). |
-| [`preset_list`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L67) | List registered parameter presets and their search thresholds. |
-| [`preset_sage`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L96) | Emit a SAGE config with a preset applied. |
-| [`preset_show`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L78) | Show all parameters for a preset. |
-| [`quantify_study_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1842) | Quantify completed study groups and retain peptide/ion support diagnostics. |
-| [`tune_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L821) | Recommend SAGE parameters by post-hoc sweep over existing entrapment results. |
-| [`validate`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1497) | Validate a FASTA Lake JSON configuration file. |
+| [`_Legacy.invoke`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L59) | Print the legacy notice to stderr, then run the command unchanged. |
+| [`_LegacyGroup.invoke`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L68) | Print the legacy notice to stderr, then run the command unchanged. |
+| [`_maybe_inject_entrapment`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1493) | Apply a config's entrapment section to a database, returning what to search. |
+| [`_setup_logging`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L33) | Configure logging for CLI usage. |
+| [`analyze_study_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1932) | Export AnnData and run AlphaPeptTools QC, log2 PCA and optional replicate CV. |
+| [`cli`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L46) | FASTA Lake: Sample-specific protein database construction for metaproteomics. |
+| [`contam_list`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L176) | List the bundled contaminant accessions. |
+| [`contam_tag`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L209) | Scan a FASTA, prefix CON_ on headers matching the contaminant list. |
+| [`contaminants_grp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L165) | Inspect or apply the contaminant database (v5.1). |
+| [`convert`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1238) | Convert raw mass spec data to de novo predictions. |
+| [`diagnose_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L938) | Produce FDR calibration curve + outlier sample list. |
+| [`entrapment_classes_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L299) | List entrapment classes with their difficulty and interpretation. |
+| [`entrapment_fdp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L667) | Compute the FDP from search results, with n, median, IQR and bootstrap CI. |
+| [`entrapment_generate`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L427) | Produce an entrapment FASTA, deterministically. |
+| [`entrapment_grp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L254) | Generate, inject and measure entrapment sequences. |
+| [`entrapment_inject`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L533) | Concatenate entrapment into a database and write a manifest. |
+| [`entrapment_prefixes`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L339) | Report the entrapment prefixes actually present in a FASTA. |
+| [`entrapment_prepare`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L807) | Generate + inject entrapment as configured by a fastalake.json. |
+| [`evidence_lake`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1394) | Stage 1: Create evidence lake from peptide predictions. |
+| [`export`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1171) | Prepare a FASTA for a specific search engine. |
+| [`extract_chunked_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1986) | Build evidence in bounded reference pieces and merge before inference. |
+| [`extract_sample`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1450) | Stage 2: Extract per-sample protein database. |
+| [`fl_mo_gate`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1818) | Run the FL_MO gate for one sample at Stage 3. |
+| [`fl_mo_grp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1764) | Legacy clustered FL_MO reproduction (archived Methods §M5.5). |
+| [`fl_mo_reproduce`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1859) | Reproduce the published FL_MO razor per-sample median (13,776). |
+| [`group_study_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L88) | Group and quantify completed Sage searches (fasta-lake group-study --help). |
+| [`infer`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1069) | Experimental Python inference, distinct from the validated Rust workflow. |
+| [`init`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1560) | Generate an example fastalake.json configuration. |
+| [`lake_build`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1368) | Stage 0: Build reference protein lake from databases. |
+| [`lake_inspect_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1684) | Query a lake provenance sidecar produced by lake-merge. |
+| [`lake_merge_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1605) | Merge multiple source FASTAs into one lake with field-level annotation merge (v5.2). |
+| [`plan_resources_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L2031) | Show laptop planning choices without starting a workflow. |
+| [`preset_grp`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L101) | Inspect or export the legacy parameter presets of the infer route. |
+| [`preset_list`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L110) | List registered parameter presets and their search thresholds. |
+| [`preset_sage`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L139) | Emit a SAGE config with a preset applied. |
+| [`preset_show`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L121) | Show all parameters for a preset. |
+| [`quantify_study_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1884) | Quantify completed study groups and retain peptide/ion support diagnostics. |
+| [`run_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L79) | Run the whole study from an acquisition manifest (fasta-lake run --help). |
+| [`tune_cmd`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L864) | Recommend SAGE parameters by post-hoc sweep over existing entrapment results. |
+| [`validate`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/cli.py#L1539) | Validate a FASTA Lake JSON configuration file. |
 
 ### fasta_lake.config
 
@@ -675,11 +679,11 @@ CI checks the index against the source.
 
 | Function | Purpose |
 |---|---|
-| [`apply_preset`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/presets.py#L153) | Apply preset fields to an existing RunConfig-like object. |
-| [`describe_preset`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/presets.py#L178) | Human-readable description of what a preset does. |
-| [`get_preset`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/presets.py#L145) | Return the named preset or raise ValueError listing the available names. |
-| [`Preset.as_dict`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/presets.py#L50) | Return a dataclass dictionary of this preset's settings. |
-| [`preset_sage_config`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/presets.py#L164) | Apply preset to a SAGE JSON config dict. Returns modified copy. |
+| [`apply_preset`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/presets.py#L152) | Apply preset fields to an existing RunConfig-like object. |
+| [`describe_preset`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/presets.py#L177) | Human-readable description of what a preset does. |
+| [`get_preset`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/presets.py#L144) | Return the named preset or raise ValueError listing the available names. |
+| [`Preset.as_dict`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/presets.py#L49) | Return a dataclass dictionary of this preset's settings. |
+| [`preset_sage_config`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/presets.py#L163) | Apply preset to a SAGE JSON config dict. Returns modified copy. |
 
 ### fasta_lake.provenance
 
@@ -720,6 +724,12 @@ CI checks the index against the source.
 | [`run_fasta_extractor`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/rust/binaries.py#L89) | Run the Rust ``fasta_extractor`` binary. |
 | [`run_lake_builder`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/rust/binaries.py#L198) | Run the Rust ``lake_builder`` binary. |
 
+### fasta_lake.study_cli
+
+| Function | Purpose |
+|---|---|
+| [`main`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study_cli.py#L11) | Parse grouping options, validate optional backends, then group and report the study. |
+
 ### fasta_lake.taxonomy_cli
 
 | Function | Purpose |
@@ -729,21 +739,19 @@ CI checks the index against the source.
 | [`report`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/taxonomy_cli.py#L50) | Render upstream sunburst/treemap/tree with explicit counts, signal and citations. |
 | [`taxonomy`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/taxonomy_cli.py#L10) | Export Unipept queries and plot its saved taxonomic assignments locally. |
 
-### tools.group_study
+### fasta_lake.workflow
 
 | Function | Purpose |
 |---|---|
-| [`main`](https://github.com/MannLabs/fasta-lake/blob/main/tools/group_study.py#L14) | Parse grouping options, validate optional backends, then group and report the study. |
-
-### tools.run_manifest
-
-| Function | Purpose |
-|---|---|
-| [`load_manifest`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L47) | Validate acquisitions and resolve inputs relative to the manifest. |
-| [`main`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L129) | Validate and execute the acquisition-manifest workflow. |
-| [`main.execute`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L394) | Run one command with resource measurements and append its result to commands.json. |
-| [`main.extract`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L446) | Run whole-reference or chunked exact lookup with the same declared evidence settings. |
-| [`sha256`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py#L38) | Stream file bytes into a SHA-256 digest for the run's provenance. |
+| [`build_parser`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/workflow.py#L158) | Define every `fasta-lake run` option with its help text and default. |
+| [`entry`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/workflow.py#L836) | Run :func:`main` and turn expected failures into a one-line error and exit 1. |
+| [`load_manifest`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/workflow.py#L48) | Validate acquisitions and resolve inputs relative to the manifest. |
+| [`main`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/workflow.py#L336) | Validate and execute the acquisition-manifest workflow. |
+| [`main.execute`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/workflow.py#L530) | Run one command with resource measurements and append its result to commands.json. |
+| [`main.extract`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/workflow.py#L576) | Run whole-reference or chunked exact lookup with the same declared evidence settings. |
+| [`parameters_table`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/workflow.py#L312) | One row per runner option: name, value used, and whether it was the default. |
+| [`provenance_record`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/workflow.py#L133) | Parameters, input and executable identities written to PROVENANCE.json. |
+| [`sha256`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/workflow.py#L39) | Stream file bytes into a SHA-256 digest for the run's provenance. |
 
 ## 7. Diagnostics and comparisons
 
@@ -851,6 +859,16 @@ CI checks the index against the source.
 | [`verify_prefix_matches`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L301) | Assert the configured prefix finds the entrapment partition that is declared. |
 | [`write_conserved_report`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L959) | Write the conserved peptides and their target proteins to TSV. |
 | [`write_fdp_reports`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/entrapment_workflow.py#L1668) | Write the per-sample TSV, the (dataset, class, stage) record, and conserved peptides. |
+
+### fasta_lake.study_annotation
+
+| Function | Purpose |
+|---|---|
+| [`annotate_study`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study_annotation.py#L108) | Write ``study_group_annotation.tsv`` and ``annotated_study_group_matrix.tsv``. |
+| [`describe`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study_annotation.py#L88) | Summarise parsed headers; distinct values are joined with ``; ``. |
+| [`fasta_headers`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study_annotation.py#L61) | Read header lines for the wanted accessions from FASTA files. |
+| [`load_header_sidecar`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study_annotation.py#L22) | Map each emitted lake accession to its original source headers. |
+| [`searched_fastas`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study_annotation.py#L78) | Return the distinct FASTA files named by each acquisition's Sage record. |
 
 ### fasta_lake.tune
 
