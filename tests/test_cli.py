@@ -127,3 +127,68 @@ def test_member_set_aggregate_is_opt_in_and_needs_searches(tmp_path, capsys):
         workflow.main(["--help"])
     assert "Diagnostic only" in capsys.readouterr().out
     assert not (tmp_path / "out").exists()
+
+
+LEGACY = ("infer", "convert", "tune", "diagnose", "preset", "lake-build")
+INTERNAL = (
+    "DESIGN_V5",
+    "PREFIX_CENSUS",
+    "razor_tiebreak_bias",
+    "COMPARABILITY_RESOLUTION",
+    "MicrobPredict",
+    "PREDICT_<",
+    "pre-v26",
+    "For v26",
+)
+
+
+def test_legacy_commands_are_hidden_but_still_run_with_a_notice():
+    runner = CliRunner()
+    listing = runner.invoke(cli, ["--help"]).output
+    commands = {line.split()[0] for line in listing.split("Commands:")[1].splitlines() if line}
+    assert not commands & set(LEGACY)
+    assert {"run", "group-study"} <= commands
+    result = runner.invoke(cli, ["preset", "list"])
+    assert result.exit_code == 0
+    assert "legacy route" in result.stderr and "fasta-lake run" in result.stderr
+    assert "legacy route" not in result.stdout
+
+
+def test_visible_help_has_no_internal_references():
+    """Help text must not point users at private files, cohorts or internal versions."""
+    runner = CliRunner()
+
+    def walk(group, prefix):
+        for name, command in group.commands.items():
+            if command.hidden:
+                continue
+            text = runner.invoke(cli, [*prefix, name, "--help"]).output
+            yield " ".join([*prefix, name]), text
+            if isinstance(command, click.Group):
+                yield from walk(command, [*prefix, name])
+
+    import click
+
+    texts = dict(walk(cli, []))
+    assert "run" in texts and "entrapment fdp" in texts
+    for name, text in texts.items():
+        for marker in INTERNAL:
+            assert marker not in text, f"{name} --help mentions {marker}"
+
+
+def test_rust_help_has_no_internal_references():
+    import os
+    import subprocess
+
+    import pytest
+
+    folder = os.environ.get("FASTALAKE_BIN_DIR")
+    if not folder:
+        pytest.skip("Set FASTALAKE_BIN_DIR to the built Rust executables")
+    for name in ("fasta_extractor", "parsimony_engine", "aggregation_engine", "lake_builder"):
+        text = subprocess.run(
+            [str(Path(folder) / name), "--help"], capture_output=True, text=True
+        ).stdout
+        assert text, name
+        for marker in INTERNAL + ("Measured on PREDICT", "CAPSCAN"):
+            assert marker not in text, f"{name} --help mentions {marker}"

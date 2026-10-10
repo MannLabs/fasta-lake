@@ -1,35 +1,41 @@
-usage: run_manifest.py [-h] --manifest MANIFEST [--lake LAKE] --out OUT [--sage SAGE]
-                       [--threads THREADS] [--laptop]
-                       [--memory-budget-gib MEMORY_BUDGET_GIB]
-                       [--memory-fraction MEMORY_FRACTION]
-                       [--cpu-fraction CPU_FRACTION]
-                       [--reference-chunk-mib REFERENCE_CHUNK_MIB]
-                       [--top-fraction TOP_FRACTION] [--min-length MIN_LENGTH]
-                       [--max-length MAX_LENGTH]
-                       [--digestion {tryptic,semi-tryptic,unspecific}]
-                       [--search-mode {closed,open}]
-                       [--search-min-length SEARCH_MIN_LENGTH]
-                       [--search-max-length SEARCH_MAX_LENGTH] [--databases-only]
-                       [--skip-qc] [--validate-only]
-                       [--quantification {sum,directlfq}]
-                       [--molecular-reference {augment,shared}]
-                       [--molecular-dna-percent MOLECULAR_DNA_PERCENT]
-                       [--molecular-rna-percent MOLECULAR_RNA_PERCENT]
-                       [--molecular-dna-absolute MOLECULAR_DNA_ABSOLUTE]
-                       [--molecular-rna-absolute MOLECULAR_RNA_ABSOLUTE]
-                       [--molecular-metabolites] [--background BACKGROUND]
-                       [--annotation-settings ANNOTATION_SETTINGS]
+usage: fasta-lake run [-h] --manifest MANIFEST [--lake LAKE]
+                      [--lake-headers LAKE_HEADERS] --out OUT [--sage SAGE]
+                      [--threads THREADS] [--laptop]
+                      [--memory-budget-gib MEMORY_BUDGET_GIB]
+                      [--memory-fraction MEMORY_FRACTION]
+                      [--cpu-fraction CPU_FRACTION]
+                      [--reference-chunk-mib REFERENCE_CHUNK_MIB]
+                      [--top-fraction TOP_FRACTION] [--min-length MIN_LENGTH]
+                      [--max-length MAX_LENGTH]
+                      [--digestion {tryptic,semi-tryptic,unspecific}]
+                      [--search-mode {closed,open}]
+                      [--search-min-length SEARCH_MIN_LENGTH]
+                      [--search-max-length SEARCH_MAX_LENGTH] [--databases-only]
+                      [--member-set-aggregate] [--skip-qc] [--validate-only]
+                      [--quantification {sum,directlfq}]
+                      [--molecular-reference {augment,shared}]
+                      [--molecular-dna-percent MOLECULAR_DNA_PERCENT]
+                      [--molecular-rna-percent MOLECULAR_RNA_PERCENT]
+                      [--molecular-dna-absolute MOLECULAR_DNA_ABSOLUTE]
+                      [--molecular-rna-absolute MOLECULAR_RNA_ABSOLUTE]
+                      [--molecular-metabolites] [--background BACKGROUND]
+                      [--annotation-settings ANNOTATION_SETTINGS]
 
 Portable, explicit Rust workflow for a declared acquisition manifest. Inputs and prior
 outputs are preserved. Chunked extraction reclaims its own consumed scratch pieces. A
-run requires a new output directory; failed runs remain available for diagnosis. Run
-this script from an installed FastaLake environment.
+run requires a new output directory; failed runs remain available for diagnosis.
+Installed as ``fasta-lake run``; ``tools/run_manifest.py`` remains as a compatibility
+wrapper.
 
 options:
   -h, --help            show this help message and exit
-  --manifest MANIFEST
+  --manifest MANIFEST   Tab-separated acquisition manifest: sample, predictions, mzml
   --lake LAKE           Required reservoir in augment mode
-  --out OUT
+  --lake-headers LAKE_HEADERS
+                        Header sidecar written by lake_builder --output-headers; names
+                        study groups by gene, protein and organism (otherwise the
+                        searched FASTA headers are used)
+  --out OUT             New output directory (must not exist)
   --sage SAGE           Explicit path to the official SAGE v0.14.7 Linux x86_64
                         executable, which reports 'sage 0.14.6' (otherwise PATH)
   --threads THREADS     Rust threads (default: 4, automatic in laptop mode)
@@ -44,17 +50,29 @@ options:
                         Extract reference pieces of this target size, then merge
                         before razor (e.g. 256)
   --top-fraction TOP_FRACTION
+                        Share of top-scoring de novo predictions used as evidence
+                        (default: 0.30)
   --min-length MIN_LENGTH
+                        Shortest de novo peptide used (default: 9)
   --max-length MAX_LENGTH
+                        Longest de novo peptide used (default: 50)
   --digestion {tryptic,semi-tryptic,unspecific}
                         Search cleavage specificity; does not change de novo selection
   --search-mode {closed,open}
                         Closed +/-20 ppm or open [-500,+100] Da precursor search
   --search-min-length SEARCH_MIN_LENGTH
+                        Shortest searched peptide (default: 5)
   --search-max-length SEARCH_MAX_LENGTH
-  --databases-only
+                        Longest searched peptide (default: 50)
+  --databases-only      Stop after writing per-acquisition databases; no search or
+                        grouping
+  --member-set-aggregate
+                        Also write the legacy member-set aggregate/ matrices.
+                        Diagnostic only: they count distinct protein member sets,
+                        which exceed protein groups
   --skip-qc             Explicitly omit automatic QC/PCA for a core-only installation
-  --validate-only
+  --validate-only       Check inputs, executables and destination, then exit without
+                        running
   --quantification {sum,directlfq}
                         Study quantification after searching (default: sum); QC/PCA
                         follows automatically
@@ -62,10 +80,18 @@ options:
                         Augment a reservoir-derived baseline, or select from each
                         shared gene reference
   --molecular-dna-percent MOLECULAR_DNA_PERCENT
+                        Top percent of positive available DNA genes; zero disables
+                        (default: 1.0)
   --molecular-rna-percent MOLECULAR_RNA_PERCENT
+                        Top percent of positive available RNA genes; zero disables
+                        (default: 0)
   --molecular-dna-absolute MOLECULAR_DNA_ABSOLUTE
+                        Strict DNA TPM threshold; requires dna-percent 0
   --molecular-rna-absolute MOLECULAR_RNA_ABSOLUTE
+                        Strict RNA TPM threshold; requires rna-percent 0
   --molecular-metabolites
+                        Also select through positive compounds and direct reaction/KO
+                        links
   --background BACKGROUND
                         Common target-only host/contaminant FASTA for molecular runs
   --annotation-settings ANNOTATION_SETTINGS
