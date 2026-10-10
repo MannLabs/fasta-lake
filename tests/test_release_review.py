@@ -3,9 +3,7 @@
 from __future__ import annotations
 
 import csv
-import importlib.util
 import subprocess
-from pathlib import Path
 
 import pytest
 
@@ -138,11 +136,9 @@ def test_path_discovery_works_outside_checkout(monkeypatch, tmp_path):
 
 
 def load_runner():
-    path = Path(__file__).resolve().parents[1] / "tools/run_manifest.py"
-    spec = importlib.util.spec_from_file_location("reviewed_runner", path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
+    from fasta_lake import workflow
+
+    return workflow
 
 
 def test_manifest_rejects_duplicate_ids_and_resolves_relative_paths(tmp_path):

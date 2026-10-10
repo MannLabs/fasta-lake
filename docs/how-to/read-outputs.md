@@ -62,7 +62,7 @@ why PCA was skipped. No missing quantities are imputed.
 For existing searches, grouping and plots can also be generated directly:
 
 ```bash
-python tools/group_study.py --search study_run_01/search \
+fasta-lake group-study --search study_run_01/search \
   --out study_groups_01 --peptide-q 0.01
 ```
 

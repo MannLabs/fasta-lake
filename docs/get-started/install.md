@@ -89,7 +89,7 @@ installed Sage v0.14.7. Use the official Linux x86_64 release asset
 (archive SHA-256 `e3dc6b41015cb167574f6c82525b75e946c094f30bd700271b05c051c30cbe8a`);
 the same archive is bundled at `examples/campi/runtime/`. Its executable reports
 `sage 0.14.6` because upstream did not change the version string for this tag, so
-`tools/run_manifest.py` identifies it by executable SHA-256
+`fasta-lake run` identifies it by executable SHA-256
 `d3820543a31bfa2a556e04f91719204ce0ac6f34dcca6670314a13df87064625` and warns for any other
 Sage binary (including the v0.14.6 release, a self-built or a macOS build), because
 results may then differ from the validated configuration:
@@ -113,8 +113,8 @@ ones.
 
 The Python wheel contains Python code; Rust executables are separate.
 `FASTALAKE_BIN_DIR` can point to a directory containing those executables.
-Run `python tools/run_manifest.py --help` and `fasta-lake --help` to see the
-two entry points. The [function map](../reference/function-map.md) explains the library underneath.
+Run `fasta-lake --help` to list the commands and `fasta-lake run --help` for
+the study runner. The [function map](../reference/function-map.md) explains the library underneath.
 
 ## Verify the installation
 

@@ -4,7 +4,7 @@ Find a specific function in the [Python index](function-index.md),
 [Python API](api/index.md) or [Rust index](rust-function-index.md).
 The list below follows the default runner's execution order.
 
-Start at [`run_manifest.main`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py). Read its `execute`
+Start at [`workflow.main`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/workflow.py). Read its `execute`
 calls from top to bottom; they connect the stages below. Python checks inputs,
 organizes processes and records results; Rust performs sequence matching and
 razor selection. [The method diagram](../concepts/principle.md) gives the scientific view.
@@ -13,7 +13,7 @@ razor selection. [The method diagram](../concepts/principle.md) gives the scient
 
 ```mermaid
 flowchart TD
-    A["run_manifest.main"] --> B["load_manifest"]
+    A["workflow.main"] --> B["load_manifest"]
     B --> C["extract pooled evidence"]
     C --> D["extract acquisition candidates"]
     D --> E["parsimony_engine: run_razor"]
@@ -48,14 +48,14 @@ validated before output is created.
 | Order | Function or executable | What to follow |
 |---|---|---|
 | 1. Plan resources | [`plan_laptop` → `detect_capacity`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/capacity.py), when `--laptop` is set | Visible RAM/CPU limits → thread and reference-piece plan |
-| 2. Validate acquisitions | [`load_manifest`](https://github.com/MannLabs/fasta-lake/blob/main/tools/run_manifest.py), then [`load_reference`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/multi_omics/sources.py) for molecular rows | Resolve paths; check unique acquisition IDs, specimen identity and input hashes |
+| 2. Validate acquisitions | [`load_manifest`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/workflow.py), then [`load_reference`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/multi_omics/sources.py) for molecular rows | Resolve paths; check unique acquisition IDs, specimen identity and input hashes |
 | 3. Pool de novo evidence | Runner's `extract("evidence", ...)` → [`extract_chunked`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/chunked.py) when chunking is selected | Match pooled predictions against the lake; merge pieces into `evidence.fasta` |
 | 4. Draw an acquisition's candidates | Runner's `extract(sample + "_extract", ...)` | Match that acquisition's predictions against pooled evidence → `sample_lake.fasta` |
 | 5. Select the compact database | [`parsimony_engine.main`](https://github.com/MannLabs/fasta-lake/blob/main/rust/parsimony_engine/src/main.rs) | Complete candidate set → razor FASTA with the recorded hash/accession tie rule |
 | 6. Add matched molecular evidence | [`build_selection`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/multi_omics/selection.py), through `molecular add` | Preserve de novo targets; add exact DNA/RNA/compound-supported sequences → `molecular/search.fasta` |
 | 7. Search the spectra | [`sage_config`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/search.py), then Sage | Final FASTA + mzML → `search/<sample>/config.json`, PSM and LFQ tables |
 | 8. Write compatibility summaries | [`aggregation_engine.main`](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs) | Member-set summaries under `aggregate/`; distinct from the fixed study matrix |
-| 9. Fix study reporting groups | [`group_study.main`](https://github.com/MannLabs/fasta-lake/blob/main/tools/group_study.py) → [`group_searches` → `study_dictionary`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py) | Accepted study peptides → deterministic dictionary, sum matrix, representatives and peptide evidence |
+| 9. Fix study reporting groups | [`study_cli.main`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study_cli.py) → [`group_searches` → `study_dictionary`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/study.py) | Accepted study peptides → deterministic dictionary, sum matrix, representatives and peptide evidence |
 | 10. Quantify those groups | [`quantify_study`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/quantification.py) | Grouped ions → sum or directLFQ quantities; preserve missing cells and sample identity |
 | 11. Make basic QC/PCA | [`analyze_study`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/downstream.py) | Selected matrix → coverage/missingness, AnnData and plots; record PCA eligibility |
 | 12. Annotate, if requested | [`annotate_study` → `annotate_fasta`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/annotation.py) | Selected representatives → annotation and unresolved-sequence ledgers |

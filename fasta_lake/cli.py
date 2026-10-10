@@ -49,6 +49,27 @@ def cli() -> None:
     """FASTA Lake: Sample-specific protein database construction for metaproteomics."""
 
 
+_PASSTHROUGH = {"ignore_unknown_options": True, "allow_extra_args": True, "help_option_names": []}
+
+
+@cli.command("run", context_settings=_PASSTHROUGH, add_help_option=False)
+@click.argument("args", nargs=-1, type=click.UNPROCESSED)
+def run_cmd(args: tuple[str, ...]) -> None:
+    """Run the whole study from an acquisition manifest (fasta-lake run --help)."""
+    from fasta_lake.workflow import entry
+
+    sys.exit(entry(list(args)))
+
+
+@cli.command("group-study", context_settings=_PASSTHROUGH, add_help_option=False)
+@click.argument("args", nargs=-1, type=click.UNPROCESSED)
+def group_study_cmd(args: tuple[str, ...]) -> None:
+    """Group and quantify completed Sage searches (fasta-lake group-study --help)."""
+    from fasta_lake.study_cli import main
+
+    sys.exit(main(list(args)))
+
+
 # ---------------------------------------------------------------------------
 # Presets
 # ---------------------------------------------------------------------------
@@ -982,7 +1003,7 @@ def diagnose_cmd(
     type=click.Choice(list(STRATEGIES.keys())),
     help=(
         "Experimental Python strategy (default: species_budget). "
-        "See tools/run_manifest.py for the validated Rust workflow."
+        "Use `fasta-lake run` for the validated Rust workflow."
     ),
 )
 @click.option("--min-peptides", default=2, type=int, help="Min peptides for uniform_2pep")
@@ -1045,7 +1066,7 @@ def infer(
         raise click.ClickException("Output must be new or empty; choose a fresh directory")
     click.echo(
         "Experimental Python inference: evidence weighting and tie rules differ from "
-        "Rust razor/hash-acc. Use tools/run_manifest.py for the validated workflow.",
+        "Rust razor/hash-acc. Use `fasta-lake run` for the validated workflow.",
         err=True,
     )
     _setup_logging(verbose)

@@ -27,7 +27,7 @@ Check the prediction-to-mzML pairing using acquisition metadata. The runner veri
 ## Preflight
 
 ```bash
-python tools/run_manifest.py --manifest samples.tsv --lake lake_build_01/lake.fasta \
+fasta-lake run --manifest samples.tsv --lake lake_build_01/lake.fasta \
   --out study_run_01 --sage /path/to/sage --threads 4 --validate-only
 ```
 
@@ -36,7 +36,7 @@ Preflight checks the manifest structure, unique identifiers, nonempty input file
 ## Execute
 
 ```bash
-python tools/run_manifest.py --manifest samples.tsv --lake lake_build_01/lake.fasta \
+fasta-lake run --manifest samples.tsv --lake lake_build_01/lake.fasta \
   --out study_run_01 --sage /path/to/sage --threads 4 \
   --top-fraction 0.30 --min-length 9 --max-length 50
 ```

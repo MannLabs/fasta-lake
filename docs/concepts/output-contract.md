@@ -23,7 +23,7 @@ broader dictionary does not meet this definition.
 ## Run on completed searches
 
 ```bash
-python tools/group_study.py --search /path/to/completed/acquisitions \
+fasta-lake group-study --search /path/to/completed/acquisitions \
     --out /path/to/new/grouped-output --config-name results.json \
     --samples-file publication/analyses/simplified_grouping_2026-09-10/hstool_samples.txt
 ```
@@ -122,7 +122,7 @@ Generating code commits and input hashes accompany each run.
 ## Provenance
 
 Direct peptide assignment replaced the dual-key rule on 11 September 2026.
-`tools/group_study.py` writes the new schema and the example consumers follow it.
+`fasta-lake group-study` writes the new schema and the example consumers follow it.
 Outputs produced before that date record the previous method.
 
 ## Optional quantification

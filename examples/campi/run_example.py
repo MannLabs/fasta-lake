@@ -296,7 +296,9 @@ def main(example_dir=None, cohort="CAMPI"):
         "run_acquisitions",
         [
             python,
-            ROOT / "tools/run_manifest.py",
+            "-m",
+            "fasta_lake.cli",
+            "run",
             "--manifest",
             HERE / "inputs/samples.tsv",
             "--lake",

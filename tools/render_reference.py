@@ -23,7 +23,7 @@ def render() -> dict[str, str]:
     env = dict(os.environ, COLUMNS="88", PYTHONUTF8="1")
     files: dict[str, str] = {}
     help_text = subprocess.run(
-        [sys.executable, str(ROOT / "tools" / "run_manifest.py"), "--help"],
+        [sys.executable, "-m", "fasta_lake.cli", "run", "--help"],
         check=True,
         capture_output=True,
         text=True,

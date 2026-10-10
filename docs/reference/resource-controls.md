@@ -10,7 +10,7 @@ dependencies and the Rust/Sage executables:
 
 ```bash
 fasta-lake plan-resources
-python tools/run_manifest.py --manifest samples.tsv --lake reference_lake.fasta \
+fasta-lake run --manifest samples.tsv --lake reference_lake.fasta \
   --laptop --out laptop_run_01
 ```
 
@@ -25,7 +25,7 @@ On an otherwise available eight-core, 32 GiB machine, this chooses four Rust
 threads and an 11.2 GiB planning budget. To request 11 GiB explicitly:
 
 ```bash
-python tools/run_manifest.py --manifest samples.tsv --lake reference_lake.fasta \
+fasta-lake run --manifest samples.tsv --lake reference_lake.fasta \
   --laptop --memory-budget-gib 11 --out laptop_run_02
 ```
 

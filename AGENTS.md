@@ -39,8 +39,8 @@ scientific inputs or access when needed, without repeatedly reconfirming agreed 
    Resolve paths relative to the manifest; do not infer specimen pairing from names.
 2. Keep source data unchanged and choose a new result directory. Prefer read-only
    input mounts in Docker. Read the relevant tutorial and the current command's
-   `--help`; `python tools/run_manifest.py` is the source-run entry point inside
-   the repository root, and `/opt/fastalake/tools/run_manifest.py` is its image path.
+   `--help`; `fasta-lake run` is the study entry point, both from a source
+   installation and inside the image (`tools/run_manifest.py` is a compatibility wrapper).
 3. Run `--validate-only` with the intended settings before execution. Preflight is
    not a completed analysis or a guarantee of sufficient RAM. Use a representative
    full acquisition to size the main study; consult the measured resource guide.

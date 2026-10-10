@@ -80,3 +80,33 @@ class TestCLISmoke:
         assert result.exit_code == 0
         data = json.loads(result.output)
         assert "database" in data
+
+
+def test_run_and_group_study_are_installed_commands():
+    """The main workflow is reachable as ``fasta-lake run``, not only as a repository script."""
+    import subprocess
+    import sys
+
+    for command, flag in (("run", "--manifest"), ("group-study", "--search")):
+        result = subprocess.run(
+            [sys.executable, "-m", "fasta_lake.cli", command, "--help"],
+            capture_output=True,
+            text=True,
+        )
+        assert result.returncode == 0, result.stderr
+        assert f"fasta-lake {command}" in result.stdout
+        assert flag in result.stdout
+    listing = CliRunner().invoke(cli, ["--help"])
+    assert "run" in listing.output and "group-study" in listing.output
+
+
+def test_repository_scripts_remain_compatibility_wrappers():
+    import subprocess
+    import sys
+
+    root = Path(__file__).resolve().parents[1]
+    for script in ("tools/run_manifest.py", "tools/group_study.py"):
+        result = subprocess.run(
+            [sys.executable, str(root / script), "--help"], capture_output=True, text=True
+        )
+        assert result.returncode == 0, result.stderr

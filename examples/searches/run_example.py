@@ -36,7 +36,9 @@ def main():
             destination = out / label
             argv = [
                 sys.executable,
-                str(ROOT / "tools/run_manifest.py"),
+                "-m",
+                "fasta_lake.cli",
+                "run",
                 "--manifest",
                 str(manifest),
                 "--lake",

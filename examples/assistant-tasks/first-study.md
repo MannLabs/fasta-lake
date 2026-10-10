@@ -17,7 +17,7 @@ examples/campi/inputs/samples.tsv; paths are relative to the manifest.
 Confirm ambiguous pairings with me. Do not infer biological specimen identity
 from a filename.
 
-Validate with tools/run_manifest.py --validate-only and the intended settings.
+Validate with fasta-lake run --validate-only and the intended settings.
 Profile one representative full acquisition before sizing the full study.
 Keep every input unchanged and use a fresh output directory for each attempt.
 

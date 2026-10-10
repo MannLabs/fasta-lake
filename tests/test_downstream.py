@@ -157,12 +157,11 @@ def test_quantify_cli_writes_qc_and_pca_by_default(study, tmp_path, method):
 def test_grouping_tool_writes_qc_by_default(study, tmp_path):
     import subprocess
     import sys
-    from pathlib import Path
 
     out = tmp_path / "automatic_groups"
-    tool = Path(__file__).resolve().parents[1] / "tools/group_study.py"
+    command = [sys.executable, "-m", "fasta_lake.cli", "group-study"]
     result = subprocess.run(
-        [sys.executable, str(tool), "--search", str(tmp_path / "search"), "--out", str(out)],
+        command + ["--search", str(tmp_path / "search"), "--out", str(out)],
         capture_output=True,
         text=True,
     )

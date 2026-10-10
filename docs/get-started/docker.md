@@ -36,7 +36,7 @@ docker run --rm --platform linux/amd64 --network none \
   --user "$(id -u):$(id -g)" \
   --mount "type=bind,source=$PWD/inputs,target=/data,readonly" \
   --mount "type=bind,source=$PWD/fastalake-results,target=/work" \
-  ghcr.io/mannlabs/fasta-lake:local python /opt/fastalake/tools/run_manifest.py \
+  ghcr.io/mannlabs/fasta-lake:local fasta-lake run \
   --manifest /data/samples.tsv --lake /data/lake.fasta \
   --out /work/study_01 --sage /usr/local/bin/sage --threads 4 --validate-only
 ```
