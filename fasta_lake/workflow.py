@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import gzip
 import hashlib
 import json
 import math
@@ -112,11 +113,14 @@ def load_manifest(path):
                 raise ValueError(f"{sample}: acquisition/source specimen mismatch")
             row["molecular_source"] = str(source)
             row["molecular_source_sha256"] = sha256(source)
-        if Path(row["predictions"]).suffix.lower() != ".csv":
-            raise ValueError(f"{sample}: this workflow requires a predictions CSV")
-        if Path(row["mzml"]).suffix.lower() != ".mzml":
-            raise ValueError(f"{sample}: this workflow has been validated with mzML inputs")
-        with open(row["predictions"], newline="") as stream:
+        if not row["predictions"].lower().endswith((".csv", ".csv.gz")):
+            raise ValueError(
+                f"{sample}: this workflow requires a predictions CSV (.csv or .csv.gz)"
+            )
+        if not row["mzml"].lower().endswith((".mzml", ".mzml.gz")):
+            raise ValueError(f"{sample}: this workflow requires mzML spectra (.mzML or .mzML.gz)")
+        opener = gzip.open if row["predictions"].lower().endswith(".gz") else open
+        with opener(row["predictions"], "rt", newline="") as stream:
             header = next(csv.reader(stream), [])
         if not (
             {"score", "sequence"}.issubset(header)
@@ -516,6 +520,15 @@ def main(argv=None):
 
     provenance = provenance_record(args, rows, binaries)
     (out / "PROVENANCE.json").write_text(json.dumps(provenance, indent=2, default=str) + "\n")
+    # The Rust readers take plain CSV; decompress gzipped predictions once, after
+    # PROVENANCE.json has recorded the checksum of the file the user supplied.
+    for row in rows:
+        if row["predictions"].lower().endswith(".gz"):
+            plain = out / "predictions" / (row["sample"] + ".csv")
+            plain.parent.mkdir(exist_ok=True)
+            with gzip.open(row["predictions"], "rb") as source, plain.open("xb") as target:
+                shutil.copyfileobj(source, target, 8 * 1024 * 1024)
+            row["predictions"] = str(plain)
     pool = out / "pooled_predictions"
     pool.mkdir()
     for row in rows:

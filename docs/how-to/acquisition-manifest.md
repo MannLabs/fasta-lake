@@ -12,7 +12,7 @@ Sample01	data/Sample01.csv	data/Sample01.mzML
 Sample02	data/Sample02.csv	data/Sample02.mzML
 ```
 
-The separators above must be actual tabs when saved. Paths resolve relative to the manifest's directory. Absolute paths also work. Each sample identifier must be unique and use letters, digits, underscores, dots or hyphens, starting with a letter or digit. Do not use a subject identifier alone when that subject has several acquisitions.
+The separators above must be actual tabs when saved. Paths resolve relative to the manifest's directory. Absolute paths also work. Gzipped files (`.csv.gz`, `.mzML.gz`) are accepted: Sage reads gzipped mzML directly, and gzipped predictions are decompressed once into the run's `predictions/` folder after their checksums are recorded. Each sample identifier must be unique and use letters, digits, underscores, dots or hyphens, starting with a letter or digit. Do not use a subject identifier alone when that subject has several acquisitions.
 
 ## Prediction files
 
