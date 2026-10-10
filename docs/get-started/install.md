@@ -105,7 +105,7 @@ done
 export PATH="$PWD/rust/fasta_extractor_v2/target/release:$PWD/rust/parsimony_engine/target/release:$PWD/rust/aggregation_engine/target/release:$PATH"
 ```
 
-The core package runs on Python 3.10 or newer; the analysis extras need 3.11 or newer; the tested and locked environment is 3.12.
+FastaLake needs Python 3.11 or newer; the tested and locked environment is 3.12.
 Other Python versions and other platforms can install with
 `python -m pip install '.[analysis,directlfq]'` instead of the two locked lines,
 but then dependency versions float with PyPI and results are not the CI-tested
