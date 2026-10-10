@@ -234,6 +234,12 @@ def main(argv=None):
         help="Stop after writing per-acquisition databases; no search or grouping",
     )
     parser.add_argument(
+        "--member-set-aggregate",
+        action="store_true",
+        help="Also write the legacy member-set aggregate/ matrices. Diagnostic only: they "
+        "count distinct protein member sets, which exceed protein groups",
+    )
+    parser.add_argument(
         "--skip-qc",
         action="store_true",
         help="Explicitly omit automatic QC/PCA for a core-only installation",
@@ -309,6 +315,8 @@ def main(argv=None):
         or args.search_max_length != 50
     ):
         parser.error("Search options require searches; incompatible with --databases-only")
+    if args.member_set_aggregate and args.databases_only:
+        parser.error("--member-set-aggregate requires searches; incompatible with --databases-only")
     if args.annotation_settings:
         from fasta_lake.annotation import read_annotation_settings
 
@@ -407,7 +415,8 @@ def main(argv=None):
         binaries["sage"] = find_binary(
             "sage", explicit_path=args.sage or shutil.which("sage") or "/missing/sage"
         )
-        binaries["aggregation_engine"] = find_binary("aggregation_engine")
+        if args.member_set_aggregate:
+            binaries["aggregation_engine"] = find_binary("aggregation_engine")
         version = subprocess.check_output([binaries["sage"], "--version"], text=True).strip()
         if version.split()[-1] != SAGE_REPORTED_VERSION:
             parser.error(
@@ -677,7 +686,8 @@ def main(argv=None):
                     next(stream, None)
                     if next(stream, None) is None:
                         raise RuntimeError(f"{sample}: {name} contains no data rows")
-    if not args.databases_only:
+    if args.member_set_aggregate:
+        # Member-set keys are not protein groups; the study matrix below is the result.
         execute(
             "aggregate",
             [
@@ -743,6 +753,10 @@ def main(argv=None):
                 "seconds": time.monotonic() - started,
                 "acquisitions": len(rows),
                 "databases_only": args.databases_only,
+                "protein_group_matrix": None
+                if args.databases_only
+                else "study_groups/annotated_study_group_matrix.tsv",
+                "member_set_aggregate": "aggregate/" if args.member_set_aggregate else None,
                 "quantification": args.quantification,
                 "annotation": "annotation/STUDY_COMPLETE.json"
                 if args.annotation_settings

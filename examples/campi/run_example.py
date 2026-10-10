@@ -326,6 +326,11 @@ def main(example_dir=None, cohort="CAMPI"):
     for ext in ("pdf", "png"):
         if (qc / ("QC_overview." + ext)).stat().st_size <= 1000:
             raise RuntimeError("Automatic QC plot is missing or empty")
+    complete = json.loads((out / "workflow/COMPLETE.json").read_text())
+    if (out / "workflow/aggregate").exists() or complete["member_set_aggregate"] is not None:
+        raise RuntimeError("The member-set aggregate must be opt-in")
+    if complete["protein_group_matrix"] != "study_groups/annotated_study_group_matrix.tsv":
+        raise RuntimeError("COMPLETE.json must name the one protein-group matrix")
     with (out / "study/study_group_annotation.tsv").open() as stream:
         named = list(csv.DictReader(stream, delimiter="\t"))
     # Every lake accession has a sidecar entry; nearly all CAMPI records are

@@ -43,8 +43,8 @@ An assistant can walk through them using the
 | `samples/<sample>/inference/<sample>_razor.fasta` | Exact selected search candidates | Preserve together with the SAGE configuration |
 | `search/<sample>/results.sage.tsv` | Spectrum matches and confidence fields | Target label, appropriate q-value and counting unit |
 | `search/<sample>/lfq.tsv` | Quantified peptide features | Acquisition column, finite intensities and matching PSM table |
-| `aggregate/` | Peptide-feature and protein-member-set matrices | Threshold and grouping mode in filenames/metadata |
-| `COMPLETE.json` | Successful termination of the requested runner scope | Whether databases-only was enabled |
+| `aggregate/` | Only with `--member-set-aggregate`: legacy peptide-feature and protein-member-set matrices. Member sets are not protein groups and outnumber them | Do not report its row count as protein groups |
+| `COMPLETE.json` | Successful termination of the requested runner scope; `protein_group_matrix` names the one matrix to report | Whether databases-only was enabled |
 
 The core LFQ aggregator requires the corresponding results table and exactly one acquisition intensity column per search directory. Multiple intensity columns fail clearly instead of silently selecting the first. The peptide-feature matrix is gated on search-level peptide_q, and the protein-member-set matrix on search-level protein_q. The core aggregator does not gate these matrices on the MS1-specific LFQ q_value column. Their total signal can differ because their identification gates differ. Aggregate observations are filtered before summation. For example, intensities 10 and 1,000 from observations with q-values 0.001 and 0.9 must contribute 10 at a 0.01 threshold, even when they share a reporting key.
 

@@ -73,7 +73,6 @@ These are different counting units. The 348 and 287 selected sequences are searc
 | `workflow/evidence.fasta` | Pooled construction-evidence lake |
 | `workflow/samples/S01/` and `S02/` | Drawn databases, selected FASTAs and inference sidecars |
 | `workflow/search/S01/` and `S02/` | Search configuration, SAGE identification and LFQ results |
-| `workflow/aggregate/` | Filtered acquisition-level aggregation outputs |
 | `study/summary.json`, `study/study_group_long.tsv` | Study accounting and one quantitative study-group table |
 
 Open `study/study_group_long.tsv` in a spreadsheet or TSV reader. Each row reports one acquisition/study-group combination, its assigned peptides and features, and intensity. Original local memberships are retained in `feature_assignments.tsv.gz`. The accompanying `expected/reference_dual_key_long.tsv` (577 rows) preserves the original-rule reference execution. It is archived historical evidence, not the current output schema or an expected row count. The example checks the unchanged inferred-cover count (448) against that reference; it does not check the long-table row count.

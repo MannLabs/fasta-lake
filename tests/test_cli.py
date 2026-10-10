@@ -110,3 +110,20 @@ def test_repository_scripts_remain_compatibility_wrappers():
             [sys.executable, str(root / script), "--help"], capture_output=True, text=True
         )
         assert result.returncode == 0, result.stderr
+
+
+def test_member_set_aggregate_is_opt_in_and_needs_searches(tmp_path, capsys):
+    """The default run reports one protein-group matrix; member sets are a diagnostic."""
+    import pytest
+
+    from fasta_lake import workflow
+
+    base = ["--manifest", str(tmp_path / "m.tsv"), "--out", str(tmp_path / "out")]
+    with pytest.raises(SystemExit) as error:
+        workflow.main(base + ["--databases-only", "--member-set-aggregate"])
+    assert error.value.code == 2
+    assert "member-set-aggregate requires searches" in capsys.readouterr().err
+    with pytest.raises(SystemExit):
+        workflow.main(["--help"])
+    assert "Diagnostic only" in capsys.readouterr().out
+    assert not (tmp_path / "out").exists()
