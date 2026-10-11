@@ -129,8 +129,8 @@ struct Args {
     /// mechanistically unrelated rules all placed ~40%.
     ///
     /// With a single shared tag the accession carries NO source signal, so no
-    /// catalogue can be preferred by any downstream ordering. Measured on PREDICT,
-    /// which already has hash-only accessions, the largest alpha-vs-hash-acc
+    /// catalogue can be preferred by any downstream ordering. Measured on a cohort
+    /// lake with hash-only accessions, the largest alpha-vs-hash-acc
     /// difference is 0.016 pp — i.e. with no prefix there is nothing left to bias.
     ///
     /// Provenance is NOT lost: every original header, from every source that owns

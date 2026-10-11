@@ -43,9 +43,8 @@ struct Args {
     #[arg(short = 's', long, default_value = "DB")]
     source_tag: String,
 
-    /// Minimum peptide length. Default 9 (v5) — raised from 8 because SAGE digests
-    /// FASTA to tryptic peptides ≥9; shorter de novo peptides admit proteins with
-    /// low-quality evidence that inflate entrapment FDP. See DESIGN_V5.md.
+    /// Minimum peptide length (default 9). Shorter de novo peptides admit proteins
+    /// with low-quality evidence that inflate entrapment FDP.
     #[arg(long, default_value = "9")]
     min_length: usize,
 

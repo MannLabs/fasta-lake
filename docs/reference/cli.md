@@ -1,6 +1,6 @@
 # Command-line reference
 
-Every command of the `fasta-lake` executable, generated from the code. The runner for a whole study, `tools/run_manifest.py`, has [its own page](run-manifest.md).
+Every command of the `fasta-lake` executable, generated from the code. The runner for a whole study, `fasta-lake run`, has [its own page](run-manifest.md).
 
 ::: mkdocs-click
     :module: fasta_lake.cli

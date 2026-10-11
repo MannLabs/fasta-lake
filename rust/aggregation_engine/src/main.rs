@@ -30,11 +30,7 @@ struct Cli {
     #[arg(short, long)]
     output: PathBuf,
 
-    #[arg(
-        short,
-        long,
-        help = "Dataset/project identifier (e.g., MicrobPredict, CAPSCAN)"
-    )]
+    #[arg(short, long, help = "Dataset/project identifier (e.g., Study)")]
     dataset: String,
 
     #[arg(
@@ -102,7 +98,7 @@ struct Cli {
     /// Pre-computing them writes 11 levels x 2 modes x 2 granularities x 4 thresholds =
     /// 176 extra files.
     ///
-    /// Measured on PREDICT, 2026-08-03: those 176 files are 155.1 GB of a 178.3 GB
+    /// Measured on a 306-acquisition cohort: those 176 files are 155.1 GB of a 178.3 GB
     /// output (87%), and writing them IS the runtime. The write phase is serial and
     /// formats billions of f64s into decimal text -- one peptide matrix is 4,281,281
     /// rows x 306 columns = 1.31 billion cells, and 92 of the 198 files are at peptide

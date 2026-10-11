@@ -64,7 +64,7 @@ hashes, wall/CPU time, peak RSS, thread limits and output disk usage.
 On Linux, for a normal run:
 
 ```bash
-/usr/bin/time -v python tools/run_manifest.py \
+/usr/bin/time -v fasta-lake run \
   --manifest samples.tsv --lake lake.fasta --out profile_01 \
   --laptop --threads 2 > profile_01.log 2>&1
 ```

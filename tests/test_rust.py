@@ -101,3 +101,14 @@ class TestRustBinary:
         monkeypatch.setattr(binaries.shutil, "which", lambda _: None)
         with pytest.raises(FileNotFoundError, match="cargo build"):
             find_binary("fasta_extractor", search_dir="/tmp/empty_dir_12345")
+
+    @pytest.mark.parametrize("name", ["parsimony_engine", "aggregation_engine"])
+    def test_missing_binary_names_its_own_crate(self, tmp_path, monkeypatch, name):
+        monkeypatch.delenv("FASTALAKE_BIN_DIR", raising=False)
+        monkeypatch.setattr(binaries.shutil, "which", lambda _: None)
+        with pytest.raises(FileNotFoundError) as exc:
+            find_binary(name, search_dir=tmp_path)
+        message = str(exc.value)
+        assert f"rust/{name}/Cargo.toml" in message
+        assert "FASTALAKE_BIN_DIR" in message
+        assert "rust/fasta_extractor_v2" not in message

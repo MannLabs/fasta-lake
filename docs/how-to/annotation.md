@@ -81,7 +81,7 @@ fasta-lake annotate study --groups results/study_groups \
 ```
 
 Or add `--annotation-settings annotation.json` to your normal
-`python tools/run_manifest.py ...` command. After searching, grouping and QC,
+`fasta-lake run ...` command. After searching, grouping and QC,
 the runner annotates its verified representatives and records the annotation
 completion receipt. Invalid settings fail before the workflow starts.
 

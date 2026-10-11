@@ -3,7 +3,6 @@ FastaLake parameter presets (v5).
 
 Legacy entrapment observations refer to the historical 592-sample MicrobPredict sweep;
 they do not calibrate the current whole workflow.
-See DESIGN_V5.md for the empirical justification.
 
 Use via CLI:
     fasta-lake infer --preset stringent ...

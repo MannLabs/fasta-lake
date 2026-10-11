@@ -250,16 +250,12 @@ def test_compressed_tpm_input(tmp_path):
 
 
 def test_manifest_binds_each_acquisition_to_the_declared_specimen(tmp_path):
-    import importlib.util
-    from pathlib import Path
 
     raw, manifest = prepared(tmp_path)
     (raw / "predictions.csv").write_text("sequence,score\nACDEK,1\n")
     (raw / "spectra.mzML").write_text("format fixture; not measured spectra")
-    path = Path(__file__).resolve().parents[1] / "tools/run_manifest.py"
-    spec = importlib.util.spec_from_file_location("molecular_runner", path)
-    runner = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(runner)
+    from fasta_lake import workflow as runner
+
     acquisition = tmp_path / "samples.tsv"
     header = "sample\tpredictions\tmzml\tmolecular_source\tspecimen\n"
     prefix = "run1\traw/predictions.csv\traw/spectra.mzML\tsource/source.json\t"

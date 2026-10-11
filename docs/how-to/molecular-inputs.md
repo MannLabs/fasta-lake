@@ -107,7 +107,7 @@ de novo-only workflow.
 ## Run the additive workflow
 
 ```bash
-python tools/run_manifest.py \
+fasta-lake run \
   --manifest inputs/samples.tsv --lake reference_lake.fasta \
   --molecular-dna-percent 100 --molecular-rna-percent 100 \
   --quantification directlfq --out results/run_01

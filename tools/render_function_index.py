@@ -53,7 +53,8 @@ GROUPS = [
     (
         "6. Run the workflow and configure tools",
         {
-            "tools",
+            "workflow",
+            "study_cli",
             "cli",
             "run_config",
             "config",
@@ -91,9 +92,8 @@ def cell(text):
 
 
 def python_index():
-    """Render package functions and the two main workflow tools in a stable order."""
+    """Render package functions in a stable order."""
     files = sorted((ROOT / "fasta_lake").rglob("*.py"))
-    files += [ROOT / "tools" / name for name in ("run_manifest.py", "group_study.py")]
     buckets = [[] for _ in GROUPS]
     count, undocumented = 0, []
     for path in files:
@@ -122,7 +122,7 @@ def python_index():
         "",
         "For a first reading, use [functions in execution order](function-map.md).",
         f"This generated index contains **{count} functions and methods**, including private",
-        "and nested helpers, from the Python package and the two main workflow tools.",
+        "and nested helpers, from the Python package.",
         "Sections follow workflow purpose; modules and names are alphabetical within them.",
         "Links open the exact definition. The [Python API](api/index.md) renders full",
         "docstrings. Legacy and experimental functions remain listed; their presence",

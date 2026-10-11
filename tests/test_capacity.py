@@ -1,6 +1,5 @@
 """Resource planning must respect parent limits and retain laptop headroom."""
 
-import importlib.util
 import json
 from pathlib import Path
 
@@ -156,10 +155,8 @@ def test_installed_command_reports_plan_without_creating_files(tmp_path, monkeyp
 
 
 def test_manifest_preserves_explicit_zero_thread_rejection(tmp_path):
-    path = Path(__file__).resolve().parents[1] / "tools/run_manifest.py"
-    spec = importlib.util.spec_from_file_location("capacity_runner", path)
-    runner = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(runner)
+    from fasta_lake import workflow as runner
+
     with pytest.raises(SystemExit) as error:
         runner.main(
             [
@@ -176,10 +173,8 @@ def test_manifest_preserves_explicit_zero_thread_rejection(tmp_path):
 
 
 def test_laptop_helper_limits_are_set_before_preflight_imports(tmp_path, monkeypatch):
-    path = Path(__file__).resolve().parents[1] / "tools/run_manifest.py"
-    spec = importlib.util.spec_from_file_location("laptop_preflight_runner", path)
-    runner = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(runner)
+    from fasta_lake import workflow as runner
+
     monkeypatch.setattr(capacity, "detect_capacity", machine)
     names = ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "NUMBA_NUM_THREADS")
     for name in names:

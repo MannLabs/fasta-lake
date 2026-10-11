@@ -60,7 +60,7 @@ docker run --rm --platform linux/amd64 --network none \
   --mount "type=bind,source=$PWD/inputs,target=/data,readonly" \
   --mount "type=bind,source=$PWD/prepared,target=/prepared,readonly" \
   --mount "type=bind,source=$PWD/results,target=/work" \
-  ghcr.io/mannlabs/fasta-lake:local python /opt/fastalake/tools/run_manifest.py \
+  ghcr.io/mannlabs/fasta-lake:local fasta-lake run \
   --manifest /data/samples.tsv --lake /data/lake.fasta --out /work/study_01 \
   --laptop --quantification directlfq \
   --molecular-dna-percent 1 --molecular-rna-percent 1 --validate-only

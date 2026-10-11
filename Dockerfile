@@ -72,6 +72,7 @@ RUN set -eux; \
         "$bin" --help >/dev/null; \
     done; \
     fasta-lake --help >/dev/null; \
+    fasta-lake run --help >/dev/null; \
     mkdir /work; chown 10001:10001 /work
 USER 10001:10001
 WORKDIR /work

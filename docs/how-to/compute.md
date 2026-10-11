@@ -48,7 +48,7 @@ After [installation](../get-started/install.md), from the repository root:
 
 ```bash
 fasta-lake plan-resources
-python tools/run_manifest.py --manifest samples.tsv --lake reference_lake.fasta \
+fasta-lake run --manifest samples.tsv --lake reference_lake.fasta \
   --laptop --out pilot_01 --validate-only
 ```
 

@@ -25,6 +25,16 @@ _SEARCH_PATHS = [
     "rust/fasta_export/target/release",
 ]
 
+_BINARY_CRATES = {
+    "fasta_extractor": "fasta_extractor_v2",
+    "lake_builder": "fasta_extractor_v2",
+    "parsimony_engine": "parsimony_engine",
+    "aggregation_engine": "aggregation_engine",
+    "fasta_export": "fasta_export",
+    "lake_stats": "lake_stats",
+    "shared_peptide_classifier": "shared_peptide_classifier",
+}
+
 
 def find_binary(
     name: str,
@@ -79,10 +89,17 @@ def find_binary(
     if on_path:
         return Path(on_path).resolve()
 
+    crate = _BINARY_CRATES.get(name)
+    build_hint = (
+        f"Build with: cargo build --release --locked --manifest-path rust/{crate}/Cargo.toml. "
+        if crate
+        else "Build the crate that provides this executable. "
+    )
     raise FileNotFoundError(
         f"Rust binary '{name}' not found. "
         f"Searched in {search_dir}. "
-        f"Build with: cd rust/fasta_extractor_v2 && cargo build --release"
+        f"{build_hint}"
+        "Alternatively, set FASTALAKE_BIN_DIR to the directory containing the compiled binaries."
     )
 
 

@@ -18,42 +18,42 @@ Regenerate with `python tools/render_function_index.py --write`.
 
 | Function | Definition |
 |---|---|
-| `apply_bh_correction` | [Line 924](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L924) |
-| `build_functional_group_matrix` | [Line 1484](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1484) |
-| `build_functional_peptide_matrix` | [Line 1552](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1552) |
-| `build_peptide_matrix` | [Line 774](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L774) |
-| `build_protein_group_matrix` | [Line 842](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L842) |
-| `canonical_for_group` | [Line 1401](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1401) |
-| `classify_group` | [Line 331](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L331) |
-| `classify_group_with_hosts` | [Line 1147](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1147) |
-| `find_sample_dirs` | [Line 446](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L446) |
-| `group_value_votes` | [Line 1362](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1362) |
-| `is_classifiable_accession` | [Line 322](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L322) |
-| `is_host_member` | [Line 368](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L368) |
-| `load_functional_lookup` | [Line 1257](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1257) |
-| `load_host_accessions` | [Line 1112](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1112) |
-| `load_search_q` | [Line 470](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L470) |
-| `main` | [Line 1801](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1801) |
-| `normalize_protein_group` | [Line 293](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L293) |
-| `parse_intensity` | [Line 437](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L437) |
-| `parse_lfq_sample` | [Line 539](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L539) |
-| `parse_psm_sample` | [Line 681](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L681) |
-| `parse_q` | [Line 425](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L425) |
-| `parse_q_thresholds` | [Line 157](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L157) |
-| `representative_protein` | [Line 406](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L406) |
-| `resolve_functional_levels` | [Line 1787](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1787) |
-| `resolve_level` | [Line 1448](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1448) |
-| `sanitize_level` | [Line 1616](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1616) |
-| `short` | [Line 229](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L229) |
-| `split_functional_value` | [Line 1328](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1328) |
-| `strip_source_tags` | [Line 263](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L263) |
-| `validate_search_schema` | [Line 525](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L525) |
-| `write_functional_group_matrix` | [Line 1629](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1629) |
-| `write_functional_peptide_matrix` | [Line 1686](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1686) |
-| `write_group_metadata` | [Line 1170](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1170) |
-| `write_group_to_level_map` | [Line 1746](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1746) |
-| `write_peptide_matrix` | [Line 999](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L999) |
-| `write_protein_group_matrix` | [Line 1054](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1054) |
+| `apply_bh_correction` | [Line 920](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L920) |
+| `build_functional_group_matrix` | [Line 1480](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1480) |
+| `build_functional_peptide_matrix` | [Line 1548](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1548) |
+| `build_peptide_matrix` | [Line 770](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L770) |
+| `build_protein_group_matrix` | [Line 838](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L838) |
+| `canonical_for_group` | [Line 1397](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1397) |
+| `classify_group` | [Line 327](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L327) |
+| `classify_group_with_hosts` | [Line 1143](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1143) |
+| `find_sample_dirs` | [Line 442](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L442) |
+| `group_value_votes` | [Line 1358](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1358) |
+| `is_classifiable_accession` | [Line 318](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L318) |
+| `is_host_member` | [Line 364](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L364) |
+| `load_functional_lookup` | [Line 1253](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1253) |
+| `load_host_accessions` | [Line 1108](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1108) |
+| `load_search_q` | [Line 466](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L466) |
+| `main` | [Line 1797](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1797) |
+| `normalize_protein_group` | [Line 289](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L289) |
+| `parse_intensity` | [Line 433](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L433) |
+| `parse_lfq_sample` | [Line 535](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L535) |
+| `parse_psm_sample` | [Line 677](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L677) |
+| `parse_q` | [Line 421](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L421) |
+| `parse_q_thresholds` | [Line 153](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L153) |
+| `representative_protein` | [Line 402](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L402) |
+| `resolve_functional_levels` | [Line 1783](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1783) |
+| `resolve_level` | [Line 1444](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1444) |
+| `sanitize_level` | [Line 1612](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1612) |
+| `short` | [Line 225](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L225) |
+| `split_functional_value` | [Line 1324](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1324) |
+| `strip_source_tags` | [Line 259](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L259) |
+| `validate_search_schema` | [Line 521](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L521) |
+| `write_functional_group_matrix` | [Line 1625](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1625) |
+| `write_functional_peptide_matrix` | [Line 1682](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1682) |
+| `write_group_metadata` | [Line 1166](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1166) |
+| `write_group_to_level_map` | [Line 1742](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1742) |
+| `write_peptide_matrix` | [Line 995](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L995) |
+| `write_protein_group_matrix` | [Line 1050](https://github.com/MannLabs/fasta-lake/blob/main/rust/aggregation_engine/src/main.rs#L1050) |
 
 ## rust/common/dianovo.rs
 
@@ -203,21 +203,21 @@ Regenerate with `python tools/render_function_index.py --write`.
 
 | Function | Definition |
 |---|---|
-| `add` | [Line 374](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L374) |
-| `collect_csvs` | [Line 388](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L388) |
-| `extract_sequence` | [Line 294](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L294) |
-| `is_low_complexity` | [Line 311](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L311) |
-| `load_peptides` | [Line 494](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L494) |
-| `load_peptides_single_csv` | [Line 541](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L541) |
-| `load_peptides_top_percent` | [Line 413](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L413) |
-| `load_peptides_top_percent_single_csv` | [Line 573](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L573) |
-| `load_peptides_txt` | [Line 630](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L630) |
-| `main` | [Line 673](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L673) |
-| `new` | [Line 364](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L364) |
-| `normalize_il_seq` | [Line 305](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L305) |
-| `parse_fasta_regions` | [Line 259](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L259) |
-| `parse_prediction_csv` | [Line 141](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L141) |
-| `walk` | [Line 390](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L390) |
+| `add` | [Line 373](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L373) |
+| `collect_csvs` | [Line 387](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L387) |
+| `extract_sequence` | [Line 293](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L293) |
+| `is_low_complexity` | [Line 310](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L310) |
+| `load_peptides` | [Line 493](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L493) |
+| `load_peptides_single_csv` | [Line 540](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L540) |
+| `load_peptides_top_percent` | [Line 412](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L412) |
+| `load_peptides_top_percent_single_csv` | [Line 572](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L572) |
+| `load_peptides_txt` | [Line 629](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L629) |
+| `main` | [Line 672](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L672) |
+| `new` | [Line 363](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L363) |
+| `normalize_il_seq` | [Line 304](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L304) |
+| `parse_fasta_regions` | [Line 258](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L258) |
+| `parse_prediction_csv` | [Line 140](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L140) |
+| `walk` | [Line 389](https://github.com/MannLabs/fasta-lake/blob/main/rust/fasta_extractor_v2/src/main.rs#L389) |
 
 ## rust/lake_stats/build.rs
 

@@ -13,8 +13,6 @@ import subprocess
 import sys
 import tempfile
 
-import pytest
-
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from fasta_lake.config import VALID_STRATEGIES, FastaLakeConfig
@@ -280,39 +278,13 @@ class TestExperimentDetection:
 class TestRustFastaExport:
     """Test the Rust fasta_export binary."""
 
-    BINARY = os.path.join(
-        os.path.dirname(os.path.dirname(__file__)),
-        "rust",
-        "fasta_export",
-        "target",
-        "release",
-        "fasta_export",
-    )
-
-    def test_binary_exists(self):
-        """The binary is a BUILD ARTEFACT, so its absence is not a defect.
-
-        This asserted unconditionally and was the single failure on a fresh clone
-        of main (2026-08-03: 618 passed, 19 skipped, 1 failed). A suite that is red
-        on a clean checkout for a reason that is not a bug trains everyone to
-        ignore red, so this skips with the build command instead.
-        """
-        if not os.path.isfile(self.BINARY):
-            pytest.skip(
-                "fasta_export not built; run: cargo build --release "
-                "--manifest-path rust/fasta_export/Cargo.toml"
-            )
-        assert os.path.isfile(self.BINARY)
-
-    def test_export_sage(self):
-        if not os.path.isfile(self.BINARY):
-            return
+    def test_export_sage(self, fasta_export_binary):
         with tempfile.TemporaryDirectory() as d:
             inp = os.path.join(d, "input.fasta")
             out = os.path.join(d, "sage.fasta")
             _write_multi_format(inp)
             result = subprocess.run(
-                [self.BINARY, "export", "-i", inp, "-o", out, "-e", "sage"],
+                [str(fasta_export_binary), "export", "-i", inp, "-o", out, "-e", "sage"],
                 capture_output=True,
                 text=True,
             )
@@ -321,15 +293,13 @@ class TestRustFastaExport:
             for hdr in _read_headers(out):
                 assert "GN=" in hdr
 
-    def test_export_msfragger(self):
-        if not os.path.isfile(self.BINARY):
-            return
+    def test_export_msfragger(self, fasta_export_binary):
         with tempfile.TemporaryDirectory() as d:
             inp = os.path.join(d, "input.fasta")
             out = os.path.join(d, "msfragger.fasta")
             _write_multi_format(inp)
             result = subprocess.run(
-                [self.BINARY, "export", "-i", inp, "-o", out, "-e", "msfragger"],
+                [str(fasta_export_binary), "export", "-i", inp, "-o", out, "-e", "msfragger"],
                 capture_output=True,
                 text=True,
             )
@@ -338,15 +308,13 @@ class TestRustFastaExport:
             headers = _read_headers(out)
             assert sum(1 for h in headers if h.startswith("rev_")) == 6
 
-    def test_export_diann(self):
-        if not os.path.isfile(self.BINARY):
-            return
+    def test_export_diann(self, fasta_export_binary):
         with tempfile.TemporaryDirectory() as d:
             inp = os.path.join(d, "input.fasta")
             out = os.path.join(d, "diann.fasta")
             _write_multi_format(inp)
             result = subprocess.run(
-                [self.BINARY, "export", "-i", inp, "-o", out, "-e", "diann"],
+                [str(fasta_export_binary), "export", "-i", inp, "-o", out, "-e", "diann"],
                 capture_output=True,
                 text=True,
             )

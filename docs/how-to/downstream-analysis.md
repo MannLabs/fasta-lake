@@ -22,8 +22,8 @@ flowchart LR
 
 ## Standard output
 
-QC plots are produced automatically by `tools/run_manifest.py`,
-`tools/group_study.py` and `fasta-lake quantify-study`. The runner writes
+QC plots are produced automatically by `fasta-lake run`,
+`fasta-lake group-study` and `fasta-lake quantify-study`. The runner writes
 `study_groups/qc/`; the other commands write `qc/` inside their output.
 Coverage/completeness always appears in `QC_overview.png` and `.pdf`.
 Protein intensity violins in `Protein_intensity_violins.pdf` and numbered PNG

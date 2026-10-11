@@ -47,7 +47,7 @@ struct Cli {
     /// whose accessions are content hashes and carry no catalogue prefix.
     ///
     /// Without it, `db_breakdown` on a SHA-256-keyed lake can only report UNCLASSIFIED,
-    /// because `PREDICT_<64 hex>` says nothing about which catalogue the sequence came
+    /// because `TAG_<64 hex>` says nothing about which catalogue the sequence came
     /// from. The hash-keyed eggNOG lookups already have this layout and can be passed
     /// directly. Coverage is printed, so a map that only partly covers the database
     /// cannot be mistaken for a complete one.
@@ -94,7 +94,8 @@ struct Cli {
     /// change the result of every existing script, whereas this makes them fail loudly
     /// and reproduce exactly once `--tiebreak alpha` is added.
     ///
-    /// For v26 use `hash-acc`. To reproduce pre-v26 published output use `alpha`.
+    /// The validated workflow uses `hash-acc`; use `alpha` only to reproduce output
+    /// made with the historical lexical rule.
     #[arg(long, value_enum, required = true)]
     tiebreak: TieBreak,
 }
@@ -139,12 +140,11 @@ struct Cli {
 /// Use `hash-acc` if catalogue neutrality is what is wanted; it achieves it without the
 /// inflation, at a protein-yield cost that is stated on that variant.
 ///
-/// Pick by what the study needs. See analyses/razor_tiebreak_bias/FINDING.md and
-/// COMPARABILITY_RESOLUTION_AXIS.md.
+/// Pick by what the study needs; `fasta-lake run` uses `hash-acc`.
 #[derive(Clone, Copy, PartialEq, Eq, Debug, ValueEnum)]
 enum TieBreak {
     /// Lexicographically smallest accession wins. The historical behaviour, so it
-    /// reproduces pre-v26 output exactly. Order-independent by
+    /// reproduces output made before hash-acc existed. Order-independent by
     /// construction, because it is a pure function of the accession strings. Its flaw
     /// is that byte order encodes a catalogue preference nobody chose --
     /// GMGC < GMSC < MGYG < sp| < tr| -- and `db_breakdown` reports those categories.
@@ -185,11 +185,11 @@ enum TieBreak {
     /// So: pick hash-acc when catalogue neutrality on a catalogue-keyed lake is worth a
     /// yield cost.
     ///
-    /// ⚠ DEFAULT CHANGED 2026-07-31: hash-acc is now the DEFAULT, alpha is retained for
-    /// reproducing pre-v26 output. The ruling rests on the v26 accession scheme: with
+    /// hash-acc is the rule `fasta-lake run` uses; alpha is retained for reproducing
+    /// older output. The choice rests on the hash accession scheme: with
     /// every accession `COHORT_<sha256hex>` (--uniform-tag), no accession carries a
     /// catalogue, so alpha has no preference left to express and the two rules converge
-    /// -- measured at 0.016 pp on PREDICT, which was already hash-keyed in v25. hash-acc
+    /// -- measured at 0.016 pp on a hash-keyed cohort lake. hash-acc
     /// was chosen anyway so neutrality holds by the RULE and not only by the accession
     /// scheme, i.e. it does not silently depend on --uniform-tag also being correct.
     ///

@@ -12,7 +12,7 @@ Sample01	data/Sample01.csv	data/Sample01.mzML
 Sample02	data/Sample02.csv	data/Sample02.mzML
 ```
 
-The separators above must be actual tabs when saved. Paths resolve relative to the manifest's directory. Absolute paths also work. Each sample identifier must be unique and use letters, digits, underscores, dots or hyphens, starting with a letter or digit. Do not use a subject identifier alone when that subject has several acquisitions.
+The separators above must be actual tabs when saved. Paths resolve relative to the manifest's directory. Absolute paths also work. Gzipped files (`.csv.gz`, `.mzML.gz`) are accepted: Sage reads gzipped mzML directly, and gzipped predictions are decompressed once into the run's `predictions/` folder after their checksums are recorded. Each sample identifier must be unique and use letters, digits, underscores, dots or hyphens, starting with a letter or digit. Do not use a subject identifier alone when that subject has several acquisitions.
 
 ## Prediction files
 
@@ -27,7 +27,7 @@ Check the prediction-to-mzML pairing using acquisition metadata. The runner veri
 ## Preflight
 
 ```bash
-python tools/run_manifest.py --manifest samples.tsv --lake lake_build_01/lake.fasta \
+fasta-lake run --manifest samples.tsv --lake lake_build_01/lake.fasta \
   --out study_run_01 --sage /path/to/sage --threads 4 --validate-only
 ```
 
@@ -36,10 +36,16 @@ Preflight checks the manifest structure, unique identifiers, nonempty input file
 ## Execute
 
 ```bash
-python tools/run_manifest.py --manifest samples.tsv --lake lake_build_01/lake.fasta \
+fasta-lake run --manifest samples.tsv --lake lake_build_01/lake.fasta \
+  --lake-headers lake_build_01/joint_headers.tsv \
   --out study_run_01 --sage /path/to/sage --threads 4 \
   --top-fraction 0.30 --min-length 9 --max-length 50
 ```
+
+`--lake-headers` is the sidecar from `lake_builder --output-headers`. It names
+each study group by gene, protein and organism in
+`study_groups/annotated_study_group_matrix.tsv`; leave it out only when the lake
+already keeps catalogue headers.
 
 The runner hashes all inputs, including the full lake, before starting. Hashing a large FASTA adds I/O time and provides an exact input identity. The command records parameter values and executable hashes in `PROVENANCE.json`, and stage commands, return codes and elapsed times in `commands.json`.
 

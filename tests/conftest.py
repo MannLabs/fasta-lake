@@ -40,6 +40,17 @@ E2E_DIR = REPO_ROOT / "e2e_test"
 
 
 @pytest.fixture
+def fasta_export_binary() -> Path:
+    """Use the configured exporter, or explicitly skip if it has not been built."""
+    from fasta_lake.rust.binaries import find_binary
+
+    try:
+        return find_binary("fasta_export", search_dir=REPO_ROOT)
+    except FileNotFoundError as error:
+        pytest.skip(str(error))
+
+
+@pytest.fixture
 def tiny_fasta() -> Path:
     """Path to the tiny test FASTA with 20 proteins."""
     return DATA_DIR / "tiny.fasta"

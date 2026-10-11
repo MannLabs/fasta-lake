@@ -1,17 +1,15 @@
 """
 Click CLI for FASTA Lake.
 
-Provides command groups for each pipeline stage:
+The validated workflow is one command:
 
 .. code-block:: bash
 
-    fasta-lake lake-build -c fastalake.json
-    fasta-lake evidence-lake -d lake.fasta -p predictions/ -o evidence.fasta
-    fasta-lake extract-sample -d evidence.fasta -p sample.csv -o sample.fasta
-    fasta-lake infer --sample SAMPLE_001 --stage2-fasta s2.fasta \\
-        --peptides sample.csv -o output/ --strategy species_budget
-    fasta-lake validate fastalake.json
-    fasta-lake init --template full
+    fasta-lake run --manifest samples.tsv --lake lake.fasta --out study_01
+    fasta-lake group-study --search study_01/search --out study_groups_01
+
+Legacy commands (infer, convert, tune, diagnose, preset, lake-build) are hidden
+from --help and print a notice when used.
 """
 
 from __future__ import annotations
@@ -49,17 +47,62 @@ def cli() -> None:
     """FASTA Lake: Sample-specific protein database construction for metaproteomics."""
 
 
+_LEGACY_NOTE = (
+    "Note: `fasta-lake {}` belongs to a legacy route that was not validated; "
+    "use `fasta-lake run` for a study."
+)
+
+
+class _Legacy(click.Command):
+    """A hidden command kept for old scripts; it says so on every use."""
+
+    def invoke(self, ctx):
+        """Print the legacy notice to stderr, then run the command unchanged."""
+        click.echo(_LEGACY_NOTE.format(ctx.info_name), err=True)
+        return super().invoke(ctx)
+
+
+class _LegacyGroup(click.Group):
+    """A hidden command group kept for old scripts; it says so on every use."""
+
+    def invoke(self, ctx):
+        """Print the legacy notice to stderr, then run the command unchanged."""
+        click.echo(_LEGACY_NOTE.format(ctx.info_name), err=True)
+        return super().invoke(ctx)
+
+
+_PASSTHROUGH = {"ignore_unknown_options": True, "allow_extra_args": True, "help_option_names": []}
+
+
+@cli.command("run", context_settings=_PASSTHROUGH, add_help_option=False)
+@click.argument("args", nargs=-1, type=click.UNPROCESSED)
+def run_cmd(args: tuple[str, ...]) -> None:
+    """Run the whole study from an acquisition manifest (fasta-lake run --help)."""
+    from fasta_lake.workflow import entry
+
+    sys.exit(entry(list(args)))
+
+
+@cli.command("group-study", context_settings=_PASSTHROUGH, add_help_option=False)
+@click.argument("args", nargs=-1, type=click.UNPROCESSED)
+def group_study_cmd(args: tuple[str, ...]) -> None:
+    """Group and quantify completed Sage searches (fasta-lake group-study --help)."""
+    from fasta_lake.study_cli import main
+
+    sys.exit(main(list(args)))
+
+
 # ---------------------------------------------------------------------------
 # Presets
 # ---------------------------------------------------------------------------
 
 
-@cli.group("preset")
+@cli.group("preset", cls=_LegacyGroup, hidden=True)
 def preset_grp() -> None:
-    """Inspect or export validated parameter presets (v5).
+    """Inspect or export the legacy parameter presets of the infer route.
 
-    Presets are named bundles of stage-specific parameters validated against
-    entrapment FDP on 592 MicrobPredict samples. See DESIGN_V5.md.
+    These bundles come from a historical entrapment sweep; `fasta-lake run`
+    does not use them and they do not calibrate the current workflow.
     """
 
 
@@ -789,7 +832,7 @@ def entrapment_prepare(config_path: str, database: str, output_dir: str, verbose
 # ---------------------------------------------------------------------------
 
 
-@cli.command("tune")
+@cli.command("tune", cls=_Legacy, hidden=True)
 @click.option(
     "--results-dir",
     required=True,
@@ -868,7 +911,7 @@ def tune_cmd(
 # ---------------------------------------------------------------------------
 
 
-@cli.command("diagnose")
+@cli.command("diagnose", cls=_Legacy, hidden=True)
 @click.option(
     "--results-dir",
     required=True,
@@ -955,7 +998,7 @@ def diagnose_cmd(
 # ---------------------------------------------------------------------------
 
 
-@cli.command()
+@cli.command("infer", cls=_Legacy, hidden=True)
 @click.option("--sample", required=True, help="Sample ID")
 @click.option(
     "--stage2-fasta",
@@ -982,7 +1025,7 @@ def diagnose_cmd(
     type=click.Choice(list(STRATEGIES.keys())),
     help=(
         "Experimental Python strategy (default: species_budget). "
-        "See tools/run_manifest.py for the validated Rust workflow."
+        "Use `fasta-lake run` for the validated Rust workflow."
     ),
 )
 @click.option("--min-peptides", default=2, type=int, help="Min peptides for uniform_2pep")
@@ -1020,8 +1063,7 @@ def diagnose_cmd(
     "--preset",
     default=None,
     type=click.Choice(list(PRESETS)),
-    help="Apply a parameter preset (overrides other --min-peptides / --strategy flags). "
-    "See DESIGN_V5.md for preset parameters and empirical FDP for each.",
+    help="Apply a parameter preset (overrides other --min-peptides / --strategy flags).",
 )
 @click.option("-v", "--verbose", is_flag=True, help="Verbose logging")
 def infer(
@@ -1045,7 +1087,7 @@ def infer(
         raise click.ClickException("Output must be new or empty; choose a fresh directory")
     click.echo(
         "Experimental Python inference: evidence weighting and tie rules differ from "
-        "Rust razor/hash-acc. Use tools/run_manifest.py for the validated workflow.",
+        "Rust razor/hash-acc. Use `fasta-lake run` for the validated workflow.",
         err=True,
     )
     _setup_logging(verbose)
@@ -1158,7 +1200,7 @@ def export(
 # ---------------------------------------------------------------------------
 
 
-@cli.command("convert")
+@cli.command("convert", cls=_Legacy, hidden=True)
 @click.option(
     "-i",
     "--input",
@@ -1184,8 +1226,8 @@ def export(
 @click.option(
     "--checkpoint",
     type=click.Choice(["old", "rope"]),
-    default="rope",
-    help="AlphaNovo checkpoint for de novo inference (default: rope)",
+    required=True,
+    help="AlphaNovo checkpoint passed to your conversion scripts",
 )
 @click.option(
     "--validate/--no-validate",
@@ -1216,15 +1258,15 @@ def convert(
 
     \b
       # Full pipeline from raw files
-      fasta-lake convert -i data/raw/ -o data/predictions/ --step all
+      fasta-lake convert -i data/raw/ -o data/predictions/ --step all --checkpoint old
 
     \b
       # Just convert mzML to HDF
-      fasta-lake convert -i data/mzml/ -o data/hdf/ --step mzml-to-hdf
+      fasta-lake convert -i data/mzml/ -o data/hdf/ --step mzml-to-hdf --checkpoint old
 
     \b
       # Run inference on clean HDFs
-      fasta-lake convert -i data/hdf/ -o data/pred/ --step hdf-to-csv --checkpoint rope
+      fasta-lake convert -i data/hdf/ -o data/pred/ --step hdf-to-csv --checkpoint old
     """
     _setup_logging(verbose)
     import subprocess
@@ -1320,7 +1362,7 @@ def convert(
 # ---------------------------------------------------------------------------
 
 
-@cli.command("lake-build")
+@cli.command("lake-build", cls=_Legacy, hidden=True)
 @click.option("-c", "--config", "config_path", required=True, type=click.Path(exists=True))
 @click.option("-v", "--verbose", is_flag=True)
 def lake_build(config_path: str, verbose: bool) -> None:

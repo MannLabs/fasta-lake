@@ -16,7 +16,9 @@ Inside your completed run directory:
 | Start with | What to look for |
 |---|---|
 | `study_groups/qc/QC_overview.png` | Do acquisitions have similar coverage? Which groups are missing? Was PCA eligible? |
+| `study_groups/annotated_study_group_matrix.tsv` | The same matrix with gene, protein name and organism beside each group. Open this one in a spreadsheet. |
 | `study_groups/study_group_matrix.tsv` | One reporting group per row, acquisitions in columns; the default quantities are sums. |
+| `study_groups/study_group_annotation.tsv` | Gene, protein name, organism and source catalogue of each group's representative. |
 | `study_groups/peptide_evidence.tsv.gz` | Which accepted peptide sequences support each group and acquisition? |
 | `COMPLETE.json` | Did the requested workflow finish, and did it include searching? |
 
@@ -34,6 +36,7 @@ An assistant can walk through them using the
 
 | Output | Meaning | First check |
 |---|---|---|
+| `PARAMETERS.tsv` | Every runner setting in one table: value used and whether it was the default, set by you or chosen by the laptop plan | The settings you meant to change are marked `user` |
 | `PROVENANCE.json` | Parameters, input identities and executable identities | Correct acquisition pairing and versions |
 | `commands.json` and stage logs | Actual execution and failures | Every required stage returned zero |
 | `evidence.fasta` and sidecars | Cohort evidence-supported reference subset | Nonempty output and plausible retained size |
@@ -41,8 +44,8 @@ An assistant can walk through them using the
 | `samples/<sample>/inference/<sample>_razor.fasta` | Exact selected search candidates | Preserve together with the SAGE configuration |
 | `search/<sample>/results.sage.tsv` | Spectrum matches and confidence fields | Target label, appropriate q-value and counting unit |
 | `search/<sample>/lfq.tsv` | Quantified peptide features | Acquisition column, finite intensities and matching PSM table |
-| `aggregate/` | Peptide-feature and protein-member-set matrices | Threshold and grouping mode in filenames/metadata |
-| `COMPLETE.json` | Successful termination of the requested runner scope | Whether databases-only was enabled |
+| `aggregate/` | Only with `--member-set-aggregate`: legacy peptide-feature and protein-member-set matrices. Member sets are not protein groups and outnumber them | Do not report its row count as protein groups |
+| `COMPLETE.json` | Successful termination of the requested runner scope; `protein_group_matrix` names the one matrix to report | Whether databases-only was enabled |
 
 The core LFQ aggregator requires the corresponding results table and exactly one acquisition intensity column per search directory. Multiple intensity columns fail clearly instead of silently selecting the first. The peptide-feature matrix is gated on search-level peptide_q, and the protein-member-set matrix on search-level protein_q. The core aggregator does not gate these matrices on the MS1-specific LFQ q_value column. Their total signal can differ because their identification gates differ. Aggregate observations are filtered before summation. For example, intensities 10 and 1,000 from observations with q-values 0.001 and 0.9 must contribute 10 at a 0.01 threshold, even when they share a reporting key.
 
@@ -62,9 +65,16 @@ why PCA was skipped. No missing quantities are imputed.
 For existing searches, grouping and plots can also be generated directly:
 
 ```bash
-python tools/group_study.py --search study_run_01/search \
+fasta-lake group-study --search study_run_01/search \
   --out study_groups_01 --peptide-q 0.01
 ```
+
+Add `--lake-headers lake_build_01/joint_headers.tsv` (the sidecar written by
+`lake_builder --output-headers`) when lake accessions are sequence hashes such as
+`TAG_<sha256>`; without it, groups are named from the searched FASTA headers. When
+one sequence came from several catalogue entries, every distinct gene, name and
+organism is listed, separated by `; `. These are labels of the representative, not
+proof of a protein's unique biological origin.
 
 This post-search operation reads the exact searched FASTAs from each configuration and builds an observed target peptide-to-protein graph at the declared peptide-q threshold. Greedy set cover selects study representatives by maximum additional peptide coverage, with lexical ties. The full rule and ambiguity handling are in the algorithms document.
 
