@@ -26,3 +26,16 @@ fastalake.site.sh
 tutorial_data/
 # mkdocs-jupyter render cache
 .cache/
+
+# Local artwork render and review records
+/docs/figure/BUILD_RECEIPT.json
+/docs/figure/LAYOUT_BOUNDS.json
+/docs/figure/PDF_CHECK.json
+/docs/figure/RENDER_RECEIPT.json
+/docs/figure/VERIFICATION.json
+/docs/figure/VISUAL_REVIEW.json
+/docs/figure/LABEL_SOURCES.md
+/docs/figure/PIPELINE_INVENTORY.md
+/docs/figure/README_SNIPPET.md
+/docs/figure/verify_figure.py
+/docs/figure/renders/

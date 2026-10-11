@@ -11,9 +11,7 @@ a tutorial correction, a measured speedup or a new analysis.
 3. Open the relevant module beside its tests. The whole repository is the supported source; the manuscript and its review
    records are kept privately, outside this repository.
 
-The [development review](development.md) distinguishes engineering
-work from scientific questions. An open question is welcome when its scope and
-evidence are clear.
+For a proposed change, state the problem, its scope and how the result can be checked. Keep scientific assumptions explicit.
 
 ## Set up and check a change
 

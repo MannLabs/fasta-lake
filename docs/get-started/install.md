@@ -3,29 +3,33 @@
 For a first run, use Docker: it bundles the tools and example inputs. A cluster
 that does not allow Docker can use the [source installation](#source-installation).
 
-## Start with a working example
+## Published image { #published-image }
+
+With Docker installed, download the bundled release:
 
 ```bash
-git clone https://github.com/MannLabs/fasta-lake.git
-cd fasta-lake
-bash tools/check_local_docker.sh docker_check_01
+docker pull --platform linux/amd64 ghcr.io/mannlabs/fasta-lake:v1.1.0rc2
 ```
 
-The first build downloads dependencies and compiles the tools, so allow several
-minutes. The examples then run offline; a successful check ends with `PASS`.
-Open [the demo guide](demo.md#open-these-first) to inspect your first results.
+The image includes Python, compiled Rust tools, Sage, directLFQ, AlphaPeptTools
+and example inputs. Continue with the [quickstart](first-study.md).
+It targets Linux x86_64; Apple Silicon uses Docker's x86_64 emulation.
 
-Prefer help from an agent or LLM? Use the [installation task file](../how-to/assistants.md#ready-to-copy-task-files).
+## Choose an installation
 
-## Choose another installation route
+| Route | Use when |
+|---|---|
+| **Published Docker image** | You want a bundled release and a first result |
+| **[Build Docker from source](#docker-built-from-the-checkout)** | You need changes on the current development branch |
+| **[Source installation](#source-installation)** | You develop in Python or use a Linux cluster |
+| **[Apptainer / Slurm](../how-to/cluster.md)** | Your cluster runs containers through Apptainer |
+| **[CI image artifact](#download-a-tested-image)** | You are testing a particular development commit |
 
-| Route | When to choose it | Needs |
-|---|---|---|
-| **Docker, built from the checkout** | Use Docker on a supported machine; examples run offline | Docker |
-| **Tested image download** | You want the exact image a CI run tested, without building | Docker, Bash |
-| **Source installation** | Development, or a cluster without Docker | Python 3.12, Rust toolchain, C compiler, Sage v0.14.7 |
-
-The container includes Python, all nine FastaLake Rust executables, the official Sage v0.14.7 release binary (it reports its version as 0.14.6), directLFQ 0.3.3, AlphaPeptTools 0.4.0 and the bundled public CAMPI acquisition windows. The complete Python runtime is pinned with distribution hashes in `requirements/container.txt` for Linux x86_64 and Python 3.12; the source route installs that same set.
+The published image is `v1.1.0rc2`; newer changes on `main` enter the next
+release. The container includes the official Sage v0.14.7 release binary
+(which reports version 0.14.6), directLFQ 0.3.3 and AlphaPeptTools 0.4.0.
+The Python runtime is hash-pinned in `requirements/container.txt` for Linux
+x86_64 and Python 3.12.
 
 ## Docker, built from the checkout
 
