@@ -42,7 +42,7 @@ Zero probabilities are kept and numeric gaps are preserved.
 A smaller database can feed spectral-library prediction and DIA searching.
 Reuse of one acquisition for de novo selection and searching does not establish
 whole-workflow FDR. Validate acquisition windows, modifications and calibration
-before interpreting results. See [development scope](../project/development.md).
+before interpreting results. See [the method and its scope](../concepts/methods.md).
 
 ## Find the code
 

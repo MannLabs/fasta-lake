@@ -10,7 +10,7 @@ FASTA, peptide dictionary and quantity matrix relate before you run anything.
 
 ## Prepare the environment
 
-Build the image once as described in [Install](install.md), then create a results directory:
+Pull the published image as described in [Install](install.md#published-image), then create a results directory:
 
 ```bash
 mkdir -p fastalake-results
@@ -23,7 +23,7 @@ docker run --rm --platform linux/amd64 --network none \
   --memory 4g --memory-swap 4g --cpus 2 \
   --user "$(id -u):$(id -g)" \
   --mount "type=bind,source=$PWD/fastalake-results,target=/work" \
-  ghcr.io/mannlabs/fasta-lake:local fastalake-example campi --out /work/campi_01 --threads 2
+  ghcr.io/mannlabs/fasta-lake:v1.1.0rc2 fastalake-example campi --out /work/campi_01 --threads 2
 ```
 
 The inputs are real spectra and matching predictions, cropped to two acquisition
@@ -52,6 +52,10 @@ The separately labelled [synthetic analysis example](https://github.com/MannLabs
 exercises that three-acquisition route.
 
 ## Use your own acquisitions
+
+The commands below use the current development interface. Build the image from
+[the checkout](install.md#docker-built-from-the-checkout), tagged `:local`, or use
+the [source installation](install.md#source-installation).
 
 Check what you already have before preparing the manifest:
 

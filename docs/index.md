@@ -2,111 +2,75 @@
 title: FastaLake
 hide:
   - navigation
+  - toc
 ---
 
 # FastaLake
 
-FastaLake uses de novo peptide evidence to construct compact protein databases
-for proteomics and metaproteomics. Complete proteins are selected from large
-sequence repositories for each mass spectrometry acquisition. The resulting
-databases are searched with [Sage](https://github.com/lazear/sage), followed by
-protein grouping and quantification within each study. Matched metagenomic and
-metatranscriptomic sequences can be included when available.
+**Compact protein databases, guided by your spectra.**
+
+FastaLake uses de novo peptide predictions to select complete proteins from large
+sequence reservoirs. Search the selected databases with Sage, then group and
+quantify the peptide evidence across your study.
+
+[Install FastaLake](get-started/install.md){ .md-button .md-button--primary }
+[Run your first example](get-started/first-study.md){ .md-button }
 
 <figure markdown="1">
-![FastaLake selection funnel](assets/fastalake-funnel.svg){ width="560" .no-lightbox }
+![From peptide evidence to a study result](assets/fastalake-funnel.svg){ width="560" .no-lightbox }
 </figure>
 
-## Getting started { #run-it-in-30-seconds }
+## What you can do
 
-The Docker image bundles Python, the compiled Rust tools, Sage, directLFQ, AlphaPeptTools and the example inputs.
+- Build an acquisition-specific protein database from public sequence catalogues.
+- Run selection, database searching and study-level quantification from a manifest.
+- Add matched DNA and RNA evidence when available.
+- Use chunked lookup for large reservoirs on smaller machines.
+- Explore protein groups, peptide evidence and QC plots.
 
-```bash
-git clone https://github.com/MannLabs/fasta-lake.git
-cd fasta-lake
-bash tools/check_local_docker.sh docker_check_01
-```
-
-The first build downloads dependencies. The examples then run offline within 4 GiB of RAM and two CPUs. Success ends with `PASS`, and every table, plot and log stays in `docker_check_01/`.
-
-## Set up with an assistant
-
-Working with an agent or LLM? Give it the repository's `AGENTS.md` and a
-[task file](how-to/assistants.md#ready-to-copy-task-files) for what you want to do.
-Each task names the inputs to supply and the outputs to check, with example
-files to adapt.
-
-## Documentation guide
-
-New to the method? Follow the [visual walkthrough](concepts/walkthrough.md):
-step through candidate selection, study grouping and intensity aggregation,
-then inspect the same files in the measured example.
+## Start here
 
 <div class="grid cards" markdown>
 
--   :material-play-circle:{ .lg .middle } **Example data**
+-   :material-download:{ .lg .middle } **Installation**
 
     ---
 
-    Every bundled example, what it produces and how to read the result.
+    Use the bundled Docker image, install from source, or run on a cluster.
 
-    [:octicons-arrow-right-24: The demo](get-started/demo.md)
+    [Choose your installation :octicons-arrow-right-24:](get-started/install.md)
 
--   :material-flask:{ .lg .middle } **Study analysis**
-
-    ---
-
-    Acquisition manifest, preflight, result folders, first study.
-
-    [:octicons-arrow-right-24: Your first study](get-started/first-study.md)
-
--   :material-dna:{ .lg .middle } **Matched metagenome or metatranscriptome**
+-   :material-play-circle:{ .lg .middle } **Quickstart**
 
     ---
 
-    One FASTA and one TPM table per specimen, added after de novo selection.
+    Run a small CAMPI example and open your first protein-group matrix.
 
-    [:octicons-arrow-right-24: Molecular inputs](how-to/molecular-inputs.md)
-
--   :material-memory:{ .lg .middle } **A large reference and limited memory**
-
-    ---
-
-    Chunked extraction, measured limits, laptop or cluster.
-
-    [:octicons-arrow-right-24: Compute choices](how-to/compute.md)
-
--   :material-robot:{ .lg .middle } **A cluster, with an assistant**
-
-    ---
-
-    Scheduler-first prompts for ChatGPT, Claude or a coding agent.
-
-    [:octicons-arrow-right-24: Working with an assistant](how-to/assistants.md)
-
--   :material-help-circle:{ .lg .middle } **Methods and interpretation**
-
-    ---
-
-    Watch the decisions, inspect the rules and understand the resulting matrix.
-
-    [:octicons-arrow-right-24: Visual walkthrough](concepts/walkthrough.md)
+    [Get a first result :octicons-arrow-right-24:](get-started/first-study.md)
 
 </div>
 
-## How it is tested
+## Bring your own study
 
-Continuous integration runs on every push: the six Rust crates (fmt, clippy, tests), the Python suite under Python 3.10 and 3.12 with warnings treated as errors, the analysis and directLFQ suites, dependency and licence checks, the source manifest, and the public CAMPI SIHUMIx acquisition windows end to end (PRIDE data). The Docker workflow builds the image and runs every bundled example offline. [Validation](concepts/validation.md) records what the examples check; [Development](project/development.md) records what remains open.
+Start with mzML spectra, de novo prediction CSVs and a protein FASTA reservoir.
+An acquisition manifest connects the files for each sample. RAW conversion and
+de novo inference happen upstream.
 
-## Credits
+[Prepare a manifest](how-to/acquisition-manifest.md) ·
+[Choose references](how-to/references.md) ·
+[Read the results](how-to/read-outputs.md)
 
-FastaLake uses [Sage](https://github.com/lazear/sage), [directLFQ](https://github.com/MannLabs/directlfq) and [AlphaPeptTools](https://github.com/MannLabs/alphapepttools). Please credit them alongside the FastaLake revision and settings. Code is under the MIT licence. Bundled data and third-party dependencies keep their own terms. A manuscript is in preparation. Cite the repository revision until a DOI exists.
+Learn the method through the [visual walkthrough](concepts/walkthrough.md),
+follow the [notebook tutorials](tutorials/index.md), or use a
+[task file with your coding assistant](how-to/assistants.md).
 
-## AI-assisted development
+## Citation and credits
 
-Much of FastaLake's code and documentation was developed with Codex Astra
-(reasoning effort: xhigh), Opus 4.8, Opus 5 and Fable. The authors remain
-responsible for the software, design decisions, validation and scientific
-claims. AI assistance is not evidence that an implementation is correct.
-The [validation documentation](concepts/validation.md) describes the checks
-and their limits.
+Cite the exact software version used; [CITATION.cff](https://github.com/MannLabs/fasta-lake/blob/main/CITATION.cff)
+contains the software citation. The manuscript analyses are in
+[fastalake-paper](https://github.com/treitpeter/fastalake-paper).
+
+FastaLake uses [Sage](https://github.com/lazear/sage),
+[directLFQ](https://github.com/MannLabs/directlfq) and
+[AlphaPeptTools](https://github.com/MannLabs/alphapepttools).
+Code is MIT licensed; bundled data and dependencies retain their own terms.
