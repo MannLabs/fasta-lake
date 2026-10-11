@@ -10,6 +10,7 @@
   --md-typeset-a-color: #85c6a9;
 }
 .md-typeset h1 { font-weight: 600; }
+.md-typeset .md-button { margin-bottom: .5rem; }
 .md-typeset table:not([class]) { font-size: 0.8rem; }
 .md-typeset .mermaid { text-align: center; }
 
