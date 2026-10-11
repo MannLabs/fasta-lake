@@ -4,7 +4,7 @@
 [![Docker examples](https://github.com/MannLabs/fasta-lake/actions/workflows/docker.yml/badge.svg)](https://github.com/MannLabs/fasta-lake/actions/workflows/docker.yml)
 [![Documentation](https://github.com/MannLabs/fasta-lake/actions/workflows/docs.yml/badge.svg)](https://mannlabs.github.io/fasta-lake/)
 [![Licence: MIT](https://img.shields.io/badge/licence-MIT-1f4e5f.svg)](LICENSE)
-[![Python 3.12](https://img.shields.io/badge/python-3.12-1f4e5f.svg)](docs/get-started/install.md#source-installation)
+[![Python 3.11 and 3.12](https://img.shields.io/badge/python-3.11%20%7C%203.12-1f4e5f.svg)](docs/get-started/install.md#source-installation)
 
 FastaLake uses de novo peptide evidence to construct compact protein databases
 for proteomics and metaproteomics. Complete proteins are selected from large
