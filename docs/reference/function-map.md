@@ -94,4 +94,4 @@ The [measured CAMPI example](https://github.com/MannLabs/fasta-lake/blob/main/ex
 stages. The [multi-omics example](https://github.com/MannLabs/fasta-lake/blob/main/examples/multiomics/run_example.py) adds
 explicitly synthetic molecular values to real sequences and spectra.
 See [contributing](https://github.com/MannLabs/fasta-lake/blob/main/.github/CONTRIBUTING.md) for development/test commands and
-[development priorities](../project/contributing.md) for work that remains.
+[contributor guide](../project/contributing.md) for setup and contribution guidance.
