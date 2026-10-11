@@ -1,6 +1,6 @@
 # FastaLake
 
-[![Release](https://img.shields.io/github/v/release/MannLabs/fasta-lake?include_prereleases&color=1f4e5f)](https://github.com/MannLabs/fasta-lake/releases/latest)
+[![Release](https://img.shields.io/github/v/release/MannLabs/fasta-lake?include_prereleases&color=1f4e5f)](https://github.com/MannLabs/fasta-lake/releases/tag/v1.1.0rc2)
 [![CI](https://github.com/MannLabs/fasta-lake/actions/workflows/ci.yml/badge.svg)](https://github.com/MannLabs/fasta-lake/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-1f4e5f.svg)](docs/get-started/install.md#source-installation)
 [![Licence: MIT](https://img.shields.io/badge/licence-MIT-1f4e5f.svg)](LICENSE)
