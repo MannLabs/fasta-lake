@@ -35,10 +35,6 @@ ENTRAP_RESULTS = SAMPLE_DIR / "entrapment" / "results.sage.tsv"
 # Find predictions CSV from sample list
 SAMPLE_LIST = BENCH / "sample_lists" / "all_296.tsv"
 
-FASTA_EXPORT = (
-    Path(__file__).parent.parent / "rust" / "fasta_export" / "target" / "release" / "fasta_export"
-)
-
 
 def _find_predictions_csv():
     if not SAMPLE_LIST.exists():
@@ -288,25 +284,33 @@ class TestRealEntrapment:
 
 
 @pytest.mark.skipif(not DATA_AVAILABLE, reason="MicrobPredict data not available")
-@pytest.mark.skipif(not FASTA_EXPORT.exists(), reason="fasta_export binary not built")
 class TestRustBinaryReal:
     """Test Rust fasta_export binary on real data."""
 
-    def test_export_sage_real(self, tmp_path):
+    def test_export_sage_real(self, tmp_path, fasta_export_binary):
         out = tmp_path / "sage.fasta"
         result = subprocess.run(
-            [str(FASTA_EXPORT), "export", "-i", str(STAGE2_FASTA), "-o", str(out), "-e", "sage"],
+            [
+                str(fasta_export_binary),
+                "export",
+                "-i",
+                str(STAGE2_FASTA),
+                "-o",
+                str(out),
+                "-e",
+                "sage",
+            ],
             capture_output=True,
             text=True,
         )
         assert result.returncode == 0, f"STDERR: {result.stderr}"
         assert _count_proteins(out) == 75234
 
-    def test_export_msfragger_real(self, tmp_path):
+    def test_export_msfragger_real(self, tmp_path, fasta_export_binary):
         out = tmp_path / "msfragger.fasta"
         result = subprocess.run(
             [
-                str(FASTA_EXPORT),
+                str(fasta_export_binary),
                 "export",
                 "-i",
                 str(STAGE2_FASTA),
@@ -322,21 +326,39 @@ class TestRustBinaryReal:
         n = _count_proteins(out)
         assert n == 75234 * 2  # targets + decoys
 
-    def test_export_diann_real(self, tmp_path):
+    def test_export_diann_real(self, tmp_path, fasta_export_binary):
         out = tmp_path / "diann.fasta"
         result = subprocess.run(
-            [str(FASTA_EXPORT), "export", "-i", str(STAGE2_FASTA), "-o", str(out), "-e", "diann"],
+            [
+                str(fasta_export_binary),
+                "export",
+                "-i",
+                str(STAGE2_FASTA),
+                "-o",
+                str(out),
+                "-e",
+                "diann",
+            ],
             capture_output=True,
             text=True,
         )
         assert result.returncode == 0
         assert _count_proteins(out) == 75234
 
-    def test_export_diann_headers_correct(self, tmp_path):
+    def test_export_diann_headers_correct(self, tmp_path, fasta_export_binary):
         """DIA-NN export: non-sp/tr headers should have gene as first word."""
         out = tmp_path / "diann.fasta"
         subprocess.run(
-            [str(FASTA_EXPORT), "export", "-i", str(STAGE2_FASTA), "-o", str(out), "-e", "diann"],
+            [
+                str(fasta_export_binary),
+                "export",
+                "-i",
+                str(STAGE2_FASTA),
+                "-o",
+                str(out),
+                "-e",
+                "diann",
+            ],
             capture_output=True,
         )
         with open(out) as f:
