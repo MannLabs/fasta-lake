@@ -720,9 +720,9 @@ CI checks the index against the source.
 
 | Function | Purpose |
 |---|---|
-| [`find_binary`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/rust/binaries.py#L29) | Locate a compiled Rust binary. |
-| [`run_fasta_extractor`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/rust/binaries.py#L89) | Run the Rust ``fasta_extractor`` binary. |
-| [`run_lake_builder`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/rust/binaries.py#L198) | Run the Rust ``lake_builder`` binary. |
+| [`find_binary`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/rust/binaries.py#L39) | Locate a compiled Rust binary. |
+| [`run_fasta_extractor`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/rust/binaries.py#L106) | Run the Rust ``fasta_extractor`` binary. |
+| [`run_lake_builder`](https://github.com/MannLabs/fasta-lake/blob/main/fasta_lake/rust/binaries.py#L215) | Run the Rust ``lake_builder`` binary. |
 
 ### fasta_lake.study_cli
 
