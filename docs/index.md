@@ -7,6 +7,8 @@ hide:
 
 # FastaLake
 
+[**Read the FastaLake paper on bioRxiv**](https://www.biorxiv.org/content/10.64898/2026.10.08.757395v1)
+
 **Compact protein databases, guided by your spectra.**
 
 FastaLake uses de novo peptide predictions to select complete proteins from large
