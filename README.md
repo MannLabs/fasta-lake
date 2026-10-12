@@ -1,5 +1,7 @@
 # FastaLake
 
+[**Read the paper — bioRxiv**](https://www.biorxiv.org/content/10.64898/2026.10.08.757395v1) · [DOI: 10.64898/2026.10.08.757395](https://doi.org/10.64898/2026.10.08.757395)
+
 [![Release](https://img.shields.io/github/v/release/MannLabs/fasta-lake?include_prereleases&color=1f4e5f)](https://github.com/MannLabs/fasta-lake/releases/tag/v1.1.0rc2)
 [![CI](https://github.com/MannLabs/fasta-lake/actions/workflows/ci.yml/badge.svg)](https://github.com/MannLabs/fasta-lake/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-1f4e5f.svg)](docs/get-started/install.md#source-installation)
@@ -96,7 +98,8 @@ or [reading the results](docs/how-to/read-outputs.md).
 
 ## Citation and credits
 
-Cite the software version used; see [CITATION.cff](CITATION.cff).
+Treit et al. (2026). *FastaLake selects compact metaproteomic databases from large sequence reservoirs by de novo peptide lookup*. [bioRxiv](https://www.biorxiv.org/content/10.64898/2026.10.08.757395v1).
+Please also cite the software version used; see [CITATION.cff](CITATION.cff).
 The manuscript analyses and source tables are maintained in
 [fastalake-paper](https://github.com/treitpeter/fastalake-paper).
 
